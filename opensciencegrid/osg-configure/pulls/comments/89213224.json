@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-configure/pull/40#discussion_r89213224"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/40"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/comments/89213224"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "So what if value contains double quotes?", 
+  "commit_id": "441b65b4924028428f105a7615dfeebbe9b70a37", 
+  "created_at": "2016-11-22T21:24:59Z", 
+  "diff_hunk": "@@ -706,17 +707,20 @@ def replace_setting(buf, setting, value, xml_file=True):\n         \"\"\"\n         value = str(value)\n         if xml_file:\n-            value = value.replace('\"', '&quot;')\n+            quoted_value = saxutils.quoteattr(value)\n         else:\n-            value = value.replace('\"', '\\\"')\n+            # urCollector.conf files are a custom format that require '\"'\n+            # surrounding the value but support no escaping of quotes or\n+            # anything.\n+            quoted_value = '\"' + value + '\"'", 
+  "html_url": "https://github.com/opensciencegrid/osg-configure/pull/40#discussion_r89213224", 
+  "id": 89213224, 
+  "original_commit_id": "441b65b4924028428f105a7615dfeebbe9b70a37", 
+  "original_position": 19, 
+  "path": "osg_configure/configure_modules/gratia.py", 
+  "position": 19, 
+  "pull_request_review_id": 9761048, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/40", 
+  "updated_at": "2016-11-22T21:25:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/comments/89213224", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

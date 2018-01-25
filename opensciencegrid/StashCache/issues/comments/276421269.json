@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "Addresses #42 ", 
+  "created_at": "2017-01-31T16:52:30Z", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/pull/46#issuecomment-276421269", 
+  "id": 276421269, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/46", 
+  "updated_at": "2017-01-31T16:52:30Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/comments/276421269", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/17444278?v=4", 
+    "events_url": "https://api.github.com/users/caseylargent/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/caseylargent/followers", 
+    "following_url": "https://api.github.com/users/caseylargent/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/caseylargent/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/caseylargent", 
+    "id": 17444278, 
+    "login": "caseylargent", 
+    "organizations_url": "https://api.github.com/users/caseylargent/orgs", 
+    "received_events_url": "https://api.github.com/users/caseylargent/received_events", 
+    "repos_url": "https://api.github.com/users/caseylargent/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/caseylargent/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/caseylargent/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/caseylargent"
+  }
+}

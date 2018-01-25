@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/271#discussion_r157068590"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/271"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/157068590"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Could we add a link to the reference section?", 
+  "commit_id": "4c9f6a729fc81dfb4f7176cfce003a5500864419", 
+  "created_at": "2017-12-14T21:37:06Z", 
+  "diff_hunk": "@@ -0,0 +1,375 @@\n+Troubleshooting Gratia Accounting\n+=================================\n+\n+This document will help you troubleshoot problems with the Gratia Accounting, particularly with problems in collecting and reporting accounting information to the central OSG accounting service. See also other documents recommended in the Reference section below.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/271#discussion_r157068590", 
+  "id": 157068590, 
+  "original_commit_id": "ebc3f346824e46557b3a09f15ad4cccf83dc59c5", 
+  "original_position": 4, 
+  "path": "docs/other/troubleshooting-gratia.md", 
+  "position": null, 
+  "pull_request_review_id": 83653096, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/271", 
+  "updated_at": "2018-01-10T21:33:15Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/157068590", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

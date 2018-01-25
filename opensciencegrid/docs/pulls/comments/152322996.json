@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/254#discussion_r152322996"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/254"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/152322996"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "I think it would be good to repeat here about the wait, for example: \"Once you are told in the ticket to proceed to the next step, execute the following commands:\"", 
+  "commit_id": "432ef1abaa967804c5edbc3d264e7d2f59597279", 
+  "created_at": "2017-11-21T16:10:44Z", 
+  "diff_hunk": "@@ -142,37 +141,21 @@ Host a Repository on OASIS\n \n     Replace the %RED%red%ENDCOLOR% items with the appropriate values.\n \n-3.  (**OSG internal step**)\n-    OSG Operations ensures that the repository administrator is valid for the VO. This can be done by (a) OSG\n-    already having a relationship with the person or (b) the GOC representative contacting the VO manager to find out.\n-    OSG Operations should review the URL to verify it is appropriate for the VO.  This typically takes one business day.\n-\n-4.  (**OSG internal step**)\n-    The OSG representative adds the repository URL in OIM under the VO's OASIS repository URLs. This should cause\n-    the repository's configuration to be added to the GOC Stratum-0 within 15 minutes.\n-\n-5.  (**OSG internal step**) If the respository ends in a new\n-    domain name that has not been distributed before, the OSG representative next places a copy of the `domain.name.pub`\n-    public key from `domain.name` into `/srv/etc/keys` on both `oasis-replica` and `oasis-replica-itb`. If the OSG\n-    representative does not have that key, he or she will ask the repository service representative how to obtain it.\n-    In order to support CVMFS client versions 2.2.X, a symbolic link of `domain.name.conf` has to be made in\n-    `/cvmfs/config-osg.opensciencegrid.org/etc/cvmfs/domain.d` pointing to `default.conf`. This symbolic link has to be\n-    created on the `oasis-itb` machine's copy of the `config-osg.opensciencegrid.org` repository and then copied to\n-    production with the `copy_config_osg` command on the oasis machine.\n-\n-6.  If the repository name matches `*.opensciencegrid.org` or `*.osgstorage.org`, the OSG representative responds in\n-    the ticket to ask that step \\#6 be done; all other repositories (such as `*.egi.eu`) skip this step.\n+1.  If the repository name matches `*.opensciencegrid.org` or `*.osgstorage.org`, wait for the go-ahead from the OSG\n+    representative before continuing with the remaining instructions; for all other repositories (such as `*.egi.eu`),\n+    you are done.\n \n-    The repository administrator should **execute the following commands**:\n+1. Execute the following commands:", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/254#discussion_r152322996", 
+  "id": 152322996, 
+  "original_commit_id": "6b15a57ffbb16c42362223e335bd9285c567afa5", 
+  "original_position": 60, 
+  "path": "docs/data/external-oasis-repos.md", 
+  "position": null, 
+  "pull_request_review_id": 78165365, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/254", 
+  "updated_at": "2017-11-21T21:54:06Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/152322996", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

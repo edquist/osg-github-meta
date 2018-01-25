@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/249#discussion_r151249308"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/249"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/151249308"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Question mark not needed. Also, I can't add a comment below for some reason, but you should \"Do you accept multicore jobs?\" to \"Support for multicore jobs\" to match phrasing", 
+  "commit_id": "df9a7eb63efbfbd12f464c0ed1e09b9e053b6e74", 
+  "created_at": "2017-11-15T20:57:44Z", 
+  "diff_hunk": "@@ -104,7 +108,6 @@ Start GlideinWMS Pilot Submissions\n \n To begin running [GlideinWMS](http://www.uscms.org/SoftwareComputing/Grid/WMS/glideinWMS/) pilot jobs at your site, e-mail <osg-gfactory-support@physics.ucsd.edu> and tell them that you want to start accepting Glideins. Please provide them with the following information:\n \n--   The type of CE (HTCondor-CE or the now-unsupported GRAM-CE)\n -   The fully qualified hostname of the CE\n -   Resource/WLCG name\n -   OS major version of your worker nodes\u00a0\u2014 EL\u00a06, EL\u00a07, or a mix of both?", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/249#discussion_r151249308", 
+  "id": 151249308, 
+  "original_commit_id": "75bccc3e5f7b08899c40a9e73620316e976b5cc7", 
+  "original_position": 87, 
+  "path": "docs/index.md", 
+  "position": null, 
+  "pull_request_review_id": 76925814, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/249", 
+  "updated_at": "2017-11-15T21:56:56Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/151249308", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/rsv-perfsonar/pull/6#discussion_r97119126"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/6"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/comments/97119126"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Well this is a knob and the rpm does keep whatever it was before. But I will change it and merge. Thanks for looking into it @marian-babik ", 
+  "commit_id": "a2269afe43d3dd7ee780d659fa0f5fa1bd431756", 
+  "created_at": "2017-01-20T17:40:42Z", 
+  "diff_hunk": "@@ -4,17 +4,22 @@ probe-interval = 60\n job-timeout   = 1500\n no-ping = True\n [org.osg.general.perfsonar-simple args]\n-username = perfsonar\n-key = ab132837b1f49139e7d1f1f635956ee15c37068e\n+username = perfsonar3\n+#This is the good key\n+key = a4dfdf481a73f37b9dad39528c6150f2944e0934\n+# this is the wrong key\n+#key = ab132837b1f49139e7d1f1f635956ee15c37068\n goc = http://fermicloud077.fnal.gov:9090\n-start = 910\n+start = 26052\n timeout = 1400\n debug = False\n summary = True\n-maxstart = 86400\n+maxstart = 21625672", 
+  "html_url": "https://github.com/opensciencegrid/rsv-perfsonar/pull/6#discussion_r97119126", 
+  "id": 97119126, 
+  "in_reply_to_id": 96889369, 
+  "original_commit_id": "a446b8e3be85af25c5ee8da5bdf29aaaee06bb06", 
+  "original_position": 18, 
+  "path": "etc/metrics/org.osg.general.perfsonar-simple.conf", 
+  "position": null, 
+  "pull_request_review_id": 17726540, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/6", 
+  "updated_at": "2017-01-23T22:21:47Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/comments/97119126", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

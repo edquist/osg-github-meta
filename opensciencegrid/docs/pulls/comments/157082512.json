@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/272#discussion_r157082512"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/272"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/157082512"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I think we should indicate that this means installing software on a site's worker nodes", 
+  "commit_id": "08c098989f72d5770efdadd6ca42eed97d246f86", 
+  "created_at": "2017-12-14T22:43:18Z", 
+  "diff_hunk": "@@ -1,44 +1,86 @@\n-Site Planning\n-=============\n+Introduction\n+--------\n \n-This document is for **System Administrators**. The purpose of the document is to provide an overview about the different ways to setup an OSG site and to encourage you to plan your site before you continue to install the OSG software on your site.\n+The OSG vision is to integrate computing across different resource types and business models to allow campus IT to offer\n+a maximally flexible _high throughput computing_ (HTC) environment for their researchers.\n \n-After reading this document you should be able to identify the site elements needed to setup your OSG site and choose among different technology choices presented.\n+This document is for **System Administrators** and aims to provide an overview of the different options to consider when\n+planning to share resources via the OSG.\n \n-Background\n-----------\n+After reading, you should be able to understand what software or services you want to provide to support your\n+researchers\n \n-The goal for the OSG Software stack is to provide a uniform computing and storage fabric across many\n-independently-managed computing and storage resources. These individual services will be accessed by virtual\n-organizations (VOs), which will delegate the resources to scientists, researchers, and students.\n+!!! note\n+    This document covers the most common options.  OSG is a diverse infrastructure: depending on what groups you want to\n+    support, you may need to install additional services.  Coordinate with your local researchers.\n \n-_Sharing_ is a fundamental principle for the OSG: your site is encouraged to support as many OSG-registered VOs as\n-local conditions allow.  _Autonomy_ is another principle: you are not required to support any you do not want.\n+OSG Site Services\n+-----------------\n \n-As the administrator responsible for deployment of the OSG software stack, your task is to make your existing computing\n-and storage resources available to and reliable for your supported VOs. Fundamentally, there are three components:\n+The OSG Software stack tries to provide a uniform computing and storage fabric across many independently-managed\n+computing and storage resources. These individual services will be accessed by virtual organizations (VOs), which will\n+delegate the resources to scientists, researchers, and students.\n \n-- *Compute Element* (CE): This provides remote access for VOs to submit \"pilot jobs\" to your local batch system.\n-- *Worker node* (WN): A standardized runtime environment for pilot jobs, managed and allocated by the batch system.\n-- *Data*: Various services that provide access to the data and storage resources at your site.\n+_Sharing_ is a fundamental principle for the OSG: your site is encouraged to support as many OSG-registered VOs as\n+local conditions allow.  _Autonomy_ is another principle: you are not required to support any you do not want.  As the\n+administrator, your task is to make your existing computing and storage resources available to and reliable for your\n+supported VOs.\n \n-Depending on the VOs you want to support, data services may not be necessary.  Even a compute element is not strictly\n-necessary: OSG offers a \"hosted CE\" service where OSG will run the software provided only with a SSH connection to the\n-batch submit host.  Contact <mailto:help@opensciencegrid.org> for more information on the hosted CE.\n+We break this down into three tasks:\n \n-- The simplest way to support OSG is to only provide SSH logins for the hosted CE and install the worker node\n-  environment.\n-- Larger or more complex sites will elect to run their own CE in addition to the WN environment and the simplest\n-  data service (HTTP proxy cache).\n-- The largest sites will additionally run large-scale data services such as a \"storage element\".  This is often required\n-  for sites that want to support more complex organizations such as ATLAS or CMS.\n+- Getting \"pilot jobs\" submitted to your site batch system.\n+- Establishing a OSG runtime environment for running jobs.\n+- Delivering data to payload applications to be processed.\n+\n+There are multiple approaches for each item, depending on the VOs you support and time you have to invest on the OSG.\n \n !!! note\n     An essential concept on the OSG is the \"pilot job\".  The pilot, which arrives at your batch system, is sent by the\n     VO and gets a resource allocation.  However, it _does not_ contain any scientific payload.  Once started, it will\n     connect back to a resource pool and pull down individuals' scientific \"payload jobs\".  Hence, we do not think about\n     submitting \"jobs\" to sites but rather \"resource requests\".\n \n+### Pilot Jobs\n+\n+Traditionally, an OSG *Compute Element* (CE) provides remote access for VOs to submit pilot jobs to your local batch\n+system.  However, today, there are two options for accepting pilot jobs at your site:\n+\n+- **Hosted CE**: OSG will run and operate the CE services; the site only needs to provide a SSH pubkey-based\n+   authentication access to the central OSG host.  OSG will interface with the VO and submit pilots directly to your\n+   batch system via SSH.  By far, this is the _simplest option_: however, it is less-scalable and the site delegates\n+   many of the scheduling decisions to the OSG.  Contact <mailto:help@opensciencegrid.org> for more information on the\n+   hosted CE.\n+- **OSG CE**: The traditional option where the site installs and operates a HTCondor-based CE on a dedicated host.\n+   This provides the best scalability and flexibility, but may require an ongoing time investment from the site.  The\n+   OSG CE install and operation is covered in this documentation page.\n+\n+### Runtime environment\n+\n+The OSG provides a very minimal runtime environment that can be deployed via tarball, RPM, or through a global", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/272#discussion_r157082512", 
+  "id": 157082512, 
+  "original_commit_id": "08c098989f72d5770efdadd6ca42eed97d246f86", 
+  "original_position": 84, 
+  "path": "docs/site-planning.md", 
+  "position": 84, 
+  "pull_request_review_id": 83665217, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/272", 
+  "updated_at": "2017-12-14T22:52:33Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/157082512", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

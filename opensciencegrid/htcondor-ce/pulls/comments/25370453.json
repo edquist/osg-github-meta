@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/11#discussion_r25370453"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/11"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/25370453"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "^ should be \"if not had_success:\"\n", 
+  "commit_id": "ba49473ebf57a49941530b60e84afe7d0fc75baa", 
+  "created_at": "2015-02-25T19:30:10Z", 
+  "diff_hunk": "@@ -123,45 +105,45 @@ def parseOpts():\n         \"files.\", dest=\"clean\", default=True, action=\"store_false\")\n \n     opts, args = parser.parse_args()\n-    global g_debug\n-    g_debug = opts.debug\n-    if g_debug and hasattr(htcondor.param, 'setdefault') and hasattr(htcondor, 'enable_debug'):\n+    global G_DEBUG\n+    G_DEBUG = opts.debug\n+    if G_DEBUG and hasattr(htcondor.param, 'setdefault') and hasattr(htcondor, 'enable_debug'):\n         htcondor.param.setdefault('TOOL_DEBUG', \"D_FULLDEBUG\")\n         htcondor.enable_debug()\n \n     return opts, args\n \n \n-def checkAuthz(job_info):\n+def check_authz(job_info):\n     print \"Testing HTCondor-CE collector connectivity.\"\n     addresses = socket.getaddrinfo(job_info['collector_fqdn'], job_info['collector_port'], 0, socket.SOCK_STREAM)\n-    hadSuccess = False\n+    had_success = False\n     for addrinfo in addresses:\n         addr = \"<%s:%d>\" % addrinfo[4][:2]\n         try:\n-            runPing(\"<%s:%d>\" % addrinfo[4][:2], daemon=\"COLLECTOR\")\n-            hadSuccess = True\n+            run_ping(\"<%s:%d>\" % addrinfo[4][:2], daemon=\"COLLECTOR\")\n+            had_success = True\n             print \"- Successful ping of collector on %s.\\n\" % addr\n         except Exception, e:\n             print \"- Failed ping of collector on %s.\\n\" % addr\n             raise e\n \n     if not hadSuccess:", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/11#discussion_r25370453", 
+  "id": 25370453, 
+  "original_commit_id": "27f5ce0a674f7e20e7d28fe5e541e6e73e6b93a6", 
+  "original_position": 162, 
+  "path": "src/condor_ce_trace", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/11", 
+  "updated_at": "2015-02-25T19:33:46Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/25370453", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

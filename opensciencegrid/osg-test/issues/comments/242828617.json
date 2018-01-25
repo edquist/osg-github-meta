@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Thanks @brianhlin and @matyasselmeci !  I've updated the PR to conditionalize it based on the version.\n\nI made new a little wrapper function, `package_version_compare`, which combines `get_package_envra` and `version_compare`, and avoids having to manually break open the envra tuple and reassemble it as (e,v,r).\n\nI kicked off a (very small) VMU run against `edquist:software-2398-gridftp-probe; 3.3; osg-development` and `osg-release` to see if everything's in order.\n", 
+  "created_at": "2016-08-26T19:25:32Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/37#issuecomment-242828617", 
+  "id": 242828617, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/37", 
+  "updated_at": "2016-08-26T19:25:32Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/242828617", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/241#discussion_r150105011"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/241"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/150105011"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "change \"all the publishe data\" to \"all the published data in compressed and de-duplicated form\" and change \"current transaction\" to \"current transaction in uncompressed form.  `/var/spool/cvmfs` should contain enough space for the largest amount of data expected to be published in a transaction, and possibly more than one in parallel if the server hosts more than one repository.\"", 
+  "commit_id": "07df5de9d9b93d575a9ae706390bc823517d0094", 
+  "created_at": "2017-11-09T22:24:55Z", 
+  "diff_hunk": "@@ -1,60 +1,79 @@\n-Procedures for handling OASIS externally-hosted CVMFS repositories\n-==================================================================\n+Install an OASIS Repository\n+===========================\n \n-**Technical information contained here is believed to be reliable but administrative procedures, particularly as concerns organizational entities outside the OSG, should be considered unapproved proposals.**\n+OASIS (the **OSG** **A**pplication **S**oftware **I**nstallation **S**ervice) is an infrastructure, based on\n+[CVMFS](https://cvmfs.readthedocs.io), for distributing software throughout the OSG.  Once software is installed into\n+an OASIS repository, the goal is to make it available across about 90% of the OSG within an hour.\n \n+OASIS consists of keysigning infrastructure, a content distribution network (CDN), and a shared CVMFS repository that\n+is hosted by the OSG.  Many use cases will be covered by utilizing the [shared repository](update-oasis); this document\n+covers how to install, configure, and host your own CVMFS _repository server_.  This server will distribute software\n+via OASIS, but be hosted and operated externally from the OSG project.\n \n-About OASIS\n------------\n+OASIS-based distribution and key signing is available to OSG VOs or repositories affiliated with an OSG VO.\n+See the [policy page](https://opensciencegrid.github.io/technology/policy/external-oasis-repos/) for more information\n+on what repositories OSG is willing to distribute.\n \n-OASIS is the OSG Application Software Installation Service. It is the recommended method to install software on the Open Science Grid. It is implemented using CernVM FileSystem (CVMFS) technology.\n+Before Starting\n+---------------\n \n-About this Document\n--------------------\n+CVMFS repositories work at the kernel filesystem layer, which adds more stringent host requirements than a typical\n+OSG install.  The host OS must meet ONE of the following:\n \n-This document describes the detailed procedures for dealing with CVMFS repositories that are part of the OASIS system but are not hosted at the OSG Global Operations Center (GOC). Rather, they are hosted at the home institution of a Virtual Organization (VO). The procedures include the steps performed by both the GOC and by the repository service administrator. If you are only interested in using an OASIS repository that is hosted at the GOC, see [this document](update-oasis) instead.\n+-   RHEL 7.3 (or equivalent) or later.  **This option is recommended**.\n+-   RHEL 6 with the aufs kernel module.\n \n-Policies\n---------\n+Additionally,\n \n-These are the policies regarding OSG CVMFS repositories:\n+-   **User IDs:** If it does not exist already, the installation will create the `cvmfs` Linux user\n+-   **Group IDs:** If they do not exist already, the installation will create the Linux groups `cvmfs` and `fuse`\n+-   **Network ports:** This page will configure the repository to distribute using Apache HTTPD on port 8000.  At the\n+    minimum, the repository needs in-bound access from the OASIS CDN.\n+-   **Disk space:** This host will need enough free disk space to host _two_ copies of the software: one compressed\n+    and one uncompressed. `/srv/cvmfs` will hold all the published data, while `/var/spool/cvmfs` will contain all\n+    the data in the current transaction.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/241#discussion_r150105011", 
+  "id": 150105011, 
+  "original_commit_id": "586ae4bcdd49e42829fd220bd4231b7e68a00926", 
+  "original_position": 46, 
+  "path": "docs/data/external-oasis-repos.md", 
+  "position": null, 
+  "pull_request_review_id": 75606692, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/241", 
+  "updated_at": "2017-11-10T13:51:48Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/150105011", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

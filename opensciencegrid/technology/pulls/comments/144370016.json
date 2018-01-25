@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/333#discussion_r144370016"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/333"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/144370016"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "maybe \u201cteam\u201d instead of Officer? In case the Security Officer is unavailable\u2026", 
+  "commit_id": "e2d414ad80e2c67aaa46bc87626a556c34118700", 
+  "created_at": "2017-10-12T18:19:09Z", 
+  "diff_hunk": "@@ -0,0 +1,44 @@\n+\n+Policy for OSG Mirroring of External CVMFS repositories\n+=====================================================\n+\n+This document provides an overview of the policies and security understanding with regards to OSG mirroring of CVMFS\n+repositories of external organizations.  This is not a service-level agreement but rather a statement of responsibilities.\n+\n+!!! note:\n+    To actually understand the technical procedure for mirroring a repository, [see the following page](https://twiki.grid.iu.edu/bin/view/Documentation/Release3/OasisExternalRepositories).  This document solely covers the policy aspects.\n+\n+Introduction\n+------------\n+\n+The OSG provides a network of CVMFS Stratum-1 servers for mirroring content of externally-managed repositories.  These repositories are often\n+hosted by large HEP or physics VOs for the purpose of distributing software for high-throughput computing jobs.  Additionally, OSG provides a\n+repository (<oasis.opensciencegrid.org>) for smaller VOs; this is not covered here.\n+\n+OSG will include additional repositories into the content distribution network (CDN) at the request of an OSG-affiliated VO.  These repositories\n+are meant to help the OSG-affiliated VO accomplish their domain science.\n+\n+The goal of this mirroring provides an improved quality-of-service for the VO end-users running at OSG sites.  OSG does not provide support\n+for use of the software in external repositories, but will help end-users contact the VO for help as necessary.\n+\n+OSG Responsibilities\n+---------------------\n+\n+* OSG will provide the Stratum-1 server network according to [the OASIS SLA](https://opensciencegrid.github.io/operations/SLA/oasis-replica/)\n+* OSG will provide a best-effort mirror of the full contents of the external repo.  We will attempt to provide best-effort integrity of the\n+  object contents, but assume users of the Stratum-1 will do further integrity checking.  No SLA is provided covering potential data corruptions.\n+* OSG will provide best-effort notification to the mirrored repository in case OSG detects a service outage of the external repo.\n+* In the event of a reported security incident, OSG will replace the repository contents with an empty directory, signed by an OSG-managed key.\n+* Once the external repository is approved, OSG will distribute the corresponding repository signing keys in a valid whitelist.  The whitelist\n+  will be signed by the OSG Stratum-0.  This whitelist attests to the authenticity of the key, but not a statement about repository contents.\n+\n+VO Responsibilities\n+-------------------\n+* The requesting VO should only include targeted repositories they need to support their science.\n+* The VO should understand that in the event of a reported security incident, the contents of this repository may be replaced with an\n+  empty directory and signed by the OSG repository key.  This will be done after attempting to contact the VO first; the amount of time OSG\n+  will wait on an unresponsive VO will be based on the evaluation of the situation of the OSG Security officer. ", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/333#discussion_r144370016", 
+  "id": 144370016, 
+  "original_commit_id": "0af58a914644f891060cdec652c8df1e822a22df", 
+  "original_position": 40, 
+  "path": "docs/policy/external-oasis-repos.md", 
+  "position": null, 
+  "pull_request_review_id": 69017601, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/333", 
+  "updated_at": "2017-10-19T18:37:04Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/144370016", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Oh, to be clear, May 2018 is fine.  I was just giving general guidance (note that I kept things signed-off; still waiting on Rob and Tim).", 
+  "created_at": "2017-06-22T18:34:07Z", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/51#issuecomment-310465198", 
+  "id": 310465198, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/technology/issues/51", 
+  "updated_at": "2017-06-22T18:34:07Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/issues/comments/310465198", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

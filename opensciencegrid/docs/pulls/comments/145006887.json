@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/208#discussion_r145006887"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/208"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/145006887"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "I amended the commit message; the comment says if you don't make it executable, it is ignored, so it is necessary to have that chmod.  I removed the html tag and one other.", 
+  "commit_id": "c622612a6fae5da0a3f386d5fc6c48eadcfe46c3", 
+  "created_at": "2017-10-17T01:03:15Z", 
+  "diff_hunk": "@@ -46,7 +46,8 @@ This is the procedure for installing on a Redhat EL7-based system:\n ``` console\n root@host # rpm -i https://repo.grid.iu.edu/osg/3.4/osg-3.4-el7-release-latest.rpm \n root@host # yum install cvmfs-server.x86_64 osg-oasis \n-root@host # echo \"cvmfs_server mount -a\" >>/etc/rc.local</pre>\n+root@host # echo \"cvmfs_server mount -a\" >>/etc/rc.local\n+root@host # chmod +x /etc/rc.local</pre>", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/208#discussion_r145006887", 
+  "id": 145006887, 
+  "in_reply_to_id": 145005261, 
+  "original_commit_id": "b6f80623786ed03e59e8b77d4d06c8b679b47f0b", 
+  "original_position": 6, 
+  "path": "docs/data/external-oasis-repos.md", 
+  "position": null, 
+  "pull_request_review_id": 69742782, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/208", 
+  "updated_at": "2017-10-17T01:36:37Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/145006887", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

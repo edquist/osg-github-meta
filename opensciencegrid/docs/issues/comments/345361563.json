@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "No, both lines need to be in both places.", 
+  "created_at": "2017-11-17T20:49:39Z", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/256#issuecomment-345361563", 
+  "id": 345361563, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/docs/issues/256", 
+  "updated_at": "2017-11-17T20:49:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/issues/comments/345361563", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

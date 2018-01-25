@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/254#discussion_r152322224"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/254"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/152322224"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "The URL to the instructions on the next line will now be incorrect.  Probably we should change it to the new URL so that the GOC staff will know immediately where to look for their instructions, although we could leave that out if they all knew where to look.", 
+  "commit_id": "432ef1abaa967804c5edbc3d264e7d2f59597279", 
+  "created_at": "2017-11-21T16:08:24Z", 
+  "diff_hunk": "@@ -123,16 +123,15 @@ Verify that the repository is readable over HTTP:\n \n That should print several lines including some gibberish at the end.\n \n-Host a Repository on OASIS\n-------------------------\n+Hosting a Repository on OASIS\n+-----------------------------\n \n 1.  **Verify your VO's OIM registration is up-to-date**.  All repositories need to be associated with a VO; the VO\n     needs to assign an _OASIS manager_ in OIM who would be responsible for the contents of any of the VO's repositories\n     and will be contacted in case of issues. To designate an OASIS manager, have the VO manager update the\n     [OIM registration](https://oim.grid.iu.edu).\n \n-2.  The repository administrator should **create a [support ticket](https://ticket.opensciencegrid.org/goc/submit)**\n-    using the following template:\n+1.  Create a [support ticket](https://ticket.opensciencegrid.org/goc/submit) using the following template:\n \n         Please add a new CVMFS repository to OASIS for VO %RED%voname%ENDCOLOR% using the URL \n             http://%RED%fully.qualified.domain%ENDCOLOR%:8000/cvmfs/%RED%example.opensciencegrid.org%ENDCOLOR%", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/254#discussion_r152322224", 
+  "id": 152322224, 
+  "original_commit_id": "6b15a57ffbb16c42362223e335bd9285c567afa5", 
+  "original_position": 30, 
+  "path": "docs/data/external-oasis-repos.md", 
+  "position": 32, 
+  "pull_request_review_id": 78165365, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/254", 
+  "updated_at": "2017-11-21T21:54:06Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/152322224", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

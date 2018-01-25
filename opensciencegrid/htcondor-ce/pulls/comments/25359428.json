@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/11#discussion_r25359428"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/11"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/25359428"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "stderr is always going to be blank here because you are redirecting stderr to stdout above. If you want to separate the two streams, you should do\n    p = Popen(command, stdout=PIPE, stderr=PIPE)\nIf not, then don't capture and return stderr, it's just confusing\n    outerr, _ = p.communicate()\n    return p.returncode, outerr\n", 
+  "commit_id": "ba49473ebf57a49941530b60e84afe7d0fc75baa", 
+  "created_at": "2015-02-25T17:26:12Z", 
+  "diff_hunk": "@@ -0,0 +1,49 @@\n+#!/usr/bin/python\n+\n+import errno\n+import os\n+import tempfile\n+import textwrap\n+import time\n+from subprocess import Popen, PIPE, STDOUT\n+\n+# Excluding submit file so the respective scripts\n+# can generate it as they see fit\n+JOB_FILES = ['stdout', 'stderr', 'log']\n+\n+class CondorRunException(Exception):\n+    pass\n+\n+class CondorUserException(Exception):\n+    pass\n+\n+def print_formatted_msg(msg):\n+    print \"*\"*80\n+    for line in textwrap.wrap(msg, 80):\n+        print line\n+    print \"*\"*80\n+\n+def print_timestamped_msg(msg):\n+    print_formatted_msg(\"%s %s\" % (time.strftime('%F %T'), msg))\n+\n+def run_command(command):\n+    p = Popen(command, stdout=PIPE, stderr=STDOUT)\n+    stdout, stderr = p.communicate()\n+    return p.returncode, stdout, stderr", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/11#discussion_r25359428", 
+  "id": 25359428, 
+  "original_commit_id": "37e80a06db7ad76ddfd63eaae86be9fa0ce80a12", 
+  "original_position": 32, 
+  "path": "src/condor_ce_tools.py", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/11", 
+  "updated_at": "2015-02-25T19:33:46Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/25359428", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

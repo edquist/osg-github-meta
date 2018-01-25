@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gridftp-hdfs/pull/10#discussion_r133809406"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/10"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/comments/133809406"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "It's going to raise an error, but the error is going to be ignored. Actually, it's been broken for a long time now -- we used to source `.../globus-gridftp-server` but the file has been called `.../globus-gridftp-server-plugin`.", 
+  "commit_id": "4fd741d947d35ff4f3f000db322030a746618d2c", 
+  "created_at": "2017-08-17T19:40:08Z", 
+  "diff_hunk": "@@ -1,18 +1,8 @@\n-#!/bin/sh                                                            \n+#!/bin/sh\n \n-if [ -e @datadir_resolved@/gridftp-hdfs/gridftp-hdfs-environment ] ; then\n-    . @datadir_resolved@/gridftp-hdfs/gridftp-hdfs-environment\n-fi\n-\n-if [ -e @sysconfdir_resolved@/gridftp-hdfs/gridftp-hdfs-local.conf ] ; then\n-    . @sysconfdir_resolved@/gridftp-hdfs/gridftp-hdfs-local.conf\n-fi\n-\n-if [ -e @sysconfdir_resolved@/sysconfig/gridftp-hdfs ] ; then\n-    . @sysconfdir_resolved@/sysconfig/gridftp-hdfs\n-fi\n+. /usr/share/osg/sysconfig/globus-gridftp-server-plugin", 
+  "html_url": "https://github.com/opensciencegrid/gridftp-hdfs/pull/10#discussion_r133809406", 
+  "id": 133809406, 
+  "in_reply_to_id": 133806430, 
+  "original_commit_id": "4fd741d947d35ff4f3f000db322030a746618d2c", 
+  "original_position": 15, 
+  "path": "scripts/gridftp-hdfs-standalone.in", 
+  "position": 15, 
+  "pull_request_review_id": 57033128, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/10", 
+  "updated_at": "2017-08-17T19:40:08Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/comments/133809406", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "@opensciencegrid/operations-team there are some broken links that I wasn't sure what to do with:\r\n\r\n* http://gratiaweb1.grid.iu.edu/gratiastatic/today/osg_wall_hours.png\r\n* http://osgconnect.net/accounting-summary/data/osg/daily_hours_by_project.png\r\n* http://reports.grid.iu.edu/reports/capacitydump-latest.txt\r\n* http://reports.grid.iu.edu/reports/capacitydump-latest.txt\r\n* http://reports.grid.iu.edu/reports/current.apel\r\n* http://reports.grid.iu.edu/reports/version_summary.txt\r\n* http://reports.grid.iu.edu/reports/versiondump-latest.txt\r\n* https://www.xsede.org/osg-user-guide\r\n", 
+  "created_at": "2017-11-29T22:47:56Z", 
+  "html_url": "https://github.com/opensciencegrid/operations/pull/107#issuecomment-348022809", 
+  "id": 348022809, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/operations/issues/107", 
+  "updated_at": "2017-11-29T22:47:56Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/operations/issues/comments/348022809", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

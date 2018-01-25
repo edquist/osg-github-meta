@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gratia-probe/pull/9#discussion_r92716772"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/9"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/comments/92716772"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I'm not really attached to any particular way of doing it but I think it's safe in this case:\r\n\r\n* If `get_SiteName()` throws a `KeyError`, is it worthy of stopping the entire probe run or should we just continue constructing the record as best we can? We could try setting the host description to `MATCH_EXP_JOBGLIDEIN_ResourceName`, which would be `Local Job` in that case, but I'm not sure if that's any better than setting it to `None` (and possibly worse because of how the `None` case is [handled](https://github.com/opensciencegrid/gratia-probe/blob/master/condor/condor_meter#L704-L708)).\r\n* If `classad[]` throws a `KeyError`, we have no hope of knowing where the job ran so we should return `None`. We could feasibly set it to the ProbeConfig's SiteName but it wouldn't necessarily reflect reality.", 
+  "commit_id": "7cfcf61bb1ee2a4a5947cf369f95a4cf4576273d", 
+  "created_at": "2016-12-15T22:43:37Z", 
+  "diff_hunk": "@@ -551,11 +551,14 @@ def determine_host_description(classad):\n \n     If there's no special host description, this returns None.\n     \"\"\"\n-    if 'MATCH_EXP_JOBGLIDEIN_ResourceName' not in classad:\n+    try:\n+        if classad['MATCH_EXP_JOBGLIDEIN_ResourceName'] == 'Local Job':\n+            host_descr = GratiaCore.Config.get_SiteName()\n+        else:\n+            host_descr = classad['MATCH_EXP_JOBGLIDEIN_ResourceName']\n+    except KeyError:", 
+  "html_url": "https://github.com/opensciencegrid/gratia-probe/pull/9#discussion_r92716772", 
+  "id": 92716772, 
+  "in_reply_to_id": 92711236, 
+  "original_commit_id": "7cfcf61bb1ee2a4a5947cf369f95a4cf4576273d", 
+  "original_position": 10, 
+  "path": "condor/condor_meter", 
+  "position": 10, 
+  "pull_request_review_id": 13238174, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/9", 
+  "updated_at": "2016-12-15T22:43:37Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/comments/92716772", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

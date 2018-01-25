@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/27#discussion_r29209044"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/27"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/29209044"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "You should be able to instead use the classad.parseAds method to parse multiple ads.  _note_ that I don't quite recall when parseAds was added (but I think it was 8.1.x).\n", 
+  "commit_id": "d1ccc64586d0e816a4cb11bf610cd8b80d8066a4", 
+  "created_at": "2015-04-28T01:54:55Z", 
+  "diff_hunk": "@@ -50,13 +50,11 @@ start() {\n     echo -n $\"Starting Condor-CE daemons: \"\n \n     # Check validity of job router knobs\n-    for ATTR in 'JOB_ROUTER_DEFAULTS' 'JOB_ROUTER_ENTRIES'; do\n-        python -c \"import htcondor; import classad; classad.ExprTree(htcondor.param[\\\"$ATTR\\\"])\" &> /dev/null\n-        if [ $? -ne 0 ]; then\n-            echo \"Could not read $ATTR in the HTCondor CE configuration. Please verify syntax correctness.\"\n-            exit 6\n-        fi\n-    done\n+    python -c \"import htcondor; import classad; classad.ExprTree(htcondor.param['JOB_ROUTER_DEFAULTS'])\" &> /dev/null", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/27#discussion_r29209044", 
+  "id": 29209044, 
+  "original_commit_id": "d1ccc64586d0e816a4cb11bf610cd8b80d8066a4", 
+  "original_position": 11, 
+  "path": "src/condor-ce", 
+  "position": 11, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/27", 
+  "updated_at": "2015-04-28T01:54:55Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/29209044", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/231#discussion_r147488959"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/231"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/147488959"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Make this an admonition.  Suggested wording:\r\n\r\n```\r\n!!! note\r\n    As of October 2017, no VO in the OSG is ready to use non-setuid Singularity in production.  Only testing sites will need to follow these instructions; contact the VOs you support for more information.\r\n\r\n   Most sites will want to follow the RPM install instructions until there is wider VO support.\r\n```", 
+  "commit_id": "4611dd5b6a3d5ae9bd4fa248d59f2f5d93e5dda3", 
+  "created_at": "2017-10-27T18:47:50Z", 
+  "diff_hunk": "@@ -49,7 +53,10 @@ As with all OSG software installations, there are some one-time (per host) steps\n \n If the operating system is an EL 7 variant, and has been updated to EL\n 7.4 or the 7.4 kernel (3.10.0-693 or greater), you can skip\n-installation altogether and use singularity through CVMFS:\n+installation altogether and instead do these steps to enable\n+singularity to be run as an unprivileged user via CVMFS (although note", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/231#discussion_r147488959", 
+  "id": 147488959, 
+  "original_commit_id": "93f9dd565e091089a97fc0eb18886c0f28c79acd", 
+  "original_position": 27, 
+  "path": "docs/worker-node/install-singularity.md", 
+  "position": null, 
+  "pull_request_review_id": 72596632, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/231", 
+  "updated_at": "2017-10-27T21:14:41Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/147488959", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

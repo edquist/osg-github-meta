@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/3#discussion_r150091697"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/3"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/150091697"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "They are placeholders for the OBS \"debtransform\" tool.  I was just following the [instructions](https://en.opensuse.org/openSUSE:Build_Service_Debian_builds#packageName.dsc).  It says there has to be two lines with three fields.", 
+  "commit_id": "283b69434b1a8eac0a77354dbfe5a8c99bbc76bd", 
+  "created_at": "2017-11-09T21:28:41Z", 
+  "diff_hunk": "@@ -0,0 +1,36 @@\n+#!/bin/bash\n+# update $PKG.dsc\n+# That file is used by build.opensuse.org's Open Build Service\n+# After the file is updated, it needs to be separately committed to git.\n+\n+HERE=\"`dirname $0`\"\n+ME=\"`basename $0`\"\n+PKG=\"`sed -n 's/^Source: //p' control`\"\n+SPECFILE=\"../redhat/$PKG.spec\"\n+VERSION=\"$(grep ^Version: $SPECFILE | awk '{print $2}')\"\n+RPMREL=\"$(grep '^%define release_prefix' $SPECFILE | awk '{print $3}')\"\n+if [ -z \"$RPMREL\" ]; then\n+    RPMREL=\"$(grep '^Release:' $SPECFILE | awk '{print $2}' | cut -d% -f1)\"\n+fi\n+# if the version is current, increment the release number, else choose 1\n+DEBREL=\"`sed -n \"s/^Version: ${VERSION}\\.${RPMREL}-//p\" $PKG.dsc 2>/dev/null`\"\n+if [ -z \"$DEBREL\" ]; then\n+    DEBREL=1\n+else\n+    let DEBREL+=1\n+fi\n+(\n+echo \"# created by $ME, do not edit by hand\"\n+# The following two lines are OBS \"magic\" to use the tarball from the rpm\n+echo \"Debtransform-Tar: ${PKG}-${VERSION}.tar.gz\"\n+#echo \"Debtransform-Files-Tar: \"\n+echo \"Format: 1.0\"\n+echo \"Version: ${VERSION}.${RPMREL}-${DEBREL}\"\n+echo \"Binary: $PKG\"\n+cat control\n+echo \"Files:\"\n+echo \"  ffffffffffffffffffffffffffffffff 99999 file1\"\n+echo \"  ffffffffffffffffffffffffffffffff 99999 file2\"", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/3#discussion_r150091697", 
+  "id": 150091697, 
+  "in_reply_to_id": 149750446, 
+  "original_commit_id": "550fc2d1368c017a2acc4d9ad4f5262683d2729b", 
+  "original_position": 33, 
+  "path": "packaging/debian/obsupdate.sh", 
+  "position": 33, 
+  "pull_request_review_id": 75592536, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/3", 
+  "updated_at": "2017-11-10T17:07:27Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/150091697", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

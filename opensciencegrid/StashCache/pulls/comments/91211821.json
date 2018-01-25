@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/StashCache/pull/33#discussion_r91211821"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/33"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/91211821"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Note that this format requires what, python 2.7?  That means this would eliminate using the system python on RHEL6.", 
+  "commit_id": "f1c4d6dea017cbfff0ab90a72ad91b9833d5bd41", 
+  "created_at": "2016-12-07T01:39:01Z", 
+  "diff_hunk": "@@ -172,20 +168,22 @@ def es_send(payload):\n             url = \"http://uct2-collectd.mwt2.org:9951\"\n             req = urllib2.Request(url, data=data, headers={'Content-Type': 'application/json'})\n             f = urllib2.urlopen(req)\n-            response = f.read()\n+            f.read()\n             f.close()\n-        except:\n-            logging.error(\"Error posting to ES\")\n+        except urllib2.URLError as e:", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/pull/33#discussion_r91211821", 
+  "id": 91211821, 
+  "original_commit_id": "d8de6be9999efb1190ef5d35872910f292b5b4ff", 
+  "original_position": 132, 
+  "path": "bin/stashcp", 
+  "position": null, 
+  "pull_request_review_id": 11721374, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/33", 
+  "updated_at": "2016-12-07T01:43:22Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/91211821", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

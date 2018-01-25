@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/28#discussion_r135863225"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/28"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/135863225"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I don't believe the CVMFS doc has been fully converted yet, we should refer to the TWiki doc until then", 
+  "commit_id": "75c4edcb18368e657333de768b6297a18138d673", 
+  "created_at": "2017-08-29T17:47:21Z", 
+  "diff_hunk": "@@ -0,0 +1,126 @@\n+Configuring a Site to Use the Worker Node Client Software From OASIS\n+====================================================================\n+\n+\n+About This Guide\n+----------------\n+\n+The *OSG Worker Node Client* is a collection of software components that is expected to be added to every worker node that can run OSG jobs. It provides a common environment and a minimal set of common tools that all OSG jobs can expect to use. See the [reference section](#Reference) below for contents of the Worker Node Client.\n+\n+It is possible to install the Worker Node Client software in a variety of ways, depending on what works best for distributing and managing software at your site:\n+\n+-   Use the Worker Node Client software from OASIS (this guide) - useful when [OASIS](cvmfs.md) is already mounted on your worker nodes", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/28#discussion_r135863225", 
+  "id": 135863225, 
+  "original_commit_id": "218af9765aa494429753df284290cb9322954c92", 
+  "original_position": 12, 
+  "path": "docs/client/wn-oasis.md", 
+  "position": null, 
+  "pull_request_review_id": 59325135, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/28", 
+  "updated_at": "2017-08-29T18:25:19Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/135863225", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

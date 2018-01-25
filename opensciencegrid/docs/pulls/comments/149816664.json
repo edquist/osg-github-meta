@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/241#discussion_r149816664"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/241"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/149816664"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "How does one go about becoming an OASIS manager? The wording also leaves something to be desired. Perhaps something like this:\r\n\r\n> All repositories need to be associated with a VO; the VO needs to assign an _OASIS manager_ in OIM who would be responsible for the contents of any of the VO's repositories and will be contacted in case of issues. To designate an OASIS manager, follow the instructions \\<link here\\>.", 
+  "commit_id": "07df5de9d9b93d575a9ae706390bc823517d0094", 
+  "created_at": "2017-11-08T22:30:33Z", 
+  "diff_hunk": "@@ -63,94 +75,186 @@ root@host # chkconfig httpd on\n root@host # service httpd start\n ```\n \n-Make sure that port 8000 is available to the internet through any firewalls.\n+!!! note\n+    Make sure that port 8000 is available to the Internet.  Check the setting of the host- and site-level firewalls.\n+    The next steps will fail if the web server is not accessible.\n \n-Procedure to add an externally-hosted repository to OASIS\n----------------------------------------------------------\n+Create a Repository\n+-------------------\n \n-1.  A VO representative who will have responsibility for the contents of the repository chooses a name for the repository. This name should be the name of the VO or be derived from it (or a project in the VO for the case of the OSG VO), and in a domain that has a secured master key. The recommended domain name for a new repository that originates at an OSG site is opensciencegrid.org. The full name used as an example in this document is **repo.domain.name**. Note: the VO representative's name will be registered in OIM as an OASIS manager for the VO, and names can be added or changed later with GOC tickets. If there is more than one repository for the VO, all the OASIS managers are assumed to be contacts for all the repositories.\n+Prior to creation, the repository administrator will need to make two decisions:\n \n-2.  Using whatever mechanism is appropriate at their institution, the VO representative requests the local CVMFS repository service administrator to create this repository called `repo.domain.name`.\n+-   **Select a repository name**; typically, this is derived from the VO or project's name and ends in\n+    `opensciencegrid.org`.  For example, the NoVA VO runs the repository `nova.opensciencegrid.org`.  For this section,\n+    we will use %RED%example.opensciencegrid.org%ENDCOLOR%.\n+-   **Select a repository owner**: Software publication will need to run by a non-`root` Unix user account; for this\n+    document, we will use %BLUE%LIBRARIAN%ENDCOLOR% as the account name of the repository owner.\n \n-3.  The repository service administrator creates the repository with these command like these, where ownerid is the user id that will have write access:\n+The initial repository creation must be run as `root`:\n \n-        :::console\n-        root@host # echo -e \"\\*\\\\t\\\\t-\\\\tnofile\\\\t\\\\t16384\" >>/etc/security/limits.conf \n-        root@host # ulimit -n 16384 \n-        root@host # cvmfs_server mkfs -o ownerid repo.domain.name \n-        root@host # echo \"CVMFS_AUTO_TAG=false\" >>/etc/cvmfs/repositories.d/repo.domain.name/server.conf \n-        root@host # (echo Order deny,allow;echo Deny from all;echo Allow from 127.0.0.1;echo Allow from ::1;echo Allow from 129.79.53.0/24;echo Allow from 2001:18e8:2:6::/56) >/srv/cvmfs/repo.domain.name/.htaccess\n+    :::console\n+    root@host # echo -e \"\\*\\\\t\\\\t-\\\\tnofile\\\\t\\\\t16384\" >>/etc/security/limits.conf\n+    root@host # ulimit -n 16384\n+    root@host # cvmfs_server mkfs -o %BLUE%LIBRARIAN%ENDCOLOR% %RED%example.opensciencegrid.org%ENDCOLOR%\n+    root@host # echo \"CVMFS_AUTO_TAG=false\" >>/etc/cvmfs/repositories.d/%RED%example.opensciencegrid.org%ENDCOLOR%/server.conf\n+    root@host # (echo Order deny,allow;echo Deny from all;echo Allow from 127.0.0.1;echo Allow from ::1;echo Allow from 129.79.53.0/24;echo Allow from 2001:18e8:2:6::/56) >/srv/cvmfs/%RED%example.opensciencegrid.org%ENDCOLOR%/.htaccess\n+\n+Here, we increase the number of open files, create the repository using the `mkfs` command, adjust the configuration,\n+and then limit the hosts that are allowed to access the repo to the OSG CDN.\n \n-    If you might be hosting any hardlinks that span directories (e.g. the git package) and are using aufs (that is, EL6), also do the following:\n+!!! note\n+    If you might be hosting any hardlinks that span directories (e.g. publishing a `git` repository) and are using\n+    EL6 with aufs, make the following configuration change:\n \n         :::console\n         root@host # echo \"CVMFS_IGNORE_XDIR_HARDLINKS=true\" >>/etc/cvmfs/repositories.d/repo.domain.name/server.conf\n \n-    Verify that the repository is readable over http with the following command:\n+Verify that the repository is readable over HTTP:\n \n-        :::console\n-        root@host # wget -qO- http://localhost:8000/cvmfs/repo.domain.name/.cvmfswhitelist|cat -v\n+    :::console\n+    root@host # wget -qO- http://localhost:8000/cvmfs/%RED%example.opensciencegrid.org%ENDCOLOR%/.cvmfswhitelist | cat -v\n+\n+That should print several lines including some gibberish at the end.\n+\n+Host a Repository on OASIS\n+------------------------\n \n-    That should print several lines including some gibberish at the end.\n+1.  **Verify your VO's OIM registration is up-to-date**.  All repositories need to be associated with a VO; the VO needs\n+    to make sure an appropriate individual has the _OASIS manager_ role in OIM.  This individual will be responsible\n+    for the contents of any of the VO's repositories and will be contacted in case of issues.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/241#discussion_r149816664", 
+  "id": 149816664, 
+  "original_commit_id": "8fff3ebca223dbe12429bedb19646b78fbd7937d", 
+  "original_position": 172, 
+  "path": "docs/data/external-oasis-repos.md", 
+  "position": null, 
+  "pull_request_review_id": 75267776, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/241", 
+  "updated_at": "2017-11-10T13:51:48Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/149816664", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

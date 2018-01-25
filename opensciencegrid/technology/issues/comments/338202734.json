@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "The reads like a proposal, not a policy. Reading this in January, you would be confused. Change the \"Rationale\" to \"Introduction\" and make it refer to the past. Also, change \"Proposal\" to \"Release Model\" and make it refer to the present. ", 
+  "created_at": "2017-10-20T13:14:38Z", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/343#issuecomment-338202734", 
+  "id": 338202734, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/technology/issues/343", 
+  "updated_at": "2017-10-20T13:14:38Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/issues/comments/338202734", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377632?v=4", 
+    "events_url": "https://api.github.com/users/timtheisen/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/timtheisen/followers", 
+    "following_url": "https://api.github.com/users/timtheisen/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/timtheisen/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/timtheisen", 
+    "id": 7377632, 
+    "login": "timtheisen", 
+    "organizations_url": "https://api.github.com/users/timtheisen/orgs", 
+    "received_events_url": "https://api.github.com/users/timtheisen/received_events", 
+    "repos_url": "https://api.github.com/users/timtheisen/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/timtheisen/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/timtheisen/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/timtheisen"
+  }
+}

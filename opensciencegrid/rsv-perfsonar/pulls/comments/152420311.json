@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/rsv-perfsonar/pull/19#discussion_r152420311"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/19"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/comments/152420311"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Replace this with `break`.\r\n\r\nTry setting `result = None` before the loop.  This way, you only have to check once if the loop failed.", 
+  "commit_id": "a693eaca6253c4aa9c7537c374c56ac14738f814", 
+  "created_at": "2017-11-21T22:30:40Z", 
+  "diff_hunk": "@@ -44,21 +44,28 @@ def publishSToMq(self, arguments, event_types, summaries, summaries_data):\n     def SendMessagetoMQ(self, msg_body):\r\n         # the max size limit in KB but python expects it in bytes                                                                           \r\n         size_limit = self.maxMQmessageSize * 1000\r\n-        size_msg = sys.getsizeof(json.dumps(msg_body))\r\n+        size_msg = self.total_size(msg_body)\r\n         # if size of the message is larger than 10MB discarrd                                                                             \r\n         if size_msg > size_limit:\r\n             self.add2log(\"Size of message body bigger than limit, discarding\")\r\n             return\r\n-        # add to mq                                                                                                                       \r\n-        try:\r\n-            result = self.channel.basic_publish(exchange = self.exchange,\r\n+        # add to mq\r\n+        tries = 0\r\n+        N = 5\r\n+        while(tries<N):\r\n+            tries = tries + 1\r\n+            try:\r\n+                result = self.channel.basic_publish(exchange = self.exchange,\r\n                                                 routing_key = self.routing_key,\r\n                                                 body = json.dumps(msg_body), \r\n                                                 properties = self.ch_prop)\r\n-            if not result:\r\n-                raise Exception('Exception publishing to rabbit MQ', 'Problem publishing to mq')\r\n-        except Exception as e:\r\n-            self.add2log(\"ERROR: Failed to send message to mq, exception was %s\" % (e))\r\n+                tries = N+1\r", 
+  "html_url": "https://github.com/opensciencegrid/rsv-perfsonar/pull/19#discussion_r152420311", 
+  "id": 152420311, 
+  "original_commit_id": "7cb9363a143b8c15271645aee805a66d3d459069", 
+  "original_position": 36, 
+  "path": "libexec/probes/worker-scripts/uploader/rabbitmquploader.py", 
+  "position": null, 
+  "pull_request_review_id": 78280553, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/19", 
+  "updated_at": "2017-11-22T18:52:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/comments/152420311", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

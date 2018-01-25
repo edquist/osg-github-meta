@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Did nobody else like the simple `UPSTREAM_PATH/filename [SHA1SUM]` format extension i  [suggested](https://github.com/opensciencegrid/osg-build/pull/30#issuecomment-292595549) in #30 ?  :)\r\n\r\n> As a side note, updating the hash in the source file is a pain.\r\n\r\nCan we script that?\r\n\r\n> Any objection to me putting in a command-line flag to make hash mismatch a warning?\r\n\r\nI feel like even for scratch builds it should fail and force you to fix it, but if you're using an explicit command line flag, at least you're asking for it.  (Maybe something like `--ignore-source-checksum`)\r\n\r\n> `type=git url=https://github.com/opensciencegrid/cvmfs-config-osg.git name=cvmfs-config-osg tag=v2.1 hash=18ac00531b1487d3d079c7e7bb727dbbed805587`\r\n\r\nCan `type` and `name` be implied here?", 
+  "created_at": "2018-01-11T00:01:50Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-build/pull/48#issuecomment-356779105", 
+  "id": 356779105, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-build/issues/48", 
+  "updated_at": "2018-01-11T00:02:59Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-build/issues/comments/356779105", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

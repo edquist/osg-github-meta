@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Good catch on the file named rsync thing - I didn't think about that.\n\nIt's not other copies of osg-koji-offsite-backup that I want to catch, but the backup script that creates the directories that I want to copy offsite in the first place, called `/usr/local/bin/backups.sh`. I suppose I could look for that directly, but what if that script gets renamed?\n\nI suppose one way of identifying rsync processes that I do watch to catch is to use lsof and look for rsync processes that have the directory tree that I want to back up opened, but it might be overkill.\n\nSo something like `lsof -c rsync +d /export/backup/$DATE`\n", 
+  "created_at": "2016-07-07T18:39:01Z", 
+  "html_url": "https://github.com/opensciencegrid/tools/pull/9#issuecomment-231168984", 
+  "id": 231168984, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/tools/issues/9", 
+  "updated_at": "2016-07-07T18:42:11Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/tools/issues/comments/231168984", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

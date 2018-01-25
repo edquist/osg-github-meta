@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gracc-request/pull/34#discussion_r80328331"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/34"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/comments/80328331"
+    }
+  }, 
+  "author_association": "CONTRIBUTOR", 
+  "body": "I tried that initially, but then the XPath searches returned None when I tried to go to a parent element.  I'm still not sure why that was the case.  It should be possible.\n\nThat being said, I figured it was okay for us to grab the resource group-specific info from the resource group element (since we'd have to navigate to that level anyway), then descend into the resource element, and grab the information specific to that.\n", 
+  "commit_id": "c53a3d828647123a85f5354d4a94d4947cb03448", 
+  "created_at": "2016-09-23T21:14:35Z", 
+  "diff_hunk": "@@ -62,119 +50,157 @@ def get_file_from_OIM(self):\n         return oim_xml\n \n     def parse(self):\n-        \"\"\"Parses XML file using ElementTree.parse().  Also sets XML root for\n-        further processing\"\"\"\n+        \"\"\"Parses XML file using ElementTree.parse().  Also builds dictionary\n+        of Resource Name :{resource information} format for future lookups\"\"\"\n         try:\n             self.e = ET.parse(self.xml_file)\n             self.root = self.e.getroot()\n-            print \"Parsed file\"\n+            print \"Parsing file\"\n         except Exception as e:\n             print e\n             print \"Couldn't parse OIM file\"\n             self.xml_file = None\n+            return\n+        \n+        for resourcename_elt in self.root.findall('./ResourceGroup/'\n+                                                  'Resources/Resource/Name'):\n+            resourcename = resourcename_elt.text\n+            if resourcename not in self.resourcedict:\n+                resource_grouppath = './ResourceGroup/Resources/Resource/' \\\n+                                     '[Name=\"{0}\"]/../..'.format(resourcename)\n+                self.resourcedict[resourcename] = \\\n+                    self.get_resource_information(resource_grouppath,", 
+  "html_url": "https://github.com/opensciencegrid/gracc-request/pull/34#discussion_r80328331", 
+  "id": 80328331, 
+  "in_reply_to_id": 80327195, 
+  "original_commit_id": "c792031e95d3673c0d4d7c8cc7317fae6fdc97e8", 
+  "original_position": 64, 
+  "path": "src/graccreq/oim/OIMTopology.py", 
+  "position": 65, 
+  "pull_request_review_id": 1406432, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/34", 
+  "updated_at": "2016-09-23T21:29:18Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/comments/80328331", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/19695727?v=4", 
+    "events_url": "https://api.github.com/users/shreyb/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/shreyb/followers", 
+    "following_url": "https://api.github.com/users/shreyb/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/shreyb/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/shreyb", 
+    "id": 19695727, 
+    "login": "shreyb", 
+    "organizations_url": "https://api.github.com/users/shreyb/orgs", 
+    "received_events_url": "https://api.github.com/users/shreyb/received_events", 
+    "repos_url": "https://api.github.com/users/shreyb/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/shreyb/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/shreyb/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/shreyb"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-display-data/pull/1#discussion_r110070794"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-display-data/pulls/1"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-display-data/pulls/comments/110070794"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "If you insist!  :)\r\n\r\nI had made `[Gracc]` configuration sections to mirror the `[Gratia]` ones, but if that burns the eyes or dishonors its name, I will happily make them `[GRACC]`.", 
+  "commit_id": "99bdadb9d9962ce2db9113e730101779ef74098c", 
+  "created_at": "2017-04-06T02:54:15Z", 
+  "diff_hunk": "@@ -17,40 +74,27 @@ def run(self):\n         self.connect()\n \n     def disconnect(self):\n-        self.conn.close()\n+        pass\n \n-    def connect(self):\n-        user = self.cp.get(\"Gratia\", \"User\")\n-        password = self.cp.get(\"Gratia\", \"Password\")\n-        host = self.cp.get(\"Gratia\", \"Host\")\n-        database = self.cp.get(\"Gratia\", \"Database\")\n-        port = int(self.cp.get(\"Gratia\", \"Port\"))\n+    def connect_gracc_url(self, gracc_url):\n         try:\n-            self.conn = MySQLdb.connect(user=user, passwd=password, host=host,\n-                port=port, db=database)\n-            log.info(\"Successfully connected to Gratia database\")\n+            self.es = elasticsearch.Elasticsearch(\n+                [gracc_url], timeout=300, use_ssl=True, verify_certs=True,\n+                ca_certs='/etc/ssl/certs/ca-bundle.crt')\n         except Exception, e:\n             log.exception(e)\n-            log.error(\"Unable to connect to Gratia database\")\n+            log.error(\"Unable to connect to Gracc database\")\n             raise\n-        curs = self.conn.cursor()\n-        curs.execute(\"set time_zone='+0:00'\")\n+\n+    def connect(self):\n+        gracc_url = self.cp.get(\"Gracc\", \"Url\")", 
+  "html_url": "https://github.com/opensciencegrid/osg-display-data/pull/1#discussion_r110070794", 
+  "id": 110070794, 
+  "in_reply_to_id": 110048519, 
+  "original_commit_id": "7d8e5c3b914b96c4bccf952fedac4de533fbe501", 
+  "original_position": 101, 
+  "path": "src/osg_display/gratia_datasource.py", 
+  "position": null, 
+  "pull_request_review_id": 31215250, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-display-data/pulls/1", 
+  "updated_at": "2017-04-06T03:22:17Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-display-data/pulls/comments/110070794", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

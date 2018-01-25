@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/376#discussion_r153329345"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/376"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/153329345"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "I pushed the reworked script and I tested functionality of the script.", 
+  "commit_id": "fc6aca33b37337cae81326ee1144137bcc85e3f3", 
+  "created_at": "2017-11-27T21:31:51Z", 
+  "diff_hunk": "@@ -157,7 +157,21 @@ cd release-tools\n ./1-client-tarballs $NON_UPCOMING_VERSIONS\n ```\n \n-You should get up to 8 tarballs for each version (excluding upcoming), 25-55 megs each and they should all have the version number in the name.\n+You should get 7 tarballs.\n+They should all have the version number in the name.\n+\n+-   OSG 3.3.x\n+    -   32-bit (i386)\n+        - osg-wn-client, el6: 23 megabytes\n+    -   64-bit\n+        - osg-wn-client, el6: 23 megabytes\n+        - osg-wn-client, el7: 31 megabytes\n+-   OSG 3.4.x\n+    -   64-bit\n+        - osg-afs-client, el6: 23 megabytes\n+        - osg-afs-client, el7: 31 megabytes\n+        - osg-wn-client, el6: 23 megabytes\n+        - osg-wn-client, el7: 31 megabytes", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/376#discussion_r153329345", 
+  "id": 153329345, 
+  "in_reply_to_id": 153279281, 
+  "original_commit_id": "0e68f81b30c10738f397ed660e483146cdeca4e2", 
+  "original_position": 19, 
+  "path": "docs/release/cut-sw-release.md", 
+  "position": null, 
+  "pull_request_review_id": 79319121, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/376", 
+  "updated_at": "2017-11-28T16:09:04Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/153329345", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377632?v=4", 
+    "events_url": "https://api.github.com/users/timtheisen/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/timtheisen/followers", 
+    "following_url": "https://api.github.com/users/timtheisen/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/timtheisen/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/timtheisen", 
+    "id": 7377632, 
+    "login": "timtheisen", 
+    "organizations_url": "https://api.github.com/users/timtheisen/orgs", 
+    "received_events_url": "https://api.github.com/users/timtheisen/received_events", 
+    "repos_url": "https://api.github.com/users/timtheisen/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/timtheisen/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/timtheisen/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/timtheisen"
+  }
+}

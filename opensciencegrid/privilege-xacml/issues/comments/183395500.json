@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Hi Gerd,\n\nWhen I run `mvn dependency:analyze`, it picks up all those as dependencies as a used during compile time.  For example, focusing on `joda-time`, I get a complaint if I drop it from the direct dependencies.  Really, I think this indicates I'm compensating for a missing indirect dependency.  Do you have any tips on how to nail down the problematic POM?\n\nCertainly, I think `wsdl4j` can be moved to compile-only.  \n\nBrian\n", 
+  "created_at": "2016-02-12T16:24:00Z", 
+  "html_url": "https://github.com/opensciencegrid/privilege-xacml/issues/11#issuecomment-183395500", 
+  "id": 183395500, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/privilege-xacml/issues/11", 
+  "updated_at": "2016-02-12T16:24:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/privilege-xacml/issues/comments/183395500", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/tools/pull/12#discussion_r93469607"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/tools/pulls/12"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/tools/pulls/comments/93469607"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Why do you define this? What's wrong with `os.path.isdir()`?", 
+  "commit_id": "6278d07680a8580d42f630424e033cf6b3fa55fb", 
+  "created_at": "2016-12-21T16:19:51Z", 
+  "diff_hunk": "@@ -0,0 +1,268 @@\n+#!/usr/bin/python\n+\n+\"\"\"\n+Usage:\n+  %(script)s [options] output-001 [packages...]\n+  %(script)s [options] --summarize [run-]20161220-1618 packages...\n+\n+List version-release numbers for RPMs installed in an osg-test run output\n+directory, as found in output-NNN/output/osg-test-*.log\n+\n+The output argument can also be a root.log from a koji/mock build,\n+or the raw output of an 'rpm -qa' command.\n+\n+If any packages are specified, limit the results to just those packages.\n+\n+If a run directory (or, just the timstamp string) is specified, summary\n+information will be printed for the listed packages across all output-NNN\n+subdirectories for that set of osg test runs.\n+\n+Options:\n+  -A, --no-strip-arch  don't attempt to strip .arch from package names\n+  -D, --no-strip-dist  don't attempt to strip .dist tag from package releases\n+\n+  -s, --summarize      summarize results for all output subdirs\n+  -l, --list-outputs   list output numbers (summarize mode only)\n+  -L, --max-outputs N  list at most N output numbers per NVR (-1 for unlimited)\n+\"\"\"\n+\n+import collections\n+import getopt\n+import glob\n+import stat\n+import sys\n+import os\n+import re\n+\n+\n+GLOBAL_RUNS_DIR = \"/osgtest/runs\"\n+\n+outdir     = None\n+pkgs       = []\n+strip_arch = True\n+strip_dist = True\n+summarize  = False\n+list_nums  = False\n+max_nums   = 7\n+\n+arch_pat = r'\\.(x86_64|i[3-6]86|noarch|src)$'\n+dist_pat = r'((\\.osg(\\d+)?)?\\.[es]l[5-9](_[\\d.]+)?(\\.centos)?|\\.osg|\\.fc\\d+)$'\n+\n+def usage(msg=None):\n+    if msg:\n+        print \"***\", msg, \"***\"\n+    print __doc__ % {\"script\": os.path.basename(__file__)}\n+    sys.exit()\n+\n+def parseargs():\n+    global outdir, pkgs, strip_arch, strip_dist, summarize, list_nums, max_nums\n+    longopts = ['no-strip-arch', 'no-strip-dist', 'summarize',\n+                'list-outputs', 'max-outputs=', 'help']\n+    ops,args = getopt.getopt(sys.argv[1:], 'ADslL:', longopts)\n+    for op,val in ops:\n+        if   op in ('-A', '--no-strip-arch') : strip_arch = False\n+        elif op in ('-D', '--no-strip-dist') : strip_dist = False\n+        elif op in ('-s', '--summarize')     : summarize  = True\n+        elif op in ('-l', '--list-outputs')  : list_nums  = True\n+        elif op in ('-L', '--max-outputs')   : list_nums  = True; \\\n+                                               max_nums   = int(val)\n+        elif op == '--help'                  : usage()\n+\n+    if not args:\n+        usage(\"Must provide a test run output location\")\n+\n+    outdir = args[0]\n+    pkgs   = args[1:]\n+\n+    if max_nums < 0:\n+        max_nums = 99999\n+\n+    if summarize and not pkgs:\n+        usage(\"Must specify package list for --summarize\")\n+\n+def arch_strip(na):\n+    return re.sub(arch_pat, '', na)\n+\n+def dist_strip(evr):\n+    ev,r = evr.split('-')\n+    r = re.sub(dist_pat, '', r)\n+    return '-'.join([ev,r])\n+\n+def nvrgen(items):\n+    # generate sequence of [\"name.arch\", \"epoch:version-release\"] pairs\n+    while items:\n+        na, evr = items[:2]\n+        if strip_arch:\n+            na = arch_strip(na)\n+        if strip_dist:\n+            evr = dist_strip(evr)\n+        if evr.startswith(\"0:\"):\n+            evr = evr[2:]\n+        yield [na,evr]\n+        items[:2] = []\n+\n+def isdir(fn):", 
+  "html_url": "https://github.com/opensciencegrid/tools/pull/12#discussion_r93469607", 
+  "id": 93469607, 
+  "original_commit_id": "5ef1d4405387af26260e5adae8377bfb9ced9eac", 
+  "original_position": 104, 
+  "path": "list-rpm-versions", 
+  "position": null, 
+  "pull_request_review_id": 13997918, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/tools/pulls/12", 
+  "updated_at": "2016-12-22T06:29:45Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/tools/pulls/comments/93469607", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

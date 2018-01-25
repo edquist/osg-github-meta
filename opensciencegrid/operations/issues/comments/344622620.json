@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Scott, you can point out specific issues via github's UI. Go to the [files](https://github.com/opensciencegrid/operations/pull/99/files) tab of the pull request and if you hover over lines, a \"plus\" button should appear. Click on that button to add a comment at that line.", 
+  "created_at": "2017-11-15T15:12:40Z", 
+  "html_url": "https://github.com/opensciencegrid/operations/pull/99#issuecomment-344622620", 
+  "id": 344622620, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/operations/issues/99", 
+  "updated_at": "2017-11-15T15:12:40Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/operations/issues/comments/344622620", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

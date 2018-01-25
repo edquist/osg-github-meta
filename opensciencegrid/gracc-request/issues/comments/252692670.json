@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "@retzkek found a bug, which is that if the probe name regexp match doesn't work, the script errors out.  I added code to handle that case.\n", 
+  "created_at": "2016-10-10T17:51:46Z", 
+  "html_url": "https://github.com/opensciencegrid/gracc-request/pull/36#issuecomment-252692670", 
+  "id": 252692670, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gracc-request/issues/36", 
+  "updated_at": "2016-10-10T17:51:46Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-request/issues/comments/252692670", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/19695727?v=4", 
+    "events_url": "https://api.github.com/users/shreyb/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/shreyb/followers", 
+    "following_url": "https://api.github.com/users/shreyb/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/shreyb/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/shreyb", 
+    "id": 19695727, 
+    "login": "shreyb", 
+    "organizations_url": "https://api.github.com/users/shreyb/orgs", 
+    "received_events_url": "https://api.github.com/users/shreyb/received_events", 
+    "repos_url": "https://api.github.com/users/shreyb/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/shreyb/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/shreyb/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/shreyb"
+  }
+}

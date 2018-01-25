@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/376#discussion_r153280459"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/376"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/153280459"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I'm not a big fan of the existence check. Presently, we expect 7 tarballs and if one of them doesn't exist, the tests should complain. If more than 7 tarballs are created, the tests should probably fail, too.", 
+  "commit_id": "fc6aca33b37337cae81326ee1144137bcc85e3f3", 
+  "created_at": "2017-11-27T18:22:06Z", 
+  "diff_hunk": "@@ -168,34 +182,30 @@ NON_UPCOMING_VERSIONS=<NON-UPCOMING VERSION(S)>\n \n dotest () {\n     file=$dir/$client-$ver-1.$rhel.$arch.tar.gz\n-    mkdir -p $rhel-$arch\n-    pushd $rhel-$arch\n-    tar xzf ../$file\n-    $client/osg/osg-post-install\n-    $client/osgrun osg-version\n-    popd\n-    rm -rf $rhel-$arch\n+    if [ -e $file ]; then", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/376#discussion_r153280459", 
+  "id": 153280459, 
+  "original_commit_id": "0e68f81b30c10738f397ed660e483146cdeca4e2", 
+  "original_position": 34, 
+  "path": "docs/release/cut-sw-release.md", 
+  "position": 20, 
+  "pull_request_review_id": 79261469, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/376", 
+  "updated_at": "2017-11-28T16:09:04Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/153280459", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

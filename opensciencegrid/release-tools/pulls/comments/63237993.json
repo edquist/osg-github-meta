@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/release-tools/pull/1#discussion_r63237993"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/release-tools/pulls/1"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/release-tools/pulls/comments/63237993"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "What is the reason for removing the `-u` option here?\n\nMore importantly, why is the unsupported option check removed?  Without it the script will hang in an infinite loop if you mistype `--upcomnig` :-p\n\nAlso, I'm confused how the commit message \"Use a standard SVN layout\" explains the changes in this commit...\n", 
+  "commit_id": "48f3851461797e3a8e0388fbbe209cb9042a50ca", 
+  "created_at": "2016-05-13T19:24:19Z", 
+  "diff_hunk": "@@ -34,9 +34,8 @@ FILTER=pre_wrap\n SERIES=\n while [[ $1 = -* ]]; do\n case $1 in\n-  --bare        ) FILTER=cat;      shift;;\n-  -u|--upcoming ) SERIES=upcoming; shift;;\n-             -* ) echo \"Unsupported option: $1\" >&2; usage ;;", 
+  "html_url": "https://github.com/opensciencegrid/release-tools/pull/1#discussion_r63237993", 
+  "id": 63237993, 
+  "original_commit_id": "17a127455ca1fa6eba2853e2368bfd8959e92c41", 
+  "original_position": 15, 
+  "path": "list-package-updates", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/release-tools/pulls/1", 
+  "updated_at": "2016-05-13T19:30:23Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/release-tools/pulls/comments/63237993", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

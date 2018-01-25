@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/43#discussion_r80120021"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/43"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/80120021"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "`service.is_running()` turns out to work here because the lockfile is the same between the init script and systemd but this isn't always the case (HTCondor-CE comes to mind). If the lockfile names are different, and the init `status()` function checks for the lockfile, it will always fail since the lockfile exists elsewhere. We should update `service.is_running()` to use `systemctl is-active` .\n", 
+  "commit_id": "652e8b8ed46c20d93af13925d6e125d5b940de87", 
+  "created_at": "2016-09-22T19:39:54Z", 
+  "diff_hunk": "@@ -1,24 +1,31 @@\n import os\n import osgtest.library.core as core\n import osgtest.library.osgunittest as osgunittest\n+import osgtest.library.service as service\n+import time\n import unittest\n \n class TestStartCondorCron(osgunittest.OSGTestCase):\n-\n     def test_01_start_condor_cron(self):\n-        core.config['condor-cron.lockfile'] = '/var/lock/subsys/condor-cron'\n         core.state['condor-cron.started-service'] = False\n         core.state['condor-cron.running-service'] = False\n \n         core.skip_ok_unless_installed('condor-cron')\n-        if os.path.exists(core.config['condor-cron.lockfile']):\n+        if service.is_running('condor-cron'):\n             core.state['condor-cron.running-service'] = True\n             self.skip_ok('already running')\n \n-        command = ('service', 'condor-cron', 'start')\n-        stdout, _, fail = core.check_system(command, 'Start Condor-Cron')\n-        self.assert_(stdout.find('error') == -1, fail)\n-        self.assert_(os.path.exists(core.config['condor-cron.lockfile']),\n-                     'Condor-Cron run lock file missing')\n+        if core.el_release() < 7:\n+            command = ('service', 'condor-cron', 'start')\n+            stdout, _, fail = core.check_system(command, 'Start Condor-Cron')\n+            self.assert_(stdout.find('error') == -1, fail)\n+        else:\n+            core.check_system(('systemctl', 'start', 'condor-cron'), 'Start Condor-Cron')\n+\n+        # Give condor-cron time to start up\n+        time.sleep(5)\n+\n+        self.assert_(service.is_running('condor-cron'), \"Condor-Cron is not running\")", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/43#discussion_r80120021", 
+  "id": 80120021, 
+  "original_commit_id": "81e6f8e11344c7ec7f7b176e676fbb8d1a288092", 
+  "original_position": 36, 
+  "path": "osgtest/tests/test_11_condor_cron.py", 
+  "position": 36, 
+  "pull_request_review_id": 1215434, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/43", 
+  "updated_at": "2016-09-22T20:01:21Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/80120021", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

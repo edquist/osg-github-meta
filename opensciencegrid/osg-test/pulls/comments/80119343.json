@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/43#discussion_r80119343"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/43"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/80119343"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Small nitpick, there's no newline at the end of the file\n", 
+  "commit_id": "652e8b8ed46c20d93af13925d6e125d5b940de87", 
+  "created_at": "2016-09-22T19:36:13Z", 
+  "diff_hunk": "@@ -107,10 +107,11 @@ def is_running(service_name, init_script=None):\n     \"\"\"\n     init_script = _init_script_name(service_name, init_script)\n \n-    command = ('service', init_script, 'status')\n-    status, _, _ = core.system(command, 'Checking status of ' + service_name + ' service')\n+    if core.el_release() >= 7:\n+        command = ('systemctl', 'is-active', init_script)\n+    else:\n+        command = ('service', init_script, 'status')\n \n-    if status == 0:\n-        return True\n+    status, _, _ = core.system(command, 'Checking status of ' + service_name + ' service')\n \n-    return False\n+    return status == 0", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/43#discussion_r80119343", 
+  "id": 80119343, 
+  "original_commit_id": "81e6f8e11344c7ec7f7b176e676fbb8d1a288092", 
+  "original_position": 16, 
+  "path": "osgtest/library/service.py", 
+  "position": null, 
+  "pull_request_review_id": 1215434, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/43", 
+  "updated_at": "2016-09-22T20:01:21Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/80119343", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

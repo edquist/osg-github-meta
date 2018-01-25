@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/173#discussion_r139479271"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/173"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139479271"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "I think it's helpful to at least make it clear to people at a glance that any EL6 kernel won't do what they need. \r\n\r\nI don't fully envision the changes that you're asking for, so I suggest that you go ahead and update it to how you'd like it and push that to the pull request.", 
+  "commit_id": "3accca42b12f390c7dffd79f2a608d83688e0454", 
+  "created_at": "2017-09-18T16:56:38Z", 
+  "diff_hunk": "@@ -40,10 +45,11 @@ As with all OSG software installations, there are some one-time (per host) steps\n - Obtain root access to the host\n - If you're installing singularity, prepare the [required Yum repositories](../common/yum)\n \n-## Using Singularity via CVMFS (EL 7.4 only)\n+## Using Singularity via CVMFS (EL 7 only)\n \n-If you are using a RHEL 7.4 variant OS, you can skip installation\n-altogether and use singularity through CVMFS:\n+If the operating system is an EL 7 variant, and has been updated to EL\n+7.4 or the 7.4 kernel (3.10.0-693 or greater), you can skip\n+installation altogether and use singularity through CVMFS:", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/173#discussion_r139479271", 
+  "id": 139479271, 
+  "in_reply_to_id": 139477451, 
+  "original_commit_id": "3accca42b12f390c7dffd79f2a608d83688e0454", 
+  "original_position": 40, 
+  "path": "docs/worker-node/install-singularity.md", 
+  "position": 40, 
+  "pull_request_review_id": 63417838, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/173", 
+  "updated_at": "2017-09-18T16:56:38Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139479271", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

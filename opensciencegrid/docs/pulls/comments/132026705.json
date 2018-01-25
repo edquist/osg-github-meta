@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/7#discussion_r132026705"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/7"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/132026705"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I think this might be your laptop?  It looks fine to me...", 
+  "commit_id": "401196edabf91952348956b54428db2164747705", 
+  "created_at": "2017-08-08T20:44:30Z", 
+  "diff_hunk": "@@ -0,0 +1,46 @@\n+\n+OSG Release Signing Information\n+===============================\n+\n+Verifying OSG's RPMs\n+--------------------\n+\n+We use a GPG key to sign our software packages. Normally `yum` and `rpm` transparently use the GPG signatures to verify the packages have not been corrupted and were created by us. You get our GPG public key when you install the `osg-release` RPM.\n+\n+If you wish to verify one of our RPMs manually, you can run:\n+\n+```console\n+$ rpm --checksig -v <NAME.RPM>\n+```\n+\n+For example:\n+\n+```console\n+$ rpm --checksig -v globus-core-8.0-2.osg.x86_64.rpm \n+globus-core-8.0-2.osg.x86_64.rpm:\n+    Header V3 DSA signature: OK, key ID 824b8603\n+    Header SHA1 digest: OK (2b5af4348c548c27f10e2e47e1ec80500c4f85d7)\n+    MD5 digest: OK (d11503a229a1a0e02262034efe0f7e46)\n+    V3 DSA signature: OK, key ID 824b8603\n+```", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/7#discussion_r132026705", 
+  "id": 132026705, 
+  "in_reply_to_id": 131961955, 
+  "original_commit_id": "401196edabf91952348956b54428db2164747705", 
+  "original_position": 25, 
+  "path": "docs/Release/signing.md", 
+  "position": 25, 
+  "pull_request_review_id": 55065341, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/7", 
+  "updated_at": "2017-08-08T20:44:30Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/132026705", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

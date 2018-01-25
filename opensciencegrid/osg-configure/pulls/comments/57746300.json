@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-configure/pull/1#discussion_r57746300"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/1"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/comments/57746300"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Should be \"BoscoConfiguration.parse_configuration started\"\n", 
+  "commit_id": "e90e7717fdd40f5b03efc47d2e9d51c01ceacea6", 
+  "created_at": "2016-03-29T15:42:50Z", 
+  "diff_hunk": "@@ -0,0 +1,271 @@\n+\"\"\"\n+Module to handle attributes related to the bosco jobmanager \n+configuration\n+\"\"\"\n+import os\n+import logging\n+import subprocess\n+import pwd\n+import shutil\n+import stat\n+\n+from osg_configure.modules import utilities\n+from osg_configure.modules import configfile\n+from osg_configure.modules import validation\n+from osg_configure.modules.jobmanagerconfiguration import JobManagerConfiguration\n+\n+__all__ = ['BoscoConfiguration']\n+\n+\n+class BoscoConfiguration(JobManagerConfiguration):\n+    \"\"\"Class to handle attributes related to Bosco job manager configuration\"\"\"\n+\n+\n+    def __init__(self, *args, **kwargs):\n+        # pylint: disable-msg=W0142\n+        super(BoscoConfiguration, self).__init__(*args, **kwargs)\n+        self.log('BoscoConfiguration.__init__ started')\n+        \n+        # dictionary to hold information about options\n+        self.options = {'endpoint':\n+                            configfile.Option(name='endpoint',\n+                                              requred=configfile.Option.MANDATORY),\n+                        'batch':\n+                            configfile.Option(name='batch',\n+                                              requred=configfile.Option.MANDATORY),\n+                        'users':\n+                            configfile.Option(name='users',\n+                                              requred=configfile.Option.MANDATORY),\n+                        'ssh_key':\n+                            configfile.Option(name='ssh_key',\n+                                              requred=configfile.Option.MANDATORY),\n+                        'max_jobs':\n+                            configfile.Option(name='max_jobs',\n+                                              requred=configfile.Option.OPTIONAL,\n+                                              default_value=1000)}\n+                                              \n+        \n+        self.config_section = \"BOSCO\"\n+        self.log(\"BoscoConfiguration.__init__ completed\")\n+        \n+        \n+    def parse_configuration(self, configuration):\n+        \"\"\"Try to get configuration information from ConfigParser or SafeConfigParser object given\n+        by configuration and write recognized settings to attributes dict\n+        \"\"\"\n+        super(BoscoConfiguration, self).parse_configuration(configuration)\n+\n+        self.log('SlurmConfiguration.parse_configuration started')", 
+  "html_url": "https://github.com/opensciencegrid/osg-configure/pull/1#discussion_r57746300", 
+  "id": 57746300, 
+  "original_commit_id": "7b951bb53111e465b4b78fde7020944a847f00f7", 
+  "original_position": 58, 
+  "path": "osg_configure/configure_modules/bosco.py", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/1", 
+  "updated_at": "2016-03-29T18:42:23Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/comments/57746300", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

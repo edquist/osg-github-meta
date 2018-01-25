@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/395#discussion_r157046393"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/395"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/157046393"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Since this is a cross-link to the docs area, you'll need to provide the full link: https://opensciencegrid.github.io/docs/", 
+  "commit_id": "89f28d4720afda3de833fc9f8d0d5f7f488b1bbc", 
+  "created_at": "2017-12-14T19:57:58Z", 
+  "diff_hunk": "@@ -39,7 +39,7 @@ Note that if you follow the above, we will end up with three assignees to each t\n     2.  Software Support (Triage)\n     3.  The Software team member who will handle the ticket\n \n-    Inasmuch as possible, you should strive to handle the easier tickets and not pass them off to other people. For reference, see our [troubleshooting documents](https://twiki.grid.iu.edu/bin/view/Documentation/Release3/#Software_Guides_Troubleshooting).\n+    Inasmuch as possible, you should strive to handle the easier tickets and not pass them off to other people. For reference, see our [troubleshooting documents](/docs).", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/395#discussion_r157046393", 
+  "id": 157046393, 
+  "original_commit_id": "25db63b24befbdb035d810d9b62bd89727bddb81", 
+  "original_position": 14, 
+  "path": "docs/policy/software-support.md", 
+  "position": null, 
+  "pull_request_review_id": 83626481, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/395", 
+  "updated_at": "2017-12-15T17:42:37Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/157046393", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/376#discussion_r153324104"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/376"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/153324104"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "You don't know which client to test if you don't know the major version.", 
+  "commit_id": "fc6aca33b37337cae81326ee1144137bcc85e3f3", 
+  "created_at": "2017-11-27T21:12:11Z", 
+  "diff_hunk": "@@ -168,34 +182,30 @@ NON_UPCOMING_VERSIONS=<NON-UPCOMING VERSION(S)>\n \n dotest () {\n     file=$dir/$client-$ver-1.$rhel.$arch.tar.gz\n-    mkdir -p $rhel-$arch\n-    pushd $rhel-$arch\n-    tar xzf ../$file\n-    $client/osg/osg-post-install\n-    $client/osgrun osg-version\n-    popd\n-    rm -rf $rhel-$arch\n+    if [ -e $file ]; then\n+        echo \"Testing $client-$ver-1.$rhel.$arch...\"\n+        mkdir -p $rhel-$arch\n+        pushd $rhel-$arch\n+        tar xzf ../$file\n+        $client/osg/osg-post-install\n+        $client/osgrun osg-version\n+        popd\n+        rm -rf $rhel-$arch\n+    fi\n }\n \n pushd /tmp\n \n-for client in osg-afs-client osg-wn-client; do\n-    for ver in $NON_UPCOMING_VERSIONS; do\n+for ver in $NON_UPCOMING_VERSIONS; do\n+    for client in osg-afs-client osg-wn-client; do", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/376#discussion_r153324104", 
+  "id": 153324104, 
+  "in_reply_to_id": 153278636, 
+  "original_commit_id": "0e68f81b30c10738f397ed660e483146cdeca4e2", 
+  "original_position": 51, 
+  "path": "docs/release/cut-sw-release.md", 
+  "position": null, 
+  "pull_request_review_id": 79313324, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/376", 
+  "updated_at": "2017-11-28T16:09:04Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/153324104", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377632?v=4", 
+    "events_url": "https://api.github.com/users/timtheisen/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/timtheisen/followers", 
+    "following_url": "https://api.github.com/users/timtheisen/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/timtheisen/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/timtheisen", 
+    "id": 7377632, 
+    "login": "timtheisen", 
+    "organizations_url": "https://api.github.com/users/timtheisen/orgs", 
+    "received_events_url": "https://api.github.com/users/timtheisen/received_events", 
+    "repos_url": "https://api.github.com/users/timtheisen/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/timtheisen/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/timtheisen/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/timtheisen"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/25#discussion_r134130773"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/25"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/134130773"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "... then follow instructions in the Troubleshooting and Debugging sections of **that** document and include ...", 
+  "commit_id": "380c2023fc1cc99c905870f84784631082abb026", 
+  "created_at": "2017-08-21T00:19:04Z", 
+  "diff_hunk": "@@ -0,0 +1,45 @@\n+How to Get Help\n+===============\n+\n+This page is aimed at OSG site administrators looking for support. Help for OSG users is found at [our support desk](https://support.opensciencegrid.org/support/home).\n+\n+Grid Operations Center\n+----------------------\n+\n+The Grid Operations Center (GOC) is available to coordinate users, site admins, and developers around an issue.  Additionally, the GOC can provide basic monitoring and troubleshooting.  There are several ways to receive support:\n+\n+*  You can [submit a trouble ticket](https://ticket.grid.iu.edu) or send an email to [goc@opensciencegrid.org](mailto:goc@opensciencegrid.org) (which also accept general inquiries not intended for tickets.)\n+*  The [trouble ticket system](https://ticket.grid.iu.edu/goc/list/open) is searchable.  Historical tickets may contain the solution for similar problems others have encountered.\n+*  The [operations blog](http://osggoc.blogspot.com/) contains information about recent software releases, and important outage and maintenance notifications of central OSG services.\n+*  For emergencies, the OSG Grid Operation Center provides extended support. Operators are on hand 24x7 at the GOC and can be reached via phone at +1 317-278-9699.   Non-emergency issues can be opened 24x7 but will be handled during normal business hours.\n+\n+\n+Security incident\n+-----------------\n+\n+Security incidents can be reported by following the instructions on the [Incident Discovery and Reporting](https://opensciencegrid.github.io/security/IncidentDiscoveryReporting/) page.  Additional steps to aid in the incident handling process are also linked from that page.\n+\n+Information Required to Help You\n+--------------------------------\n+\n+If you came to this page from an installation or other document in this website, then follow instructions in the **Troubleshooting** and **Debugging** sections of the document and include results in your support inquiry, no matter which channel you choose (email, trouble ticket, web chat, ...)", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/25#discussion_r134130773", 
+  "id": 134130773, 
+  "original_commit_id": "7dd46fb8bad0b8db50792a5dfed8eaefb9c9edfc", 
+  "original_position": 25, 
+  "path": "docs/common/help.md", 
+  "position": null, 
+  "pull_request_review_id": 57386803, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/25", 
+  "updated_at": "2017-08-22T16:30:38Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/134130773", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

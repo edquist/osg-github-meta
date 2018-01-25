@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/97#discussion_r139165760"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/97"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/139165760"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "@efajardo just drop singularity etc from this line and be done with it. We have the nightlies, this will suffice.", 
+  "commit_id": "e39fed9c0c0b671182a362a926c87c5e70062eff", 
+  "created_at": "2017-09-15T14:36:09Z", 
+  "diff_hunk": "@@ -1,10 +1,10 @@\n sudo: required\n env:\n   matrix:\n-  - OS_TYPE=centos OS_VERSION=6 PACKAGES=osg-ce-condor,vo-client-lcmaps-voms,llrun\n-  - OS_TYPE=centos OS_VERSION=6 PACKAGES=osg-gridftp,lcmaps,lcmaps-db-templates,vo-client-lcmaps-voms,rsv,llrun\n-  - OS_TYPE=centos OS_VERSION=7 PACKAGES=osg-ce-condor,vo-client-lcmaps-voms,llrun\n-  - OS_TYPE=centos OS_VERSION=7 PACKAGES=osg-gridftp,lcmaps,lcmaps-db-templates,vo-client-lcmaps-voms,rsv,llrun\n+  - OS_TYPE=centos OS_VERSION=6 PACKAGES=osg-ce-condor,vo-client-lcmaps-voms,llrun,singularity-runtime,osg-oasis", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/97#discussion_r139165760", 
+  "id": 139165760, 
+  "original_commit_id": "243bd078e49f67ef6ae5a913a135402965e10226", 
+  "original_position": 8, 
+  "path": ".travis.yml", 
+  "position": null, 
+  "pull_request_review_id": 63062830, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/97", 
+  "updated_at": "2017-09-20T17:24:33Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/139165760", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

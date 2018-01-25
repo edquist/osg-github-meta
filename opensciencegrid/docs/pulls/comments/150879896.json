@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/244#discussion_r150879896"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/244"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/150879896"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "This should be a `!!! note`", 
+  "commit_id": "c6904da6b05c796ff4f0e21acad74dd70b9ba430", 
+  "created_at": "2017-11-14T16:08:33Z", 
+  "diff_hunk": "@@ -0,0 +1,115 @@\n+OSG Software Release 3.4.5\n+==========================\n+\n+**Release Date**: 2017-11-14\n+\n+Summary of changes\n+------------------\n+\n+This release contains:\n+\n+\n+These [JIRA tickets](https://jira.opensciencegrid.org/issues/?jql=project%20%3D%20SOFTWARE%20AND%20fixVersion%20%3D%203.4.5%20ORDER%20BY%20priority%20DESC%2C%20key%20DESC) were addressed in this release.\n+\n+!!! note\n+    OSG 3.4 contains only 64-bit components.\n+\n+!!! note\n+    StashCache is supported on EL7 only.\n+\n+!!! note\n+    xrootd-lcmaps will remain at 1.2.1-2 on EL6.\n+\n+Detailed changes are below. All of the documentation can be found [here](../../).\n+\n+Known Issues\n+------------\n+\n+-   Because the Gratia system has been turned off, RSV emits the following warning: `WARNING: Gratia server gratia-osg-prod.opensciencegrid.org:80 not responding to obtain last contact details`. This warning can safely be ignored.\n+-   In GlideinWMS, a small configuration change must be added to account for changes in HTCondor 8.6. Add the following line to the HTCondor configuration.\n+\n+        COLLECTOR.USE_SHARED_PORT=False\n+\n+Updating to the new release\n+---------------------------\n+\n+To update to the OSG 3.4 series, please consult the page on [updating between release series](../release_series).\n+\n+### Update Repositories\n+\n+To update to this series, you need [install the current OSG repositories](../../common/yum#install-osg-repositories).\n+\n+### Update Software\n+\n+Once the new repositories are installed, you can update to this new release with:\n+\n+``` console\n+root@host # yum update\n+```\n+\n+<span class=\"twiki-macro NOTE\"></span> Please be aware that running `yum update` may also update other RPMs. You can exclude packages from being updated using the `--exclude=[package-name or glob]` option for the `yum` command.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/244#discussion_r150879896", 
+  "id": 150879896, 
+  "original_commit_id": "185422824b991a46747b5ef2520dee3d6b75b131", 
+  "original_position": 50, 
+  "path": "docs/release/3.4/release-3-4-5.md", 
+  "position": null, 
+  "pull_request_review_id": 76496179, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/244", 
+  "updated_at": "2017-11-14T16:28:20Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/150879896", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

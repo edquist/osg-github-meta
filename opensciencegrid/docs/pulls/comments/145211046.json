@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/214#discussion_r145211046"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/214"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/145211046"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "It seems a little awkward to have the parenthetical here. Maybe a note before the inner list? Or just let line 129 (now) do its work?", 
+  "commit_id": "a59d24410c1e5f2a54413e2079f66271783184a3", 
+  "created_at": "2017-10-17T18:13:56Z", 
+  "diff_hunk": "@@ -123,20 +119,20 @@ The program edg-mkgridmap (found in the package `edg-mkgridmap`), used for authe\n     | HTCondor-CE                 | `/etc/sysconfig/condor-ce`             | `condor-ce`                     |\n     | GridFTP server              | `/etc/sysconfig/globus-gridftp-server` | `globus-gridftp-server`         |\n \n-3.  If you are converting an HTCondor-CE host, remove the HTCondor-CE `GRIDMAP` configuration. Otherwise, skip to the next step.\n+3.  If you are converting an HTCondor-CE host, remove the HTCondor-CE `GRIDMAP` configuration (`osg-configure` may have already done this for you). Otherwise, skip to the next step.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/214#discussion_r145211046", 
+  "id": 145211046, 
+  "original_commit_id": "672959a68a1a79136520df9fd08c590da76f25bb", 
+  "original_position": 25, 
+  "path": "docs/security/lcmaps-voms-authentication.md", 
+  "position": null, 
+  "pull_request_review_id": 69977040, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/214", 
+  "updated_at": "2017-10-19T20:26:37Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/145211046", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

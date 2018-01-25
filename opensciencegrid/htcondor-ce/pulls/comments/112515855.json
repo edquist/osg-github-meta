@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/142#discussion_r112515855"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/142"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/112515855"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "What's the point of this and `JOB_GLIDEIN_Memory`? They don't appear to be used in any other expressions", 
+  "commit_id": "ba08f99ce721b498ba62edc554fbf46777262e07", 
+  "created_at": "2017-04-20T17:40:02Z", 
+  "diff_hunk": "@@ -50,15 +50,23 @@ JOB_ROUTER_DEFAULTS_GENERATED = \\\\\n     set_requirements = True; \\\\\n     /* Note default memory request of 2GB */ \\\\\n     /* Note yet another nested condition allow pass attributes (maxMemory,xcount,jobtype,queue) via gWMS Factory described within ClassAd */ \\\\\n-    eval_set_RequestMemory = ifThenElse(maxMemory isnt undefined, maxMemory, ifThenElse(default_maxMemory isnt undefined, default_maxMemory, 2000)); \\\\\n+    eval_set_OriginalMemory = ifThenElse(maxMemory isnt undefined, maxMemory, ifThenElse(default_maxMemory isnt undefined, default_maxMemory, 2000)); \\\\\n+    set_JOB_GLIDEIN_Memory = \"$$(TotalMemory:0)\"; \\\\\n+    set_JobMemory = JobIsRunning ? int(MATCH_EXP_JOB_GLIDEIN_Memory)*95/100 : OriginalMemory; \\\\\n+    set_RequestMemory = ifThenElse(WholeNodeWanted is true, !isUndefined(TotalMemory) ? TotalMemory*95/100 : JobMemory, OriginalMemory); \\\\\n     eval_set_remote_queue = ifThenElse(batch_queue isnt undefined, batch_queue, ifThenElse(queue isnt undefined, queue, ifThenElse(default_queue isnt undefined, default_queue, \"\"))); \\\\\n     /* HTCondor uses RequestCpus; blahp uses SMPGranularity and NodeNumber.  Default is 1 core. */ \\\\\n     copy_RequestCpus = \"orig_RequestCpus\"; \\\\\n-    eval_set_RequestCpus = ifThenElse(xcount isnt undefined, xcount, \\\\\n+    eval_set_OriginalCpus = ifThenElse(xcount isnt undefined, xcount, \\\\\n         ifThenElse(orig_RequestCpus isnt undefined, \\\\\n             ifThenElse(orig_RequestCpus > 1, orig_RequestCpus, \\\\\n                 ifThenElse(default_xcount isnt undefined, default_xcount, 1)), \\\\\n             ifThenElse(default_xcount isnt undefined, default_xcount, 1))); \\\\\n+    set_GlideinCpusIsGood = !isUndefined(MATCH_EXP_JOB_GLIDEIN_Cpus) && (int(MATCH_EXP_JOB_GLIDEIN_Cpus) isnt error); \\\\\n+    set_JOB_GLIDEIN_Cpus = \"$$(TotalCpus:0)\"; \\\\", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/142#discussion_r112515855", 
+  "id": 112515855, 
+  "original_commit_id": "ba08f99ce721b498ba62edc554fbf46777262e07", 
+  "original_position": 19, 
+  "path": "src/condor_ce_router_defaults", 
+  "position": 19, 
+  "pull_request_review_id": 33831751, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/142", 
+  "updated_at": "2017-04-20T17:40:26Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/112515855", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

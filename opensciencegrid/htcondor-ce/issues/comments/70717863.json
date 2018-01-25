@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "After reading the comments and looking at the (new) condor_ce_job_router_info code, I do not understand why a fairly simple check of the output of \u201ccondor_version\u201d is not the right way to go? Yes, the version string would have to be matched with a grep string, but it\u2019s really not that hard to get right, is it?\n", 
+  "created_at": "2015-01-20T19:38:13Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/2#issuecomment-70717863", 
+  "id": 70717863, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/2", 
+  "updated_at": "2015-01-20T19:38:13Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/70717863", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

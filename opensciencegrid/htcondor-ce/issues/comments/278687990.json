@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "@djw8605 I've moved over all the CE config checks to a python script, which should give us better stability than parsing the condor tool outputs. Could you give this another review? Thanks", 
+  "created_at": "2017-02-09T16:08:51Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/132#issuecomment-278687990", 
+  "id": 278687990, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/132", 
+  "updated_at": "2017-02-09T16:08:51Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/278687990", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

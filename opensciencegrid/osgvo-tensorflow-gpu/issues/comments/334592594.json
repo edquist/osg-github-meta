@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "@djw8605 right now the image is busted and it works for no one. YOu can try it yourself:\r\n\r\nSo this PR won't leave you in any worse situation than what we are now:\r\n\r\n\r\n```console\r\nsingularity shell --bind /usr/lib64/nvidia:/host-libs /cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow-gpu:latest/\r\nSingularity: Invoking an interactive shell within container...\r\n\r\ncuser1@cgpu-1:~$ python\r\nPython 2.7.12 (default, Nov 19 2016, 06:48:10) \r\n[GCC 5.4.0 20160609] on linux2\r\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\r\n>>> import tensorflow\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"/usr/local/lib/python2.7/dist-packages/tensorflow/__init__.py\", line 24, in <module>\r\n    from tensorflow.python import *\r\n  File \"/usr/local/lib/python2.7/dist-packages/tensorflow/python/__init__.py\", line 49, in <module>\r\n    from tensorflow.python import pywrap_tensorflow\r\n  File \"/usr/local/lib/python2.7/dist-packages/tensorflow/python/pywrap_tensorflow.py\", line 52, in <module>\r\n    raise ImportError(msg)\r\nImportError: Traceback (most recent call last):\r\n  File \"/usr/local/lib/python2.7/dist-packages/tensorflow/python/pywrap_tensorflow.py\", line 41, in <module>\r\n    from tensorflow.python.pywrap_tensorflow_internal import *\r\n  File \"/usr/local/lib/python2.7/dist-packages/tensorflow/python/pywrap_tensorflow_internal.py\", line 28, in <module>\r\n    _pywrap_tensorflow_internal = swig_import_helper()\r\n  File \"/usr/local/lib/python2.7/dist-packages/tensorflow/python/pywrap_tensorflow_internal.py\", line 24, in swig_import_helper\r\n    _mod = imp.load_module('_pywrap_tensorflow_internal', fp, pathname, description)\r\nImportError: libcudnn.so.6: cannot open shared object file: No such file or directory\r\n```\r\nBut I tried it directly on a GPU node at UCSD and worked, with some simple tensorflow matrix multiplication\r\n\r\n\r\n```console\r\n singularity exec docker://efajardo/osgvo-tensorflow-gpu python tf_matmul.py\r\nTotal memory: 10.91GiB\r\nFree memory: 10.75GiB\r\n2017-10-05 21:07:04.461815: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0 1 2 3 \r\n2017-10-05 21:07:04.461838: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y Y Y Y \r\n2017-10-05 21:07:04.461847: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 1:   Y Y Y Y \r\n2017-10-05 21:07:04.461855: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 2:   Y Y Y Y \r\n2017-10-05 21:07:04.461862: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 3:   Y Y Y Y \r\n2017-10-05 21:07:04.461878: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:84:00.0)\r\n2017-10-05 21:07:04.461894: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:1) -> (device: 1, name: GeForce GTX 1080 Ti, pci bus id: 0000:85:00.0)\r\n2017-10-05 21:07:04.461903: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:2) -> (device: 2, name: GeForce GTX 1080 Ti, pci bus id: 0000:88:00.0)\r\n2017-10-05 21:07:04.461911: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:3) -> (device: 3, name: GeForce GTX 1080 Ti, pci bus id: 0000:89:00.0)\r\nresult of matrix multiplication\r\n===============================\r\n[[  1.00000000e+00   0.00000000e+00]\r\n [ -4.76837158e-07   1.00000024e+00]]\r\n===============================\r\n```", 
+  "created_at": "2017-10-05T21:08:07Z", 
+  "html_url": "https://github.com/opensciencegrid/osgvo-tensorflow-gpu/pull/1#issuecomment-334592594", 
+  "id": 334592594, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osgvo-tensorflow-gpu/issues/1", 
+  "updated_at": "2017-10-05T21:08:07Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osgvo-tensorflow-gpu/issues/comments/334592594", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

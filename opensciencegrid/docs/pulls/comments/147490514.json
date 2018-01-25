@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/231#discussion_r147490514"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/231"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/147490514"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Instead of the parenthetical, add a sentence to the effect of:\r\n\r\n> Singularity via CVMFS is a new method of distributing and not all VOs currently support it. To provide wider singularity support, consider installing the singularity RPM (link to section) as well as offering it via CVMFS.", 
+  "commit_id": "4611dd5b6a3d5ae9bd4fa248d59f2f5d93e5dda3", 
+  "created_at": "2017-10-27T18:54:34Z", 
+  "diff_hunk": "@@ -49,7 +53,10 @@ As with all OSG software installations, there are some one-time (per host) steps\n \n If the operating system is an EL 7 variant, and has been updated to EL\n 7.4 or the 7.4 kernel (3.10.0-693 or greater), you can skip\n-installation altogether and use singularity through CVMFS:\n+installation altogether and instead do these steps to enable\n+singularity to be run as an unprivileged user via CVMFS (although note\n+that VO pilot jobs that use singularity may not yet be ready to use it\n+that way so you may want both this and an rpm for a transition period):", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/231#discussion_r147490514", 
+  "id": 147490514, 
+  "original_commit_id": "93f9dd565e091089a97fc0eb18886c0f28c79acd", 
+  "original_position": 29, 
+  "path": "docs/worker-node/install-singularity.md", 
+  "position": null, 
+  "pull_request_review_id": 72597924, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/231", 
+  "updated_at": "2017-10-27T21:14:41Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/147490514", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

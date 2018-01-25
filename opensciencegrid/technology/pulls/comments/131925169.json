@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/84#discussion_r131925169"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/84"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/131925169"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Can we replace the newlines and angle brackets with commas?", 
+  "commit_id": "64c76ca387525eb1c71aa101e22425687c037e81", 
+  "created_at": "2017-08-08T14:18:20Z", 
+  "diff_hunk": "@@ -0,0 +1,23 @@\n+SHA-2 Compliance\n+================\n+\n+When a certificate authority signs a certificate, it uses one of several possible hash algorithms. \n+Historically, the most popular algorithms were MD5 (now retired due to security issues) and the SHA-1 family.\n+SHA-1 certificates are being phased out due to perceived weaknesses \u2014 as of February 2017, a practical attack for generating collisions was demonstrated by [Google researchers](https://shattered.io/static/shattered.pdf).\n+ These days, the preferred hash algorithm family is SHA-2.\n+\n+The certificate authorities (CAs), which issue host and user certificates used widely in the OSG, defaulted to SHA-2-based certificates on 1 October 2013; all sites will need to make sure that their software supports certificates using the SHA-2 algorithms. All supported OSG releases support SHA-2.\n+\n+The table below denotes indicates the minimum releases necessary to support SHA-2 certificates.\n+\n+| Component               | Version                                                                                                                                     | In Release | Notes                                                             |\n+|:------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:------------------------------------------------------------------|\n+| BeStMan 2               | bestman2-2.3.0-9.osg                                                                                                                        | 3.1.13     | SHA-2 support; also see jGlobus, below                            |\n+| dCache SRM client       | dcache-srmclient-2.2.11.1-2.osg                                                                                                             | 3.1.22     | Major update includes SHA-2 support                               |\n+| Globus GRAM             | globus-gram-job-manager-13.45-1.2.osg&lt;br&gt;globus-gram-job-manager-condor-1.0-13.1.osg&lt;br&gt;globus-gram-job-manager-pbs-1.6-1.1.osg | 3.1.9      | Critical bug fixes (not SHA-2 specific)                           |", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/84#discussion_r131925169", 
+  "id": 131925169, 
+  "original_commit_id": "c31121908528fdb366f170e897f27958498d6aa2", 
+  "original_position": 17, 
+  "path": "docs/projects/sha2-support.md", 
+  "position": null, 
+  "pull_request_review_id": 54951675, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/84", 
+  "updated_at": "2017-08-08T14:21:33Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/131925169", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

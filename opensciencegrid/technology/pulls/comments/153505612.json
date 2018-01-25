@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/376#discussion_r153505612"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/376"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/153505612"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "These sentences seem superfluous if we're automatically testing the existence of the 7 tarballs below.", 
+  "commit_id": "fc6aca33b37337cae81326ee1144137bcc85e3f3", 
+  "created_at": "2017-11-28T14:25:06Z", 
+  "diff_hunk": "@@ -157,7 +157,8 @@ cd release-tools\n ./1-client-tarballs $NON_UPCOMING_VERSIONS\n ```\n \n-You should get up to 8 tarballs for each version (excluding upcoming), 25-55 megs each and they should all have the version number in the name.\n+You should get 7 tarballs.\n+They should all have the version number in the name.", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/376#discussion_r153505612", 
+  "id": 153505612, 
+  "original_commit_id": "bec4dd7b2b09e458651af63bea55c6d82e466c0f", 
+  "original_position": 6, 
+  "path": "docs/release/cut-sw-release.md", 
+  "position": null, 
+  "pull_request_review_id": 79520008, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/376", 
+  "updated_at": "2017-11-28T16:09:04Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/153505612", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

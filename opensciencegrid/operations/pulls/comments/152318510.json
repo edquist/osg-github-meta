@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/operations/pull/99#discussion_r152318510"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/operations/pulls/99"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/operations/pulls/comments/152318510"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "We can change the beginning phrase, as Scott commented, to say \"If there is a need to shut down the distribution of a repository\" without qualifying that it only comes from OSG Security.", 
+  "commit_id": "b4dc7e8e7136196ffb6a16901b84e8fb84175e26", 
+  "created_at": "2017-11-21T15:57:03Z", 
+  "diff_hunk": "@@ -0,0 +1,67 @@\n+External OASIS Repositories\n+===========================\n+\n+We offer hosting of non-OSG CVMFS repositories on OASIS. This means that requests to create, rename, remove, or blanking OASIS repositories will come in as GOC tickets. This document contains instructions for handling those tickets.\n+\n+!!! note \"Also see\"\n+    * [Policy for OSG Mirroring of External CVMFS repositories](https://opensciencegrid.github.io/technology/policy/external-oasis-repos/)\n+    * [External OASIS repository](https://opensciencegrid.github.io/docs/data/external-oasis-repos/)\n+\n+Hosting a repository on OASIS\n+-----------------------------\n+\n+1.  Ensure that the repository administrator is valid for the VO. This can be done by (a) OSG already having a\n+    relationship with the person or (b) the contacting the VO manager to find out.  Review the URL and verify verify\n+    that it is appropriate for the VO.\n+\n+1.  Add the repository URL in OIM under the VO's OASIS repository URLs. This should cause the repository's configuration\n+    to be added to the GOC Stratum-0 within 15 minutes.\n+\n+1.  If the respository ends in a new domain name that has not been distributed before, place a copy of the\n+    `domain.name.pub` public key from `domain.name` into `/srv/etc/keys` on both `oasis-replica` and\n+    `oasis-replica-itb`. If you do not have that key, ask the repository service representative how to obtain it.  In\n+    order to support CVMFS client versions 2.2.X, a symbolic link of `domain.name.conf` has to be made in\n+    `/cvmfs/config-osg.opensciencegrid.org/etc/cvmfs/domain.d` pointing to `default.conf`. This symbolic link has to be\n+    created on the `oasis-itb` machine's copy of the `config-osg.opensciencegrid.org` repository and then copied to\n+    production with the `copy_config_osg` command on the oasis machine.\n+\n+1.  If the repository name matches `*.opensciencegrid.org` or `*.osgstorage.org`, respond to the ticket to ask the\n+    administrator to continue with the next step; all other repositories (such as `*.egi.eu`) you are done.\n+\n+1.  Once the repository administrator has responded to the ticket, indicating that the BNL stratum 1 needs to be\n+    updated, ask the administrator of the BNL stratum 1 to also add the new repository.  The BNL Stratum-1 operator\n+    should set the service to read from\n+    `http://oasis-replica.opensciencegrid.org:8000/cvmfs/%RED%example.opensciencegrid.org%ENDCOLOR%`.  When the BNL\n+    Stratum-1 operator has reported back that the replication is ready, respond to the ticket that the repository is\n+    fully replicated on the OSG and close the ticket.\n+\n+Changing the URL of an external repository\n+------------------------------------------\n+\n+*Insert internal instructions here*\n+\n+Removing an external repository\n+-------------------------------\n+\n+1.  After validating that the ticket submitter is authorized by the VO's OASIS manager, the delete the registered value\n+    for %RED%example.opensciencegrid.org%ENDCOLOR% in OIM for the VO in OASIS Repo URLs.\n+1.  Add the FNAL and BNL Stratum-1 operators to the ticket to asks them to remove the repository.  Wait for the\n+    Stratum-1 operators to finish before proceeding.\n+1.  Run `cvmfs_server rmfs -f %RED%example.opensciencegrid.org%ENDCOLOR%` and `rm -r\n+    /oasissrv/cvmfs/%RED%example.opensciencegrid.org%ENDCOLOR%` on `oasis-replica-itb` and `oasis-replica`\n+1.  Run the following command on `oasis-itb` and `oasis`:\n+\n+        :::console\n+        rm -r /srv/cvmfs/%RED%example.opensciencegrid.org%ENDCOLOR%\n+\n+Blanking an externally-hosted repostiroy\n+----------------------------------------\n+\n+1.  If there is a request from OSG Security to shut down the distribution of a repository, run `blank_osg_repository` on", 
+  "html_url": "https://github.com/opensciencegrid/operations/pull/99#discussion_r152318510", 
+  "id": 152318510, 
+  "original_commit_id": "f9b8f4b25c5d1f08adb06e30e2ea7649120e95d3", 
+  "original_position": 60, 
+  "path": "oasis.md", 
+  "position": null, 
+  "pull_request_review_id": 78156685, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/operations/pulls/99", 
+  "updated_at": "2017-11-27T19:15:48Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/operations/pulls/comments/152318510", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

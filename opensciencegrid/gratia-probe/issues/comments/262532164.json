@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "I do not like adding code to work around a problem caused by archaic coding conventions. Let\u2019s pursue the idea from your last sentence \u2014\u00a0check with Tanya and see if there is any reason why we cannot just strip out all of the code related to the keywords, parsing the keywords, etc.", 
+  "created_at": "2016-11-23T14:46:36Z", 
+  "html_url": "https://github.com/opensciencegrid/gratia-probe/pull/8#issuecomment-262532164", 
+  "id": 262532164, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gratia-probe/issues/8", 
+  "updated_at": "2016-11-23T14:46:36Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gratia-probe/issues/comments/262532164", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

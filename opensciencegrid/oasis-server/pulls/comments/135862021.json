@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/oasis-server/pull/74#discussion_r135862021"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/74"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/comments/135862021"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Why not allow use of the site proxies for the metadata?  I guess one reason might be that some proxies restrict the destination to known servers.", 
+  "commit_id": "c1e966eab51758b03b096d30d1ccef20b69341a3", 
+  "created_at": "2017-08-29T17:42:34Z", 
+  "diff_hunk": "@@ -1,3 +1,3 @@\n-CVMFS_EXTERNAL_URL=\"https://srm.unl.edu:1094/\"\n-CVMFS_SERVER_URL=\"https://hcc-cvmfs-repo.unl.edu/cvmfs/@fqrn@\"", 
+  "html_url": "https://github.com/opensciencegrid/oasis-server/pull/74#discussion_r135862021", 
+  "id": 135862021, 
+  "in_reply_to_id": 135692927, 
+  "original_commit_id": "0d760a917bcc781a9c9d021637513ab1a5133ce3", 
+  "original_position": 2, 
+  "path": "goc/config-osg/etc/cvmfs/config.d/cms.osgstorage.org.conf", 
+  "position": 2, 
+  "pull_request_review_id": 59323750, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/74", 
+  "updated_at": "2017-08-29T20:44:42Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/comments/135862021", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

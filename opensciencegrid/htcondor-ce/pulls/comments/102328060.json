@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/133#discussion_r102328060"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/133"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/102328060"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "The check for `Subcluster` in the entry seems superfluous with the use of `get()`; the empty string default will never get used. The whole thing seems like it could be simplified to the following:\r\n\r\n```\r\nqueue = entry.get('Transform', {}).get('set_remote_queue', 'default')\r\nqueues[queue] = {'ce': ce,\r\n                'max_wallclocktime': int(entry.get('MaxWallTime', 1440)),\r\n                'entry': entry.get('Name', ''),\r\n                'name': queue,\r\n                'status': 'Production',\r\n                'memory': int(entry.get('Memory')),\r\n                'cpus': int(entry.get('CPUs', 1)),\r\n                'votag': entry.get('VOTag', ''),\r\n                'subclusters': entry.get('Subclusters', '')\r\n}\r\n```\r\n", 
+  "commit_id": "7347723dad6a85bc5e65ba246d62aef875a6ffcd", 
+  "created_at": "2017-02-21T21:54:52Z", 
+  "diff_hunk": "@@ -123,7 +123,14 @@ def generate_queue_ad(resource_catalog, ce):\n         name = entry.get('Name', '')\n         queue = entry.get('Transform', {}).get('set_remote_queue', 'default')\n         walltime = int(entry.get('MaxWallTime', 1440))\n-        ad = {'ce': ce, 'max_wallclocktime': walltime, 'entry': name, 'name': queue, 'status': 'Production'}\n+        memory = int(entry.get('Memory', 2048))\n+        cpus = int(entry.get('CPUs', 1))\n+        votag = entry.get('VOTag', '')\n+        if 'Subclusters' in entry:\n+            subclusters = entry.get('Subclusters', '')\n+            ad = {'ce': ce, 'max_wallclocktime': walltime, 'entry': name, 'name': queue, 'status': 'Production', 'memory': memory, 'cpus': cpus, 'votag': votag, 'subclusters': subclusters}\n+        else:\n+            ad = {'ce': ce, 'max_wallclocktime': walltime, 'entry': name, 'name': queue, 'status': 'Production', 'memory': memory, 'cpus': cpus, 'votag': votag}", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/133#discussion_r102328060", 
+  "id": 102328060, 
+  "original_commit_id": "d1e8f4ceebad7e6a63c3082dc980d8bdb8944926", 
+  "original_position": 12, 
+  "path": "src/htcondorce/web_utils.py", 
+  "position": null, 
+  "pull_request_review_id": 23081538, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/133", 
+  "updated_at": "2017-02-22T15:30:23Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/102328060", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

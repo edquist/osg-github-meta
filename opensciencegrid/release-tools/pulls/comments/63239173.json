@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/release-tools/pull/1#discussion_r63239173"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/release-tools/pulls/1"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/release-tools/pulls/comments/63239173"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Thanks for catching this @edquist. I think this was due to a bad rebase when I changed remotes to point to github. I've removed the offending commit.\n", 
+  "commit_id": "48f3851461797e3a8e0388fbbe209cb9042a50ca", 
+  "created_at": "2016-05-13T19:33:29Z", 
+  "diff_hunk": "@@ -34,9 +34,8 @@ FILTER=pre_wrap\n SERIES=\n while [[ $1 = -* ]]; do\n case $1 in\n-  --bare        ) FILTER=cat;      shift;;\n-  -u|--upcoming ) SERIES=upcoming; shift;;\n-             -* ) echo \"Unsupported option: $1\" >&2; usage ;;", 
+  "html_url": "https://github.com/opensciencegrid/release-tools/pull/1#discussion_r63239173", 
+  "id": 63239173, 
+  "original_commit_id": "17a127455ca1fa6eba2853e2368bfd8959e92c41", 
+  "original_position": 15, 
+  "path": "list-package-updates", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/release-tools/pulls/1", 
+  "updated_at": "2016-05-13T19:33:29Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/release-tools/pulls/comments/63239173", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

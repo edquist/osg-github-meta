@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "The complaint from dep-analyze is at compile time.  I suspect that one of our dependency JARs has code which uses it - but in a package not actually used - which the static analyzer is picking up.\n\nI guess I can put some exceptions in there to suppress the warnings - but it does make me a bit nervous since I don't know how they are used in the dependency packages.\n\nI also only test through a package (GUMS) that builds on top of privilege-xacml.  Unfortunately, the original/prior developer's only tests require access to their long-deleted home directory.  Part of the fun...\n", 
+  "created_at": "2016-02-12T16:51:28Z", 
+  "html_url": "https://github.com/opensciencegrid/privilege-xacml/issues/11#issuecomment-183408461", 
+  "id": 183408461, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/privilege-xacml/issues/11", 
+  "updated_at": "2016-02-12T16:51:28Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/privilege-xacml/issues/comments/183408461", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

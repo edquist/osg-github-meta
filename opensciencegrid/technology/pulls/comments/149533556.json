@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/360#discussion_r149533556"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/360"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/149533556"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Could you expand on this? Having missed the meeting I'm not sure what to expect. Is it the same stuff mentioned above in your blog post?", 
+  "commit_id": "43f97f3055e0c30cc73ce31a69164952a02b7365", 
+  "created_at": "2017-11-07T23:14:23Z", 
+  "diff_hunk": "@@ -92,14 +92,16 @@ XRootd 4.7.1 has a bug that affects StashCache servers, but is not user-facing\n \n ### Last Week\n \n--   GRACC changes; some services moving to the cloud\n+-   GRACC changes\n     - Changes to dashboard based on comments from e.g. LIGO and Minerva\n+    - Overview of changes https://djw8605.github.io/2017/11/06/cleaning-up-gracc/\n -   StashCache changes\n \n \n ### This Week\n \n-\n+-   More GRACC changes", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/360#discussion_r149533556", 
+  "id": 149533556, 
+  "original_commit_id": "43f97f3055e0c30cc73ce31a69164952a02b7365", 
+  "original_position": 14, 
+  "path": "docs/meetings/2017/TechArea20171106.md", 
+  "position": 14, 
+  "pull_request_review_id": 74943169, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/360", 
+  "updated_at": "2017-11-07T23:14:36Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/149533556", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

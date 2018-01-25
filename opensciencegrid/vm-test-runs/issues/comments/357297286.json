@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Do the osg-gridftp-hdfs and xrootd-hdfs not conflict?", 
+  "created_at": "2018-01-12T17:09:01Z", 
+  "html_url": "https://github.com/opensciencegrid/vm-test-runs/pull/51#issuecomment-357297286", 
+  "id": 357297286, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/51", 
+  "updated_at": "2018-01-12T17:09:01Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/comments/357297286", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

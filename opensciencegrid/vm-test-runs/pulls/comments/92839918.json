@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/vm-test-runs/pull/22#discussion_r92839918"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/22"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/comments/92839918"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Yea, I figured since I bothered to write `PackageSet.__ne__` that I should ensure that it actually does the opposite of `PackageSet.__eq__`", 
+  "commit_id": "3dd8bb1d44bb3d07dbc8eba17202a714fd6d4281", 
+  "created_at": "2016-12-16T16:21:27Z", 
+  "diff_hunk": "@@ -0,0 +1,192 @@\n+#!/usr/bin/env python\n+# python -m unittest -v test_vmu[.TestClass][.test_function]\n+\n+#pylint: disable=C0301\n+#pylint: disable=R0904\n+\n+import copy\n+import os\n+import sys\n+import unittest\n+\n+PATHNAME = os.path.realpath('../')\n+sys.path.insert(0, PATHNAME)\n+\n+import vmu\n+\n+def results_msg(expected, actual, msg):\n+    divider = '='*70 + '\\n'\n+    return '%s\\n' % msg + divider + \\\n+        'EXPECTED:\\n%s\\n' % str(expected) + divider + \\\n+        'ACTUAL:\\n%s\\n' % str(actual)\n+\n+class TestVmu(unittest.TestCase):\n+\n+    def assertEqualWithResults(self, expected, actual, msg=None):\n+        \"\"\"Assert equality with pre-built failure message\"\"\"\n+        self.assertEqual(expected, actual, results_msg(expected, actual, msg))\n+\n+    def assertNotEqualWithResults(self, expected, actual, msg=None):\n+        \"\"\"Assert inequality with pre-built failure message\"\"\"\n+        self.assertNotEqual(expected, actual, results_msg(expected, actual, msg))\n+\n+class TestPackageSet(TestVmu):\n+\n+    def test_missing_label(self):\n+        self.assertRaises(vmu.ParamError, vmu.PackageSet, '', [1, 2, 3])\n+\n+    def test_empty_packages(self):\n+        self.assertRaises(vmu.ParamError, vmu.PackageSet, 'foo', [])\n+\n+    def test_equality(self):\n+        self.assertEqualWithResults(vmu.PackageSet('foo', [1, 2, 3], True, False),\n+                                    vmu.PackageSet('foo', [1, 2, 3], True, False),\n+                                    'PackageSet label or packages equality broken')\n+        self.assertEqualWithResults(vmu.PackageSet('foo', [1, 2, 3], True, False),\n+                                    vmu.PackageSet('foo', [1, 2, 3], False, False),\n+                                    'PackageSet SELinux equality broken')\n+        # Test mismatched tags\n+        self.assertRaises(vmu.ParamError, vmu.PackageSet.__eq__,\n+                          vmu.PackageSet('foo', [1, 2, 3], True, False),\n+                          vmu.PackageSet('bar', [1, 2, 3], False, False))\n+\n+    def test_inequality(self):\n+        self.assertNotEqualWithResults(vmu.PackageSet('foo', [1, 2, 3]),\n+                                       vmu.PackageSet('bar', [4, 5, 6]),\n+                                       'PackageSet packages inequality broken')\n+        self.assertNotEqualWithResults(vmu.PackageSet('foo', [1, 2, 3]),\n+                                       vmu.PackageSet('foo', [4, 5, 6]),\n+                                       'PackageSet packages inequality broken')\n+        self.assertNotEqualWithResults(vmu.PackageSet('foo', [1, 2, 3], java=True),\n+                                       vmu.PackageSet('foo', [1, 2, 3], java=False),\n+                                       'PackageSet java inequality broken')\n+        # Test mismatched tags\n+        self.assertRaises(vmu.ParamError, vmu.PackageSet.__eq__,", 
+  "html_url": "https://github.com/opensciencegrid/vm-test-runs/pull/22#discussion_r92839918", 
+  "id": 92839918, 
+  "in_reply_to_id": 92835761, 
+  "original_commit_id": "40302f280da27ec30c808fcb4d8917d4087c1a2a", 
+  "original_position": 64, 
+  "path": "tests/test_vmu.py", 
+  "position": null, 
+  "pull_request_review_id": 13363397, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/22", 
+  "updated_at": "2016-12-20T20:16:30Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/comments/92839918", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

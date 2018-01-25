@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Ah, It didn\u2019t look like I had merge privileges, but it seems I do.\u00a0 I, too, was confused by that.\u00a0 But I\u2019ve merged it now.\n\n \n\nKyle Gross\n\nOpen Science Grid Operations\n\nOperations Support Manager\n\nOSG Outreach Coordinator\n\nIndiana University Research Technologies\n\n \n\n \n\nFrom: DrDaveD <notifications@github.com>\nReply-To: opensciencegrid/operations <reply@reply.github.com>\nDate: Thursday, January 18, 2018 at 12:30 PM\nTo: opensciencegrid/operations <operations@noreply.github.com>\nCc: \"Gross, Kyle Anthony\" <kagross@iu.edu>, Mention <mention@noreply.github.com>\nSubject: Re: [opensciencegrid/operations] Clarify some wording in external oasis repo instructions (#123)\n\n \n\nOk good. Do you have merge privileges or is someone else supposed to do that?\n\n\u2014\nYou are receiving this because you were mentioned.\nReply to this email directly, view it on GitHub, or mute the thread.\n\n", 
+  "created_at": "2018-01-18T18:32:12Z", 
+  "html_url": "https://github.com/opensciencegrid/operations/pull/123#issuecomment-358739035", 
+  "id": 358739035, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/operations/issues/123", 
+  "updated_at": "2018-01-18T18:32:12Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/operations/issues/comments/358739035", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/6717462?v=4", 
+    "events_url": "https://api.github.com/users/kagross/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/kagross/followers", 
+    "following_url": "https://api.github.com/users/kagross/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/kagross/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/kagross", 
+    "id": 6717462, 
+    "login": "kagross", 
+    "organizations_url": "https://api.github.com/users/kagross/orgs", 
+    "received_events_url": "https://api.github.com/users/kagross/received_events", 
+    "repos_url": "https://api.github.com/users/kagross/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/kagross/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/kagross/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/kagross"
+  }
+}

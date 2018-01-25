@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/302#discussion_r138954935"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/302"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/138954935"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Also, the Both-Delta, total cell looks like it should read `-5`?", 
+  "commit_id": "c1a9e0097541dff866aa3181af2b7e2bc636bb91", 
+  "created_at": "2017-09-14T17:10:33Z", 
+  "diff_hunk": "@@ -65,36 +65,30 @@ Some issues with Florida -- Derek to investigate.\n \n ## OSG Release Team\n \n--   Suchandra Thapa is handling the [September 12th](https://jira.opensciencegrid.org/issues/?filter=15254&jql=project%25252520%2525253D%25252520SOFTWARE%25252520AND%25252520labels%25252520in%25252520(3.3.28%2525252C%252525203.4.3)%25252520ORDER%25252520BY%25252520status%25252520ASC%2525252C%25252520priority%25252520DESC%2525252C%25252520assignee%25252520ASC) release\n--   Package Freeze today!\n+-   Tim Theisen is handling the [September 12th](https://jira.opensciencegrid.org/issues/?filter=15254&jql=project%25252520%2525253D%25252520SOFTWARE%25252520AND%25252520labels%25252520in%25252520(3.3.28%2525252C%252525203.4.3)%25252520ORDER%25252520BY%25252520status%25252520ASC%2525252C%25252520priority%25252520DESC%2525252C%25252520assignee%25252520ASC) release\n+-   Release tomorrow???\n -   TimT may call upon software team members for testing assistance\n \n | 3.3.28 | &Delta; | Both | &Delta; | 3.4.3 | &Delta; | Total | &Delta; | Status            |\n | ------ | ------- | ---- | ------- | ----- | ------- | ----- | ------- | ----------------- |\n-| 1      | -1      | 2    | -7      | 0     | +0      | 3     | -8      | Open              |\n-| 1      | -2      | 6    | -2      | 2     | +1      | 9     | -3      | In Progress       |\n-| 7      | +2      | 10   | +4      | 4     | +1      | 21    | +7      | Ready for Testing |\n-| 0      | +0      | 1    | +1      | 0     | +0      | 1     | +1      | Ready for Release |\n-| 9      | -1      | 19   | -4      | 6     | +2      | 34    | -3      | Total             |\n+| 1      | +0      | 0    | -2      | 0     | +0      | 1     | -2      | Open              |\n+| 0      | -1      | 0    | -6      | 0     | -2      | 0     | -9      | In Progress       |\n+| 3      | -4      | 3    | -7      | 0     | -2      | 6     | -15     | Ready for Testing |\n+| 5      | +5      | 11   | +10     | 4     | +4      | 20    | +19     | Ready for Release |\n+| 9      | +0      | 14   | -r5     | 4     | -2      | 27    | -7      | Total             |", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/302#discussion_r138954935", 
+  "id": 138954935, 
+  "original_commit_id": "fa0856409536f84bc486fb352cd572fce6ee276c", 
+  "original_position": 21, 
+  "path": "docs/meetings/2017/TechArea20170905.md", 
+  "position": null, 
+  "pull_request_review_id": 62821414, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/302", 
+  "updated_at": "2017-09-16T00:13:51Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/138954935", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

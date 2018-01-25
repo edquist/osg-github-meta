@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "@rjones30 - there's a conflict that needs to be resolved before I can merge.\r\n\r\n@djw8605 - I've been not keeping on top of the debugging you and Richard are doing.  Is this one safe to merge once the conflict is resolved?", 
+  "created_at": "2017-08-21T14:19:06Z", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-singularity-sync/pull/28#issuecomment-323754328", 
+  "id": 323754328, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/cvmfs-singularity-sync/issues/28", 
+  "updated_at": "2017-08-21T14:19:06Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-singularity-sync/issues/comments/323754328", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

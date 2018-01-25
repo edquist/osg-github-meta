@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/231#discussion_r147488117"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/231"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/147488117"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Can you pull this out as a separate admonition?  Something to be visually catching?", 
+  "commit_id": "4611dd5b6a3d5ae9bd4fa248d59f2f5d93e5dda3", 
+  "created_at": "2017-10-27T18:44:05Z", 
+  "diff_hunk": "@@ -19,14 +19,18 @@ keeps that privileged code to a\n vulnerability low.  Beginning with the kernel released with RHEL 7.4,\n there is a new\n [technology preview feature](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html-single/7.4_Release_Notes/index.html#technology_previews_kernel)\n-to allow unprivileged bind mounts in user name spaces, which allows\n+to allow unprivileged bind mounts in user namespaces, which allows\n singularity to run as an unprivileged user.  The OSG has installed\n singularity in [cvmfs](install-cvmfs), so if you have a RHEL 7.4 kernel\n or later you\n can avoid installing singularity at all and reduce vulnerability even\n further.  The RHEL 7.4 kernel (version 3.10.0-693) is available as a\n security update for all RHEL 7 based versions, even on systems that\n-have not updated to RHEL 7.4.\n+have not updated to RHEL 7.4.  Enabling unprivileged user namespaces", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/231#discussion_r147488117", 
+  "id": 147488117, 
+  "original_commit_id": "93f9dd565e091089a97fc0eb18886c0f28c79acd", 
+  "original_position": 13, 
+  "path": "docs/worker-node/install-singularity.md", 
+  "position": null, 
+  "pull_request_review_id": 72596632, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/231", 
+  "updated_at": "2017-10-27T21:14:41Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/147488117", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

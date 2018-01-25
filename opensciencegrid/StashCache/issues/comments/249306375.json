@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Nah, you don't have to delete the fork.  Just on your local machine, do this:\n1. Clone the OSG StashCache repo in a different directory, so it's clean.\n2. Make a new branch, say, add_stashcp2\n3. Copy in the new files that you made.\n4. Add your repo as a new remote:\n   \n   ```\n   $ git remote add tony https://github.com/tony044/StashCache-Tony.git\n   ```\n5. Push to your repo, `tony`.\n6. Create a new pull request.\n", 
+  "created_at": "2016-09-23T21:25:56Z", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/pull/16#issuecomment-249306375", 
+  "id": 249306375, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/16", 
+  "updated_at": "2016-09-23T21:25:56Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/comments/249306375", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/327#discussion_r143559120"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/327"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/143559120"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "The repo corresponding to the removed release series, right? If so, I think this should be clarified", 
+  "commit_id": "7b0fcc419d9d6300ea1fb1b40cbc87dc7cac51e4", 
+  "created_at": "2017-10-09T19:39:18Z", 
+  "diff_hunk": "@@ -0,0 +1,90 @@\n+Old Release Series Removal Plan\n+===============================\n+\n+In order to reduce clutter and disk usage on our repositories and build system,\n+we should remove older OSG Software release series.  This will result in\n+packages from those series becoming unavailable both to users, and to developers.\n+\n+\n+Policy\n+------\n+\n+We should delete a release series only when needing to download a package from\n+that series is improbable.  I propose the following rule:\n+\n+Delete a release series when the _following_ series is completely out of\n+support.  For example, OSG 3.1 can be deleted when OSG 3.2 is out of support,\n+and OSG 3.2 can be deleted when OSG 3.3 is out of support.\n+\n+\n+Tasks\n+-----\n+\n+Deleting a release series requires work from both Operations and Software &\n+Release.  The first step is to create a JIRA ticket in the SOFTWARE project to\n+track the work.\n+\n+Operations tasks should be completed before Software & Release tasks.\n+\n+\n+### Operations\n+\n+These tasks should be completed in order.\n+\n+1.  Two weeks in advance, notify sites (including mirror sites) that the\n+    release series is going away.\n+\n+2.  Remove the series from the mash configs on the repo.grid.iu.edu machines.\n+\n+3.  Remove the appropriate mirrorlist directories from `/usr/local/mirror/osg`.\n+\n+4.  Remove the appropriate repo directories from `/usr/local/repo/osg`.\n+\n+5.  Wait for mash to run and verify that the repos are no longer getting\n+    updated:\n+\n+    -  Look at the mash logs in `/var/log/repo`.\n+    -  Verify that the repo directory under `/usr/local/repo/osg` did not get", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/327#discussion_r143559120", 
+  "id": 143559120, 
+  "original_commit_id": "a512c20a54d51cfaf696179e61d9fa634bd1eae2", 
+  "original_position": 47, 
+  "path": "docs/release/old-release-removal.md", 
+  "position": null, 
+  "pull_request_review_id": 68086444, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/327", 
+  "updated_at": "2017-10-09T20:01:24Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/143559120", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

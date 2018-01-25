@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "I'd like you to strongly consider making use of the features in the [package that I developed](https://git.ligo.org/lvcomputing/cvmfs-config-osg/tree/master/debian) from yours. I prefer to have them merged back up into your management rather than keep them myself because then we automatically get the actual underlying OSG configuration changes.\r\n\r\n* Make use of /etc/auto.master.d\r\n* Reload autofs map on behalf of user after installation / removal\r\n\r\nThe combination of these obviates the need for the user to execute any extra-steps post-installation or removal. I'm happy to turn this into a formal PR.\r\n\r\nFWIW: the package available on OBS had a higher version # than the one in the LIGO repos and it took me a while to figure out what was going wrong with my test CVMFS installation. Let's work together on this!", 
+  "created_at": "2017-11-09T14:10:31Z", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/3#issuecomment-343165368", 
+  "id": 343165368, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/issues/3", 
+  "updated_at": "2017-11-09T14:18:09Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/issues/comments/343165368", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/7475598?v=4", 
+    "events_url": "https://api.github.com/users/tpdownes/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/tpdownes/followers", 
+    "following_url": "https://api.github.com/users/tpdownes/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/tpdownes/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/tpdownes", 
+    "id": 7475598, 
+    "login": "tpdownes", 
+    "organizations_url": "https://api.github.com/users/tpdownes/orgs", 
+    "received_events_url": "https://api.github.com/users/tpdownes/received_events", 
+    "repos_url": "https://api.github.com/users/tpdownes/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/tpdownes/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/tpdownes/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/tpdownes"
+  }
+}

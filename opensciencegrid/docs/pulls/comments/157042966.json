@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/267#discussion_r157042966"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/267"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/157042966"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Let's put LCMAPS VOMS first and make sure we fixup the capitalization", 
+  "commit_id": "8c2f82ecda5f72680d83dcb4e3f68bf6b4499586", 
+  "created_at": "2017-12-14T19:44:01Z", 
+  "diff_hunk": "@@ -85,19 +89,17 @@ Aside from the [basic configuration](install-htcondor-ce#configuring-htcondor-ce\n How Security Works\n ------------------\n \n-In the OSG, security depends on a PKI infrastructure involving Certificate Authorities (CAs) where CAs sign and issue certifcates to users and hosts. When these users and hosts wish to communicate with each other, the identities of each party is confirmed by cross-checking their certificates with the signing CA and establishing trust.\n-\n-Due to the OSG's distributed nature, a user's job may end up at any number of sites, potentially needing to re-authenticate at multiple points. Instead of sending the user's certificate with the job for this re-authentication, trust can be delegated to a proxy that is generated from the user certificate, which is then attached to the job and expires after some set time for added security.\n+In the OSG, security depends on a PKI infrastructure involving Certificate Authorities (CAs) where CAs sign and issue certificates. When these clients and hosts wish to communicate with each other, the identities of each party is confirmed by cross-checking their certificates with the signing CA and establishing trust.\n \n-In its default configuration, HTCondor-CE uses GSI-based authentication and authorization to verify the certificate chain, which will work with existing GUMS servers or grid mapfiles. Additionally, it can be reconfigured to provide alternate authentication mechanisms such as Kerberos, SSL, shared secret, or even IP-based authentication. More information about authorization methods can be found [here](http://research.cs.wisc.edu/htcondor/manual/v8.6/3_8Security.html#SECTION00483000000000000000).\n+In its default configuration, HTCondor-CE uses GSI-based authentication and authorization to verify the certificate chain, which will work with existing GUMS servers, grid mapfiles, or lcmaps voms authentication. Additionally, it can be reconfigured to provide alternate authentication mechanisms such as Kerberos, SSL, shared secret, or even IP-based authentication. More information about authorization methods can be found [here](http://research.cs.wisc.edu/htcondor/manual/v8.6/3_8Security.html#SECTION00483000000000000000).", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/267#discussion_r157042966", 
+  "id": 157042966, 
+  "original_commit_id": "aa9a28847544144d8ff922ed6c666319afdbb96f", 
+  "original_position": 77, 
+  "path": "docs/compute-element/htcondor-ce-overview.md", 
+  "position": null, 
+  "pull_request_review_id": 83622746, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/267", 
+  "updated_at": "2017-12-14T22:02:36Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/157042966", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

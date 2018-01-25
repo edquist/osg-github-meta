@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-pki-tools/pull/26#discussion_r153614362"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/pulls/26"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/pulls/comments/153614362"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Update docstring above to specify `hostsec` instead of `host`.", 
+  "commit_id": "5048df9a52b6bdc3157e26adb0b98db97daa16cb", 
+  "created_at": "2017-11-28T20:30:34Z", 
+  "diff_hunk": "@@ -214,7 +216,7 @@ def issue(self, **arguments):\n                    'User-Agent': USER_AGENT}\n \n         newrequrl = arguments['issurl']\n-        conn = httplib.HTTPConnection(arguments['host'])\n+        conn = httplib.HTTPSConnection(arguments['hostsec'])", 
+  "html_url": "https://github.com/opensciencegrid/osg-pki-tools/pull/26#discussion_r153614362", 
+  "id": 153614362, 
+  "original_commit_id": "a968eb42381eb10a18e4f5978eaf66aaaf4ff272", 
+  "original_position": 109, 
+  "path": "osgpkitools/ConnectAPI.py", 
+  "position": 126, 
+  "pull_request_review_id": 79642330, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/pulls/26", 
+  "updated_at": "2017-11-28T21:31:36Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/pulls/comments/153614362", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

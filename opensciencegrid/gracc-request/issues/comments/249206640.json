@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "Good - I'm going to make one more (purely stylistic) change, commit that within the hour, and hopefully it should also pass tests.  Then, is there anything else we need before merging this in?\n", 
+  "created_at": "2016-09-23T14:23:31Z", 
+  "html_url": "https://github.com/opensciencegrid/gracc-request/pull/32#issuecomment-249206640", 
+  "id": 249206640, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gracc-request/issues/32", 
+  "updated_at": "2016-09-23T14:23:31Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-request/issues/comments/249206640", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/19695727?v=4", 
+    "events_url": "https://api.github.com/users/shreyb/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/shreyb/followers", 
+    "following_url": "https://api.github.com/users/shreyb/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/shreyb/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/shreyb", 
+    "id": 19695727, 
+    "login": "shreyb", 
+    "organizations_url": "https://api.github.com/users/shreyb/orgs", 
+    "received_events_url": "https://api.github.com/users/shreyb/received_events", 
+    "repos_url": "https://api.github.com/users/shreyb/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/shreyb/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/shreyb/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/shreyb"
+  }
+}

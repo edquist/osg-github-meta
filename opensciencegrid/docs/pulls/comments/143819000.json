@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/191#discussion_r143819000"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/191"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/143819000"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I assume the point of factoring this out is that we'll soon move this to a git sub-module?\r\n\r\nIf so, I think the environment variable name is per-repo: might want to separate this particular line out of the script?", 
+  "commit_id": "438928ddaa1934d66f0b5bae7eb3d17b7ee9455e", 
+  "created_at": "2017-10-10T18:47:25Z", 
+  "diff_hunk": "@@ -0,0 +1,13 @@\n+#!/bin/bash -xe\n+\n+openssl aes-256-cbc -K $encrypted_8bf0fadbb437_key -iv $encrypted_8bf0fadbb437_iv -in deploy-key.enc -out deploy-key -d", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/191#discussion_r143819000", 
+  "id": 143819000, 
+  "original_commit_id": "0698402214cd7a4744730cef0f41378d4337e4b7", 
+  "original_position": 3, 
+  "path": "travis/run_on_non_pull_requests.sh", 
+  "position": null, 
+  "pull_request_review_id": 68387429, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/191", 
+  "updated_at": "2017-10-10T19:24:12Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/143819000", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

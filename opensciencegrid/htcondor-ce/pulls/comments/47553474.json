@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/53#discussion_r47553474"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/53"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/47553474"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "It actually shows both.  The first GlobalJobId is the job id of the payload job, ie the job id on the remote submission host.  The jobid on the local CE's batch system (Slurm for example) is shown in the BatchID column.\n", 
+  "commit_id": "5ef56b87052fae13014663bb5c6241d488c187b3", 
+  "created_at": "2015-12-14T20:32:50Z", 
+  "diff_hunk": "@@ -0,0 +1,17 @@\n+\n+SELECT\n+  Machine AS \"Worker Node\" WIDTH -20\n+  State AS State WIDTH -9\n+  ifThenElse(State==\"Claimed\", split(GlobalJobId, \"#\")[1], \"\") AS \"Payload ID\" WIDTH -15\n+  ifThenElse(State==\"Claimed\", split(RemoteUser, \"@\")[0], \"\") AS User WIDTH -10\n+  ifThenElse(State==\"Claimed\", split(GlobalJobId, \"#\")[0], \"\") AS \"Scheduler\" WIDTH -31\n+  ifThenElse(EnteredCurrentActivity isnt undefined, EnteredCurrentActivity, time()) AS \"  Job Runtime\" PRINTAS ACTIVITY_TIME\n+  GLIDEIN_SiteWMS_JobId AS BatchID WIDTH -10", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/53#discussion_r47553474", 
+  "id": 47553474, 
+  "original_commit_id": "428fe579b4fb92b4f5a47188c24bbed9daac20c7", 
+  "original_position": 9, 
+  "path": "config/pilot-status.cpf", 
+  "position": 9, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/53", 
+  "updated_at": "2015-12-14T20:42:46Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/47553474", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

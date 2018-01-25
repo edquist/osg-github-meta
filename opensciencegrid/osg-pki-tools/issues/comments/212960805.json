@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "It is indeed hard to evaluate requests like these.\n\nOnce this one is swallowed - could we create a Travis-CI build/test to get some automatic basic assurance?\n", 
+  "created_at": "2016-04-21T15:00:53Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-pki-tools/pull/1#issuecomment-212960805", 
+  "id": 212960805, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/issues/1", 
+  "updated_at": "2016-04-21T15:00:53Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/issues/comments/212960805", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

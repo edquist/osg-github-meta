@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Tried this out on an SLF7 VM and got the expected results based on the presence of 50-osg-configured.conf and 50-osg-configure.conf", 
+  "created_at": "2017-07-20T20:33:02Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/158#issuecomment-316821657", 
+  "id": 316821657, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/158", 
+  "updated_at": "2017-07-20T20:33:02Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/316821657", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

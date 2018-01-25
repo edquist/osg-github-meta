@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/globus-gridftp-osg-extensions/pull/1#discussion_r103830749"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/globus-gridftp-osg-extensions/pulls/1"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/globus-gridftp-osg-extensions/pulls/comments/103830749"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Do we want to keep `gridftp-hdfs` in the sem name?", 
+  "commit_id": "a585205f0f4328f4814978d9288790add15d8671", 
+  "created_at": "2017-03-02T01:12:25Z", 
+  "diff_hunk": "@@ -149,9 +155,199 @@ osg_extensions_init(globus_gfs_operation_t op, globus_gfs_session_info_t * sessi\n \n #endif  // VOMS_FOUND\n \n+    int user_transfer_limit;\n+    int transfer_limit;\n+\n+    char username[256] = {};\n+    size_t strlength = strlen(username);\n+    strlength = strlength < 256 ? strlength : 255;\n+    strncpy(username, session->username, strlength);\n+\n+    get_connection_limits_params(username, &user_transfer_limit, &transfer_limit);\n+\n+    check_connection_limits(username, user_transfer_limit, transfer_limit);\n+\n     original_init_function(op, session);\n }\n \n+void\n+get_connection_limits_params(\n+        const char *username,\n+        int *user_transfer_limit_p,\n+        int *transfer_limit_p)\n+{\n+    GlobusGFSName(hdfs_start);\n+    globus_result_t rc;\n+\n+    int user_transfer_limit = -1;\n+    int transfer_limit = -1;\n+\n+    // Pull configuration from environment.\n+\n+    char * global_transfer_limit_char = getenv(\"GRIDFTP_TRANSFER_LIMIT\");\n+    char * default_user_limit_char = getenv(\"GRIDFTP_DEFAULT_USER_TRANSFER_LIMIT\");\n+\n+    char specific_limit_env_var[256];\n+\n+    snprintf(specific_limit_env_var, 255, \"GRIDFTP_%s_USER_TRANSFER_LIMIT\", username);\n+    specific_limit_env_var[255] = '\\0';\n+    int idx;\n+    for (idx=0; idx<256; idx++) {\n+        if (specific_limit_env_var[idx] == '\\0') {break;}\n+        specific_limit_env_var[idx] = toupper(specific_limit_env_var[idx]);\n+    }\n+    char * specific_user_limit_char = getenv(specific_limit_env_var);\n+\n+    if (!specific_user_limit_char) {\n+        specific_user_limit_char = default_user_limit_char;\n+    }\n+    if (specific_user_limit_char) {\n+        user_transfer_limit = atoi(specific_user_limit_char);\n+    }\n+    if (global_transfer_limit_char) {\n+        transfer_limit = atoi(global_transfer_limit_char);\n+    }\n+\n+    *user_transfer_limit_p = user_transfer_limit;\n+    *transfer_limit_p = transfer_limit;\n+}\n+\n+\n+/*************************************************************************\n+ * check_connection_limits\n+ * -----------------------\n+ * Make sure the number of concurrent connections to HDFS is below a certain\n+ * threshold.  If we are over-threshold, wait for a fixed amount of time (1 \n+ * minute) and fail the transfer.\n+ * Implementation baed on named POSIX semaphores.\n+ *************************************************************************/\n+globus_result_t\n+check_connection_limits(const char *username, int user_transfer_limit, int transfer_limit)\n+{\n+    GlobusGFSName(check_connection_limit);\n+    globus_result_t result = GLOBUS_SUCCESS;\n+\n+    // only used for Error macros\n+    char local_host[256] = {};\n+    if (gethostname(local_host, 255)) {\n+        strcpy(local_host, \"UNKNOWN\");\n+    }\n+\n+    int user_lock_count = 0;\n+    if (user_transfer_limit > 0) {\n+        char user_sem_name[256];\n+        snprintf(user_sem_name, 255, \"/dev/shm/gridftp-hdfs-%s-%d\", username, user_transfer_limit);", 
+  "html_url": "https://github.com/opensciencegrid/globus-gridftp-osg-extensions/pull/1#discussion_r103830749", 
+  "id": 103830749, 
+  "original_commit_id": "1ab50dbb9bed7f835955594fccf644a09301d93b", 
+  "original_position": 105, 
+  "path": "src/osg_extension_dsi.c", 
+  "position": null, 
+  "pull_request_review_id": 24632894, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/globus-gridftp-osg-extensions/pulls/1", 
+  "updated_at": "2017-07-26T19:12:44Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/globus-gridftp-osg-extensions/pulls/comments/103830749", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/33#discussion_r137629412"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/33"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/137629412"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "You don't need the `.md` suffix for links", 
+  "commit_id": "32dbecb6d80920ee5d5aa8432cfe8abeae1fc2e6", 
+  "created_at": "2017-09-07T19:06:15Z", 
+  "diff_hunk": "@@ -9,7 +9,9 @@ The HTCondor-CE software is a *job gateway* for an OSG Compute Element\n (CE). As such, HTCondor-CE is the entry point for jobs coming from the\n OSG \u2014 it handles authorization and delegation of jobs to your local\n batch system. In OSG today, most CEs accept *pilot jobs* from a factory,\n-which in turn are able to accept and run end-user jobs.\n+which in turn are able to accept and run end-user jobs.  See the\n+[HTCondor-CE Overview](htcondor-ce-overview.md) for a much more", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/33#discussion_r137629412", 
+  "id": 137629412, 
+  "original_commit_id": "14fcc98db48031ca58a221ebcfc1b3ab9e853d50", 
+  "original_position": 6, 
+  "path": "docs/compute-element/HTCondor_CE.md", 
+  "position": null, 
+  "pull_request_review_id": 61322064, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/33", 
+  "updated_at": "2017-09-07T20:45:54Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/137629412", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

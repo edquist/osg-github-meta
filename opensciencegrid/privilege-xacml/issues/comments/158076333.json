@@ -1,0 +1,29 @@
+{
+  "author_association": "NONE", 
+  "body": ":+1: \n", 
+  "created_at": "2015-11-19T14:43:02Z", 
+  "html_url": "https://github.com/opensciencegrid/privilege-xacml/pull/9#issuecomment-158076333", 
+  "id": 158076333, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/privilege-xacml/issues/9", 
+  "updated_at": "2015-11-19T14:43:02Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/privilege-xacml/issues/comments/158076333", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/575965?v=4", 
+    "events_url": "https://api.github.com/users/kofemann/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/kofemann/followers", 
+    "following_url": "https://api.github.com/users/kofemann/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/kofemann/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/kofemann", 
+    "id": 575965, 
+    "login": "kofemann", 
+    "organizations_url": "https://api.github.com/users/kofemann/orgs", 
+    "received_events_url": "https://api.github.com/users/kofemann/received_events", 
+    "repos_url": "https://api.github.com/users/kofemann/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/kofemann/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/kofemann/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/kofemann"
+  }
+}

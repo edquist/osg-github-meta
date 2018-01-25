@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/27#discussion_r29290882"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/27"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/29290882"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Looks like it first made it into 8.1.2 so that should work!\n", 
+  "commit_id": "d1ccc64586d0e816a4cb11bf610cd8b80d8066a4", 
+  "created_at": "2015-04-28T21:30:44Z", 
+  "diff_hunk": "@@ -50,13 +50,11 @@ start() {\n     echo -n $\"Starting Condor-CE daemons: \"\n \n     # Check validity of job router knobs\n-    for ATTR in 'JOB_ROUTER_DEFAULTS' 'JOB_ROUTER_ENTRIES'; do\n-        python -c \"import htcondor; import classad; classad.ExprTree(htcondor.param[\\\"$ATTR\\\"])\" &> /dev/null\n-        if [ $? -ne 0 ]; then\n-            echo \"Could not read $ATTR in the HTCondor CE configuration. Please verify syntax correctness.\"\n-            exit 6\n-        fi\n-    done\n+    python -c \"import htcondor; import classad; classad.ExprTree(htcondor.param['JOB_ROUTER_DEFAULTS'])\" &> /dev/null", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/27#discussion_r29290882", 
+  "id": 29290882, 
+  "original_commit_id": "d1ccc64586d0e816a4cb11bf610cd8b80d8066a4", 
+  "original_position": 11, 
+  "path": "src/condor-ce", 
+  "position": 11, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/27", 
+  "updated_at": "2015-04-28T21:30:44Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/29290882", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

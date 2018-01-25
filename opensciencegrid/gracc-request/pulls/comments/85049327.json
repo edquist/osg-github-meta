@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gracc-request/pull/37#discussion_r85049327"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/37"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/comments/85049327"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "It makes an SSL connection without verifying certs, which causes urllib3 (which the elasticsearch library is using by default) to spew out a bunch of warnings. which can drown out the actually useful debugging messages.\n", 
+  "commit_id": "fefe5e94452bb8a943832f2eaef4d07a5145613b", 
+  "created_at": "2016-10-26T04:55:49Z", 
+  "diff_hunk": "@@ -0,0 +1,108 @@\n+import logging\n+from elasticsearch import Elasticsearch\n+from elasticsearch.helpers import scan\n+from elasticsearch.exceptions import ElasticsearchException\n+\n+logger = logging.getLogger(__name__)\n+\n+class Corrections:\n+    \"\"\"\n+    Generic class for correcting fields based on lookup to Elasticseearch table.\n+\n+    The corrections are fetched and cached when the class is instantiated. Call\n+    fetch_corrections() to refresh the cache.\n+    \"\"\"\n+    def __init__(self, uri, index, doc_type, match_fields, source_field, dest_field):\n+        \"\"\"\n+        :param str uri: base URI to Elasticsearch REST API\n+        :param str index: Elasticsearch index to fetch corrections from.\n+        :param str doc_type: Elasticsearch document type to fetch corrections from.\n+        :param list match_fields: list of fields that are used to look up the corrections.\n+            The field names must be the same in the document and in the lookup index.\n+        :param str source_field: Field name in the lookup index containing the corrected name.\n+        :param str dest_field: Field name in the document .\n+        \"\"\"\n+        self.es_uri = uri\n+        self.es_index = index\n+        self.es_doc_type = doc_type\n+        self.match_fields = match_fields\n+        self.source_field = source_field\n+        self.dest_field = dest_field\n+\n+        self.fetch_corrections()\n+\n+    def fetch_corrections(self):\n+        \"\"\"\n+        Fetch corrections from Elasticsearch and cache them. Successive calls will overwrite the cache.\n+\n+        Corrections are stored in flat dict using a lookup key generated from the match fields by _key().\n+        \"\"\"\n+        self.corrections = {}\n+        try:\n+            client = Elasticsearch(self.es_uri, timeout=300)\n+            s = scan(client=client, index=self.es_index, doc_type=self.es_doc_type, scroll='10m')\n+            for doc in s:\n+                self._add_correction(doc)\n+        except ElasticsearchException as e:\n+            logger.error('unable to fetch corrections: {}'.format(e))\n+        else:\n+            logger.info('loaded {} corrections from {}/{}/{}'.\n+                        format(len(self.corrections),\n+                               self.es_uri,\n+                               self.es_index,\n+                               self.es_doc_type))\n+\n+    def _key(self, doc):\n+        \"\"\"\n+        Generate lookup key using the fields in the doc.\n+\n+        :param dict doc: record document containing fields as keys\n+        \"\"\"\n+        return '--'.join([str(doc.get(f,'__')) for f in self.match_fields])\n+\n+    def _add_correction(self, doc):\n+        \"\"\"\n+        Add correction to cache.\n+\n+        :param dict doc: Elasticsearch document\n+        \"\"\"\n+        source = doc.get('_source',{})\n+        ## make sure all the fields are there\n+        for field in self.match_fields:\n+            if field not in source:\n+                logger.warning('match field {} missing for correction document (id={})'.format(field,doc['_id']))\n+                return\n+        if self.source_field not in source:\n+                logger.warning('source field {} missing for correction document (id={})'.format(self.source_field,doc['_id']))\n+        ## add to cache using generated key\n+        self.corrections[self._key(source)] = source[self.source_field]\n+\n+    def correct(self, rec):\n+        \"\"\"\n+        Corrects fields in the raw JobUsageRecord. The record is mutated by correcting\n+        the appropriate field, and adding a new field named Raw<corrected field name>\n+        with the original value.\n+\n+        :param dict rec: record document\n+        :return dict: record document\n+        \"\"\"\n+        rec['Raw'+self.dest_field] = rec.get(self.dest_field,'')\n+        for field in self.match_fields:\n+            if field not in rec:\n+                return rec\n+        key = self._key(rec)\n+        if key in self.corrections:\n+            rec[self.dest_field] = self.corrections[key]\n+        return rec\n+\n+\n+if __name__ == '__main__':\n+    import urllib3\n+    urllib3.disable_warnings()", 
+  "html_url": "https://github.com/opensciencegrid/gracc-request/pull/37#discussion_r85049327", 
+  "id": 85049327, 
+  "in_reply_to_id": 84985404, 
+  "original_commit_id": "95bc41292715673305d168bd5c51162ecca252c6", 
+  "original_position": 101, 
+  "path": "src/graccreq/correct/correct.py", 
+  "position": 101, 
+  "pull_request_review_id": 5787411, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/37", 
+  "updated_at": "2016-11-09T15:56:18Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/comments/85049327", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/1627510?v=4", 
+    "events_url": "https://api.github.com/users/retzkek/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/retzkek/followers", 
+    "following_url": "https://api.github.com/users/retzkek/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/retzkek/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/retzkek", 
+    "id": 1627510, 
+    "login": "retzkek", 
+    "organizations_url": "https://api.github.com/users/retzkek/orgs", 
+    "received_events_url": "https://api.github.com/users/retzkek/received_events", 
+    "repos_url": "https://api.github.com/users/retzkek/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/retzkek/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/retzkek/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/retzkek"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "> Yes, once registered, the images on CVMFS update automatically shortly after you push new images to Docker Hub.\r\n\r\nIs that via cron job to check if there's changes, or are you somehow setting up webhooks?\r\n", 
+  "created_at": "2017-09-28T18:42:44Z", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-singularity-sync/pull/36#issuecomment-332927588", 
+  "id": 332927588, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/cvmfs-singularity-sync/issues/36", 
+  "updated_at": "2017-09-28T18:42:44Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-singularity-sync/issues/comments/332927588", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/761483?v=4", 
+    "events_url": "https://api.github.com/users/kratsg/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/kratsg/followers", 
+    "following_url": "https://api.github.com/users/kratsg/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/kratsg/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/kratsg", 
+    "id": 761483, 
+    "login": "kratsg", 
+    "organizations_url": "https://api.github.com/users/kratsg/orgs", 
+    "received_events_url": "https://api.github.com/users/kratsg/received_events", 
+    "repos_url": "https://api.github.com/users/kratsg/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/kratsg/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/kratsg/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/kratsg"
+  }
+}

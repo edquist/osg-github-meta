@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Fair enough.  Could you put a small comment in the code along those lines?  Just so future readers can clearly understand what the privileged mode is for.", 
+  "created_at": "2017-07-24T18:24:27Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/87#issuecomment-317511667", 
+  "id": 317511667, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/87", 
+  "updated_at": "2017-07-24T18:24:27Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/317511667", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

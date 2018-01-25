@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/63#discussion_r47571983"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/63"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/47571983"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Oh, I didn't know that! Fixed!\n", 
+  "commit_id": "85f37a932b21b9018340bf5dba36fdb94143e821", 
+  "created_at": "2015-12-14T22:53:55Z", 
+  "diff_hunk": "@@ -277,10 +277,10 @@ fi\n %defattr(-,root,root,-)\n \n # Web package\n-%{python_sitelib}/htcondor_ce\n-%{python_sitelib}/htcondor_ce/__init__.py\n-%{python_sitelib}/htcondor_ce/web.py\n-%{python_sitelib}/htcondor_ce/rrd.py\n+%{python_sitelib}/htcondorce\n+%{python_sitelib}/htcondorce/__init__.py*\n+%{python_sitelib}/htcondorce/web.py*\n+%{python_sitelib}/htcondorce/rrd.py*", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/63#discussion_r47571983", 
+  "id": 47571983, 
+  "original_commit_id": "09622ab1ad7dd69d727cd18daa6db05809d27cab", 
+  "original_position": 11, 
+  "path": "config/htcondor-ce.spec", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/63", 
+  "updated_at": "2015-12-16T21:18:12Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/47571983", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

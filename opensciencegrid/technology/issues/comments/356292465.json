@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "It should be more like advice than a requirement. Something to the effect of:\r\n> Wherever possible, prose should be limited to 120 characters wide. In addition, using one line for each sentence makes it easier to review diffs in updates.", 
+  "created_at": "2018-01-09T14:03:50Z", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/405#issuecomment-356292465", 
+  "id": 356292465, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/technology/issues/405", 
+  "updated_at": "2018-01-09T14:03:50Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/issues/comments/356292465", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

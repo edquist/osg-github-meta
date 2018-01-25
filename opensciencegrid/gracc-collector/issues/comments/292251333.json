@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "ITB collector worked perfectly today, when the RabbitMQ server was blocked for a while, then was restarted or crashed. \r\n\r\n```gracc-collector_1  | time=\"2017-04-06T17:05:21Z\" level=info msg=\"handled request\" address=\"172.17.0.1:60398\" agent=\"Java/1.7.0_131\" error=\"error opening channel\" length=2380697 response=\"Service unavailable right now\" response-code=503 response-time=338634558 url_path=\"/gratia-servlets/rmi\" \r\ngracc-collector_1  | time=\"2017-04-06T17:06:20Z\" level=error msg=\"connection is blocked by broker\" where=AMQPOutput.NewWorker \r\ngracc-collector_1  | time=\"2017-04-06T17:06:20Z\" level=error msg=\"error opening channel\" \r\ngracc-collector_1  | time=\"2017-04-06T17:06:20Z\" level=info msg=\"handled request\" address=\"172.17.0.1:34472\" agent=\"Java/1.7.0_131\" error=\"error opening channel\" length=2380697 response=\"Service unavailable right now\" response-code=503 response-time=322873500 url_path=\"/gratia-servlets/rmi\" \r\ngracc-collector_1  | time=\"2017-04-06T17:06:40Z\" level=warning msg=\"AMQP: connection closed\" can-recover=false code=320 reason=\"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'\" server-initiated=true \r\ngracc-collector_1  | time=\"2017-04-06T17:06:40Z\" level=info msg=\"AMQP: connecting to RabbitMQ\" host=event-itb.grid.iu.edu port=5671 user=gracc vhost=gracc \r\ngracc-collector_1  | time=\"2017-04-06T17:06:40Z\" level=info msg=\"handled request\" address=\"172.17.0.1:59504\" agent=\"Java/1.7.0_131\" error=\"timed out while waiting for confirms\" length=2380697 response=\"Service unavailable right now\" response-code=503 response-time=66786229383548 url_path=\"/gratia-servlets/rmi\" \r\ngracc-collector_1  | time=\"2017-04-06T17:06:40Z\" level=error msg=\"AMQP: error connecting to RabbitMQ\" error=\"dial tcp 129.79.53.45:5671: getsockopt: connection refused\" retry=1s \r\ngracc-collector_1  | time=\"2017-04-06T17:06:41Z\" level=error msg=\"AMQP: error connecting to RabbitMQ\" error=\"dial tcp 129.79.53.45:5671: getsockopt: connection refused\" retry=1.287113937s \r\ngracc-collector_1  | time=\"2017-04-06T17:06:43Z\" level=error msg=\"AMQP: error connecting to RabbitMQ\" error=\"dial tcp 129.79.53.45:5671: getsockopt: connection refused\" retry=2.140443413s \r\ngracc-collector_1  | time=\"2017-04-06T17:06:45Z\" level=error msg=\"AMQP: error connecting to RabbitMQ\" error=\"dial tcp 129.79.53.45:5671: getsockopt: connection refused\" retry=4.522742026s \r\ngracc-collector_1  | time=\"2017-04-06T17:06:49Z\" level=error msg=\"AMQP: error connecting to RabbitMQ\" error=\"dial tcp 129.79.53.45:5671: getsockopt: connection refused\" retry=10.652869534s \r\ngracc-collector_1  | time=\"2017-04-06T17:07:00Z\" level=info msg=\"AMQP: connection established\" \r\ngracc-collector_1  | time=\"2017-04-06T17:07:22Z\" level=info msg=\"received update\" bundlesize=625 from=\"collector:http://gratia-itb-osg.fnal.gov:80\" \r\ngracc-collector_1  | time=\"2017-04-06T17:07:22Z\" level=info msg=\"handled request\" address=\"172.17.0.1:36856\" agent=\"Java/1.7.0_131\" length=2380697 response=OK response-code=200 response-time=1862161724 url_path=\"/gratia-servlets/rmi\" ```", 
+  "created_at": "2017-04-06T17:39:43Z", 
+  "html_url": "https://github.com/opensciencegrid/gracc-collector/pull/15#issuecomment-292251333", 
+  "id": 292251333, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gracc-collector/issues/15", 
+  "updated_at": "2017-04-06T17:39:43Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-collector/issues/comments/292251333", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/1627510?v=4", 
+    "events_url": "https://api.github.com/users/retzkek/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/retzkek/followers", 
+    "following_url": "https://api.github.com/users/retzkek/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/retzkek/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/retzkek", 
+    "id": 1627510, 
+    "login": "retzkek", 
+    "organizations_url": "https://api.github.com/users/retzkek/orgs", 
+    "received_events_url": "https://api.github.com/users/retzkek/received_events", 
+    "repos_url": "https://api.github.com/users/retzkek/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/retzkek/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/retzkek/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/retzkek"
+  }
+}

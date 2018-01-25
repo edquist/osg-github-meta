@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "How about something like this: https://stackoverflow.com/questions/40853308/watermark-text-repeated-diagonally-css-html", 
+  "created_at": "2017-11-08T22:03:27Z", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/239#issuecomment-342975868", 
+  "id": 342975868, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/docs/issues/239", 
+  "updated_at": "2017-11-08T22:03:27Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/issues/comments/342975868", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

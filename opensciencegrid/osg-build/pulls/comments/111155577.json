@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-build/pull/35#discussion_r111155577"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/35"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/111155577"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "\u201dThe default tag is \u2018osg.elV\u2019, where \u2018V\u2019 is the major version of Enterprise Linux for the build.\u201c (or something like that)", 
+  "commit_id": "fa731b20091245076b1de864806fb82f595d4ecd", 
+  "created_at": "2017-04-12T13:53:02Z", 
+  "diff_hunk": "@@ -374,41 +375,41 @@ def parse_cmdline_args(argv):\n         \"-w\", \"--working-directory\",\n         help=\"The base directory to use for temporary files made by the \"\n         \"script. If it is 'TEMP', a randomly-named directory under /tmp \"\n-        \"is used.\")\n+        \"is used. Default: package directory\")\n \n     prebuild_group = OptionGroup(parser,\n                                  \"prebuild task options\")\n     prebuild_group.add_option(\n         \"--full-extract\", action=\"store_true\",\n-        help=\"Fully extract all source files.\")\n+        help=\"Fully extract all source files\")\n     parser.add_option_group(prebuild_group)\n \n     rpmbuild_mock_group = OptionGroup(parser, \n                                       \"rpmbuild and mock task options\")\n     rpmbuild_mock_group.add_option(\n         \"--distro-tag\",\n         help=\"The distribution tag to append to the end of the release. \"\n-        \"(Default: osg.el5, osg.el6 or osg.el7, depending on --redhat-release)\")\n+        \"Default: osg.el5, osg.el6, or osg.el7 for EL 5/6/7 respectively\")", 
+  "html_url": "https://github.com/opensciencegrid/osg-build/pull/35#discussion_r111155577", 
+  "id": 111155577, 
+  "original_commit_id": "9e29aac8c04f82cb1ae737f6dacb67d37bb3d24e", 
+  "original_position": 72, 
+  "path": "osgbuild/main.py", 
+  "position": 72, 
+  "pull_request_review_id": 32380022, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/35", 
+  "updated_at": "2017-04-18T21:55:32Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/111155577", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

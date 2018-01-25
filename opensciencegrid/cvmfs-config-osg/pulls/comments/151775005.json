@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151775005"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151775005"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "This dh-systemd dependency is no longer necessary, correct?", 
+  "commit_id": "d01e585f151c9990ca9f4bd16c4c9a6931f9bbae", 
+  "created_at": "2017-11-17T19:50:37Z", 
+  "diff_hunk": "@@ -1,13 +1,17 @@\n Source: cvmfs-config-osg\n Maintainer: Dave Dykstra <dwd@fnal.gov>\n-Section: config\n+Section: utils\n Priority: extra\n-Standards-Version: 3.9.3.1\n-Build-Depends: debhelper (>= 9) \n-Homepage: http://github.conf/opensciencegrid/cvmfs-config-osg\n+Standards-Version: 3.9.6\n+Build-Depends: debhelper (>= 9), dh-systemd", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151775005", 
+  "id": 151775005, 
+  "original_commit_id": "59014e9977cdaf38fe6863abe898dafca8da9e00", 
+  "original_position": 10, 
+  "path": "packaging/debian/control", 
+  "position": null, 
+  "pull_request_review_id": 77543564, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4", 
+  "updated_at": "2017-11-17T21:54:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151775005", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

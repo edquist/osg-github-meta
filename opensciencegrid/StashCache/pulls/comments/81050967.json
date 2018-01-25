@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/StashCache/pull/17#discussion_r81050967"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/17"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/81050967"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "You should be able to copy most of the HTCondor-CE's travis.yml.  And probably copy all of the setup_tests.sh file.\n", 
+  "commit_id": "5e3ab9381f872f709d59260815293406877f2512", 
+  "created_at": "2016-09-29T01:31:14Z", 
+  "diff_hunk": "@@ -0,0 +1,4 @@\n+python stashcp.py --debug user/taburaad/public/2gb_file.tar .", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/pull/17#discussion_r81050967", 
+  "id": 81050967, 
+  "in_reply_to_id": 80362611, 
+  "original_commit_id": "d3b94159a37792a96d9de944ed1ddc8935fa9936", 
+  "original_position": 1, 
+  "path": "bin/stashcp2/tests/test.sh", 
+  "position": null, 
+  "pull_request_review_id": 2059741, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/17", 
+  "updated_at": "2016-10-11T14:34:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/81050967", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

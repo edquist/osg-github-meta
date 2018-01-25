@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "They're unpackaged and out-of-date. If we really want to bring them back, we can write new ones (or find this commit and resurrect relevant bits). I'm not inclined to spend time on them because I think a lot of this refactoring work sets us up for a simplified command interface.", 
+  "created_at": "2017-10-31T02:40:45Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-pki-tools/pull/21#issuecomment-340643174", 
+  "id": 340643174, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/issues/21", 
+  "updated_at": "2017-10-31T02:40:45Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/issues/comments/340643174", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

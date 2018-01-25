@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/182#discussion_r141630162"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/182"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/141630162"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Please convert the prompts using the following table: https://opensciencegrid.github.io/technology/software/markdown-migration/#fixing-root-and-user-prompts", 
+  "commit_id": "537e0b49923a2cdfd6b706bd4203a97d8293c19b", 
+  "created_at": "2017-09-28T14:14:45Z", 
+  "diff_hunk": "@@ -0,0 +1,338 @@\n+\n+Install a CVMFS Stratum 1\n+===================================================================\n+\n+# About this Document \n+This document describes how to install a CVMFS Stratum 1. There are many different variations on how to do that, but this document focuses on the configuration of the OSG GOC Stratum 1 oasis-replica.opensciencegrid.org. It is applicable to other Stratum 1s as well, very likely with modifications (some of which are suggested in the document below).\n+\n+# Applicable versions \n+The applicable software versions for this document are cvmfs and cvmfs-server >= 2.2.1.\n+\n+# Requirements\n+\n+## Host and OS\n+\n+-   OS is a 64-bit <span class=\"twiki-macro SUPPORTED_OS\"></span>.\n+-   Root access\n+-   SELinux disabled\n+-   Adequate disk space for the repositories that will be served, at `/srv/cvmfs`. Do not use xfs as the filesystem type on operating systems older than RHEL7, because it has been demonstrated to perform poorly for CVMFS repositories; instead use ext3 or ext4. About 10GB should be reserved for apache and squid logs under /var/log on a production server, although they normally will not get that large. A Stratum 1 that is also a repository server should have at least 5GB available at `/var/cache`.\n+\n+## Users and Groups\n+\n+If your machine is also going to be a repository server like the OSG GOC, the installation will create one user unless it already exists:\n+\n+<span class=\"twiki-macro STARTSECTION\">Users</span>\n+\n+| User    | Comment                   |\n+|:--------|:--------------------------|\n+| `cvmfs` | CernVM-FS service account |\n+\n+<span class=\"twiki-macro ENDSECTION\">Users</span>\n+\n+A repository server installation will also create a cvmfs group and default the cvmfs user to that group.\n+\n+In addition, if the fuse rpm is not for some reason already installed, installing the repository server packages will also install fuse and that will create another group:\n+\n+<span class=\"twiki-macro STARTSECTION\">Groups</span>\n+\n+| Group   | Comment                   | Group members |\n+|:--------|:--------------------------|:--------------|\n+| `cvmfs` | CernVM-FS service account | none          |\n+| `fuse`  | FUSE service account      | `cvmfs`       |\n+\n+<span class=\"twiki-macro ENDSECTION\">Groups</span>\n+\n+# Install Instructions\n+\n+All CVMFS Stratum 1s require cvmfs-server software and apache (httpd). It is highly recommended to also install frontier-squid and frontier-awstats on the same machine to be able to easily join the WLCG [MRTG](http://wlcg-squid-monitor.cern.ch/snmpstats/indexcvmfs.html) and [awstats](http://wlcg-squid-monitor.cern.ch/awstats/cvmfs.html) monitoring systems. The recommended configuration for frontier-squid below does not do any caching, it is just for monitoring.\n+\n+## Installing cvmfs-server and httpd\n+\n+The OSG GOC Stratum 1 has to function as a repository server in addition to serving repository replications; most Stratum 1s serve only replications. Serving repositories is done quite differently on Redhat EL5 and EL6 systems. Instructions are also provided for how to install cvmfs-server on Stratum 1s that do not have to be repository servers, which is the same on both versions of operating systems. Choose one of the following three sections.\n+\n+### Installing a CVMFS repository server\n+\n+#### Installing CVMFS repository server on RHEL5\n+\n+Redhat EL5-based systems that are not Scientific Linux-based should first build the [SL5 aufs source rpm](http://ftp.scientificlinux.org/linux/scientific/5x/SRPMS/SL/aufs-0.20090202.cvs-6.sl5.src.rpm) and install the resulting rpm in their own yum repository.\n+\n+Follow these instructions to install:\n+\n+```\n+[root@client ~] $ rpm -i http://cvmrepo.web.cern.ch/cvmrepo/yum/cvmfs/EL/5/x86_64/cvmfs-release-2-4.el5.noarch.rpm", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/182#discussion_r141630162", 
+  "id": 141630162, 
+  "original_commit_id": "a19dde48e1fd23b836d6f1d92bf6e119846746aa", 
+  "original_position": 62, 
+  "path": "docs/other/install-cvmfs-stratum1.md", 
+  "position": null, 
+  "pull_request_review_id": 65873387, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/182", 
+  "updated_at": "2017-09-28T16:54:05Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/141630162", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

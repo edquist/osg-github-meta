@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/84#discussion_r127496561"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/84"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/127496561"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "@efajardo could you submit a new PR where this test depends on `globus-gridftp-server-progs` instead of `osg-gridftp`?", 
+  "commit_id": "c2d86f68f9337ce64bc14ecf2b7fea4a7dde2d24", 
+  "created_at": "2017-07-14T16:32:48Z", 
+  "diff_hunk": "@@ -58,3 +69,15 @@ def test_03_remove_server_file_gfal2_util(self):\n         self.assert_(file_removed, 'Copied file still exists')\n         files.remove(TestGFAL2Util.__temp_dir)\n \n+    def test_04_copy_local_to_server_gfal2_gftp_util(self):\n+        core.skip_ok_unless_installed('osg-gridftp', 'gfal2-plugin-gridftp')", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/84#discussion_r127496561", 
+  "id": 127496561, 
+  "original_commit_id": "c2d86f68f9337ce64bc14ecf2b7fea4a7dde2d24", 
+  "original_position": 54, 
+  "path": "osgtest/tests/test_58_gfal2util.py", 
+  "position": 54, 
+  "pull_request_review_id": 50092074, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/84", 
+  "updated_at": "2017-07-14T16:33:05Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/127496561", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

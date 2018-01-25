@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "@DrDaveD I do understand that singularity can be tested without cvmfs but since that one is the OSG most common use case, I would like to test it that way. But yes I can change to the singularity out of a docker container as a last resort", 
+  "created_at": "2017-09-13T17:04:06Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/97#issuecomment-329233037", 
+  "id": 329233037, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/97", 
+  "updated_at": "2017-09-13T17:04:06Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/329233037", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

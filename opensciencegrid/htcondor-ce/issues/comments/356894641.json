@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "I have updated the contents of condor_ce_bdii_generate_glue2.py with htcondor-ce-provider, renamed and removed the glue1 provider. ", 
+  "created_at": "2018-01-11T10:36:33Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/175#issuecomment-356894641", 
+  "id": 356894641, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/175", 
+  "updated_at": "2018-01-11T10:36:49Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/356894641", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/1257854?v=4", 
+    "events_url": "https://api.github.com/users/lfield/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/lfield/followers", 
+    "following_url": "https://api.github.com/users/lfield/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/lfield/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/lfield", 
+    "id": 1257854, 
+    "login": "lfield", 
+    "organizations_url": "https://api.github.com/users/lfield/orgs", 
+    "received_events_url": "https://api.github.com/users/lfield/received_events", 
+    "repos_url": "https://api.github.com/users/lfield/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/lfield/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/lfield/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/lfield"
+  }
+}

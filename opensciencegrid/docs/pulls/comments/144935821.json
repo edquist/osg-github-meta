@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/208#discussion_r144935821"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/208"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/144935821"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Seems that touching `/etc/rc.local` is bad in all cases that I know about... this should be a proper system service or not advised at all.", 
+  "commit_id": "c622612a6fae5da0a3f386d5fc6c48eadcfe46c3", 
+  "created_at": "2017-10-16T18:53:22Z", 
+  "diff_hunk": "@@ -29,26 +29,26 @@ Requirements: setting up a CVMFS repository server\n \n This document doesn't cover requirements for the GOC computers since those are already set up. The requirements for a CVMFS repository server are that it have installed cvmfs-server and cvmfs client, both version 2.2.2 or greater; version 2.3.3 or greater is recommended on EL6 and required on EL7. This requires using aufs or OverlayFS: aufs requires a modified kernel from CERN for Redhat EL6-based systems, and OverlayFS requires at least EL7.3; the latter uses a standard kernel so it is highly recommended. Also an apache httpd server needs to be enabled. NOTE: multiple cvmfs repositories can be hosted on the same machine.\n \n-`/srv/cvmfs` will hold all the published data, so make sure it is large enough to hold all the repositories hosted on the machine. `/var/spool/cvmfs` will hold files during publish, so it should be large enough to hold the most amount of data that might be attempted to be published at once. In addition, on EL7.3 and cvmfs-server-2.3.3 or 2.3.5, `/var/spool/cvmfs` needs to be of filesystem type 'ext4' or the `cvmfs_server` command will not allow it. There is a variable to override the filesystem type check, but other filesystem types are not guaranteed to work (ext3 and xfs created with `ftype=1` should work with `CVMFS_DONT_CHECK_OVERLAYFS_VERSION=yes`).\n+`/srv/cvmfs` will hold all the published data, so make sure it is large enough to hold all the repositories hosted on the machine. `/var/spool/cvmfs` will hold files during publish, so it should be large enough to hold the most amount of data that might be attempted to be published at once. In addition, on EL7 and cvmfs-server-2.4.1, `/var/spool/cvmfs` needs to be of filesystem type 'ext3' or 'ext4', or the `cvmfs_server` command will not allow it. There is a variable to override the filesystem type check, but other filesystem types are not guaranteed to work (xfs created with `ftype=1` should work with `CVMFS_DONT_CHECK_OVERLAYFS_VERSION=yes`).\n \n This is a procedure for installing it on a Redhat EL6-based system:\n \n ``` console\n root@host # rpm -i https://cvmrepo.web.cern.ch/cvmrepo/yum/cvmfs-release-latest.noarch.rpm \n-root@host # rpm -i https://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm \n+root@host # rpm -i https://repo.grid.iu.edu/osg/3.4/osg-3.4-el6-release-latest.rpm \n root@host # yum install --enablerepo=cernvm-kernel --disablerepo=cernvm kernel aufs2-util cvmfs-server.x86_64 cvmfs.x86_64 cvmfs-config-osg \n root@host # echo \"cvmfs_server mount -a\" >>/etc/rc.local \n root@host # reboot</pre>\n ```\n-\n-This is the procedure for installing on a Redhat EL7.3-based system:\n+<br/>\n+This is the procedure for installing on a Redhat EL7-based system:\n \n ``` console\n-root@host # rpm -i https://repo.grid.iu.edu/osg/3.3/osg-3.3-el7-release-latest.rpm \n+root@host # rpm -i https://repo.grid.iu.edu/osg/3.4/osg-3.4-el7-release-latest.rpm \n root@host # yum install cvmfs-server.x86_64 osg-oasis \n root@host # echo \"cvmfs_server mount -a\" >>/etc/rc.local</pre>", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/208#discussion_r144935821", 
+  "id": 144935821, 
+  "original_commit_id": "e11ddeb6d2e5a1f28fa6ac25b2361134483f0928", 
+  "original_position": 26, 
+  "path": "docs/data/external-oasis-repos.md", 
+  "position": null, 
+  "pull_request_review_id": 69661745, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/208", 
+  "updated_at": "2017-10-17T01:36:37Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/144935821", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

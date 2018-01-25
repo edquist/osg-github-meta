@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/210#discussion_r144932971"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/210"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/144932971"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "> A simple way to organize this information is in a table\r\n\r\nMaybe I'm just overly sensitive, but this seems borderline insulting of the reader's intelligence.\r\n\r\nI don't think the sentence loses content if we just have it be:\r\n\r\n> For example, a basic site might include:", 
+  "commit_id": "fcdf82671a45369ed6e094709577b94f71995c60", 
+  "created_at": "2017-10-16T18:42:29Z", 
+  "diff_hunk": "@@ -1,10 +1,130 @@\n OSG Site Administrator Documentation\n ====================================\n \n-!!! note\n-    The documentation contained here is currently a work in progress as we migrate our TWiki documentation to GitHub. Please let us know of any issues that you encounter by [opening a ticket](https://ticket.opensciencegrid.org) or e-mailing [goc@opensciencegrid.org](mailto:goc@opensciencegrid.org). Please identify errors, inconsistencies, or incorrect information in the documentation, and also suggest extra content that you feel would be helpful to include in the documentation.\n-\n-Welcome to the home page of the Open Science Grid (OSG) Site Administrator documentation! If you're a new OSG site adminstrator, start with the [Installation Overview](install-overview). If you are not a site adminstrator...\n+Welcome to the home page of the Open Science Grid (OSG) Site Administrator documentation! If you are not a site adminstrator...\n \n - If you are a researcher interested in using OSG resources, you can find user documentation [here](https://support.opensciencegrid.org/support/home). \n - If you'd like to learn more about the OSG and our mission, visit our website [here](https://www.opensciencegrid.org/).\n+\n+This document outlines the overall installation process for an OSG site and provides many links into detailed installation, configuration, troubleshooting, and similar pages. If you do not see software-related technical documentation listed here, try the search bar to the left or contacting us at [goc@opensciencegrid.org](mailto:goc@opensciencegrid.org).\n+\n+Plan the Site\n+-------------\n+\n+If you have not done so already, [plan the overall architecture of your OSG site](site-planning). It is recommended that your plan be sufficiently detailed to include the OSG hosts that are needed and the main software components for each host. Be sure to consider [the operating systems that OSG supports](https://twiki.opensciencegrid.org/bin/view/Documentation/Release3/SupportedOperatingSystems). A simple way to organize this information is in a table; for example, a basic site might include:", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/210#discussion_r144932971", 
+  "id": 144932971, 
+  "original_commit_id": "c60884256ecec1a123144cb6d3e81f3c6a4e82e4", 
+  "original_position": 18, 
+  "path": "docs/index.md", 
+  "position": null, 
+  "pull_request_review_id": 69658472, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/210", 
+  "updated_at": "2017-10-16T20:27:59Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/144932971", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

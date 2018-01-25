@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "@brianhlin, in order to use the new `osgrelease(...)` function for a decorator without fully-qualifying it (`@core.osgrelease(...)`), you need to:\r\n```from osgtest.library.core import osgrelease```\r\n\r\nI can make a fix commit for that, or else I can reset my branch to 2c9433e, which you can merge into `master`, and then you can make more commits to use the decorators in separate PRs.", 
+  "created_at": "2018-01-23T20:01:12Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/111#issuecomment-359912222", 
+  "id": 359912222, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/111", 
+  "updated_at": "2018-01-23T20:05:26Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/359912222", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

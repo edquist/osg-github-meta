@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/4#discussion_r130924449"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/130924449"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Yup, please convert this to an admonition.", 
+  "commit_id": "5ce2808894b7e216a169301f1e98a15a6d50484e", 
+  "created_at": "2017-08-02T16:19:20Z", 
+  "diff_hunk": "@@ -0,0 +1,130 @@\n+OSG Site Installation Overview\n+==============================\n+\n+This document outlines the overall installation process for an OSG site and provides many links into detailed installation, configuration, troubleshooting, and similar pages. If you do not see software-related technical documentation listed here, try the search bar to the left or contacting us at [goc@opensciencegrid.org](mailto:goc@opensciencegrid.org).\n+\n+Plan the Site\n+-------------\n+\n+If you have not done so already, [plan the overall architecture of your OSG site](https://twiki.opensciencegrid.org/bin/view/Documentation/Release3/SitePlanning). It is recommended that your plan be sufficiently detailed to include the OSG hosts that are needed and the main software components for each host. Be sure to consider [the operating systems that OSG supports](https://twiki.opensciencegrid.org/bin/view/Documentation/Release3/SupportedOperatingSystems). A simple way to organize this information is in a table; for example, a basic site might include:\n+\n+<span class=\"twiki-macro TABLE\" sort=\"off\"></span>\n+\n+| Purpose              | Host                                | Major Software                                           |\n+|:---------------------|:------------------------------------|:---------------------------------------------------------|\n+| Compute Element (CE) | `osg-ce.example.edu`                | OSG CE, HTCondor Central Manager, etc. (`osg-ce-condor`) |\n+| Worker Nodes         | `w<em>NNN</em>.cluster.example.edu` | OSG worker node client (`osg-wn-client`)                 |\n+\n+Prepare the Batch System\n+------------------------\n+\n+The assumption is that you have an existing batch system at your site. Currently, we support [HTCondor](http://research.cs.wisc.edu/htcondor/), [LSF](http://www-03.ibm.com/systems/platformcomputing/products/lsf/), [PBS](http://www.pbsworks.com) and [TORQUE](http://www.adaptivecomputing.com/products/open-source/torque/), [SGE](http://en.wikipedia.org/wiki/Oracle_Grid_Engine), and [Slurm](http://slurm.schedmd.com) batch systems.\n+\n+The easiest way to add a site to OSG is to install the OSG Compute Element (CE) on the central host of your batch system. In any case, before proceeding be sure that you can submit and successfully run a job from your OSG CE host into your batch system.\n+\n+Add OSG Software\n+----------------\n+\n+If necessary, provision all OSG hosts that are in your site plan and that do not exist yet.\n+\n+<span class=\"twiki-macro NOTE\"></span> For sites with more than a trivial number of hosts, it is recommended to use some sort of configuration management tool to install, configure, and maintain your site. While beyond the scope of OSG\u2019s documentation to explain how to select and use such a system, some popular configuration management tools are [Puppet](http://puppetlabs.com), [Chef](https://www.chef.io), [Ansible](https://www.ansible.com), and [CFEngine](http://cfengine.com).", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/4#discussion_r130924449", 
+  "id": 130924449, 
+  "in_reply_to_id": 130904509, 
+  "original_commit_id": "6f5ed92c349120afcf07a221ae3dfdc3ab076f8d", 
+  "original_position": 30, 
+  "path": "docs/install-overview.md", 
+  "position": null, 
+  "pull_request_review_id": 53853065, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/4", 
+  "updated_at": "2017-08-02T20:30:46Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/130924449", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

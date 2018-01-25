@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/97#discussion_r139248119"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/97"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/139248119"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Can you instead just check the value of `core.state['cvmfs.mounted']` since test_38_cvmfs:test_02_cvmfs already performs this check?", 
+  "commit_id": "e39fed9c0c0b671182a362a926c87c5e70062eff", 
+  "created_at": "2017-09-15T20:55:19Z", 
+  "diff_hunk": "@@ -0,0 +1,53 @@\n+import os\n+import osgtest.library.core as core\n+import osgtest.library.files as files\n+import osgtest.library.osgunittest as osgunittest\n+import tempfile\n+\n+class TestSingularity(osgunittest.OSGTestCase):\n+\n+    __check_path = '/cvmfs/cms.cern.ch/cmsset_default.sh'\n+    __cvmfs_image = '/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osg-wn:3.3-el6'\n+\n+    def mountSingularityCVMFSRepo(self, repo):\n+        command = ('mkdir', '-p', /cvmfs + repo)\n+        status, stdout, stderr = core.system(command, False)\n+        if status != 0:\n+            self.fail(\"failed to mkdir /cvmfs/%s\" % repo)\n+\n+        command = ('mount', '-t', 'cvmfs', 'repo', '/cvmfs/' + repo)\n+        status, stdout, stderr = core.system(command, False)\n+        if status != 0:\n+            self.fail(\"failed to mount: %s, error: %s\" % (repo,stdout))\n+                               \n+\n+    def test_01_singularity(self):\n+        core.skip_ok_unless_installed('singularity-runtime')\n+        core.skip_ok_unless_installed('cvmfs')\n+        singularity_repo = 'singularity.opensciencegrid.org'\n+        if core.el_release() <= 6:\n+             self.mountSingularityCVMFSRepo(singularity_repo)\n+        core.state['cvmfs.mounted'] = False\n+\n+        command = ('ls', '/cvmfs')\n+        status, stdout, stderr = core.system(command, False)\n+        file_exists = os.path.exists('/cvmfs')\n+        self.assert_(file_exists, 'Cvmfs mount point missing')\n+        core.state['cvmfs.mounted'] = True", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/97#discussion_r139248119", 
+  "id": 139248119, 
+  "original_commit_id": "1ecf5c67b99ad886e0c29937432852423998137d", 
+  "original_position": 36, 
+  "path": "osgtest/tests/test_60_singularity.py", 
+  "position": null, 
+  "pull_request_review_id": 63062830, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/97", 
+  "updated_at": "2017-09-20T17:24:33Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/139248119", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

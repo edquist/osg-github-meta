@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gracc-request/pull/34#discussion_r80327195"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/34"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/comments/80327195"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Why do you not pass the resourcename_elt to the `get_resource_information` function?  That would cut down on the root searches, right?\n", 
+  "commit_id": "c53a3d828647123a85f5354d4a94d4947cb03448", 
+  "created_at": "2016-09-23T21:06:51Z", 
+  "diff_hunk": "@@ -62,119 +50,157 @@ def get_file_from_OIM(self):\n         return oim_xml\n \n     def parse(self):\n-        \"\"\"Parses XML file using ElementTree.parse().  Also sets XML root for\n-        further processing\"\"\"\n+        \"\"\"Parses XML file using ElementTree.parse().  Also builds dictionary\n+        of Resource Name :{resource information} format for future lookups\"\"\"\n         try:\n             self.e = ET.parse(self.xml_file)\n             self.root = self.e.getroot()\n-            print \"Parsed file\"\n+            print \"Parsing file\"\n         except Exception as e:\n             print e\n             print \"Couldn't parse OIM file\"\n             self.xml_file = None\n+            return\n+        \n+        for resourcename_elt in self.root.findall('./ResourceGroup/'\n+                                                  'Resources/Resource/Name'):\n+            resourcename = resourcename_elt.text\n+            if resourcename not in self.resourcedict:\n+                resource_grouppath = './ResourceGroup/Resources/Resource/' \\\n+                                     '[Name=\"{0}\"]/../..'.format(resourcename)\n+                self.resourcedict[resourcename] = \\\n+                    self.get_resource_information(resource_grouppath,", 
+  "html_url": "https://github.com/opensciencegrid/gracc-request/pull/34#discussion_r80327195", 
+  "id": 80327195, 
+  "original_commit_id": "c792031e95d3673c0d4d7c8cc7317fae6fdc97e8", 
+  "original_position": 64, 
+  "path": "src/graccreq/oim/OIMTopology.py", 
+  "position": 65, 
+  "pull_request_review_id": 1405175, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/34", 
+  "updated_at": "2016-09-23T21:17:16Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/comments/80327195", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

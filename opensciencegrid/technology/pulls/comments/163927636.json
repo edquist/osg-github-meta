@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/419#discussion_r163927636"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/419"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/163927636"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "IMO this would read better:\r\n> *  Other heading levels should use the appropriate number of `#`\r\n> *  Go no deeper than level 5 headings.\r\n> *  Spin off a new document or re-organize the existing document if you find that you regularly need level 5 headings.", 
+  "commit_id": "04baffc6efc361fba1c47b126808753917fd3048", 
+  "created_at": "2018-01-25T18:26:57Z", 
+  "diff_hunk": "@@ -9,16 +9,17 @@ Meta\n Wherever possible, prose should be limited to 120 characters wide.\n In addition, using one line for each sentence is recommended since it makes update diffs easier to review.\n \n-Headers\n--------\n+Headings\n+--------\n \n-Use the following conventions for headers:\n+Use the following conventions for headings:\n \n-1. The title should be the only level 1 heading\n-1. Level 1 headings should use the `====` format\n-1. Level 2 headings should use the `----` format\n-1. Other heading levels should use the appropriate number of `#`\n-1. Use Title Case for level 1 and level 2 headings. Only capitalize the first word for all other headings.\n+- The title should be the only level 1 heading\n+- Level 1 headings should use the `====` format\n+- Level 2 headings should use the `----` format\n+- Other heading levels should use the appropriate number of `#` up to a maximum of level 5 headings.\n+  Spin-off a new document or re-organize the existing document if you find that you regularly need level 5 headings.", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/419#discussion_r163927636", 
+  "id": 163927636, 
+  "original_commit_id": "89ffb20475a2c9ed4e033fb7c96df54ced0028f7", 
+  "original_position": 21, 
+  "path": "docs/documentation/style-guide.md", 
+  "position": null, 
+  "pull_request_review_id": 91623313, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/419", 
+  "updated_at": "2018-01-25T18:34:44Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/163927636", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

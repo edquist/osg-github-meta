@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/rsv-perfsonar/pull/14#discussion_r147844878"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/14"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/comments/147844878"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "opps this was a prolbme I fixed it. Good catch.", 
+  "commit_id": "18f2fb5caf03d0403b28a6dcd0e5f723df0b2f6e", 
+  "created_at": "2017-10-30T21:49:03Z", 
+  "diff_hunk": "@@ -38,11 +38,12 @@ def publishSToMq(self, arguments, event_types, summaries, summaries_data):\n             msg_body['summaries'] = summaries_data[event]\r\n             msg = Message(body=json.dumps(msg_body), header=msg_head)\r\n             size_msg = msg.size()\r\n-            # if size of the message is larger than 10MB discarrd\r\n-            if size_msg > size_limit:\r\n+            self.add2log(\"Message size: %s\" % size_msg)\r", 
+  "html_url": "https://github.com/opensciencegrid/rsv-perfsonar/pull/14#discussion_r147844878", 
+  "id": 147844878, 
+  "in_reply_to_id": 147827940, 
+  "original_commit_id": "72cc612e0760b35a2d442faed0be3babc75ba084", 
+  "original_position": 6, 
+  "path": "libexec/probes/worker-scripts/uploader/activemquploader.py", 
+  "position": null, 
+  "pull_request_review_id": 72998667, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/14", 
+  "updated_at": "2017-10-31T22:34:19Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/comments/147844878", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

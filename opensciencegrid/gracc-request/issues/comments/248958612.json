@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "Derek had two comments:\n\n1)  We reprocess the data all the time, so a cache file is unnecessary.  Plus, we'd need to put file locks in place to make sure parallel processes aren't overwriting the file while it's being read.  It's easier just to forget about the cache.  If we have problems with OIM connectivity (the reason the cache file was there in the first place), we'll be fine for 7 days, as we reprocess records often enough. Note:  I'll have to change my unittest module too then.\n\n2)  Add to this pull request the lines that would need to be added to summary_replayer.py to get this to work.\n", 
+  "created_at": "2016-09-22T16:39:48Z", 
+  "html_url": "https://github.com/opensciencegrid/gracc-request/pull/32#issuecomment-248958612", 
+  "id": 248958612, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gracc-request/issues/32", 
+  "updated_at": "2016-09-22T16:39:48Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-request/issues/comments/248958612", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/19695727?v=4", 
+    "events_url": "https://api.github.com/users/shreyb/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/shreyb/followers", 
+    "following_url": "https://api.github.com/users/shreyb/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/shreyb/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/shreyb", 
+    "id": 19695727, 
+    "login": "shreyb", 
+    "organizations_url": "https://api.github.com/users/shreyb/orgs", 
+    "received_events_url": "https://api.github.com/users/shreyb/received_events", 
+    "repos_url": "https://api.github.com/users/shreyb/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/shreyb/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/shreyb/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/shreyb"
+  }
+}

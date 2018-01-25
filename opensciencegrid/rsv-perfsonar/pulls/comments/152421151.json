@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/rsv-perfsonar/pull/19#discussion_r152421151"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/19"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/comments/152421151"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Add a block to disconnect any existing channel and connection:\r\n```\r\nif self.channel:\r\n   try:\r\n      self.channel.close()\r\n   except:\r\n      ... add log line\r\n```\r\nand then analogously for `self.connection`.", 
+  "commit_id": "a693eaca6253c4aa9c7537c374c56ac14738f814", 
+  "created_at": "2017-11-21T22:35:09Z", 
+  "diff_hunk": "@@ -80,6 +87,9 @@ def publishRToMq(self, arguments, event_types, datapoints):\n             msg_body['datapoints'] = datapoints[event]\r\n             self.SendMessagetoMQ(msg_body)\r\n             \r\n+    def restartPikaConnection(self):\r\n+        self.connection = pika.BlockingConnection(self.parameters)\r", 
+  "html_url": "https://github.com/opensciencegrid/rsv-perfsonar/pull/19#discussion_r152421151", 
+  "id": 152421151, 
+  "original_commit_id": "7cb9363a143b8c15271645aee805a66d3d459069", 
+  "original_position": 51, 
+  "path": "libexec/probes/worker-scripts/uploader/rabbitmquploader.py", 
+  "position": null, 
+  "pull_request_review_id": 78280553, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/19", 
+  "updated_at": "2017-11-22T18:52:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/comments/152421151", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

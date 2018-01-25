@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/96#discussion_r132964727"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/96"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/132964727"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Sorry I wasn't clear earlier, the `<span>` line was the one we don't want!", 
+  "commit_id": "71cf21c4975a0c5c0b0512f53bb5cc28fe8482fd", 
+  "created_at": "2017-08-14T14:28:22Z", 
+  "diff_hunk": "@@ -0,0 +1,20 @@\n+Setup Instructions for New Team Members\n+=======================================\n+<span class=\"twiki-macro TOC\" title=\"Contents:\"></span>", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/96#discussion_r132964727", 
+  "id": 132964727, 
+  "original_commit_id": "0ef71bd4678f247d7f1fe1a3663afa7fbdf78b5a", 
+  "original_position": 3, 
+  "path": "docs/software/new-team-member.md", 
+  "position": null, 
+  "pull_request_review_id": 56094775, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/96", 
+  "updated_at": "2017-08-14T15:32:28Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/132964727", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

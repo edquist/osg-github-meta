@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/11#discussion_r132795495"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/11"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/132795495"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I think I like this is a separate section rather than an admonition, we should probably reserve their use for very specific pitfalls and whatnot.", 
+  "commit_id": "4411472f645d80a58cd8aa7f395237ba4cbba7bc", 
+  "created_at": "2017-08-11T22:31:34Z", 
+  "diff_hunk": "@@ -173,13 +114,10 @@ gpgcheck=1\n gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-OSG\n ```\n \n-If you have your own mirror or\n-configuration of the EPEL repository, you **MUST** verify that the OSG\n-repository has a better yum priority than EPEL. Otherwise, you will have\n-strange dependency resolution issues.\n+!!! warning\n+    if you have your own mirror or configuration of the EPEL repository, you **MUST** verify that the OSG repository has a better yum priority than EPEL. Otherwise, you will have strange dependency resolution issues.\n \n-References\n-==========\n+!!! seealso \"See Also\"\n+    -   [Basic use of Yum](https://twiki.opensciencegrid.org/bin/view/Documentation/Release3/YumRpmBasics)\n+    -   [Best practices in using Yum](https://twiki.opensciencegrid.org/bin/view/Documentation/Release3/InstallBestPractices)", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/11#discussion_r132795495", 
+  "id": 132795495, 
+  "original_commit_id": "993ce0400b128fe5b2e790f25010a22dd38305bf", 
+  "original_position": 257, 
+  "path": "docs/common/yum.md", 
+  "position": null, 
+  "pull_request_review_id": 55919532, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/11", 
+  "updated_at": "2017-08-14T15:54:58Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/132795495", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

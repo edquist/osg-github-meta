@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "@brianhlin, the above commit 344e5b6 creates a separate `excluded` category/list for the decorated tests run on the wrong osg series.  I'm not sure what the travis-ci failure is about.\r\n\r\nHere's a VMU run with the above:\r\nhttp://vdt.cs.wisc.edu/tests/20180116-1233/packages.html\r\n\r\nThe list of tests at the top looks fine for `excluded` tests, but the detailed `EXCLUDED` section below (after `OK SKIPS`) for some reason shows the python traceback instead of just the oneline summary as seen in the `OK SKIPS` section.  Not sure what I missed there but I'm guessing we don't want it quite as-is yet.", 
+  "created_at": "2018-01-17T18:13:18Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/111#issuecomment-358393226", 
+  "id": 358393226, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/111", 
+  "updated_at": "2018-01-17T18:13:18Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/358393226", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

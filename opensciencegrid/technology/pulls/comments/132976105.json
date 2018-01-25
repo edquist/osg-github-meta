@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/97#discussion_r132976105"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/97"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/132976105"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Could we make this an admonition?\r\n\r\n```\r\n!!! note\r\n    RootExports...\r\n```", 
+  "commit_id": "ff06e7382cb3b43116b9e648bed0df01782a291b", 
+  "created_at": "2017-08-14T15:09:02Z", 
+  "diff_hunk": "@@ -0,0 +1,365 @@\n+Koji permissions and policy\n+---------------------------\n+\n+These are some notes I wrote on Koji ACLs/policy after doing some source diving in the Koji code.\n+The version of Koji was 1.6.0.\n+I later found some documentation at <https://docs.pagure.org/koji/defining_hub_policies/>. Go read it, that page has better examples.\n+\n+### Default policies (defined in hub/kojixmlrpc.py)\n+\n+    build_from_srpm =\n+           has_perm admin :: allow\n+           all :: deny\n+    build_from_repo_id =\n+           has_perm admin :: allow\n+           all :: deny\n+    channel =\n+           has req_channel :: req\n+           is_child_task :: parent\n+           all :: use default\n+    package_list =\n+           has_perm admin :: allow\n+           all :: deny\n+    vm =\n+           has_perm admin win-admin :: allow\n+           all :: deny\n+\n+If `MissingPolicyOk` is true (default), then policies that do not exist default to \"allow\".\n+\n+### Policy syntax\n+\n+Policies are set in the `[policy]` section of `/etc/koji-hub/hub.conf`\n+\n+Each policy definition starts with\n+\n+    policy_name =\n+\n+The rest of the definition is indented. The lines in the policy definition have the following format:\n+\n+Simple tests:\n+\n+    test [params] [&& test [params] ...] :: action-if-true\n+    test [params] [&& test [params] ...] !! action-if-false\n+\n+Complex tests:\n+\n+    test [params [&& ...]] :: {\n+       test [params [&& ...]] :: action\n+       test [params [&& ...]] :: {\n+          ...\n+          }\n+    }\n+\n+The following generic tests are defined in `koji/policy.py`:\n+\n+-   `true` / `all`   \n+    always true\n+\n+-   `false` / `none`   \n+    always false\n+\n+-   `has FIELD`   \n+    true if policy data contains a field called FIELD\n+\n+-   `bool FIELD`   \n+    true if FIELD is true\n+\n+-   `match FIELD PATTERN1 [PATTERN2 ...]`   \n+    true if FIELD matches any of the patterns (globs)\n+\n+-   `compare FIELD OP NUMBER`   \n+    compare FIELD against a number. OP can be `<, >, <=, >=, =, !=`\n+\n+the following koji-specific tests are defined in `hub/kojihub.py`:\n+\n+-   `buildtag PATTERN1 [PATTERN2 ...]`   \n+    true if the build tag of a build matches a pattern\n+\n+-   `fromtag PATTERN1 [PATTERN2 ...]`   \n+    true if the tag we're moving a package from matches a pattern\n+\n+-   `has_perm PATTERN1 [PATTERN2 ...]`   \n+    true if user has any matching permission\n+\n+-   `hastag TAG`   \n+    true if the build has the tag TAG\n+\n+-   `imported`   \n+    true if the build was imported\n+\n+-   `is_build_owner`   \n+    true if the user doing this task owns the build\n+\n+-   `is_child_task`   \n+    true if the task is a child of some other task\n+\n+-   `is_new_package`   \n+    true if the package being looked at is new (i.e. doesn't have an 'id' yet)\n+\n+-   `method PATTERN1 [PATTERN2 ...]`   \n+    true if the method matches a pattern\n+\n+-   `operation PATTERN1 [PATTERN2 ...]`   \n+    true if current operation matches any of the patterns\n+\n+-   `package PATTERN1 [PATTERN2 ...]`   \n+    true if the package name matches any of the patterns\n+\n+-   `policy POLICY`   \n+    true if the named policy is true\n+\n+-   `skip_tag`   \n+    true if the skip\\_tag option is true\n+\n+-   `source PATTERN1 [PATTERN2 ...]`   \n+    true if source matches patterns\n+\n+-   `tag PATTERN1 [PATTERN2 ...]`   \n+    true if the tag name matches any of the patterns\n+\n+-   `user PATTERN1 [PATTERN2 ...]`   \n+    true if username matches a pattern\n+\n+-   `user_in_group PATTERN1 [PATTERN2 ...]`   \n+    true if the user is in any matching group\n+\n+-   `vm_name PATTERN1 [PATTERN2 ...]`   \n+    true if vm name matches a pattern\n+\n+The actions are:\n+\n+-   `allow`   \n+    allow the action\n+\n+-   `deny`   \n+    deny the action\n+\n+-   `req`   \n+    ?\n+\n+-   `parent`   \n+    ?\n+\n+-   `use default`   \n+    ?\n+\n+### Default permissions\n+\n+These are the permissions that people can be given in koji:\n+\n+-   `admin`\n+-   `build`\n+-   `repo`\n+-   `livecd`\n+-   `maven-import`\n+-   `win-import`\n+-   `win-admin`\n+-   `appliance`\n+\n+As far as I can tell, additional permissions have to be manually added into the 'permissions' table in postgres.\n+\n+The following permissions are checked by name in the koji command-line utility (i.e. policies are not used):\n+\n+-   `admin`:   \n+    `add-group`, `add-tag`, `add-target`, `clone-tag`, `edit-target`, `remove-tag`, `remove-target`, `wrapper-rpm`\n+\n+-   `maven-import`:   \n+    `import-archive` with the `--type=maven` option\n+\n+-   `win-import`:   \n+    `import-archive` with the `--type=win` option\n+\n+-   `repo`:   \n+    `regen-repo`\n+\n+I haven't found out where some of the other permissions are used.\n+\n+### Adding permissions\n+\n+Go into postgres and run\n+\n+    insert into permissions values ((select nextval('permissions_id_seq')), 'NAME');\n+\n+where NAME is the name of the permission you want to create. You may now grant people that permission and use that name in policies.\n+\n+### Where policies are used and what policy data is passed on:\n+\n+#### build\\_from\\_srpm\n+\n+**source:**\n+\n+-   `builder/kojid:BuildTask.handler`   \n+    used when source url points to an SRPM (as opposed to an scm) and the build is not a scratch build.\n+\n+**policy data:**\n+\n+-   `user_id`   \n+    the owner of the task\n+\n+-   `source`   \n+    the url of the source file\n+\n+-   `task_id`   \n+    the id of the task\n+\n+-   `build_tag`   \n+    the id of the build tag\n+\n+-   `skip_tag`   \n+    true if we're not tagging this build (`--scratch` or `--skip-tag` passed on the command line)\n+\n+-   `target`   \n+    the build target (only if we have one?)\n+\n+-   `tag`   \n+    the destination tag (only if `skip_tag` is false)\n+\n+#### build\\_from\\_repo\\_id\n+\n+**source:**\n+\n+-   `builder/kojid:BuildTask.handler`   \n+    used when the `--repo-id` option is passed to `koji build`\n+\n+**policy data:** same as `build_from_srpm`\n+\n+#### package\\_list\n+\n+**source:**\n+\n+-   `hub/kojihub.py:pkglist_add`   \n+    `add-pkg`, `block-pkg`, `set-pkg-arches`, `set-pkg-owner` commands\n+\n+**policy data:**\n+\n+-   `action`   \n+    'add', 'update', 'block' depending on what is being done\n+\n+-   `force`   \n+    true if `--force` is passed on the command line\n+\n+-   `package`   \n+    package info (the id I think?)\n+\n+-   `tag`   \n+    the id of the tag we're trying to add the package to/package is in\n+\n+**source:**\n+\n+-   `hub/kojihub.py:pkglist_remove`   \n+    used internally by the `koji clone-tag` command?\n+\n+**policy data:** same as above, except `action` is 'remove'\n+\n+**source:**\n+\n+-   `hub/kojihub.py:pkglist_unblock`   \n+    `unblock-pkg` command\n+\n+**policy data:** same as above, except `action` is 'unblock'\n+\n+#### tag\n+\n+NOTE: RootExports is the class containing functions exported via XMLRPC. In general, each function corresponds to a koji task.", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/97#discussion_r132976105", 
+  "id": 132976105, 
+  "original_commit_id": "e7da8affafb5eb9482383cfdde053e008d724b07", 
+  "original_position": 263, 
+  "path": "docs/infrastructure/koji-policy-writing.md", 
+  "position": null, 
+  "pull_request_review_id": 56107246, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/97", 
+  "updated_at": "2017-08-14T18:23:18Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/132976105", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

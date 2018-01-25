@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "In the future, please separate pull requests with formatting-only commits from functional ones.\n\nIn this pull request, in special_cleanup, should you renumber the methods following the inserted one?\n\nAlso, should the checks for installed RPMs in special_cleanup and special_selinux be the same?\n", 
+  "created_at": "2016-04-29T19:06:00Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/10#issuecomment-215850466", 
+  "id": 215850466, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/10", 
+  "updated_at": "2016-04-29T19:06:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/215850466", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

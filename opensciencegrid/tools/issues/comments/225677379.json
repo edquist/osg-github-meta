@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "This commit does not change what gets backed up. It's not meant to fix the issue where backups get skipped if the cron job is unsuccessful -- that's a separate issue. This commit changes what directory the current backups are compared against, so that we can deduplicate the files.\n", 
+  "created_at": "2016-06-13T19:06:10Z", 
+  "html_url": "https://github.com/opensciencegrid/tools/pull/8#issuecomment-225677379", 
+  "id": 225677379, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/tools/issues/8", 
+  "updated_at": "2016-06-13T19:06:10Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/tools/issues/comments/225677379", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

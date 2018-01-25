@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "@bbockelm you copied the changes for `gridftp_hdfs_send.c` in 71fdc10d8 ... I just assumed you decided against including it in `gridftp_hdfs_recv.c` for some reason.\r\n\r\nThis probably merges cleanly because the `gridftp_hdfs_send.c` changes are identical to an already-applied patch, so just `gridftp_hdfs_recv.c` would get added.  Not sure whether we actually want it or not.", 
+  "created_at": "2017-08-17T20:18:38Z", 
+  "html_url": "https://github.com/opensciencegrid/gridftp-hdfs/pull/1#issuecomment-323182709", 
+  "id": 323182709, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/issues/1", 
+  "updated_at": "2017-08-17T20:18:38Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/issues/comments/323182709", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

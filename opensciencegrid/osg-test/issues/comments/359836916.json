@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Yup, the `EXCLUDED` section is looking better now:\r\nhttp://vdt.cs.wisc.edu/tests/20180122-1901/packages.html\r\n\r\n@brianhlin, I think this is ready to go.", 
+  "created_at": "2018-01-23T15:59:24Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/111#issuecomment-359836916", 
+  "id": 359836916, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/111", 
+  "updated_at": "2018-01-23T15:59:24Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/359836916", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

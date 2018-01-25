@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "It looks OK to me.\r\n\r\nIs it acceptable to fail travis, though?  Can you enable autofs?  Otherwise, manually mount the cvmfs repositories?  I am not familiar with how VMU works, but can you enable the testing you want there without it causing a travis failure on the osg-test github repository?", 
+  "created_at": "2017-09-12T22:10:51Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/97#issuecomment-328998954", 
+  "id": 328998954, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/97", 
+  "updated_at": "2017-09-12T22:10:51Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/328998954", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/vm-test-runs/pull/41#discussion_r131251242"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/41"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/comments/131251242"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "These will break on EL6, no?", 
+  "commit_id": "82a5842e8fbc04f989a95a8e839116b40191ec8b", 
+  "created_at": "2017-08-03T20:29:12Z", 
+  "diff_hunk": "@@ -1,47 +1,29 @@\n-#!/usr/bin/python\n+#!/bin/bash\n \n # Tool to create interactive KVM images from our VMU images\n # Usage: make-interactive-image <VMU image filename> <interactive image filename>\n \n-import guestfs\n-import shutil\n-import os\n-import sys\n-import tempfile\n+INPUT_IMG=$1\n+OUTPUT_IMG=$2\n \n-if len(sys.argv) != 3:\n-    print 'usage: %s <input image> <output image>' % sys.argv[0]\n-    sys.exit(1)\n+if [ $# -ne 2 ]; then\n+    echo \"Usage: make-interactive-image <VMU image filename> <interactive image filename>\"\n+    exit 1\n+fi\n \n-input_image = sys.argv[1]\n-output_image = sys.argv[2]\n+echo \"Copying image...\"\n+cp $1 $2\n \n-if not os.path.exists(output_image):\n-    print \"Copying %s to %s...\" % (input_image, output_image)\n-    try:\n-        shutil.copy2(input_image, output_image)\n-    except IOError, e:\n-        print e\n-        sys.exit(1)\n-    except RuntimeError, e:\n-        print e\n-        sys.exit(1)\n-else:\n-    print \"%s already exists\" % output_image\n-    sys.exit(1)\n+echo \"Making image interactive...\"\n+TMPFILE=$(mktemp -d)/osg-test.init\n+cat <<'EOF' > $TMPFILE\n+#!/bin/sh\n \n+# Try to set the clock correctly", 
+  "html_url": "https://github.com/opensciencegrid/vm-test-runs/pull/41#discussion_r131251242", 
+  "id": 131251242, 
+  "original_commit_id": "800fc4a608e841b0b370811a16cd615f3a804ec7", 
+  "original_position": 46, 
+  "path": "make-interactive-image", 
+  "position": null, 
+  "pull_request_review_id": 54213615, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/41", 
+  "updated_at": "2017-08-03T20:40:43Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/comments/131251242", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

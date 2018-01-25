@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151299478"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151299478"
+    }
+  }, 
+  "author_association": "NONE", 
+  "body": " @jblomer , what is the reason that some T3 sites require a package to specifically run 'cvmfs_config setup' ? If it is some custom need particular to a few sites, can't they create such an RPM themselves?\r\nTo me it seems like there is a bit of a disconnect here. On one hand, the cvmfs-auto-setup package was apparently created for a limited specific purpose for a small set of users and should not be generally used. On the other hand, it is supported and maintained in the main cernvm repository alongside the other official CVMFS packages, in a state that is useful and convenient (easy way to configure a node to use CVMFS via autofs) but somehow not recommended, intended or considered suitable for that purpose. (???)\r\nAlthough using the cvmfs-auto-setup package may not be ideal (hence the ticket suggesting improvements) we - perhaps mistakenly - adopted and documented it as part of our standard Compute Canada client instructions. Was this ill-advised?\r\n\r\nThe CVMFS quick start guide includes the instruction to do 'cvmfs_config setup' so I don't see how the cvmfs-auto-setup RPM should be considered anything more or less than a convenient way of implementing the officially-recommended standard client configuration (whatever that is, and notwithstanding the fact that 'cvmfs_config setup' does more than actually necessary for autofs config).", 
+  "commit_id": "d01e585f151c9990ca9f4bd16c4c9a6931f9bbae", 
+  "created_at": "2017-11-16T01:18:19Z", 
+  "diff_hunk": "@@ -17,12 +17,8 @@ install-common:\n \tinstall -D -m 444 opensciencegrid.org.pub $(DESTDIR)/etc/cvmfs/keys/opensciencegrid.org\n \n install-debian: install-common\n-\tmkdir -p $(DESTDIR)/lib/systemd/system \\\n-\t  $(DESTDIR)/lib/systemd/system/autofs.service.wants \\\n-\t  $(DESTDIR)/usr/sbin\n-\tinstall -D -m 444 cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system\n-\tln -s ../cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system/autofs.service.wants/cvmfs-config-osg.service\n-\tinstall -D -m 555 cvmfs-config-osgd $(DESTDIR)/usr/sbin\n+\tmkdir -p $(DESTDIR)/etc/auto.master.d\n+\tinstall -D -m 0644 cvmfs.autofs $(DESTDIR)/etc/auto.master.d", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151299478", 
+  "id": 151299478, 
+  "in_reply_to_id": 150961851, 
+  "original_commit_id": "0d3da67811bdb211e462f960ad1c378758b74563", 
+  "original_position": 11, 
+  "path": "Makefile", 
+  "position": null, 
+  "pull_request_review_id": 76984957, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4", 
+  "updated_at": "2017-11-17T21:54:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151299478", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1686627?v=4", 
+    "events_url": "https://api.github.com/users/rptaylor/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/rptaylor/followers", 
+    "following_url": "https://api.github.com/users/rptaylor/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/rptaylor/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/rptaylor", 
+    "id": 1686627, 
+    "login": "rptaylor", 
+    "organizations_url": "https://api.github.com/users/rptaylor/orgs", 
+    "received_events_url": "https://api.github.com/users/rptaylor/received_events", 
+    "repos_url": "https://api.github.com/users/rptaylor/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/rptaylor/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/rptaylor/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/rptaylor"
+  }
+}

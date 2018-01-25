@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/oasis-server/pull/72#discussion_r113502732"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/72"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/comments/113502732"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "It is irrelevant with overlayfs; overlayfs does not support real hardlinks at all, it makes copies of hardlinked files.", 
+  "commit_id": "261048396dba0ce0fd6a07eb3b3ba08358eab7ed", 
+  "created_at": "2017-04-26T16:38:37Z", 
+  "diff_hunk": "@@ -191,7 +189,6 @@ for REPO in oasis config-osg; do\n \tCVMFS_AUFS_WARNING=false cvmfs_server mkfs -m -o oasis $REPO.opensciencegrid.org\n     fi\n     echo \"CVMFS_AUFS_WARNING=false\" >>/etc/cvmfs/repositories.d/$REPO.opensciencegrid.org/server.conf\n-    echo \"CVMFS_IGNORE_XDIR_HARDLINKS=true\" >>/etc/cvmfs/repositories.d/$REPO.opensciencegrid.org/server.conf", 
+  "html_url": "https://github.com/opensciencegrid/oasis-server/pull/72#discussion_r113502732", 
+  "id": 113502732, 
+  "in_reply_to_id": 113414289, 
+  "original_commit_id": "261048396dba0ce0fd6a07eb3b3ba08358eab7ed", 
+  "original_position": 24, 
+  "path": "goc/install/install-oasis", 
+  "position": 24, 
+  "pull_request_review_id": 34897154, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/72", 
+  "updated_at": "2017-04-26T16:38:37Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/comments/113502732", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

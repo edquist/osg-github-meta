@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-vo-config/pull/20#discussion_r120288165"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-vo-config/pulls/20"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-vo-config/pulls/comments/120288165"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Please change the group name to `CIGI` (all caps, no `.`).", 
+  "commit_id": "cb674d168d235e5199fee235796504b7b89a8c7c", 
+  "created_at": "2017-06-06T08:02:45Z", 
+  "diff_hunk": "@@ -57,6 +57,7 @@ group vomss://grid-voms.desy.de:8443/voms/ilc ilc\n group vomss://hpc.sbgrid.org:8443/voms/SBGrid sbgrid\n #-------------------\n # USER-VO-MAP cigi CIGI -- 34 -- Shaowen Wang (shaowen@uiuc.edu)\n+group vomss://vm246.roger.ncsa.illinois.edu:8443/voms/CIGI .CIGI", 
+  "html_url": "https://github.com/opensciencegrid/osg-vo-config/pull/20#discussion_r120288165", 
+  "id": 120288165, 
+  "original_commit_id": "53956ae8f551a268fd7678b922ba0d68861d9115", 
+  "original_position": 4, 
+  "path": "edg-mkgridmap.config", 
+  "position": null, 
+  "pull_request_review_id": 42235767, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-vo-config/pulls/20", 
+  "updated_at": "2017-06-07T14:52:25Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-vo-config/pulls/comments/120288165", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

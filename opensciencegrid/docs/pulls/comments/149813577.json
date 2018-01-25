@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/241#discussion_r149813577"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/241"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/149813577"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "documen typo", 
+  "commit_id": "07df5de9d9b93d575a9ae706390bc823517d0094", 
+  "created_at": "2017-11-08T22:16:05Z", 
+  "diff_hunk": "@@ -1,50 +1,52 @@\n-Procedures for handling OASIS externally-hosted CVMFS repositories\n-==================================================================\n-\n-**Technical information contained here is believed to be reliable but administrative procedures, particularly as concerns organizational entities outside the OSG, should be considered unapproved proposals.**\n-\n+Setting up a Software Repository\n+================================\n \n About OASIS\n -----------\n \n-OASIS is the OSG Application Software Installation Service. It is the recommended method to install software on the Open Science Grid. It is implemented using CernVM FileSystem (CVMFS) technology.\n+OASIS (the **OSG** **A**pplication **S**oftware **I**nstallation **S**ervice) is an infrastructure, based on\n+[CVMFS](https://cvmfs.readthedocs.io), for distributing software throughout the OSG.  Once software is installed into\n+an OASIS repository, it should be available across about 90% of the OSG within an hour or two.\n \n-About this Document\n--------------------\n+OASIS consists of keysigning infrastructure, a content distribution network (CDN), and a shared CVMFS repository that\n+is hosted by the OSG.  Many use cases will be covered by utilizing the [shared repository](update-oasis); this documen", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/241#discussion_r149813577", 
+  "id": 149813577, 
+  "original_commit_id": "8fff3ebca223dbe12429bedb19646b78fbd7937d", 
+  "original_position": 20, 
+  "path": "docs/data/external-oasis-repos.md", 
+  "position": null, 
+  "pull_request_review_id": 75267776, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/241", 
+  "updated_at": "2017-11-10T13:51:48Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/149813577", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

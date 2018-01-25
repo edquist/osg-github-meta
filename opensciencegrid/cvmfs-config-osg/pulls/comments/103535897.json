@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/1#discussion_r103535897"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/1"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/103535897"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": ">    I think this should have a Requires statement for autofs. After only designates only the sequencing, not the dependency.\r\n\r\nAdded.  It does not replace the After functionality, so need both.\r\n\r\n>    Might also be possible to put a requirement on the /cvmfs mount itself.\r\n\r\nI don't see how.\r\n\r\n>    Automatic restart?\r\n\r\nI don't know what you mean by that.\r\n\r\n>    Is the PID file actually necessary for a service of type simple?\r\n\r\nOh, you're right.  I assumed it was needed so systemd would be able to kill it, but it must keep track of the PID separately.\r\n\r\n> Can we make it so we can restart this service whenever autofs is restarted?\r\n\r\nOh, maybe that's what you meant by \"Automatic restart?\"  Yes that would be good.  As a matter of fact, the \"Requires\" and \"After\" already make this service restart with \"systemctl restart autofs\".  They do not make it start after \"systemctl stop autofs\" (that stops cvmfs-config-osg) followed by \"systemctl start autofs\" (that does not start cvmfs-config-osg).  For that, I believe a \"WantedBy=autofs.service\" in the [Install] section would normally work, but it doesn't, I think because there is not actually an autofs.service file in the autofs package (it is just inferred by /etc/init.d/autofs).  It does however work to do \"ln -s ../cvmfs-config-osg.service /lib/systemd/system/autofs.service.wants/cvmfs-config-osg.service\", I will add that to the package.\r\n", 
+  "commit_id": "b47413a5218db2b32214b42245debec547530019", 
+  "created_at": "2017-02-28T19:41:51Z", 
+  "diff_hunk": "@@ -0,0 +1,11 @@\n+[Unit]\n+Description=daemon to keep /cvmfs/config-osg.opensciencegrid.org mounted\n+After=autofs.service\n+\n+[Service]\n+Type=simple\n+ExecStart=/usr/sbin/cvmfs-config-osgd -p /run/cvmfs-config-osgd.pid /cvmfs/config-osg.opensciencegrid.org\n+PIDFile=/run/cvmfs-config-osgd.pid", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/1#discussion_r103535897", 
+  "id": 103535897, 
+  "in_reply_to_id": 103214427, 
+  "original_commit_id": "9991ad5a1bcbf00d2a1640c3261a38d4bec5cd5d", 
+  "original_position": 8, 
+  "path": "cvmfs-config-osg.service", 
+  "position": null, 
+  "pull_request_review_id": 24325826, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/1", 
+  "updated_at": "2017-02-28T20:22:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/103535897", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

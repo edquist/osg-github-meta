@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "Thank you.\n", 
+  "created_at": "2015-10-29T17:50:24Z", 
+  "html_url": "https://github.com/opensciencegrid/privilege-xacml/issues/4#issuecomment-152264222", 
+  "id": 152264222, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/privilege-xacml/issues/4", 
+  "updated_at": "2015-10-29T17:50:24Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/privilege-xacml/issues/comments/152264222", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/1125766?v=4", 
+    "events_url": "https://api.github.com/users/gbehrmann/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/gbehrmann/followers", 
+    "following_url": "https://api.github.com/users/gbehrmann/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/gbehrmann/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/gbehrmann", 
+    "id": 1125766, 
+    "login": "gbehrmann", 
+    "organizations_url": "https://api.github.com/users/gbehrmann/orgs", 
+    "received_events_url": "https://api.github.com/users/gbehrmann/received_events", 
+    "repos_url": "https://api.github.com/users/gbehrmann/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/gbehrmann/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/gbehrmann/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/gbehrmann"
+  }
+}

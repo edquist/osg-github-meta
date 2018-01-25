@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "I tested my script against containers.ligo.org (even authenticated) successfully.\r\n```\r\n    if username is not None and token is not None:\r\n        client.login(username=args.username, password=args.token,\r\n                registry=args.registry)\r\n```\r\n\r\nI originally took your approach of saving the image (which is tar) and untarring it but I thought it unnecessarily expensive.", 
+  "created_at": "2017-10-13T21:46:20Z", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-singularity-sync/issues/11#issuecomment-336575216", 
+  "id": 336575216, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/cvmfs-singularity-sync/issues/11", 
+  "updated_at": "2017-10-13T21:54:21Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-singularity-sync/issues/comments/336575216", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/7475598?v=4", 
+    "events_url": "https://api.github.com/users/tpdownes/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/tpdownes/followers", 
+    "following_url": "https://api.github.com/users/tpdownes/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/tpdownes/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/tpdownes", 
+    "id": 7475598, 
+    "login": "tpdownes", 
+    "organizations_url": "https://api.github.com/users/tpdownes/orgs", 
+    "received_events_url": "https://api.github.com/users/tpdownes/received_events", 
+    "repos_url": "https://api.github.com/users/tpdownes/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/tpdownes/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/tpdownes/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/tpdownes"
+  }
+}

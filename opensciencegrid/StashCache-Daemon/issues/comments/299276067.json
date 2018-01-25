@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Let me explain:\r\n\r\nI moved stuff to `attic` as working dir while comparing what's been pushed in SVN for packaging as last thing before things were moved moved to https://github.com/opensciencegrid/StashCache/bin/StashDaemon ... Now, that `bin/StashDaemon` we want to remove once this is ready: https://github.com/opensciencegrid/StashCache-Daemon. We're doing complete rework so I did working copy (moved) everything relevant for me to `attic/old-*` to:\r\n\r\n* attic/old-svn\r\n* attic/old-git\r\n\r\nI plan to remove attic completely after consolidating the two into more reasonable commit of all files needed for root directory and new packaging of StashCache-Daemon ... Does that strategy sound OK? \r\n\r\nMaybe this pull request does not necessarily to be merged upstream and can stay in my fork until ready for merge, just wanted to keep partial progress with idea in the upstream as well. Like @bbockelm said: \"Publish early, publish often. That way others can help.\"", 
+  "created_at": "2017-05-04T18:51:16Z", 
+  "html_url": "https://github.com/opensciencegrid/StashCache-Daemon/pull/1#issuecomment-299276067", 
+  "id": 299276067, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/StashCache-Daemon/issues/1", 
+  "updated_at": "2017-05-04T18:51:16Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache-Daemon/issues/comments/299276067", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/5760170?v=4", 
+    "events_url": "https://api.github.com/users/zvada/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/zvada/followers", 
+    "following_url": "https://api.github.com/users/zvada/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/zvada/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/zvada", 
+    "id": 5760170, 
+    "login": "zvada", 
+    "organizations_url": "https://api.github.com/users/zvada/orgs", 
+    "received_events_url": "https://api.github.com/users/zvada/received_events", 
+    "repos_url": "https://api.github.com/users/zvada/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/zvada/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/zvada/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/zvada"
+  }
+}

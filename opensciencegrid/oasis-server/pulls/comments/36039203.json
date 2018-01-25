@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/oasis-server/pull/2#discussion_r36039203"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/2"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/comments/36039203"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Shouldn't this just be:\n\n```\n`hostname -s`\n```\n\n?\n", 
+  "commit_id": "de5a5bdb680f0ec44738f7c315138c68759550ae", 
+  "created_at": "2015-08-02T03:34:31Z", 
+  "diff_hunk": "@@ -2,8 +2,9 @@\n # Install and configure all application software on oasis or oasis-itb\n # Written by Dave Dykstra 2-26-2015\n \n-case \"`uname -n`\" in\n-    oasis.*|oasis-itb.*);;\n+MYSHORTNAME=\"`uname -n|cut -d. -f1`\"", 
+  "html_url": "https://github.com/opensciencegrid/oasis-server/pull/2#discussion_r36039203", 
+  "id": 36039203, 
+  "original_commit_id": "3041e4566459df70b8f7e32a1a14879c823bf4af", 
+  "original_position": 6, 
+  "path": "install/install-oasis", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/2", 
+  "updated_at": "2015-08-02T22:53:31Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/comments/36039203", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

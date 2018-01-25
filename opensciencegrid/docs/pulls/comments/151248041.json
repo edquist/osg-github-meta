@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/249#discussion_r151248041"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/249"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/151248041"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Do we need this section at all? Benefits of running the HTCondor-CE = your site can join the OSG.\r\n\r\nIf you think we still do, remove the word \"Other\" because no benefits are listed above.", 
+  "commit_id": "df9a7eb63efbfbd12f464c0ed1e09b9e053b6e74", 
+  "created_at": "2017-11-15T20:52:12Z", 
+  "diff_hunk": "@@ -29,11 +21,7 @@ What is HTCondor-CE?\n \n HTCondor-CE is a special configuration of the HTCondor software designed to be a job gateway solution for the OSG. It is configured to use the [JobRouter daemon](http://research.cs.wisc.edu/htcondor/manual/v8.6/5_4HTCondor_Job.html) to delegate jobs by transforming and submitting them to the site\u2019s batch system.\n \n-### How is HTCondor-CE different from a GRAM CE?\n-\n-The biggest difference you will see between an HTCondor-CE and a GRAM CE is in the way that jobs are submitted to your batch system; HTCondor-CE uses the built-in JobRouter daemon whereas GRAM CE uses jobmanager scripts written in Perl. Customizing your site\u2019s CE now requires editing configuration files instead of editing jobmanager scripts.\n-\n-Listed below are some other benefits to switching to HTCondor-CE:\n+Other benefits of running the HTCondor-CE:", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/249#discussion_r151248041", 
+  "id": 151248041, 
+  "original_commit_id": "75bccc3e5f7b08899c40a9e73620316e976b5cc7", 
+  "original_position": 37, 
+  "path": "docs/compute-element/htcondor-ce-overview.md", 
+  "position": null, 
+  "pull_request_review_id": 76925814, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/249", 
+  "updated_at": "2017-11-15T21:56:56Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/151248041", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

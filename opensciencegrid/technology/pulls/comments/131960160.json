@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/85#discussion_r131960160"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/85"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/131960160"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "It doesn't seem to handle the `#` well, it looks like a comment with the grayed out font", 
+  "commit_id": "9a3a55722e427993192f567acc9ed159d7437fe6", 
+  "created_at": "2017-08-08T16:14:28Z", 
+  "diff_hunk": "@@ -78,8 +78,8 @@ Make sure to use the TWiki document as a reference when making fixes!\n \n Within command blocks and file snippets, we've used `%RED%...%ENDCOLOR%`, `&lt;...&gt;`, etc. to highlight areas that users would have to insert text specific to their site. For now, use desciptive, all-caps text wrapped in angle brackets to indicate user input:\n \n-```\n-[user@client ~]$ condor_ce_trace -d <CE HOSTNAME>\n+```console\n+[root@client ~]# condor_ce_trace -d <CE HOSTNAME>", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/85#discussion_r131960160", 
+  "id": 131960160, 
+  "original_commit_id": "aca69aa08cf3fe650378e7b5b719364e40b7700e", 
+  "original_position": 27, 
+  "path": "docs/software/markdown-migration.md", 
+  "position": 27, 
+  "pull_request_review_id": 54990757, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/85", 
+  "updated_at": "2017-08-09T15:58:52Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/131960160", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

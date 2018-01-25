@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r150961851"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/150961851"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Putting a cvmfs.autofs file here is breaking with the precedents set by cvmfs and by the cvmfs-config-* packages on Redhat.  For sure I don't think it belongs in a cvmfs-config-* package; if anything it would be in cvmfs itself, but Jakob has chosen to make this a separate manual configuration step, since not every installation wants autofs mounting.  I don't think we can assume that everybody on Debian wants it.  It should be part of the installation instructions instead.", 
+  "commit_id": "d01e585f151c9990ca9f4bd16c4c9a6931f9bbae", 
+  "created_at": "2017-11-14T21:01:52Z", 
+  "diff_hunk": "@@ -17,12 +17,8 @@ install-common:\n \tinstall -D -m 444 opensciencegrid.org.pub $(DESTDIR)/etc/cvmfs/keys/opensciencegrid.org\n \n install-debian: install-common\n-\tmkdir -p $(DESTDIR)/lib/systemd/system \\\n-\t  $(DESTDIR)/lib/systemd/system/autofs.service.wants \\\n-\t  $(DESTDIR)/usr/sbin\n-\tinstall -D -m 444 cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system\n-\tln -s ../cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system/autofs.service.wants/cvmfs-config-osg.service\n-\tinstall -D -m 555 cvmfs-config-osgd $(DESTDIR)/usr/sbin\n+\tmkdir -p $(DESTDIR)/etc/auto.master.d\n+\tinstall -D -m 0644 cvmfs.autofs $(DESTDIR)/etc/auto.master.d", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r150961851", 
+  "id": 150961851, 
+  "original_commit_id": "0d3da67811bdb211e462f960ad1c378758b74563", 
+  "original_position": 11, 
+  "path": "Makefile", 
+  "position": null, 
+  "pull_request_review_id": 76593206, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4", 
+  "updated_at": "2017-11-17T21:54:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/150961851", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

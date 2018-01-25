@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/StashCache/pull/62#discussion_r116003816"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/62"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/116003816"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Why not give the full command, `systemctl start xrootd@stashcache-cache-server.service`", 
+  "commit_id": "9da39815980554ec49ee3e2087197784751e577f", 
+  "created_at": "2017-05-11T14:25:23Z", 
+  "diff_hunk": "@@ -0,0 +1,122 @@\n+# Configuring Cache Server\n+\n+Packages installed: `stashcache-daemon fetch-crl stashcache-cache-server`\n+\n+The following section describes required configuration to have a functional StashCache Cache (not origin server!). StashCache Cache package `stashcache-cache-server` needs to be manually configured from pre-existing XRootD configuration.\n+\n+## Cache server\n+!!! Note: \n+:bangbang: While example of the configuration file below provides combination of _authenticated_ and _non-authenticated_ _Cache_, the non-authenticated cache config is considered to be default option. If you're about to configure in addition _authenticated cache_ read to the end of this document and then follow post-installation of [authenticated part here](configure-cache-auth.md).\n+\n+For configuring **cache** one needs to define directive `pss.origin redirector.osgstorage.org:1024` (not `all.manager redirector.osgstorage.org+ 1213` directive as it is in case of [configuring origin](configure-origin.md)). \n+`StashCache-daemon` package provides default configuration file `/etc/xrootd/xrootd-stashcache-cache-server.cfg`. Example of the configuration of cache server is as follows:\n+```\n+all.export  /\n+set cachedir = /stash\n+xrd.allow host *\n+sec.protocol  host\n+all.adminpath /var/spool/xrootd\n+\n+xrootd.trace emsg login stall redirect\n+ofs.trace all\n+xrd.trace all\n+cms.trace all\n+\n+ofs.osslib  libXrdPss.so\n+pss.origin redirector.osgstorage.org:1094\n+pss.cachelib libXrdFileCache.so\n+pss.setopt DebugLevel 1\n+\n+oss.localroot $(cachedir)\n+\n+# Config for v1 (xrootd <=v4.5.0)\n+#pfc.nramprefetch 4\n+#pfc.nramread 4\n+#pfc.diskusage 0.98 0.99\n+\n+# Config for v2 (xrootd >v4.5.0)\n+pfc.blocksize 512k\n+pfc.ram       32g\n+pfc.prefetch  10\n+pfc.diskusage 0.98 0.99\n+\n+xrootd.seclib /usr/lib64/libXrdSec.so\n+sec.protocol /usr/lib64 gsi \\\n+  -certdir:/etc/grid-security/certificates \\\n+  -cert:/etc/grid-security/xrd/xrdcert.pem \\\n+  -key:/etc/grid-security/xrd/xrdkey.pem \\\n+  -crl:1 \\\n+  -authzfun:libXrdLcmaps.so \\\n+  -authzfunparms:--lcmapscfg,/etc/xrootd/lcmaps.cfg,--loglevel,4|useglobals \\\n+  -gmapopt:10 \\\n+  -authzto:3600\n+\n+# Enable the authorization module, even if we have an unauthenticated instance.\n+ofs.authorize 1\n+acc.audit deny grant\n+\n+# Run the authenticated instance on port 8443 (Xrootd and HTTPS)\n+# Notice authenticated and unauthenticated instances use separate auth\n+# files.\n+if named stashcache-cache-server-auth\n+   #pss.origin  red-gridftp4.unl.edu:1094\n+   xrd.port 8443\n+   acc.authdb /etc/xrootd/Authfile-auth\n+   sec.protbind * gsi\n+   xrd.protocol http:8443 libXrdHttp.so\n+   pss.origin xrootd-local.unl.edu:1094\n+else\n+# Unauthenticated instance runs on port 1094 (Xrootd) and 8000 (HTTP/HTTPS)\n+   acc.authdb /etc/xrootd/Authfile-noauth\n+   #sec.protbind * none\n+   sec.protbind  * none\n+   xrd.protocol http:8000 libXrdHttp.so\n+fi\n+\n+http.cadir /etc/grid-security/certificates\n+http.cert /etc/grid-security/xrd/xrdcert.pem\n+http.key /etc/grid-security/xrd/xrdkey.pem\n+http.secxtractor /usr/lib64/libXrdLcmaps.so\n+http.listingdeny yes\n+http.staticpreload http://static/robots.txt /etc/xrootd/stashcache-robots.txt\n+\n+# Tune the client timeouts to more aggressively timeout.\n+pss.setopt ParallelEvtLoop 10\n+pss.setopt RequestTimeout 25\n+pss.setopt ConnectTimeout 25\n+pss.setopt ConnectionRetry 2\n+\n+#Sending monitoring information\n+xrd.report uct2-collectd.mwt2.org:9931\n+xrootd.monitor all auth flush 30s window 5s fstat 60 lfn ops xfr 5 dest redir fstat info user uct2-collectd.mwt2.org:9930\n+\n+all.sitename Nebraska\n+\n+# Optional configuration\n+# Remote debugging\n+xrootd.diglib * /etc/xrootd/digauth.cf\n+```\n+\n+### Add Authfile for non-authenticated cache\n+In Authfile you want to allow local reads below `$(cachedir)` defined in the main config. Example of Authfile:\n+```\n+   [root@client ~]$ cat /etc/xrootd/Authfile-noauth \n+   u * /user/ligo -rl / rl\n+```\n+\n+### Add Robots file\n+```\n+   [root@client ~]$ cat /etc/xrootd/stashcache-robots.txt \n+   User-agent: *\n+   Disallow: /\n+```\n+\n+### RHEL7\n+On RHEL7 system, you need to run following systemd unit:\n+* `xrootd@stashcache-cache-server.service`", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/pull/62#discussion_r116003816", 
+  "id": 116003816, 
+  "original_commit_id": "6fae1d33967e0bba60cc412395aecb88913cd226", 
+  "original_position": 116, 
+  "path": "docs/admin/configure-cache.md", 
+  "position": null, 
+  "pull_request_review_id": 37590528, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/62", 
+  "updated_at": "2017-05-11T17:06:09Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/116003816", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

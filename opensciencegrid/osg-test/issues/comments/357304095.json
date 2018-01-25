@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "I'd rather not say `deprecated`. If we exclude, say, 3.4-only tests from 3.5, then we might also want to exclude 3.5-only tests from 3.4, in which case it's definitely not deprecated. It could also be called `wrongrelease`.", 
+  "created_at": "2018-01-12T17:34:59Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/111#issuecomment-357304095", 
+  "id": 357304095, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/111", 
+  "updated_at": "2018-01-12T17:34:59Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/357304095", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

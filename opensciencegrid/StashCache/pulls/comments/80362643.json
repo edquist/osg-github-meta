@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/StashCache/pull/17#discussion_r80362643"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/17"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/80362643"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Why are you calling another python script as a process.  Can't you just create a module, class, or function that does the time and takes all the necessary arguments?\n", 
+  "commit_id": "5e3ab9381f872f709d59260815293406877f2512", 
+  "created_at": "2016-09-24T15:14:53Z", 
+  "diff_hunk": "@@ -0,0 +1,219 @@\n+import optparse\n+import sys\n+import subprocess\n+import datetime\n+import time\n+import re\n+import os\n+import json\n+import multiprocessing\n+import urllib2\n+\n+parser = optparse.OptionParser()\n+parser.add_option('--debug', dest='debug', action='store_true', help='debug')\n+parser.add_option('-r', dest='recursive', action='store_true', help='recursively copy')\n+parser.add_option('--closest', action='store_true')\n+args,opts=parser.parse_args()\n+\n+def find_closest():\n+    closest=subprocess.Popen(['./get_best_stashcache.py', '0'], stdout=subprocess.PIPE)\n+    cache=closest.communicate()[0].split()[0]\n+    return cache\n+\n+if not args.closest:\n+    try:\n+        source=opts[0]\n+        destination=opts[1]\n+    except:\n+        parser.error('Source and Destination must be last two arguments')\n+else:\n+    print find_closest()\n+    sys.exit()\n+\n+#Set debug flag for xrdcp call\n+if not args.debug:\n+    xrdargs=0\n+else:\n+    xrdargs=1\n+\n+#set to 5 minutes\n+TIMEOUT = 300\n+DIFF = TIMEOUT * 10\n+\n+#For single file, try xrdcp on optimal cache 2 times, then xrdcp on the origin server\n+def doStashCpSingle(sourceFile=source, destination=destination):\n+    xrdfs = subprocess.Popen([\"xrdfs\", \"root://stash.osgconnect.net\", \"stat\", sourceFile], stdout=subprocess.PIPE).communicate()[0]\n+    fileSize=int(re.findall(r\"Size:   \\d+\",xrdfs)[0].split(\":   \")[1])\n+    cache=find_closest()\n+    command = \"python ./timeout.py -t \"+str(TIMEOUT)+ \" -f \"+sourceFile + \" -d \"+str(DIFF)+\" -s \"+str(fileSize)+\" -x \"+str(xrdargs)+\" -c \"+cache+\" -z \"+destination\n+    date=datetime.datetime.now()\n+    start1=int(time.mktime(date.timetuple()))*1000\n+    copy=subprocess.Popen([command],stdout=subprocess.PIPE,shell=True)\n+    xrd_exit=copy.communicate()[0].split()[-1]\n+    date=datetime.datetime.now()\n+    end1=int(time.mktime(date.timetuple()))*1000\n+    filename=destination+'/'+sourceFile.split('/')[-1]\n+    dlSz=os.stat(filename).st_size\n+    destSpace=1\n+    try:\n+        sitename=os.environ['OSG_SITE_NAME']\n+    except:\n+        sitename=\"siteNotFound\"\n+    xrdcp_version=subprocess.Popen(['echo $(xrdcp -V 2>&1)'],stdout=subprocess.PIPE,shell=True).communicate()[0][:-1]\n+    start2=0\n+    start3=0\n+    end2=0\n+    xrdexit2=-1\n+    xrdexit3=-1\n+    if xrd_exit=='0': #Worked first try\n+        dltime=end1-start1\n+        status = 'Success'\n+        tries=1\n+        payload={}\n+        payload['timestamp']=end1\n+        payload['host']=cache\n+        payload['filename']=sourceFile\n+        payload['filesize']=fileSize\n+        payload['download_size']=dlSz\n+        payload['download_time']=dltime\n+        payload['sitename']=sitename\n+        payload['destination_space']=destSpace\n+        payload['status']=status\n+        payload['xrdexit1']=xrd_exit\n+        payload['xrdexit2']=xrdexit2\n+        payload['xrdexit3']=xrdexit3\n+        payload['tries']=tries\n+        payload['xrdcp_version']=xrdcp_version\n+        payload['start1']=start1\n+        payload['end1']=end1\n+        payload['start2']=start2\n+        payload['end2']=end2\n+        payload['start3']=start3\n+        payload['cache']=cache\n+        try:\n+            p = multiprocessing.Process(target=es_send, name=\"es_send\", args=(payload,))\n+            p.start()\n+            time.sleep(5)\n+            p.terminate()\n+        except:\n+            print \"Error curling to ES\"\n+    else: #Copy again using same cache\n+        print \"1st try failed on %s, trying again\" % cache\n+        date=datetime.datetime.now()\n+        start2=int(time.mktime(date.timetuple()))*1000\n+        copy=subprocess.Popen([command],stdout=subprocess.PIPE,shell=True)\n+        xrd_exit=copy.communicate()[0].split()[-1]\n+        date=datetime.datetime.now()\n+        end2=int(time.mktime(date.timetuple()))*1000\n+        dlSz=os.stat(filename).st_size\n+        if xrd_exit=='0': #Worked second try\n+            status = 'Success'\n+            tries=2\n+            dltime=end2-start2\n+            payload={}\n+            payload['timestamp']=end1\n+            payload['host']=cache\n+            payload['filename']=sourceFile\n+            payload['filesize']=fileSize\n+            payload['download_size']=dlSz\n+            payload['download_time']=dltime\n+            payload['sitename']=sitename\n+            payload['destination_space']=destSpace\n+            payload['status']=status\n+            payload['xrdexit1']=xrd_exit\n+            payload['xrdexit2']=xrdexit2\n+            payload['xrdexit3']=xrdexit3\n+            payload['tries']=tries\n+            payload['xrdcp_version']=xrdcp_version\n+            payload['start1']=start1\n+            payload['end1']=end1\n+            payload['start2']=start2\n+            payload['end2']=end2\n+            payload['start3']=start3\n+            payload['cache']=cache\n+            try:\n+                p = multiprocessing.Process(target=es_send, name=\"es_send\", args=(payload,))\n+                p.start()\n+                time.sleep(5)\n+                p.terminate()\n+            except:\n+                print \"Error curling to ES\"\n+        else: #Pull from origin\n+            print \"2nd try failed on %s, pulling from origin\" % cache\n+            cache=\"root://stash.osgconnect.net\"\n+            command = \"python ./timeout.py -t \"+str(TIMEOUT)+ \" -f \"+sourceFile + \" -d \"+str(DIFF)+\" -s \"+str(fileSize)+\" -x \"+str(xrdargs)+\" -c \"+cache+\" -z \"+destination", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/pull/17#discussion_r80362643", 
+  "id": 80362643, 
+  "original_commit_id": "d3b94159a37792a96d9de944ed1ddc8935fa9936", 
+  "original_position": 144, 
+  "path": "bin/stashcp2/stashcp.py", 
+  "position": null, 
+  "pull_request_review_id": 1436511, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/17", 
+  "updated_at": "2016-10-11T14:34:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/80362643", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

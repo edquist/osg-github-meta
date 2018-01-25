@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/243#discussion_r150669124"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/243"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/150669124"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "ok Fixed.", 
+  "commit_id": "cc777eeed5e279801a82f727ea6d00d50a97451f", 
+  "created_at": "2017-11-13T21:23:56Z", 
+  "diff_hunk": "@@ -439,13 +439,152 @@ After configuring condor, be sure to restart condor:\n Proxy Configuration\n -------------------\n \n-There are 2 types of (or purposes for) proxies required for the VO Frontend: 1 the %GREEN%VO Frontend proxy%ENDCOLOR% (used to authenticate with the other glideinWMS services) 1 one or more glideinWMS %GREEN%pilot proxies%ENDCOLOR% (used/delegated to the factory services and submitted on the glideinWMS pilot jobs) The %GREEN%VO Frontend proxy%ENDCOLOR% and the %GREEN%pilot proxy%ENDCOLOR% can be the same. By default, the VO Frontend will run as user `frontend` (UID is machine dependent) so these proxies must be owned by the user `frontend`.\n+There are 2 types of (or purposes for) proxies required for the VO Frontend: \n+\n+1. The %GREEN%VO Frontend proxy%ENDCOLOR% (used to authenticate with the other glideinWMS services) \n+2. One or more glideinWMS %RED%pilot proxies%ENDCOLOR% (used/delegated to the factory services and submitted on the glideinWMS pilot jobs).\n+\n+The %GREEN%VO Frontend proxy%ENDCOLOR% and the %RED%pilot proxy%ENDCOLOR% can be the same. By default, the VO Frontend will run as user `frontend` (UID is machine dependent) so these proxies must be owned by the user `frontend`.\n+\n+- [Automatic renewal without VOMS Admin](#automatic-renewal-without-voms-admin) **(Recommended)**\n+- [Manual renewal](#manual-proxy-renewal)\n+- [Example of automatic renewal](#example-of-automatic-proxy-renewal)\n+\n+### Automatic Renewal without VOMS Admin\n+\n+This section describes how to automatically renew your frontend and pilot proxies without a VOMS Admin server, which is now [deprecated](https://opensciencegrid.github.io/technology/policy/voms-admin-retire/) in the OSG. If your VO uses non-OSG VOMS Admin servers, consult [this section](#example-of-automatic-proxy-renewal) instead\n+\n+!!! note\n+    You must have access to the certificate/key pair corresponding to your VO's entry in `/etc/vomses` of the `vo-client` package. If you do not have access to these credentials, contact your [VO manager](http://oim.opensciencegrid.org/oim/vo).\n+\n+#### Obtaining information from your current proxy\n+\n+The first step is to obtain information from your current proxy. Assuming the location of your current proxy is at `<PATH_TO_OLD_PROXY>`. Then run the following command to obtain information from your current proxy:\n+\n+    :::console\n+    root@host # voms-proxy-info --file %RED%<PATH_TO_OLD_PROXY>%ENDCOLOR% -all\n+    subject   : /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=pilot/glidein2.chtc.wisc.edu/CN=287414457\n+    issuer    : /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=pilot/glidein2.chtc.wisc.edu\n+    identity  : /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=pilot/glidein2.chtc.wisc.edu\n+    type      : RFC compliant proxy\n+    strength  : 1024 bits\n+    path      : credential_chtc2.main_745540\n+    timeleft  : 5441:28:37\n+    key usage : Digital Signature, Key Encipherment, Data Encipherment\n+    === VO GLOW extension information ===\n+    VO        : GLOW\n+    subject   : /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=pilot/glidein2.chtc.wisc.edu\n+    issuer    : /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=glow-voms.cs.wisc.edu\n+    %BLUE%attribute : /GLOW/Role=htpc/Capability=NULL %ENDCOLOR%\n+    timeleft  : 71:34:02\n+    %BLUE%uri       : glow-voms.cs.wisc.edu:15001 %ENDCOLOR%\n+\n+The most important fields to take notice are `attribute`, `VO` and `uri`. Write them down since they would be needed in the next steps\n+\n+#### Generating a proxy using voms-proxy-fake\n+\n+!!! warning\n+    To create a proxy using `voms-proxy-fake` that works the proxy must be signed by the same certificate as the non-fake proxy. In practice this means you need to have access to the certificate and key of your voms admin server (i.e the certificate and key of the `issuer` mention in this [section](#obtaining-information-from-your-current-proxy)).\n+\n+In order to create a proxy using `voms-proxy-fake`, run:\n+\n+    :::console\n+    root@host # voms-proxy-fake  -debug            \\\n+    -cert %RED%<PATH_YOUR_PILOT.CERT>%ENDCOLOR%    \\\n+    -key %RED%<PATH_YOUR_PILOT.KEY>%ENDCOLOR%      \\\n+    -out %RED%<PATH_TO_NEW_PROXY.PROXY>%ENDCOLOR%  \\\n+    -fqan /GLOW/Role=htpc/Capability=NULL          \\\n+    -voms GLOW                                     \\\n+    -hours 24                                      \\\n+    -hostcert /etc/grid-security/voms/vomscert.pem \\\n+    -hostkey /etc/grid-security/voms/vomskey.pem   \\\n+    -uri glow-voms.cs.wisc.edu:15001\n+\n+!!! note\n+    The `fqan` has to match the `attribute` of [section](#obtaining-information-from-your-current-proxy).\n+\n+!!! note\n+    The `voms` attribute has to match the `VO` attribute `VOMS` and same for uri.\n+\n+Once this is done running a `voms-proxy-info` in `<PATH_TO_NEW_PROXY.PROXY>` should yield something like this:\n+\n+    :::console\n+    root@host # voms-proxy-info --file %RED%<PATH_TO_NEW_PROXY.PROXY>%ENDCOLOR% -all\n+    subject   : /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=pilot/glidein2.chtc.wisc.edu/CN=proxy\n+    issuer    : /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=pilot/glidein2.chtc.wisc.edu\n+    identity  : /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=pilot/glidein2.chtc.wisc.edu\n+    type      : proxy\n+    strength  : 1024 bits\n+    path      : %RED%PATH_TO_NEW_PROXY.PROXY%ENDCOLOR%\n+    timeleft  : 23:30:51\n+    key usage : Digital Signature, Key Encipherment, Data Encipherment\n+    === VO GLOW extension information ===\n+    VO        : GLOW\n+    subject   : /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=pilot/glidein2.chtc.wisc.edu\n+    issuer    : /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=glow-voms.cs.wisc.edu\n+    attribute : /GLOW/Role=htpc/Capability=NULL\n+    timeleft  : 23:30:51\n+    uri       : glow-voms.cs.wisc.edu:15001\n+\n+#### Creting a script fro automatic proxy renewal\n+\n+This section describes how to create a script to automaticly renew proxies using `voms-proxy-fake`. More information on how to generate a proxy using `voms-proxy-fake` can be found in [section](#generating-a-proxy-using-voms-proxy-fake).\n+\n+1. Create a script that looks like to generate proxies called `/etc/cron.hourly/renew_proxies.sh`", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/243#discussion_r150669124", 
+  "id": 150669124, 
+  "in_reply_to_id": 150652505, 
+  "original_commit_id": "d0d4b4b21cf5b11981c4e522e52b5fd7d7842af7", 
+  "original_position": 96, 
+  "path": "docs/other/install-gwms-frontend.md", 
+  "position": null, 
+  "pull_request_review_id": 76254165, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/243", 
+  "updated_at": "2017-11-14T00:57:21Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/150669124", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

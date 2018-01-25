@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "As we discussed in person, we are dropping i386 support in OSG 3.4.", 
+  "created_at": "2017-06-20T20:08:41Z", 
+  "html_url": "https://github.com/opensciencegrid/release-tools/pull/34#issuecomment-309876508", 
+  "id": 309876508, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/release-tools/issues/34", 
+  "updated_at": "2017-06-20T20:08:41Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/release-tools/issues/comments/309876508", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

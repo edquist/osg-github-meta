@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/vm-test-runs/pull/22#discussion_r92849132"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/22"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/comments/92849132"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Huh, that's neat. Though the one benefit of being explicit is clarity, particularly if you don't know that fun `set` and `dict` interaction.", 
+  "commit_id": "3dd8bb1d44bb3d07dbc8eba17202a714fd6d4281", 
+  "created_at": "2016-12-16T17:11:27Z", 
+  "diff_hunk": "@@ -33,48 +33,32 @@ def load_run_params(param_dir):\n             # skip non-yaml files\n             pass\n         else:\n-            if param_contents.has_key('platform') \\\n-               and param_contents.has_key('sources') \\\n-               and param_contents.has_key('packages'):\n+            if set(param_contents.keys()) == set(['platforms', 'sources', 'package_sets']):", 
+  "html_url": "https://github.com/opensciencegrid/vm-test-runs/pull/22#discussion_r92849132", 
+  "id": 92849132, 
+  "in_reply_to_id": 92848449, 
+  "original_commit_id": "30b976b08dee3ef46061140add9bb0960fba6a7f", 
+  "original_position": 31, 
+  "path": "vmu.py", 
+  "position": null, 
+  "pull_request_review_id": 13372869, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/22", 
+  "updated_at": "2016-12-20T20:16:30Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/comments/92849132", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

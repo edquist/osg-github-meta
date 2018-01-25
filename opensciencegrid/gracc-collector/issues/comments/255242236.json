@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "The summarizer currently doesn't limit it's summarizing to just the JobUsageRecord type (maybe it should) when it queries the raw index.  Should that change be made first?\n", 
+  "created_at": "2016-10-20T22:09:14Z", 
+  "html_url": "https://github.com/opensciencegrid/gracc-collector/issues/5#issuecomment-255242236", 
+  "id": 255242236, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gracc-collector/issues/5", 
+  "updated_at": "2016-10-20T22:09:14Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-collector/issues/comments/255242236", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

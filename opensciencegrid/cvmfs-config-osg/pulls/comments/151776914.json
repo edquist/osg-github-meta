@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151776914"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151776914"
+    }
+  }, 
+  "author_association": "CONTRIBUTOR", 
+  "body": "I think not, but I'm not 100% certain. The `rules` file contains\r\n```\r\n#!/usr/bin/make -f\r\n%:\r\n\tdh $@\r\n```\r\nI think that, on systemd platforms, this expands to automatically performing systemd-style substitutions in the `DEBHELPER` area of  `postinst/postrm` scripts. I think these are no-ops for this package.\r\n\r\nSo, it can probably be removed. But, so could `postinst` and `postrm` and maybe some part of the `rules`? I kinda like leaving the infrastructure in place, even if it's not presently doing much.", 
+  "commit_id": "d01e585f151c9990ca9f4bd16c4c9a6931f9bbae", 
+  "created_at": "2017-11-17T20:00:01Z", 
+  "diff_hunk": "@@ -1,13 +1,17 @@\n Source: cvmfs-config-osg\n Maintainer: Dave Dykstra <dwd@fnal.gov>\n-Section: config\n+Section: utils\n Priority: extra\n-Standards-Version: 3.9.3.1\n-Build-Depends: debhelper (>= 9) \n-Homepage: http://github.conf/opensciencegrid/cvmfs-config-osg\n+Standards-Version: 3.9.6\n+Build-Depends: debhelper (>= 9), dh-systemd", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151776914", 
+  "id": 151776914, 
+  "in_reply_to_id": 151775005, 
+  "original_commit_id": "59014e9977cdaf38fe6863abe898dafca8da9e00", 
+  "original_position": 10, 
+  "path": "packaging/debian/control", 
+  "position": null, 
+  "pull_request_review_id": 77545974, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4", 
+  "updated_at": "2017-11-17T21:54:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151776914", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/7475598?v=4", 
+    "events_url": "https://api.github.com/users/tpdownes/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/tpdownes/followers", 
+    "following_url": "https://api.github.com/users/tpdownes/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/tpdownes/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/tpdownes", 
+    "id": 7475598, 
+    "login": "tpdownes", 
+    "organizations_url": "https://api.github.com/users/tpdownes/orgs", 
+    "received_events_url": "https://api.github.com/users/tpdownes/received_events", 
+    "repos_url": "https://api.github.com/users/tpdownes/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/tpdownes/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/tpdownes/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/tpdownes"
+  }
+}

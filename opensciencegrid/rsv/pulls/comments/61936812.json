@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/rsv/pull/1#discussion_r61936812"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv/pulls/1"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv/pulls/comments/61936812"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Should be ...`'nordugrid' for Nordugrid` (missing the quotes and the capitalization)\n", 
+  "commit_id": "949dae0d6d6420faef3ec72d49ee7613bf92eceb", 
+  "created_at": "2016-05-03T19:01:35Z", 
+  "diff_hunk": "@@ -151,9 +151,9 @@ def process_options(arguments=None):\n             parser.error(\"You must provide a list of metrics to run or else pass the \" +\n                          \"--all-enabled flag to run all enabled metrics\")\n \n-    if options.ce_type and options.ce_type not in ('gram', 'condor-ce', 'htcondor-ce'):\n+    if options.ce_type and options.ce_type not in ('gram', 'condor-ce', 'htcondor-ce', 'cream', 'nordugrid'):\n         parser.error(\"Invalid value for --ce-type. \"\n-                     \"Valid values are 'gram' for Globus GRAM, and 'htcondor-ce' (or 'condor-ce') for HTCondor-CE\")\n+                     \"Valid values are 'gram' for Globus GRAM, 'htcondor-ce' (or 'condor-ce') for HTCondor-CE, 'cream' for CREAM-CE and nordugrid for nordugrid\")", 
+  "html_url": "https://github.com/opensciencegrid/rsv/pull/1#discussion_r61936812", 
+  "id": 61936812, 
+  "original_commit_id": "ac0349ee431b9dd77c0e826a518cdf6e6f44b2a9", 
+  "original_position": 26, 
+  "path": "rsv-core/lib/python/rsv/rsv_control.py", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/rsv/pulls/1", 
+  "updated_at": "2016-05-03T19:22:32Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/rsv/pulls/comments/61936812", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

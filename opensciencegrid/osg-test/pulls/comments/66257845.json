@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/26#discussion_r66257845"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/26"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/66257845"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I don't see any real use of the input verification here and I think it only causes developer headache: \"I want to replace this regular expression in this file with this new line. Wait, the new line has to match the regular expression? What? Why? I want to replace it with whatever I damn well please.\" That was my response, at least. I've already gone through the rest of the test code to look at usage of this function but since my change lifts the requirement, it doesn't have any affect.\n\nThat being said, I could revert it and add the option but I think it's an unnecessary and confusing 'feature' of the function.\n", 
+  "commit_id": "a2c130ac341529e10360df211193c7d0abc56845", 
+  "created_at": "2016-06-08T13:46:33Z", 
+  "diff_hunk": "@@ -144,12 +144,9 @@ def replace(path, old_line, new_line, owner=None, backup=True):\n     write(path, lines_to_write, owner, backup)\n \n def replace_regexpr(path, regexp, new_line, owner=None, backup=True):\n-    \"\"\"Replace an old line that matches regexpr with a new line in given path.                                                     \n-    The 'owner' and 'backup' arguments are passed to write().                                                                                  \n+    \"\"\"Replace an old line that matches regexpr with a new line in given path.\n+    The 'owner' and 'backup' arguments are passed to write().\n     \"\"\"\n-    match = re.search(regexp, new_line)\n-    if not match:\n-       raise ValueError(\"The new_line '%s' does not match reg expr '%s'\" % (new_line, regexp)) \n     lines_to_write = []", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/26#discussion_r66257845", 
+  "id": 66257845, 
+  "original_commit_id": "a2c130ac341529e10360df211193c7d0abc56845", 
+  "original_position": 12, 
+  "path": "osgtest/library/files.py", 
+  "position": 12, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/26", 
+  "updated_at": "2016-06-08T13:46:33Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/66257845", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

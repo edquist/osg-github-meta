@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "@djw8605 , I need some help. Something happens in the middle in the conversion of docker to singularity.\r\n\r\nThe docker container works fine\r\n\r\n```console\r\nsingularity exec docker://opensciencegrid/tensorflow-gpu python tf_matmul.py\r\n2017-10-05 23:12:19.590915: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties: \r\nname: GeForce GTX 1080 Ti\r\nmajor: 6 minor: 1 memoryClockRate (GHz) 1.582\r\npciBusID 0000:84:00.0\r\nTotal memory: 10.91GiB\r\nFree memory: 10.75GiB\r\n2017-10-05 23:12:19.883190: W tensorflow/stream_executor/cuda/cuda_driver.cc:523] A non-primary context 0x1b4e890 exists before initializing the StreamExecutor. We haven't verified StreamExecutor works with that.\r\n2017-10-05 23:12:19.884666: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 1 with properties: \r\nname: GeForce GTX 1080 Ti\r\nmajor: 6 minor: 1 memoryClockRate (GHz) 1.582\r\npciBusID 0000:85:00.0\r\nTotal memory: 10.91GiB\r\nFree memory: 10.75GiB\r\n2017-10-05 23:12:20.179617: W tensorflow/stream_executor/cuda/cuda_driver.cc:523] A non-primary context 0x2ef3840 exists before initializing the StreamExecutor. We haven't verified StreamExecutor works with that.\r\n2017-10-05 23:12:20.180529: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 2 with properties: \r\nname: GeForce GTX 1080 Ti\r\nmajor: 6 minor: 1 memoryClockRate (GHz) 1.582\r\npciBusID 0000:88:00.0\r\nTotal memory: 10.91GiB\r\nFree memory: 10.75GiB\r\n2017-10-05 23:12:20.481700: W tensorflow/stream_executor/cuda/cuda_driver.cc:523] A non-primary context 0x2ef78a0 exists before initializing the StreamExecutor. We haven't verified StreamExecutor works with that.\r\n2017-10-05 23:12:20.482656: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 3 with properties: \r\nname: GeForce GTX 1080 Ti\r\nmajor: 6 minor: 1 memoryClockRate (GHz) 1.582\r\npciBusID 0000:89:00.0\r\nTotal memory: 10.91GiB\r\nFree memory: 10.75GiB\r\n2017-10-05 23:12:20.487009: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0 1 2 3 \r\n2017-10-05 23:12:20.487034: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y Y Y Y \r\n2017-10-05 23:12:20.487042: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 1:   Y Y Y Y \r\n2017-10-05 23:12:20.487049: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 2:   Y Y Y Y \r\n2017-10-05 23:12:20.487057: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 3:   Y Y Y Y \r\n2017-10-05 23:12:20.487092: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:84:00.0)\r\n2017-10-05 23:12:20.487105: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:1) -> (device: 1, name: GeForce GTX 1080 Ti, pci bus id: 0000:85:00.0)\r\n2017-10-05 23:12:20.487184: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:2) -> (device: 2, name: GeForce GTX 1080 Ti, pci bus id: 0000:88:00.0)\r\n2017-10-05 23:12:20.487192: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:3) -> (device: 3, name: GeForce GTX 1080 Ti, pci bus id: 0000:89:00.0)\r\nresult of matrix multiplication\r\n===============================\r\n[[  1.00000000e+00   0.00000000e+00]\r\n [ -4.76837158e-07   1.00000024e+00]]\r\n===============================\r\n```\r\n\r\nBut the singularity image does not:\r\n\r\n```console\r\nsingularity exec /cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow-gpu\\:latest/ python tf_matmul.py\r\nTraceback (most recent call last):\r\n  File \"tf_matmul.py\", line 3, in <module>\r\n    import tensorflow as tf\r\nImportError: No module named tensorflow\r\n```\r\n\r\nAlthough technically this should not be a prolem should it?\r\n", 
+  "created_at": "2017-10-05T23:24:15Z", 
+  "html_url": "https://github.com/opensciencegrid/osgvo-tensorflow-gpu/pull/1#issuecomment-334618842", 
+  "id": 334618842, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osgvo-tensorflow-gpu/issues/1", 
+  "updated_at": "2017-10-05T23:24:15Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osgvo-tensorflow-gpu/issues/comments/334618842", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

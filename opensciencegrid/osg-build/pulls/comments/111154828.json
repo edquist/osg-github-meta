@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-build/pull/35#discussion_r111154828"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/35"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/111154828"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Why not write prose? \u201cThe default is AUTO.\u201d", 
+  "commit_id": "fa731b20091245076b1de864806fb82f595d4ecd", 
+  "created_at": "2017-04-12T13:50:22Z", 
+  "diff_hunk": "@@ -325,10 +325,10 @@ def parse_cmdline_args(argv):\n         help=\"The prefix for the software cache to take source files from. \"\n         \"The following special caches exist: \"\n         \"AFS (%s), VDT (%s), and AUTO (AFS if avaliable, VDT if not). \"\n-        \"The default cache is AUTO.\" % (AFS_CACHE_PREFIX, WEB_CACHE_PREFIX))\n+        \"Default: AUTO\" % (AFS_CACHE_PREFIX, WEB_CACHE_PREFIX))", 
+  "html_url": "https://github.com/opensciencegrid/osg-build/pull/35#discussion_r111154828", 
+  "id": 111154828, 
+  "original_commit_id": "9e29aac8c04f82cb1ae737f6dacb67d37bb3d24e", 
+  "original_position": 14, 
+  "path": "osgbuild/main.py", 
+  "position": 14, 
+  "pull_request_review_id": 32379146, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/35", 
+  "updated_at": "2017-04-18T21:55:32Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/111154828", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

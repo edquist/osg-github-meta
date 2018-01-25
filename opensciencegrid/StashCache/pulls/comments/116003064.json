@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/StashCache/pull/62#discussion_r116003064"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/62"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/116003064"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I thought you were going to use the include features for this?", 
+  "commit_id": "9da39815980554ec49ee3e2087197784751e577f", 
+  "created_at": "2017-05-11T14:22:29Z", 
+  "diff_hunk": "@@ -0,0 +1,122 @@\n+# Configuring Cache Server\n+\n+Packages installed: `stashcache-daemon fetch-crl stashcache-cache-server`\n+\n+The following section describes required configuration to have a functional StashCache Cache (not origin server!). StashCache Cache package `stashcache-cache-server` needs to be manually configured from pre-existing XRootD configuration.\n+\n+## Cache server\n+!!! Note: \n+:bangbang: While example of the configuration file below provides combination of _authenticated_ and _non-authenticated_ _Cache_, the non-authenticated cache config is considered to be default option. If you're about to configure in addition _authenticated cache_ read to the end of this document and then follow post-installation of [authenticated part here](configure-cache-auth.md).\n+\n+For configuring **cache** one needs to define directive `pss.origin redirector.osgstorage.org:1024` (not `all.manager redirector.osgstorage.org+ 1213` directive as it is in case of [configuring origin](configure-origin.md)). \n+`StashCache-daemon` package provides default configuration file `/etc/xrootd/xrootd-stashcache-cache-server.cfg`. Example of the configuration of cache server is as follows:\n+```", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/pull/62#discussion_r116003064", 
+  "id": 116003064, 
+  "original_commit_id": "6fae1d33967e0bba60cc412395aecb88913cd226", 
+  "original_position": 13, 
+  "path": "docs/admin/configure-cache.md", 
+  "position": null, 
+  "pull_request_review_id": 37590528, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/62", 
+  "updated_at": "2017-05-11T17:06:09Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/116003064", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

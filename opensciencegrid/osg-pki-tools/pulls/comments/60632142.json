@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-pki-tools/pull/3#discussion_r60632142"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/pulls/3"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/pulls/comments/60632142"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Ah, it looks like at least the rpm takes care of marking them executable (the ones installed under `/usr/bin`).  Anyway, it should work as you have it.\n\nMaybe for future consideration... My thought is actually that any scripts you intend to invoke that start with a `#!` line really ought to be executable and invoked directly (rather than explicitly passing it to the interpreter, in this case `/bin/sh`).\n\n(Interestingly, for the scripts in question here, `osg-user-cert-revoke` is shell, but it invokes `osg-cert-revoke` directly, which is python --but not executable-- in the sources.  The rpm makes it executable, but for non-rpm installs my guess is this will fail with permission denied.)\n", 
+  "commit_id": "5f6d6218593cf9173d67729197a3f203df1c96c4", 
+  "created_at": "2016-04-21T18:29:47Z", 
+  "diff_hunk": "@@ -179,7 +179,7 @@ def user_revoke(self, *opts):\n         if not self.reqid and '--help' not in opts:\n             raise CertFileError('Could not revoke cert due to missing request ID\\n')\n         args = opts + ('--test', self.reqid, 'osg-pki-tools unit test - user revoke')\n-        cmd = (os.path.join(SCRIPTS_PATH, 'osg-user-cert-revoke'),) + args\n+        cmd = ('/bin/sh', os.path.join(SCRIPTS_PATH, 'osg-user-cert-revoke'),) + args", 
+  "html_url": "https://github.com/opensciencegrid/osg-pki-tools/pull/3#discussion_r60632142", 
+  "id": 60632142, 
+  "original_commit_id": "1e55f4cef07003bfc5791f2c4f9f2fc3623c0a1e", 
+  "original_position": 16, 
+  "path": "tests/pkiunittest.py", 
+  "position": 16, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/pulls/3", 
+  "updated_at": "2016-04-21T18:29:47Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-pki-tools/pulls/comments/60632142", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

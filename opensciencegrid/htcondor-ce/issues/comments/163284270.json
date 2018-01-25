@@ -1,0 +1,29 @@
+{
+  "author_association": "NONE", 
+  "body": "Hi @kreczko, no HTCONDORCE_CORES refers to the number of Logical CPUS in a single execute node.\n\nThe total cores in the cluster is calculated by querying the COLLECTOR_HOST using the python bindings. \n\nThe reason it's hard-coded here is that some people run vastly differing hardware setups in their pools, e.g. most nodes might be 8 core, but they may have a large number of 32-core nodes.\n\nWe could average by querying node cpus through the collector but then we'd need to floor it and then it doesn't exactly reflect reality. Rather than that approach I decided to leave it up to the site admin.\n\nHappy to come up with a better approach if you have ideas.\n", 
+  "created_at": "2015-12-09T15:08:40Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/60#issuecomment-163284270", 
+  "id": 163284270, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/60", 
+  "updated_at": "2015-12-09T15:08:40Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/163284270", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1413798?v=4", 
+    "events_url": "https://api.github.com/users/IainSteers/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/IainSteers/followers", 
+    "following_url": "https://api.github.com/users/IainSteers/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/IainSteers/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/IainSteers", 
+    "id": 1413798, 
+    "login": "IainSteers", 
+    "organizations_url": "https://api.github.com/users/IainSteers/orgs", 
+    "received_events_url": "https://api.github.com/users/IainSteers/received_events", 
+    "repos_url": "https://api.github.com/users/IainSteers/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/IainSteers/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/IainSteers/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/IainSteers"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gridftp-hdfs/pull/16#discussion_r145702716"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/16"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/comments/145702716"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Should we have this macro in a separate scope (surround in `{` / `}`?)  That way, we don't need to introduce new variables into the caller scope.\r\n\r\nRegardles, perhaps we should name this something like `_system_errno` to reduce collisions.", 
+  "commit_id": "58bf9def8885cac24d395bb0834e9ce7f0038bfc", 
+  "created_at": "2017-10-19T13:41:22Z", 
+  "diff_hunk": "@@ -19,9 +19,10 @@\n \n \n #define SystemError(hdfs_handle, msg, rc) \\\n+    int system_errno = errno; \\", 
+  "html_url": "https://github.com/opensciencegrid/gridftp-hdfs/pull/16#discussion_r145702716", 
+  "id": 145702716, 
+  "original_commit_id": "58bf9def8885cac24d395bb0834e9ce7f0038bfc", 
+  "original_position": 4, 
+  "path": "src/gridftp_hdfs_error.h", 
+  "position": 4, 
+  "pull_request_review_id": 70539404, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/16", 
+  "updated_at": "2017-10-19T15:15:53Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/comments/145702716", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

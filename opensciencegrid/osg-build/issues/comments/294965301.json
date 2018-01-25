@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "I forget if this was discussed or answered already.\r\n\r\nIf i want to do\r\n\r\n`cp-upstream xyz.source dest`\r\n\r\nis there a (tool-ish) way to do that utilizing the new code from this PR?", 
+  "created_at": "2017-04-18T20:10:38Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-build/pull/30#issuecomment-294965301", 
+  "id": 294965301, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-build/issues/30", 
+  "updated_at": "2017-04-18T20:10:38Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-build/issues/comments/294965301", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/StashCache/pull/6#discussion_r68433249"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/6"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/68433249"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Please don't remove comments if they are still relevant\n", 
+  "commit_id": "e6186b173b2337fef5c81e2bb5bda3e9b7e19ab4", 
+  "created_at": "2016-06-24T17:38:56Z", 
+  "diff_hunk": "@@ -1,57 +1,73 @@\n-#!/bin/bash\n while getopts \"t:f:d:s:\" opt; do\n   case \"$opt\" in\n       t) timeout=$OPTARG ;;\n-\t  f) file=$OPTARG ;;\n-\t  d) diff=$OPTARG ;;\n-\t  s) expSize=$OPTARG ;;\n+      f) file=$OPTARG ;;\n+      d) diff=$OPTARG ;;\n+      s) expSize=$OPTARG ;;\n   esac\n done\n shift $((OPTIND-1))\n \n+\n start_watchdog(){\n-\ttimeout=\"$1\"\n-\tfile=\"$2\"\n-\tdiff=\"$3\"\n-\texpSize=\"$4\"\n-\t(( i = timeout ))\n-\tprevSize=0\n-\twhile (( i > 0 ))\n-\tdo\n-\t\tif [ -e $file ]; then\n-\t\t\tnewSize=$(du -b $file | cut -f1)\n-\t\t\tnextSize=$((prevSize+diff))\n-\t\t\twantSize=$((nextSize<expSize?nextSize:expSize))\n-\t\t\tif [ $newSize -lt $((wantSize)) ]; then\n-\t\t\t\t# kill -0 $$ || exit 0\n-\t\t\t\tsleep 1\n-\t\t\t\t(( i -= 1 ))\n-\t\t\telif [ $newSize -eq $expSize ]; then\n-\t\t\t\t# Finished file\n-\t\t\t\texit 0\n-\t\t\telse\n-\t\t\t\tprevSize=$(du -b $file | cut -f1)\n-\t\t\t\t(( i = timeout ))\n-\t\t\t\tsleep 1\n-\t\t\tfi\n-\t\telse\n-\t\t\tsleep 1\n-\t\t\t(( i -= 1 )) ## to avoid infinite loop\n-\t\tfi\n-\tdone\n-\t\n-\techo \"killing process after timeout of $timeout seconds\"\n-\tkill $$\n+    timeout=\"$1\"\n+    file=\"$2\"\n+    diff=\"$3\"\n+    expSize=\"$4\"\n+    prevSize=0\n+    newSize=0\n+    SERVICE='xrdcp'\n+    while (( newSize<expSize ))\n+    do \n+        sleep $timeout #check status after every x seconds\n+        if [ -e $file ]; then\n+            newSize=$(du -b $file | cut -f1)\n+            nextSize=$((prevSize+diff))\n+            wantSize=$((nextSize<expSize?nextSize:expSize))\n+            if [ $newSize -eq $expSize ]; then\n+                #finished\n+                exit 0\n+            fi\n+            if [ $newSize -lt $wantSize ]; then #if time out\n+                echo \"killing process after timeout of $timeout seconds\"\n+                if ps ax | grep -v grep | grep $SERVICE > /dev/null\n+                then\n+                    #xrdcp running, kill xrdcp now\n+                    pgrep xrdcp | xargs kill -9\n+                    exit 1\n+                else\n+                    #xrdcp already aborted on its own, use xrdcp exit code\n+                    xrdcp_abort=$?\n+                    exit $xrdcp_abort\n+                fi\n+                \n+            else #if file increases accordingly\n+                prevSize=$(du -b $file | cut -f1)\n+            fi\n+        else\n+            #file does not exist (timeout)\n+            echo \"download did not start - killing process after timeout of $timeout seconds\"\n+            if ps ax | grep -v grep | grep $SERVICE > /dev/null\n+            then\n+                #xrdcp running, killing now\n+                pgrep xrdcp | xargs kill -9\n+                exit 1\n+            else\n+               #xrdcp not running, use xrdcp exit code\n+                xrdcp_abort=$?\n+                exit $xrdcp_abort\n+            fi\n+        \n+        fi\n+    done\n+    \n+    \n }\n \n-\n start_watchdog \"$timeout\" \"$file\" \"$diff\" \"$expSize\" &\n watchdog_pid=$!\n \"$@\"\n cp_exit=$?\n \n-# If the cp command exits, kill the watchdog", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/pull/6#discussion_r68433249", 
+  "id": 68433249, 
+  "original_commit_id": "9f863bb6f4c35de138f24fb0b58045c92814e066", 
+  "original_position": 109, 
+  "path": "bin/downloading_timeout.sh", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/6", 
+  "updated_at": "2016-07-06T20:29:43Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/68433249", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

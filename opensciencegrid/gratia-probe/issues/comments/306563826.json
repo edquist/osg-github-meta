@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "@bbockelm,\r\n\r\nI did the changes you requested.\r\n\r\nFor testing purposes I modify this file:\r\n\r\n`/etc/gratia/condor/ProbeConfig`\r\n\r\nWith the following:\r\n\r\n```Title2=\"Probe information and functional configuration\"\r\nProbeName=\"condor:uclhctest.t2.ucsd.edu\"\r\nSiteName=\"UCSD\"\r\nGrid=\"OSG\"\r\nEnableProbe=\"1\"\r\n...\r\nExtraAttributes=\"foo,foo2,foo3\"\r\n```\r\n\r\nI then submitted a job with the following submit file\r\n\r\n```\r\noutput = myoutput.$(Cluster)\r\nerror = myerror.$(Cluster)\r\nlog = mylog.$(Cluster)\r\nexecutable = echoScript.sh\r\n+foo = \"bar\"\r\n+foo2 = \"bar2\"\r\n+foo3 = \"bar3\"\r\nqueue 10\r\n```\r\n\r\nAnd checked here in [GRAC](https://gracc.opensciencegrid.org/kibana/app/kibana?#/discover?_g=(refreshInterval:(%27$$hashKey%27:%27object:267%27,display:%275%20seconds%27,pause:!t,section:1,value:5000),time:(from:now%2Fw,mode:quick,to:now%2Fw))&_a=(columns:!(ProbeName),index:%27gracc.osg.raw-*%27,interval:auto,query:(query_string:(analyze_wildcard:!f,query:%27ProbeName:%22condor:uclhctest.t2.ucsd.edu%22%27)),sort:!(EndTime,desc))), that the records have:\r\n\r\n```? Resource_foo\t   \t  bar\r\n? Resource_foo2\t   \t  bar2\r\n? Resource_foo3\t   \t  bar3\r\n```\r\n\r\nIs this allright?\r\n\r\n\r\n\r\n\r\n", 
+  "created_at": "2017-06-06T17:45:58Z", 
+  "html_url": "https://github.com/opensciencegrid/gratia-probe/pull/17#issuecomment-306563826", 
+  "id": 306563826, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gratia-probe/issues/17", 
+  "updated_at": "2017-06-06T17:45:58Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gratia-probe/issues/comments/306563826", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

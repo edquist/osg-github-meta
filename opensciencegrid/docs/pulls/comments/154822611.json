@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/263#discussion_r154822611"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/263"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/154822611"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "The console command should immediately follow the \"Next, adjust the...\" sentence.", 
+  "commit_id": "fe969d69f88795aa6983299a5e61d12f86103859", 
+  "created_at": "2017-12-05T01:10:48Z", 
+  "diff_hunk": "@@ -103,20 +103,24 @@ The initial repository creation must be run as `root`:\n     root@host # echo -e \"\\*\\\\t\\\\t-\\\\tnofile\\\\t\\\\t16384\" >>/etc/security/limits.conf\n     root@host # ulimit -n 16384\n     root@host # cvmfs_server mkfs -o %BLUE%LIBRARIAN%ENDCOLOR% %RED%example.opensciencegrid.org%ENDCOLOR%\n-    root@host # echo \"CVMFS_AUTO_TAG=false\" >>/etc/cvmfs/repositories.d/%RED%example.opensciencegrid.org%ENDCOLOR%/server.conf\n     root@host # (echo Order deny,allow;echo Deny from all;echo Allow from 127.0.0.1;echo Allow from ::1;echo Allow from 129.79.53.0/24;echo Allow from 2001:18e8:2:6::/56) >/srv/cvmfs/%RED%example.opensciencegrid.org%ENDCOLOR%/.htaccess\n \n-Here, we increase the number of open files, create the repository using the `mkfs` command, adjust the configuration,\n-and then limit the hosts that are allowed to access the repo to the OSG CDN.\n+Here, we increase the number of open files allowed, create the repository using the `mkfs` command, and then limit the hosts that are allowed to access the repo to the OSG CDN.\n \n-!!! warning \"Hardlink Limitations on EL6\"\n-    If you might be hosting any hardlinks that span directories (e.g. publishing a `git` repository) and are using\n-    EL6 with aufs, make the following configuration change:\n+Next, adjust the configuration in the repository as follows.  Also, check the [cvmfs documentation](http://cvmfs.readthedocs.io/en/latest/cpt-repo.html#configuration-recommendation-by-use-case) for additional recommendations for special purpose repositories.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/263#discussion_r154822611", 
+  "id": 154822611, 
+  "original_commit_id": "19b6e75882cff0eeb53ae58748b47da4736794e3", 
+  "original_position": 14, 
+  "path": "docs/data/external-oasis-repos.md", 
+  "position": null, 
+  "pull_request_review_id": 81043499, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/263", 
+  "updated_at": "2017-12-05T15:52:50Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/154822611", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

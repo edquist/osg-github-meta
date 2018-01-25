@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/xrootd-lcmaps/pull/3#discussion_r49363788"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/3"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/comments/49363788"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "The build for rhel7 was failing with this error:\n\nRPM build errors:\n    File not found: /builddir/build/BUILDROOT/xrootd-lcmaps-1.0.0-1.osg33.el7.x86_64/usr/lib64/libXrdLcmaps.so\n    File not found: /builddir/build/BUILDROOT/xrootd-lcmaps-1.0.0-1.osg33.el7.x86_64/usr/lib64/libXrdLcmaps.so.0\n    File not found: /builddir/build/BUILDROOT/xrootd-lcmaps-1.0.0-1.osg33.el7.x86_64/usr/lib64/libXrdLcmaps.so.0.0.2\n\nAnd it was because of the CMAKE args. This is for el7:\n\n /usr/bin/cmake -DCMAKE_C_FLAGS_RELEASE:STRING=-DNDEBUG -DCMAKE_CXX_FLAGS_RELEASE:STRING=-DNDEBUG -DCMAKE_Fortran_FLAGS_RELEASE:STRING=-DNDEBUG -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DLIB_SUFFIX=64 -DBUILD_SHARED_LIBS:BOOL=ON -\n\nAnd this one for el6:\n\n/usr/bin/cmake -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib64 -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DLIB_SUFFIX=64 -DCMAKE_SKIP_RPATH:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo .\n\nSI had to add the missing:\n\n-DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib64 for el7\n", 
+  "commit_id": "f997a054be60e72cefab4a12090a97eb25653893", 
+  "created_at": "2016-01-11T19:12:38Z", 
+  "diff_hunk": "@@ -21,11 +22,16 @@ Requires: xrootd-server >= 1:3.2\n %{summary}\n \n %prep\n-%setup -q -c -n %{name}-%{version}\n+#%setup -q -c -n %{name}-%{version}\n+%setup -q -c -n %{name}\n \n %build\n #cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=RelWithDebInfo .\n+%if 0%{?rhel} > 6\n+%cmake -DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib64 -DCMAKE_BUILD_TYPE=RelWithDebInfo .", 
+  "html_url": "https://github.com/opensciencegrid/xrootd-lcmaps/pull/3#discussion_r49363788", 
+  "id": 49363788, 
+  "original_commit_id": "3787043b17f205e9f7c3e0de723cbed15325c48c", 
+  "original_position": 25, 
+  "path": "spec/xrootd-lcmaps.spec", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/3", 
+  "updated_at": "2016-01-12T19:19:46Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/comments/49363788", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

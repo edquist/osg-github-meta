@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "We should leave out the -d on the wget. This script runs in two modes: one as advertising gwms crazy config file, and the other as condor cron. In the latter, we have to be careful to not output stuff to stdout. I would prefer wget -qO, but if you really want the -d in there, please do a 1>&2", 
+  "created_at": "2017-11-09T00:30:06Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-flock/pull/9#issuecomment-343007978", 
+  "id": 343007978, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-flock/issues/9", 
+  "updated_at": "2017-11-09T00:30:06Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-flock/issues/comments/343007978", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/1065356?v=4", 
+    "events_url": "https://api.github.com/users/rynge/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/rynge/followers", 
+    "following_url": "https://api.github.com/users/rynge/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/rynge/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/rynge", 
+    "id": 1065356, 
+    "login": "rynge", 
+    "organizations_url": "https://api.github.com/users/rynge/orgs", 
+    "received_events_url": "https://api.github.com/users/rynge/received_events", 
+    "repos_url": "https://api.github.com/users/rynge/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/rynge/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/rynge/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/rynge"
+  }
+}

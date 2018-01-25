@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/oasis-server/pull/76#discussion_r141416998"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/76"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/comments/141416998"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Yeah, but it used to be parsed by cvmfs and maybe it will again one day so I wanted to note the possibility somewhere.", 
+  "commit_id": "c6ac00c7a56ebcdf2f61900abad79498a38565b0", 
+  "created_at": "2017-09-27T17:43:21Z", 
+  "diff_hunk": "@@ -1,11 +1,19 @@\n+# This file is sourced by cvmfs config files but not parsed by cvmfs\n+# In order for cvmfs to export its variables, the sourcing config file has\n+#  to first set the following variables:\n+CVMFS_AUTHZ_OSG_BASE_DIR=\n+CVMFS_AUTHZ_OSG_WN_CLIENT=\n+CVMFS_AUTHZ_HELPER=\n+X509_CERT_DIR=\n+\n distroversion()\n {\n     # systemd-based systems have /etc/os-release\n     # Prefer /etc/os-release because lsb_release isn't always installed\n     #   on systems that have /etc/os-release\n     if [ -f /etc/os-release ]; then\n-        # Can't use equal sign in sed script, it confuses cvmfs variable parser\n-        sed -n 's/\"//g;s/^VERSION_ID[^A-Z]//p' /etc/os-release\n+        # If cvmfs parsed this file, couldn't use equal sign in sed script", 
+  "html_url": "https://github.com/opensciencegrid/oasis-server/pull/76#discussion_r141416998", 
+  "id": 141416998, 
+  "in_reply_to_id": 141415314, 
+  "original_commit_id": "a8180c93216a439ee3fd7a2e36fe74b9f9dca600", 
+  "original_position": 17, 
+  "path": "goc/config-osg/libexec/osgstorage-auth.conf", 
+  "position": 17, 
+  "pull_request_review_id": 65627956, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/76", 
+  "updated_at": "2017-09-27T17:43:21Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/comments/141416998", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

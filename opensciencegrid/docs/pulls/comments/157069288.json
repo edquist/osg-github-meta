@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/271#discussion_r157069288"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/271"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/157069288"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Use `<https://display.opensciencegrid.org>`", 
+  "commit_id": "4c9f6a729fc81dfb4f7176cfce003a5500864419", 
+  "created_at": "2017-12-14T21:39:57Z", 
+  "diff_hunk": "@@ -0,0 +1,375 @@\n+Troubleshooting Gratia Accounting\n+=================================\n+\n+This document will help you troubleshoot problems with the Gratia Accounting, particularly with problems in collecting and reporting accounting information to the central OSG accounting service. See also other documents recommended in the Reference section below.\n+\n+\n+Gratia/GRACC: The Big Picture\n+-----------------------\n+\n+Gratia is software used in OSG to gather accounting information. The information is collected from individual resources at a site, such as a Compute Element or a a submission host. The program that collects the data is called a \"Gratia probe\". The information is transferred to a GRACC server. Most sites will choose to send the accounting data to the central OSG Gratia server, but you can also use a Gratia server at your site (which can send forward the data to the central OSG Gratia server). Here is a diagram:\n+\n+!!! note \"Difference between Gratia and GRACC\"\n+    Gratia is the legacy name of the OSG Accounting system.  GRACC is the new name of the server and hosted components of the accounting system.  When we refer to Gratia, we mean either the data or the probes on the resources.  If we mention GRACC, we are referring to the hosted components that the OSG maintains.\n+\n+![Gratia Basics](../images/gratia-overview.png)\n+\n+These are the definitions of the major elements in the above figure.\n+\n+-   **Gratia probe**: A piece of software that collects accounting data from the computer on which it's running, and transmits it to a Gratia server.\n+-   **GRACC server**: A server that collects Gratia accounting data from one or more sites and can share it with users via a web page.  The GRACC server is hosted by the OSG.\n+-   **Reporter**: A web service running on the GRACC server. Users can connect to the reporter via a web browser to explore the Gratia data.\n+-   **Collector**: A web service running on the GRACC server that collects data from one or more Gratia probes. Users do not directly interact with the collector.\n+\n+You can see the OSG's GRACC website at https://gracc.opensciencegrid.org.\n+\n+You can see a fancier version of the Gratia data at [display.grid.iu.edu](http://display.grid.iu.edu/). This is **not** running a Gratia collector, but is a separate service.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/271#discussion_r157069288", 
+  "id": 157069288, 
+  "original_commit_id": "ebc3f346824e46557b3a09f15ad4cccf83dc59c5", 
+  "original_position": 26, 
+  "path": "docs/other/troubleshooting-gratia.md", 
+  "position": null, 
+  "pull_request_review_id": 83653096, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/271", 
+  "updated_at": "2018-01-10T21:33:15Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/157069288", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

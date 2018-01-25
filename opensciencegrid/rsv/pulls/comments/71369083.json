@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/rsv/pull/4#discussion_r71369083"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv/pulls/comments/71369083"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "As long as we're catching `ValueError`, we might as well be catching [some of the other exceptions that come up during unpickling](https://docs.python.org/2.6/library/pickle.html#pickle.UnpicklingError) - say `AttributeError` and `IndexError`. (They don't have to be separate blocks, you could just do\n`except (ValueError, AttributeError, IndexError) as err`)\n", 
+  "commit_id": "8cf8c8fad2477feb4906716ad92bf59996da5fc9", 
+  "created_at": "2016-07-19T16:02:25Z", 
+  "diff_hunk": "@@ -114,6 +114,12 @@ class HTMLConsumer(RSVConsumer.RSVConsumer):\n         except EOFError, err:\n             # Should this be a warning?\n             self.log(\"State file is empty\")\n+        except ValueError as err:", 
+  "html_url": "https://github.com/opensciencegrid/rsv/pull/4#discussion_r71369083", 
+  "id": 71369083, 
+  "original_commit_id": "9954049901efef1081f67880c0d7de8131205883", 
+  "original_position": 4, 
+  "path": "rsv-consumers/libexec/consumers/html-consumer", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/rsv/pulls/4", 
+  "updated_at": "2016-07-19T16:37:46Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/rsv/pulls/comments/71369083", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

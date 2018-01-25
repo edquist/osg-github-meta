@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Here's a test run: http://vdt.cs.wisc.edu/tests/20170926-1341/packages.html\r\nI ran osg-test itself from the wrong branch but you can see in the output that haveged gets installed when I specify it (in All (Java), GUMS (Java) and VOMS (Java)).", 
+  "created_at": "2017-09-27T01:13:31Z", 
+  "html_url": "https://github.com/opensciencegrid/vm-test-runs/pull/43#issuecomment-332379902", 
+  "id": 332379902, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/43", 
+  "updated_at": "2017-09-27T01:13:31Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/comments/332379902", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

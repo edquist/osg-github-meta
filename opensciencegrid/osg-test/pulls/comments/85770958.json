@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/53#discussion_r85770958"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/53"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/85770958"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Rather than just connecting, why don't you do a urllib GET?\n", 
+  "commit_id": "2f8661f4377a60140be052521416a68144c38f9c", 
+  "created_at": "2016-10-31T16:01:55Z", 
+  "diff_hunk": "@@ -137,23 +138,33 @@ def test_06_use_gums_auth(self):\n                       '# globus_mapping liblcas_lcmaps_gt4_mapping.so lcmaps_callout',\n                       'globus_mapping liblcas_lcmaps_gt4_mapping.so lcmaps_callout',\n                       owner='condor-ce')\n-\n-        service.check_stop('condor-ce')\n-        service.check_start('condor-ce')\n         core.state['condor-ce.gums-auth'] = True\n \n-    def test_07_ping_with_gums(self):\n-        self.general_requirements()\n-        core.skip_ok_unless_installed('gums-service')\n-        self.skip_bad_unless(core.state['condor-ce.gums-auth'], 'CE not using GUMS auth')\n-\n-        # Wait for the schedd to come back up\n+        service.check_stop('condor-ce')\n         try:\n             stat = os.stat(core.config['condor-ce.collectorlog'])\n         except OSError:\n             stat = None\n+\n+        service.check_start('condor-ce')\n+        # Wait for the schedd to come back up\n         self.failUnless(condor.wait_for_daemon(core.config['condor-ce.collectorlog'], stat, 'Schedd', 300.0),\n                         'Schedd failed to restart within the 1 min window')\n         command = ('condor_ce_ping', 'WRITE', '-verbose')\n         stdout, _, _ = core.check_system(command, 'ping using GSI and gridmap', user=True)\n         self.assert_(re.search(r'Authorized:\\s*TRUE', stdout), 'could not authorize with GSI')\n+\n+    def test_07_ceview(self):\n+        core.config['condor-ce.view-listening'] = False\n+        self.general_requirements()\n+        core.skip_ok_unless_installed('htcondor-ce-view')\n+        view_sock = socket.socket()\n+        try:\n+            try:\n+                view_sock.connect((core.get_hostname(), int(core.config['condor-ce.view-port'])))", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/53#discussion_r85770958", 
+  "id": 85770958, 
+  "original_commit_id": "136e380457e6820e11103ca36015ac985f1f1f98", 
+  "original_position": 53, 
+  "path": "osgtest/tests/test_55_condorce.py", 
+  "position": null, 
+  "pull_request_review_id": 6466438, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/53", 
+  "updated_at": "2016-10-31T20:16:57Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/85770958", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

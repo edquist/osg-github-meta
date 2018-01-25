@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Thanks!  What was the other item that we need to close out before this could be utilized in Koji?", 
+  "created_at": "2017-04-18T19:47:44Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-build/pull/30#issuecomment-294958865", 
+  "id": 294958865, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-build/issues/30", 
+  "updated_at": "2017-04-18T19:47:44Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-build/issues/comments/294958865", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

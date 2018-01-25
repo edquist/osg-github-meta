@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gratia-probe/pull/9#discussion_r92712894"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/9"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/comments/92712894"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "The decision to suppress is orthogonal to setting the host description in the record. They both key off the value of `MATCH_EXP_JOBGLIDEIN_ResourceName`, which tells us whether or not the job is local:\r\n\r\n* We set the host description to the ProbeConfig's `SiteName` if it's a local job.\r\n* We do not send the local records if `SuppressGridLocalJobs=\"1\"` and it's a local job\r\n", 
+  "commit_id": "7cfcf61bb1ee2a4a5947cf369f95a4cf4576273d", 
+  "created_at": "2016-12-15T22:20:43Z", 
+  "diff_hunk": "@@ -551,11 +551,14 @@ def determine_host_description(classad):\n \n     If there's no special host description, this returns None.\n     \"\"\"\n-    if 'MATCH_EXP_JOBGLIDEIN_ResourceName' not in classad:\n+    try:\n+        if classad['MATCH_EXP_JOBGLIDEIN_ResourceName'] == 'Local Job':\n+            host_descr = GratiaCore.Config.get_SiteName()", 
+  "html_url": "https://github.com/opensciencegrid/gratia-probe/pull/9#discussion_r92712894", 
+  "id": 92712894, 
+  "in_reply_to_id": 92711797, 
+  "original_commit_id": "7cfcf61bb1ee2a4a5947cf369f95a4cf4576273d", 
+  "original_position": 7, 
+  "path": "condor/condor_meter", 
+  "position": 7, 
+  "pull_request_review_id": 13234185, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/9", 
+  "updated_at": "2016-12-15T22:20:43Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/comments/92712894", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

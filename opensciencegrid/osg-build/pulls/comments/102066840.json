@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-build/pull/30#discussion_r102066840"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/30"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/102066840"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I'd love to do that!  The `tgz` backend is not explicitly mentioned on the man page, however.  Can you test `git archive --format=tgz` on a RHEL6 box to make sure it's present?", 
+  "commit_id": "f452ccc30ffd975b71ae9803d0ec6dee21523d35", 
+  "created_at": "2017-02-20T17:45:05Z", 
+  "diff_hunk": "@@ -19,6 +22,63 @@\n log = logging.getLogger('osgbuild')\n log.propagate = False\n \n+def process_json_url(line, destdir):\n+    \"\"\"\n+    Process a JSON-serialized URL spec.  Should be of the format:\n+     {\"type\": \"git\", \"url\": \"https://github.com/opensciencegrid/cvmfs-config-osg.git\", \"name\": \"cvmfs-config-osg\", \"tag\": \"0.1\", \"hash\": \"e2b54cd1b94c9e3eaee079490c9d85f193c52249\"}\n+    'name' can be derived from the URL if the last component in the URL is of the form 'NAME.git'\n+    \"\"\"\n+    json_contents = json.loads(line)\n+    tag_type = json_contents.get(\"type\", \"\")\n+    if tag_type != \"git\":\n+        raise Error(\"Only 'git'-type URLs are understood in JSON: %s\" % line)\n+    git_url = json_contents.get('url')\n+    if not git_url:\n+        raise Error(\"No git URL provided in JSON: %s\" % line)\n+    name = json_contents.get(\"name\")\n+    if not name:\n+        basename = os.path.split(git_url)[-1]\n+        if basename[-4:] == '.git':\n+            name = basename[:-4]\n+        else:\n+            raise Error(\"No package name specified in JSON: %s\" % line)\n+    print \"Checking out git repo for %s.\" % name\n+    tag = json_contents.get(\"tag\")\n+    if not tag:\n+        raise Error(\"No package tag specified: %s\" % line)\n+    dest_file = str(\"%s-%s.tar\" % (name, tag))\n+    full_dest_file = os.path.join(destdir, dest_file)\n+    prefix = str(\"%s-%s\" % (name, tag))\n+    git_hash = json_contents.get(\"hash\")\n+    if not git_hash:\n+        raise Error(\"git hash not provided.\")\n+    checkout_dir = tempfile.mkdtemp(prefix=dest_file, dir=destdir)\n+    rc = subprocess.call([\"git\", \"clone\", str(git_url), checkout_dir])\n+    if rc:\n+        shutil.rmtree(checkout_dir)\n+        raise Error(\"`git clone %s %s` failed with exit code %d\" % (git_url, checkout_dir, rc))\n+    orig_dir = os.getcwd()\n+    try:\n+        os.chdir(checkout_dir)\n+        try:\n+            output = subprocess.check_output([\"git\", \"show-ref\", str(tag)])\n+        except subprocess.CalledProcessError:\n+            raise Error(\"Repository %s does not contain a tag named %s.\" % (git_url, tag))\n+        sha1 = output.split()[0]\n+        if sha1 != git_hash:\n+            raise Error(\"Repository hash %s corresponding to tag %s does not match expected hash %s\" % (sha1, tag, git_hash))\n+        rc = subprocess.call([\"git\", \"archive\", \"--prefix=%s/\" % prefix, str(git_hash), \"--output=%s\" % os.path.join(destdir, dest_file)])\n+        if rc:\n+            raise Error(\"Failed to create an archive of hash %s\" % git_hash)\n+        rc = subprocess.call([\"gzip\", full_dest_file])", 
+  "html_url": "https://github.com/opensciencegrid/osg-build/pull/30#discussion_r102066840", 
+  "id": 102066840, 
+  "in_reply_to_id": 102066561, 
+  "original_commit_id": "a6d0ba052aea89bdb3be82f689fd24d92fd3be72", 
+  "original_position": 62, 
+  "path": "osgbuild/fetch_sources.py", 
+  "position": null, 
+  "pull_request_review_id": 22812143, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/30", 
+  "updated_at": "2017-04-18T19:38:45Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/102066840", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

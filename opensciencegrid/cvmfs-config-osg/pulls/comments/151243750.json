@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151243750"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151243750"
+    }
+  }, 
+  "author_association": "CONTRIBUTOR", 
+  "body": "It may not be leaping out from the above... At no point have I made the recommendation to actively enable `autofs` via CVMFS or related packages. In fact, I disagree with the approach taken by `cvmfs-auto-setup`. No package should actively change the state of a different package's service. `postinst/postrm` scripts typically respect the configured state of the service packaged within. I can't say that I've ever seen one that changes another package's service state.\r\n\r\nSo, I think that approach could use some re-thinking.\r\n\r\nRe: `auto.master.d/cvmfs.autofs`... The only situation I can see in which the presence of this file on Debian or RedHat platforms could possibly be bad is one in which `autofs` is running, but it is being avoided for CVMFS. Is this a real world issue?\r\n\r\nIf so, I agree that another package for `/etc/auto.master.d/cvmfs.autofs` is not unreasonable. This package should respect the configured state of the `autofs` service but reload the map in a manner like I suggest. On Debian, I would suggest that this package be in a \"Recommends\" relationship with `cvmfs` so that User X installs it by default, but User Y can avoid it . I do not know if there is a similar relationship in RPMs.", 
+  "commit_id": "d01e585f151c9990ca9f4bd16c4c9a6931f9bbae", 
+  "created_at": "2017-11-15T20:32:53Z", 
+  "diff_hunk": "@@ -17,12 +17,8 @@ install-common:\n \tinstall -D -m 444 opensciencegrid.org.pub $(DESTDIR)/etc/cvmfs/keys/opensciencegrid.org\n \n install-debian: install-common\n-\tmkdir -p $(DESTDIR)/lib/systemd/system \\\n-\t  $(DESTDIR)/lib/systemd/system/autofs.service.wants \\\n-\t  $(DESTDIR)/usr/sbin\n-\tinstall -D -m 444 cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system\n-\tln -s ../cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system/autofs.service.wants/cvmfs-config-osg.service\n-\tinstall -D -m 555 cvmfs-config-osgd $(DESTDIR)/usr/sbin\n+\tmkdir -p $(DESTDIR)/etc/auto.master.d\n+\tinstall -D -m 0644 cvmfs.autofs $(DESTDIR)/etc/auto.master.d", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151243750", 
+  "id": 151243750, 
+  "in_reply_to_id": 150961851, 
+  "original_commit_id": "0d3da67811bdb211e462f960ad1c378758b74563", 
+  "original_position": 11, 
+  "path": "Makefile", 
+  "position": null, 
+  "pull_request_review_id": 76920714, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4", 
+  "updated_at": "2017-11-17T21:54:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151243750", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/7475598?v=4", 
+    "events_url": "https://api.github.com/users/tpdownes/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/tpdownes/followers", 
+    "following_url": "https://api.github.com/users/tpdownes/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/tpdownes/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/tpdownes", 
+    "id": 7475598, 
+    "login": "tpdownes", 
+    "organizations_url": "https://api.github.com/users/tpdownes/orgs", 
+    "received_events_url": "https://api.github.com/users/tpdownes/received_events", 
+    "repos_url": "https://api.github.com/users/tpdownes/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/tpdownes/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/tpdownes/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/tpdownes"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gratia-probe/pull/24#discussion_r163632806"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/24"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/comments/163632806"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "We should be able to get rid of the check for `parseOne` availability and fallback to `parseOld`. `parseOne` has been available in condor since 8.3 (http://research.cs.wisc.edu/htcondor/manual/v8.3/6_7Python_Bindings.html).", 
+  "commit_id": "8cbde8fae18f843f8cc00e90494d84fb6e500056", 
+  "created_at": "2018-01-24T18:18:12Z", 
+  "diff_hunk": "@@ -811,66 +733,25 @@ classad_double_re = re.compile(\"^(\\w{1,255}) = ([+-]? *(?:\\d{1,30}\\.?\\d{0,30}|\\.\n classad_string_re = re.compile(\"^(\\S+) = \\\"(.*)\\\"$\")\n classad_catchall_re = re.compile(\"^(\\S+) = (.*)$\")\n def fd_to_classad(fd):\n-    if g_has_classad:\n-        buffer = ''\n-    else:\n-        classad = caselessDict()\n+    buffer = ''\n     for lineOrig in fd.readlines():\n         line = lineOrig.strip()\n-        if g_has_classad:\n-           if not line:\n-               if hasattr(classadLib, 'parseOne'):\n-                   yield add_unique_id(classadLib.parseOne(buffer))\n-               else:\n-                   yield add_unique_id(classadLib.parseOld(buffer))\n-               buffer = ''\n-           else:\n-               buffer += lineOrig\n-           continue\n-        m = classad_bool_re.match(line)\n-        if m:\n-            attr, val = m.groups()\n-            if val.lower().find(\"true\") >= 0:\n-                classad[attr] = True\n-            else:\n-                classad[attr] = False\n-            continue\n-        m = classad_int_re.match(line)\n-        if m:\n-            attr, val = m.groups()\n-            classad[attr] = int(val)\n-            continue\n-        m = classad_double_re.match(line)\n-        if m:\n-            attr, val = m.groups()\n-            classad[attr] = float(val)\n-            continue\n-        m = classad_string_re.match(line)\n-        if m:\n-            attr, val = m.groups()\n-            classad[attr] = str(val)\n-            continue\n-        m = classad_catchall_re.match(line)\n-        if m:\n-            attr, val = m.groups()\n-            classad[attr] = str(val)\n-            continue\n         if not line:\n-            yield add_unique_id(classad)\n-            classad = caselessDict()\n-            continue\n-        DebugPrint(2, \"Invalid line in ClassAd: %s\" % line)\n-\n-    if g_has_classad:\n-        if hasattr(classadLib, 'parseOne'):\n-            yield add_unique_id(classadLib.parseOne(buffer))\n+            if hasattr(classadLib, 'parseOne'):\n+                yield add_unique_id(classadLib.parseOne(buffer))\n+            else:\n+                yield add_unique_id(classadLib.parseOld(buffer))\n+            buffer = ''\n         else:\n-            yield add_unique_id(classadLib.parseOld(buffer))\n+            buffer += lineOrig\n+\n+    if hasattr(classadLib, 'parseOne'):\n+        yield add_unique_id(classadLib.parseOne(buffer))\n     else:\n-        yield add_unique_id(classad)\n+        yield add_unique_id(classadLib.parseOld(buffer))", 
+  "html_url": "https://github.com/opensciencegrid/gratia-probe/pull/24#discussion_r163632806", 
+  "id": 163632806, 
+  "original_commit_id": "4fbaf6bcc0d18e02eb9f10fb9c5b8e7100657382", 
+  "original_position": 393, 
+  "path": "condor/condor_meter", 
+  "position": null, 
+  "pull_request_review_id": 91277397, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/24", 
+  "updated_at": "2018-01-24T20:48:46Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/comments/163632806", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

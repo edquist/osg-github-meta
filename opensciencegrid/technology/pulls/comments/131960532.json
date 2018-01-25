@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/85#discussion_r131960532"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/85"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/131960532"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "This looks worse than before, with `INPUT`/`OUTPUT` and `FILE` having different font faces", 
+  "commit_id": "9a3a55722e427993192f567acc9ed159d7437fe6", 
+  "created_at": "2017-08-08T16:15:54Z", 
+  "diff_hunk": "@@ -13,8 +13,8 @@ Initial conversion with Pandoc\n \n [Pandoc](http://pandoc.org/) is a tool that's useful for automated conversion of markdown languages. [Once installed](http://pandoc.org/installing.html) (alternatively, run pandoc [via docker](#using-docker)), run the following command to convert TWiki to Markdown:\n \n-```bash\n-pandoc -f twiki -t markdown_github <INPUT FILE> > <OUTPUT FILE>\n+```console\n+$ pandoc -f twiki -t markdown_github <INPUT FILE> > <OUTPUT FILE>", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/85#discussion_r131960532", 
+  "id": 131960532, 
+  "original_commit_id": "aca69aa08cf3fe650378e7b5b719364e40b7700e", 
+  "original_position": 7, 
+  "path": "docs/software/markdown-migration.md", 
+  "position": 7, 
+  "pull_request_review_id": 54990757, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/85", 
+  "updated_at": "2017-08-09T15:58:52Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/131960532", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

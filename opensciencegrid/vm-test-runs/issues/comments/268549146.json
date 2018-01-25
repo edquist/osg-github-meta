@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Tests look good after all the changes (http://vdt.cs.wisc.edu/tests/20161220-1418/results.html). Thanks for the reviews everyone! \r\n\r\n*Merging right before vacation, what could possibly go wrong?*", 
+  "created_at": "2016-12-21T15:23:09Z", 
+  "html_url": "https://github.com/opensciencegrid/vm-test-runs/pull/22#issuecomment-268549146", 
+  "id": 268549146, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/22", 
+  "updated_at": "2016-12-21T15:23:09Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/comments/268549146", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

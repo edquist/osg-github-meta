@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/xrootd-lcmaps/pull/3#discussion_r49361173"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/3"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/comments/49361173"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Why was this necessary?\n", 
+  "commit_id": "f997a054be60e72cefab4a12090a97eb25653893", 
+  "created_at": "2016-01-11T18:54:29Z", 
+  "diff_hunk": "@@ -21,11 +22,16 @@ Requires: xrootd-server >= 1:3.2\n %{summary}\n \n %prep\n-%setup -q -c -n %{name}-%{version}\n+#%setup -q -c -n %{name}-%{version}\n+%setup -q -c -n %{name}\n \n %build\n #cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=RelWithDebInfo .\n+%if 0%{?rhel} > 6\n+%cmake -DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib64 -DCMAKE_BUILD_TYPE=RelWithDebInfo .", 
+  "html_url": "https://github.com/opensciencegrid/xrootd-lcmaps/pull/3#discussion_r49361173", 
+  "id": 49361173, 
+  "original_commit_id": "3787043b17f205e9f7c3e0de723cbed15325c48c", 
+  "original_position": 25, 
+  "path": "spec/xrootd-lcmaps.spec", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/3", 
+  "updated_at": "2016-01-12T19:19:46Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/comments/49361173", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

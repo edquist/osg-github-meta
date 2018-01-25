@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151208261"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151208261"
+    }
+  }, 
+  "author_association": "CONTRIBUTOR", 
+  "body": "@rptaylor can you point me to the mailing list?", 
+  "commit_id": "d01e585f151c9990ca9f4bd16c4c9a6931f9bbae", 
+  "created_at": "2017-11-15T18:12:28Z", 
+  "diff_hunk": "@@ -17,12 +17,8 @@ install-common:\n \tinstall -D -m 444 opensciencegrid.org.pub $(DESTDIR)/etc/cvmfs/keys/opensciencegrid.org\n \n install-debian: install-common\n-\tmkdir -p $(DESTDIR)/lib/systemd/system \\\n-\t  $(DESTDIR)/lib/systemd/system/autofs.service.wants \\\n-\t  $(DESTDIR)/usr/sbin\n-\tinstall -D -m 444 cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system\n-\tln -s ../cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system/autofs.service.wants/cvmfs-config-osg.service\n-\tinstall -D -m 555 cvmfs-config-osgd $(DESTDIR)/usr/sbin\n+\tmkdir -p $(DESTDIR)/etc/auto.master.d\n+\tinstall -D -m 0644 cvmfs.autofs $(DESTDIR)/etc/auto.master.d", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151208261", 
+  "id": 151208261, 
+  "in_reply_to_id": 150961851, 
+  "original_commit_id": "0d3da67811bdb211e462f960ad1c378758b74563", 
+  "original_position": 11, 
+  "path": "Makefile", 
+  "position": null, 
+  "pull_request_review_id": 76878880, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4", 
+  "updated_at": "2017-11-17T21:54:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151208261", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/7475598?v=4", 
+    "events_url": "https://api.github.com/users/tpdownes/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/tpdownes/followers", 
+    "following_url": "https://api.github.com/users/tpdownes/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/tpdownes/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/tpdownes", 
+    "id": 7475598, 
+    "login": "tpdownes", 
+    "organizations_url": "https://api.github.com/users/tpdownes/orgs", 
+    "received_events_url": "https://api.github.com/users/tpdownes/received_events", 
+    "repos_url": "https://api.github.com/users/tpdownes/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/tpdownes/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/tpdownes/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/tpdownes"
+  }
+}

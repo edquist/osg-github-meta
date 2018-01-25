@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "I'm familiar with Travis, but I don't know how it relates to the VMU.\r\n\r\nI would think you'd be able to just add autofs to the required packages and do the necessary cvmfs install steps (probably \"cvmfs_config setup\" is easier).  Alternatively, you can test singularity without cvmfs by having it read an image from dockerhub.", 
+  "created_at": "2017-09-13T16:15:33Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/97#issuecomment-329219215", 
+  "id": 329219215, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/97", 
+  "updated_at": "2017-09-13T16:15:33Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/329219215", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

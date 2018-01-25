@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "@matyasselmeci the whole point of this was that the 3.3 only tests were causing a lot of noise in the `okskip` numbers of 3.4. Given the choice between dropping them from the list vs a separate sate, I'd prefer an `excluded` (or `deprecated`?) state.", 
+  "created_at": "2018-01-12T17:30:07Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/111#issuecomment-357302803", 
+  "id": 357302803, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/111", 
+  "updated_at": "2018-01-12T17:30:07Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/357302803", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

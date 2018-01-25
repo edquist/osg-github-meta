@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/1#discussion_r103214427"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/1"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/103214427"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "* I think this should have a `Requires` statement for `autofs`.  `After` only designates only the sequencing, not the dependency.\r\n* Might also be possible to put a requirement on the `/cvmfs` mount itself.\r\n* Automatic restart? \r\n* Is the PID file actually necessary for a service of type `simple`?\r\n", 
+  "commit_id": "b47413a5218db2b32214b42245debec547530019", 
+  "created_at": "2017-02-27T14:17:17Z", 
+  "diff_hunk": "@@ -0,0 +1,11 @@\n+[Unit]\n+Description=daemon to keep /cvmfs/config-osg.opensciencegrid.org mounted\n+After=autofs.service\n+\n+[Service]\n+Type=simple\n+ExecStart=/usr/sbin/cvmfs-config-osgd -p /run/cvmfs-config-osgd.pid /cvmfs/config-osg.opensciencegrid.org\n+PIDFile=/run/cvmfs-config-osgd.pid", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/1#discussion_r103214427", 
+  "id": 103214427, 
+  "original_commit_id": "9991ad5a1bcbf00d2a1640c3261a38d4bec5cd5d", 
+  "original_position": 8, 
+  "path": "cvmfs-config-osg.service", 
+  "position": null, 
+  "pull_request_review_id": 23993709, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/1", 
+  "updated_at": "2017-02-28T20:22:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/103214427", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

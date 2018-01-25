@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/191#discussion_r143819398"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/191"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/143819398"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "It's not clear why some of these are ignored.  Is it possible to add a few comments or examples?\r\n\r\nIn particular, seems like we would want to notice-'n'-nuke links to confluence!", 
+  "commit_id": "438928ddaa1934d66f0b5bae7eb3d17b7ee9455e", 
+  "created_at": "2017-10-10T18:48:50Z", 
+  "diff_hunk": "@@ -0,0 +1,13 @@\n+[filtering]\n+\n+status=0\n+warnings=0\n+checkextern=1\n+ignore=\n+    ^mailto:\n+    chtc.wisc.edu\n+    jira.opensciencegrid.org\n+    twiki.org\n+    batlab.org\n+    confluence.grid.iu.edu", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/191#discussion_r143819398", 
+  "id": 143819398, 
+  "original_commit_id": "0698402214cd7a4744730cef0f41378d4337e4b7", 
+  "original_position": 12, 
+  "path": "travis/linkchecker.config", 
+  "position": null, 
+  "pull_request_review_id": 68387429, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/191", 
+  "updated_at": "2017-10-10T19:24:12Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/143819398", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

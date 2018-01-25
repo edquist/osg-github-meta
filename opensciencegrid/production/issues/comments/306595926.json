@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "FIFE stats", 
+  "created_at": "2017-06-06T19:43:44Z", 
+  "html_url": "https://github.com/opensciencegrid/production/pull/117#issuecomment-306595926", 
+  "id": 306595926, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/production/issues/117", 
+  "updated_at": "2017-06-06T19:43:44Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/production/issues/comments/306595926", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/22942491?v=4", 
+    "events_url": "https://api.github.com/users/tanyalevshina/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/tanyalevshina/followers", 
+    "following_url": "https://api.github.com/users/tanyalevshina/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/tanyalevshina/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/tanyalevshina", 
+    "id": 22942491, 
+    "login": "tanyalevshina", 
+    "organizations_url": "https://api.github.com/users/tanyalevshina/orgs", 
+    "received_events_url": "https://api.github.com/users/tanyalevshina/received_events", 
+    "repos_url": "https://api.github.com/users/tanyalevshina/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/tanyalevshina/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/tanyalevshina/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/tanyalevshina"
+  }
+}

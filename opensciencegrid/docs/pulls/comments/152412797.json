@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/259#discussion_r152412797"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/259"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/152412797"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Could we capitalize `CVMFS` here?", 
+  "commit_id": "add96f1e48754ea69b4736d87daf3f6db7d0cff3", 
+  "created_at": "2017-11-21T21:56:16Z", 
+  "diff_hunk": "@@ -47,35 +47,43 @@ The following will install CVMFS from the OSG yum repository. It will also insta\n         :::console\n         root@host # yum install osg-oasis\n \n-## Setup of FUSE and automount\n+## Automount setup\n \n-FUSE and automount are required for CVMFS and the steps to configure them are different on EL6 vs EL7. Follow the section that is appropriate for your host's OS:\n+CVMFS uses automount, and the steps to configure it are different on EL6 vs EL7. Follow the section that is appropriate for your host's OS:\n \n * [For EL6 hosts](#for-el6-hosts)\n * [For EL7 hosts](#for-el7-hosts)\n \n ### For EL6 hosts\n \n-1. Create or edit `/etc/fuse.conf` so that it contains:\n+1. If automount is not yet in use on the system, do the following:\n \n-        user_allow_other\n+        :::console\n+        root@host # chkconfig autofs on\n+        root@host # service autofs start\n \n-2. Create or edit `/etc/auto.master` to have the following contents to enable automounting:\n+1. Create or edit `/etc/auto.master` to have the following contents to enable automounting cvmfs:", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/259#discussion_r152412797", 
+  "id": 152412797, 
+  "original_commit_id": "6897b8d31f3593ba527fb59b5d9b5e792a7ca0e5", 
+  "original_position": 24, 
+  "path": "docs/worker-node/install-cvmfs.md", 
+  "position": null, 
+  "pull_request_review_id": 78272256, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/259", 
+  "updated_at": "2017-11-21T22:43:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/152412797", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

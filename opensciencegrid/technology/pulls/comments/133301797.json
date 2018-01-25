@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/112#discussion_r133301797"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/112"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/133301797"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "The colon usage isn't consistent for each item in the terminology", 
+  "commit_id": "b8b34587e0b02f510aa3a9659a17b2f1ac263213", 
+  "created_at": "2017-08-15T20:58:14Z", 
+  "diff_hunk": "@@ -0,0 +1,209 @@\n+Koji Workflow\n+=============\n+\n+This covers the basics of using and understanding the [OSG Koji](https://koji.chtc.wisc.edu/koji) instance. It is meant primarily for OSG Software team members who need to interact with the service.\n+\n+Terminology\n+-----------\n+\n+Using and understanding the following terminology correctly will help in the reading of this document:\n+\n+**Package:**  ", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/112#discussion_r133301797", 
+  "id": 133301797, 
+  "original_commit_id": "bf5c9781e6d907ba9b44c7fd178243311d52aced", 
+  "original_position": 11, 
+  "path": "docs/software/koji-workflow.md", 
+  "position": null, 
+  "pull_request_review_id": 56467262, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/112", 
+  "updated_at": "2017-08-15T21:37:04Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/133301797", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

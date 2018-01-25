@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/103#discussion_r141728887"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/103"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/141728887"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Yea, not really. Maybe `voms-proxy-fake` but we don't need the library for it or really any of what happens in `test_50_voms.py`", 
+  "commit_id": "cd90a5d48520038c3add688170564e0f64a410ef", 
+  "created_at": "2017-09-28T20:33:53Z", 
+  "diff_hunk": "@@ -148,6 +148,7 @@ def is_installed():\n         if not core.dependency_is_installed(dep):\n             return False\n \n+    # TODO: drop this check when 3.3 is completely EOL", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/103#discussion_r141728887", 
+  "id": 141728887, 
+  "in_reply_to_id": 141724505, 
+  "original_commit_id": "d14b5e932041c036d263210af8aec5e8195d7a1b", 
+  "original_position": 4, 
+  "path": "osgtest/library/voms.py", 
+  "position": 4, 
+  "pull_request_review_id": 65991046, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/103", 
+  "updated_at": "2017-09-28T20:33:53Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/141728887", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

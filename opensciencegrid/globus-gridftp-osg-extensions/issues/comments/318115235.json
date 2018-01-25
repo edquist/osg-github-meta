@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "I forget actually, it's been a while.  It was probably only light \"can I still transfer a file?\" testing.", 
+  "created_at": "2017-07-26T16:53:43Z", 
+  "html_url": "https://github.com/opensciencegrid/globus-gridftp-osg-extensions/pull/1#issuecomment-318115235", 
+  "id": 318115235, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/globus-gridftp-osg-extensions/issues/1", 
+  "updated_at": "2017-07-26T16:53:43Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/globus-gridftp-osg-extensions/issues/comments/318115235", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

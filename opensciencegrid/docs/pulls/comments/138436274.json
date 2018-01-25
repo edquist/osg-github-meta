@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/40#discussion_r138436274"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/40"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/138436274"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "A fairly descriptive Python error:\r\n```\r\nUnknown exception encountered while running: Value interpolation too deeply recursive:\r\n        section: [RSV]\r\n        option : ce_hosts\r\n        rawval : foo %(htcondor_ce_hosts)s\r\n```", 
+  "commit_id": "546819718bf9cccbbb2968b2ce9ab86b6da5713c", 
+  "created_at": "2017-09-12T18:54:59Z", 
+  "diff_hunk": "@@ -0,0 +1,550 @@\n+Configuration with OSG-Configure\n+================================\n+\n+-   [About this document](#about-this-document)\n+-   [Invocation and script usage](#invocation-and-script-usage)\n+-   [Syntax and layout](#syntax-and-layout)\n+-   [Configuration sections](#configuration-sections)\n+    -   Job managers (batch systems):\n+        -   [Bosco](#bosco)\n+        -   [Condor](#condor)\n+        -   [LSF](#lsf)\n+        -   [PBS](#pbs)\n+        -   [SGE](#sge)\n+        -   [Slurm](#slurm)\n+    -   Monitoring/reporting:\n+        -   [Gratia](#gratia)\n+        -   [Info Services](#info-services)\n+        -   [RSV](#rsv)\n+        -   [Subcluster / Resource Entry](#subcluster-resource-entry)\n+    -   [Gateway](#gateway)\n+    -   [Local Settings](#local-settings)\n+    -   [Misc Services](#misc-services)\n+    -   [Site Information](#site-information)\n+    -   [Squid](#squid)\n+    -   [Storage](#storage)\n+\n+\n+About this document\n+===================\n+\n+OSG-Configure and the INI files in `/etc/osg/config.d` allow a high level configuration of OSG services.\n+This document outlines the settings and options found in the INI files for system administers that are installing and configuring OSG software.\n+\n+This page gives an overview of the options for each of the sections of the configuration files that `osg-configure` uses.\n+\n+\n+\n+Invocation and script usage\n+===========================\n+\n+The `osg-configure` script is used to process the INI files and apply changes to the system.\n+`osg-configure` must be run as root.\n+\n+The typical workflow of OSG-Configure is to first edit the INI files, then verify them, then apply the changes.\n+\n+To verify the config files, run:\n+``` console\n+[root@server] osg-configure -v\n+```\n+\n+OSG-Configure will list any errors in your configuration, usually including the section and option where the problem is.\n+Potential problems are:\n+\n+-   Required option not filled in\n+-   Invalid value\n+-   Syntax error\n+-   Inconsistencies between options\n+\n+To apply changes, run:\n+``` console\n+[root@server] osg-configure -c\n+```\n+\n+If your INI files do not change, then re-running `osg-configure -c` will result in the same configuration as when you ran it the last time.\n+This allows you to experiment with your settings without having to worry about messing up your system.\n+\n+OSG-Configure is split up into modules. Normally, all modules are run when calling `osg-configure`.\n+However, it is possible to run specific modules separately.\n+To see a list of modules, including whether they can be run separately, run:\n+``` console\n+[root@server] osg-configure -l\n+```\n+If the module can be run separately, specify it with the `-m %RED%<MODULE>%ENDCOLOR%` option:\n+``` console\n+[root@server] osg-configure -c -m %RED%<MODULE>%ENDCOLOR%\n+```\n+\n+Options may be specified in multiple INI files, which may make it hard to determine which value OSG-Configure uses.\n+You may query the final value of an option via one of these methods:\n+``` console\n+[root@server] osg-configure -o %RED%<OPTION>%ENDCOLOR%\n+[root@server] osg-configure -o %RED%<SECTION>%ENDCOLOR%.%RED%<OPTION>%ENDCOLOR%\n+```\n+\n+Logs are written to `/var/log/osg/osg-configure.log`.\n+If something goes wrong, specify the `-d` flag to add more verbose output to `osg-configure.log`.\n+\n+The rest of this document will detail what to specify in the INI files.\n+\n+\n+Conventions\n+-----------\n+\n+In the tables below:\n+\n+-   Mandatory options for a section are given in **bold** type. Sometime the default value may be OK and no edit required, but the variable has to be in the file.\n+-   Options that are not found in the default ini file are in *italics*.\n+\n+\n+\n+Syntax and layout\n+=================\n+\n+The configuration files used by `osg-configure` are the one supported by Python's [SafeConfigParser](http://docs.python.org/library/configparser.html), similar in format to the [INI configuration file](http://en.wikipedia.org/wiki/INI_file) used by MS Windows:\n+\n+-   Config files are separated into sections, specified by a section name in square brackets (e.g. `[Section 1]`)\n+-   Options should be set using `name = value` pairs\n+-   Lines that begin with `;` or `#` are comments\n+-   Long lines can be split up using continutations: each white space character can be preceded by a newline to fold/continue the field on a new line (same syntax as specified in [email RFC 822](http://tools.ietf.org/html/rfc822.html))\n+-   Variable substitutions are supported -- [see below](#variable-substitution)\n+\n+`osg-configure` reads and uses all of the files in `/etc/osg/config.d` that have a \".ini\" suffix. The files in this directory are ordered with a numeric prefix with higher numbers being applied later and thus having higher precedence (e.g. 00-foo.ini has a lower precedence than 99-local-site-settings.ini). Configuration sections and options can be specified multiple times in different files. E.g. a section called `[PBS]` can be given in `20-pbs.ini` as well as `99-local-site-settings.ini`.\n+\n+Each of the files are successively read and merged to create a final configuration that is then used to configure OSG software. Options and settings in files read later override the ones in previous files. This allows admins to create a file with local settings (e.g. `99-local-site-settings.ini`) that can be read last and which will be take precedence over the default settings in configuration files installed by various RPMs and which will not be overwritten if RPMs are updated.\n+\n+\n+Variable substitution\n+---------------------\n+\n+The osg-configure parser allows variables to be defined and used in the configuration file:\n+any option set in a given section can be used as a variable in that section.  Assuming that you have set an option with the name `myoption` in the section, you can substitute the value of that option elsewhere in the section by referring to it as `%(myoption)s`.\n+\n+!!! note\n+    The trailing `s` is required. Also, option names cannot have a variable subsitution in them.\n+\n+!!! warning\n+    You will need to be careful when naming variables in order to avoid an\n+    infinite loop when resolving the variable substitution.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/40#discussion_r138436274", 
+  "id": 138436274, 
+  "in_reply_to_id": 138410833, 
+  "original_commit_id": "2633a2cdeec320b54ac9fa26675eabd19ac44ac0", 
+  "original_position": 128, 
+  "path": "docs/other/configuration-with-osg-configure.md", 
+  "position": null, 
+  "pull_request_review_id": 62231309, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/40", 
+  "updated_at": "2017-09-12T18:55:50Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/138436274", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gums/pull/29#discussion_r73893983"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gums/pulls/29"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gums/pulls/comments/73893983"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "The `generateOsgUserVoMap` method should be applying access controls (basically, the DN of the hostcert should equal the hostname).  Have you verified this is true?\n", 
+  "commit_id": "c38350458b608571c28b9a7c48086bf37606378a", 
+  "created_at": "2016-08-08T15:16:00Z", 
+  "diff_hunk": "@@ -105,6 +109,49 @@ private void doVersion(HttpServletRequest request,\n     }\n \n \n+    private void doGenerateOsgUserVoMap(HttpServletRequest request,\n+                          HttpServletResponse response)\n+        throws ServletException, IOException\n+    {\n+        Configuration configuration = null;\n+        try\n+        {\n+            configuration = gums.getConfiguration();\n+        }\n+        catch (Exception e)\n+        {\n+            errorResponse(response, response.SC_BAD_REQUEST, \"Failed to load GUMS configuration: \" + e.getMessage());\n+        }\n+\n+        String hostname = request.getParameter(\"hostname\");\n+        if (hostname == null)\n+        {\n+            errorResponse(response, response.SC_BAD_REQUEST, \"Missing required input parameter 'hostname'\");\n+            return;\n+        }\n+\n+        String map = null;\n+        try\n+        {\n+            map = gums.generateOsgUserVoMap(hostname);", 
+  "html_url": "https://github.com/opensciencegrid/gums/pull/29#discussion_r73893983", 
+  "id": 73893983, 
+  "original_commit_id": "e4f5a4becf553a856cd1a160fb2c5429c34f1ea1", 
+  "original_position": 39, 
+  "path": "gums-service/src/main/java/org/opensciencegrid/gums/service/JSONMapper.java", 
+  "position": 88, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gums/pulls/29", 
+  "updated_at": "2016-08-19T21:52:53Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gums/pulls/comments/73893983", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

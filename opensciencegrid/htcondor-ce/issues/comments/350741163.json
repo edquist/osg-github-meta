@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "I have addressed your comments and made the changes as suggested. I did not address the packaging. I anticipate that this provider should replace the existing one. ", 
+  "created_at": "2017-12-11T14:34:26Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/175#issuecomment-350741163", 
+  "id": 350741163, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/175", 
+  "updated_at": "2017-12-11T14:34:26Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/350741163", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/1257854?v=4", 
+    "events_url": "https://api.github.com/users/lfield/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/lfield/followers", 
+    "following_url": "https://api.github.com/users/lfield/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/lfield/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/lfield", 
+    "id": 1257854, 
+    "login": "lfield", 
+    "organizations_url": "https://api.github.com/users/lfield/orgs", 
+    "received_events_url": "https://api.github.com/users/lfield/received_events", 
+    "repos_url": "https://api.github.com/users/lfield/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/lfield/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/lfield/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/lfield"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/condor-cron/pull/5#discussion_r79015037"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/condor-cron/pulls/5"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/condor-cron/pulls/comments/79015037"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Any particular reason we're dropping the cgroup? It looks fine but I was just curious if there was a particular reason.\n", 
+  "commit_id": "0dcd096bea0bb674d6e3b87837eb7b11d53f6434", 
+  "created_at": "2016-09-15T17:12:49Z", 
+  "diff_hunk": "@@ -5,14 +5,13 @@ Wants=network.target\n \n [Service]\n Type = forking\n-ExecStart=/etc/init.d/condor-cron start\n-ExecStop=/etc/init.d/condor-cron stop\n-ExecReload=/etc/init.d/condor-cron reload\n+ExecStart=/usr/sbin/condor_cron_master\n+ExecStop=/usr/sbin/condor_cron_off\n+ExecReload=/usr/sbin/condor_cron_restart\n Restart=always\n RestartSec=5\n StandardOutput=syslog\n LimitNOFILE=16384\n-ControlGroup=/condor-cron", 
+  "html_url": "https://github.com/opensciencegrid/condor-cron/pull/5#discussion_r79015037", 
+  "id": 79015037, 
+  "original_commit_id": "0dcd096bea0bb674d6e3b87837eb7b11d53f6434", 
+  "original_position": 14, 
+  "path": "etc/condor-cron.service", 
+  "position": 14, 
+  "pull_request_review_id": 211413, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/condor-cron/pulls/5", 
+  "updated_at": "2016-09-15T17:12:49Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/condor-cron/pulls/comments/79015037", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

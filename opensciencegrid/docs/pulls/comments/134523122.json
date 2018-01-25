@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/24#discussion_r134523122"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/24"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/134523122"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Not specific to this PR, but are we going to have to re-host Globus manuals?", 
+  "commit_id": "8b3c75adc39752e8f22eba44202b6057edd58c7d", 
+  "created_at": "2017-08-22T15:49:39Z", 
+  "diff_hunk": "@@ -174,566 +129,100 @@ LCMAPS_DEBUG_LEVEL=2\n \n Output goes to `/var/log/messages` by default. Do not set logging to 5 on any production systems as that may cause systems to slow down significantly or become unresponsive.\n \n-<span class=\"twiki-macro ENDSECTION\">Environment</span>\n+#### Configuring a multi-homed server\n \n-\\#ConfigMultiHomed \u2014\\#\\# Configuring a multi-homed server\n+The GridFTP uses control connections, data connections and IPC connections. By default it listens in all interfaces but this can be changed by editing the configuration file `/etc/gridftp.conf`.\n \n-<span class=\"twiki-macro STARTSECTION\">MultiHomed</span> The GridFTP uses control connections, data connections and IPC connections. By default it listens in all interfaces but this can be changed by editing the configuration file `/etc/gridftp.conf`.\n+To use a single interface you can set `hostname` to the Hostname or IP address to use:\n \n-To use a single interface you can set `hostname` to the Hostname or IP address to use:\\<pre class=\u201cfile\u201d\\>hostname IP-TO-USE\\</pre\\> You can also set separately the `control_interface`, `data_interface` and `ipc_interface`. E.g. on systems that have multiple network interfaces, you may want to associate data transfers with the fastest possible NIC available. This can be done in the GridFTP server by setting `data_interface`: \\<pre class=\u201cfile\u201d\\> control\\_interface IP-TO-USE data\\_interface IP-TO-USE ipc\\_interface IP-TO-USE\\</pre\\> <span class=\"twiki-macro ENDSECTION\">MultiHomed</span>\n+```text\n+hostname IP-TO-USE\n+```\n \n-For more options available for the GridFTP server, read the comments in the configuration file (`/etc/gridftp.conf`) or see the [Globus manual](http://www.globus.org/toolkit/docs/latest-stable/gridftp/admin/#gridftp-configuring) mentioned in the [Reference](#DocReferences) section below.\n+You can also set separately the `control_interface`, `data_interface` and `ipc_interface`.  On systems that have multiple network interfaces, you may want to associate data transfers with the fastest possible NIC available. This can be done in the GridFTP server by setting `data_interface`:\n \n-\u2014\\# Starting GridFTP\n+```text\n+control_interface IP-TO-USE\n+data_interface IP-TO-USE\n+ipc_interface IP-TO-USE\n+```\n \n-<span class=\"twiki-macro STARTSECTION\">Starting</span>\n+For more options available for the GridFTP server, read the comments in the configuration file (`/etc/gridftp.conf`) or see the [Globus manual](http://www.globus.org/toolkit/docs/latest-stable/gridftp/admin/#gridftp-configuring).\n \n-Starting GridFTP:\n+Managing GridFTP\n+----------------\n \n-``` rootscreen\n-%UCL_PROMPT_ROOT% service globus-gridftp-server start\n-```\n+In addition to the GridFTP service itself, there are a number of supporting services in your installation. The specific services are:\n \n-<span class=\"twiki-macro ENDSECTION\">Starting</span> To start Gridftp automatically at boot time\n+| Software  | Service name                          | Notes                                                                                  |\n+|:----------|:--------------------------------------|:---------------------------------------------------------------------------------------|\n+| Fetch CRL | `fetch-crl-boot` and `fetch-crl-cron` | See [CA documentation](https://twiki.opensciencegrid.org/bin/view/Documentation/Release3/InstallCertAuth#Start_Stop_fetch_crl_A_quick_gui) for more info |\n+| Gratia    | `gratia-probes-cron`                  | Accounting software                                                                    |\n+| GridFTP   | `globus-gridftp-server`               |                                                                                        |\n \n-``` rootscreen\n-%UCL_PROMPT_ROOT% chkconfig globus-gridftp-server on\n-```\n \n-\u2014\\# Stopping GridFTP <span class=\"twiki-macro STARTSECTION\">Stopping</span> Stopping GridFTP:\n+Validating GridFTP\n+------------------\n+\n+The GridFTP service can be validated by using globus-url-copy. You will need to run `grid-proxy-init` or `voms-proxy-init` in order to get a valid user proxy in order to communicate with the GridFTP server.\n \n-``` rootscreen\n-%UCL_PROMPT_ROOT% service globus-gridftp-server stop\n+```console\n+[root@client ~] # globus-url-copy file:///tmp/zero.source gsiftp://yourhost.yourdomain/tmp/zero\n+[root@client ~] # echo $?\n+0\n ```\n \n-<span class=\"twiki-macro ENDSECTION\">Stopping</span>\n+Run the validation as an unprivileged user; when invoked as root, `globus-url-copy` will attempt to use the host certificate instead of your user certificate, with confusing results.\n \n-\u2014\\# Validation of services\n+Getting Help\n+------------\n \n-<span class=\"twiki-macro STARTSECTION\">Validation</span>\n+For assistance, please use [this page](https://twiki.opensciencegrid.org/bin/view/Documentation/HelpProcedure).\n \n-The GridFTP service can be validated by using globus-url-copy. You will need to run `grid-proxy-init` or `voms-proxy-init` in order to get a valid user proxy in order to communicate with the GridFTP server.\n+Reference\n+---------\n \n-``` screen\n-%UCL_PROMPT% globus-url-copy file:///tmp/zero.source gsiftp://yourhost.yourdomain/tmp/zero\n-%UCL_PROMPT% echo $?\n-0\n-```\n+-   [Globus GridFTP administration manual](http://www.globus.org/toolkit/docs/latest-stable/gridftp/admin/)", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/24#discussion_r134523122", 
+  "id": 134523122, 
+  "original_commit_id": "15a0a4d19a92c444ca1f94db31db24517701dd4e", 
+  "original_position": 322, 
+  "path": "docs/storage/gridftp.md", 
+  "position": 322, 
+  "pull_request_review_id": 57822689, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/24", 
+  "updated_at": "2017-08-22T16:29:24Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/134523122", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

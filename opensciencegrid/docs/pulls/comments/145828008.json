@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/221#discussion_r145828008"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/221"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/145828008"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Works for me", 
+  "commit_id": "919df2f18d14fc9680be7240a593cf1734183835", 
+  "created_at": "2017-10-19T21:23:13Z", 
+  "diff_hunk": "@@ -208,6 +209,21 @@ Each non-commented line is a shell-style pattern which is compared against a use\n !!!warning\n     `/etc/grid-security/ban-mapfile` *must* exist, even if you are not banning any users. In that case, the file should be blank. If the file does not exist, LCMAPS will ban every user.\n \n+\n+\n+### Mapping using all FQANs\n+\n+By default, the LCMAPS VOMS plugin only considers for mapping the first FQAN of a VOMS proxy. This behavior matches what GUMS does. If you want to consider all FQANs, you must set the appropriate option.\n+\n+-   If you are using osg-configure, set `all_fqans = True` in `10-misc.ini`, then run `osg-configure -c`\n+\n+-   If you are configuring `lcmaps.db` manually (see [manual configuration](#manual-configuration) below), add `\"-all-fqans\"` to the module definitions for `vomsmapfile` and `defaultmapfile`\n+\n+!!! note\n+    If you are using OSG 3.3, osg-configure should be at least version 1.10.2.  If you are using OSG 3.4, osg-configure should be at least version 2.2.2.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/221#discussion_r145828008", 
+  "id": 145828008, 
+  "in_reply_to_id": 145817225, 
+  "original_commit_id": "720cde121cad97978a757e8cc372b2575f35d57c", 
+  "original_position": 23, 
+  "path": "docs/security/lcmaps-voms-authentication.md", 
+  "position": null, 
+  "pull_request_review_id": 70687144, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/221", 
+  "updated_at": "2017-10-19T21:31:49Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/145828008", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

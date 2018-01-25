@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/153#discussion_r123659355"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/153"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/123659355"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Wait, by all of the above did you mean to include setting COLLECTOR_PLUGIN_PYTHON_MODULES = htcondorce.audit_payloads to enable the plugin by default, or just enable the log file?\r\n", 
+  "commit_id": "a3c6572d213d4cfbf68bb28ad241cb631ce77725", 
+  "created_at": "2017-06-23T02:04:57Z", 
+  "diff_hunk": "@@ -0,0 +1,24 @@\n+# Settings for the collector audit payloads function.\n+# The easiest way to direct the payload logging information here is to\n+# set the environment variable CONDORCE_COLLECTOR_HOST on worker nodes\n+# pointing to this condor-ce host.  Then pilot jobs that use condor\n+# will automatically forward their payload classads here for auditing.\n+\n+# You can edit this file but that prevents future rpm upgrade\n+# replacements, so it is better to override these settings in \n+# /etc/condor-ce/99-ce-collector-audit-payload.conf\n+\n+# Set this value to enable the plugin\n+# COLLECTOR_PLUGIN_PYTHON_MODULES = htcondorce.audit_payloads\n+\n+# Set these values to enable the log file\n+# COLLECTOR_AUDIT_LOG = $(LOG)/AuditPayloadLog\n+# COLLECTOR_DEBUG = D_AUDIT, $(COLLECTOR_DEBUG)", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/153#discussion_r123659355", 
+  "id": 123659355, 
+  "in_reply_to_id": 123656538, 
+  "original_commit_id": "19efcc6ef4d3c78b40a9309e91e9d9283cd31409", 
+  "original_position": 16, 
+  "path": "config/01-ce-collector-audit-payload.conf", 
+  "position": null, 
+  "pull_request_review_id": 45886081, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/153", 
+  "updated_at": "2017-07-21T20:33:12Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/123659355", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

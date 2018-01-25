@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "@brianhlin and @bbockelm please review.", 
+  "created_at": "2017-06-22T22:37:23Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/153#issuecomment-310521698", 
+  "id": 310521698, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/153", 
+  "updated_at": "2017-06-22T22:37:23Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/310521698", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

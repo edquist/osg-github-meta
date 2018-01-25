@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-build/pull/35#discussion_r111152555"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/35"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/111152555"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "This confuses me. The original text was better, but if you really want to work in the word \u201cdefault\u201d, maybe something like: \u201cThe default for a koji task is to build for all releases, and for other tasks is to build on the same platform as the command is run on.\u201d", 
+  "commit_id": "fa731b20091245076b1de864806fb82f595d4ecd", 
+  "created_at": "2017-04-12T13:41:43Z", 
+  "diff_hunk": "@@ -357,13 +357,14 @@ def parse_cmdline_args(argv):\n         dest=\"redhat_release\",\n         type=\"string\",\n         help=\"The version of the distribution to build the package for. \"\n-        \"Valid values are: 5 (for RHEL 5), 6 (for RHEL 6), 7 (for RHEL 7). \"\n-        \"If not specified, will build for all releases (koji task) or the \"\n-        \"platform you are running this on (other tasks)\")\n+        \"Valid values are: 5/6/7 (for EL 5/6/7 respectively). \"\n+        \"Default: build for all releases (koji task) current platform \"\n+        \"(other tasks)\")\n     parser.add_option(", 
+  "html_url": "https://github.com/opensciencegrid/osg-build/pull/35#discussion_r111152555", 
+  "id": 111152555, 
+  "original_commit_id": "9e29aac8c04f82cb1ae737f6dacb67d37bb3d24e", 
+  "original_position": 41, 
+  "path": "osgbuild/main.py", 
+  "position": 41, 
+  "pull_request_review_id": 32376636, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/35", 
+  "updated_at": "2017-04-18T21:55:32Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/111152555", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

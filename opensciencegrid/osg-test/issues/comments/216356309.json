@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "I am still not crazy about a sub-function making a decision about the user interface (in this case, an exit code). But this code should work for now, so I will accept it.\n", 
+  "created_at": "2016-05-02T20:39:08Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/12#issuecomment-216356309", 
+  "id": 216356309, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/12", 
+  "updated_at": "2016-05-02T20:39:08Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/216356309", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

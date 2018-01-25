@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "> Unfortunately, the original/prior developer's only tests require access to their long-deleted home directory. Part of the fun...\n\nYeah, that's surprisingly common - JGlobus tests had similar expectations. \n", 
+  "created_at": "2016-02-12T16:53:17Z", 
+  "html_url": "https://github.com/opensciencegrid/privilege-xacml/issues/11#issuecomment-183410329", 
+  "id": 183410329, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/privilege-xacml/issues/11", 
+  "updated_at": "2016-02-12T16:53:17Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/privilege-xacml/issues/comments/183410329", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/1125766?v=4", 
+    "events_url": "https://api.github.com/users/gbehrmann/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/gbehrmann/followers", 
+    "following_url": "https://api.github.com/users/gbehrmann/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/gbehrmann/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/gbehrmann", 
+    "id": 1125766, 
+    "login": "gbehrmann", 
+    "organizations_url": "https://api.github.com/users/gbehrmann/orgs", 
+    "received_events_url": "https://api.github.com/users/gbehrmann/received_events", 
+    "repos_url": "https://api.github.com/users/gbehrmann/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/gbehrmann/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/gbehrmann/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/gbehrmann"
+  }
+}

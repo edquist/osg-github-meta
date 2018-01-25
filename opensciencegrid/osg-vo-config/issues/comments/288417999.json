@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Hello\nI merged this request. \nS\n\nScott Teige PhD\nGrid Operations Center Manager\nIndiana University Research Technologies\nsteige@iu.edu\nOffice: +1 812 856 7331\n\n\n\nOn Mar 21, 2017, at 5:19 PM, edquist <notifications@github.com> wrote:\n\n> Drop OSGEDU, CSIU\n> Add voms.grid.iu.edu voms server for OSG\n> https://ticket.opensciencegrid.org/33040\n> https://jira.opensciencegrid.org/browse/SOFTWARE-2643\n> \n> You can view, comment on, or merge this pull request online at:\n> \n>   https://github.com/opensciencegrid/osg-vo-config/pull/12\n> \n> Commit Summary\n> \n> drop osgedu from vomses/vomsdir\n> drop osgedu from edg-mkgridmap.config\n> drop CSIU from vomses/vomsdir\n> drop CSIU from edg-mkgridmap.config\n> drop osgedu from gums.config.template\n> add voms.grid.iu.edu voms server for osg vo to vomses/vomsdir\n> File Changes\n> \n> M edg-mkgridmap.config (6)\n> M gums.config.template (34)\n> D vomsdir/CSIU/voms.grid.iu.edu.lsc (2)\n> R vomsdir/osg/voms.grid.iu.edu.lsc (0)\n> M vomses (3)\n> Patch Links:\n> \n> https://github.com/opensciencegrid/osg-vo-config/pull/12.patch\n> https://github.com/opensciencegrid/osg-vo-config/pull/12.diff\n> \u2014\n> You are receiving this because you are subscribed to this thread.\n> Reply to this email directly, view it on GitHub, or mute the thread.\n> \n\n", 
+  "created_at": "2017-03-22T14:34:55Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-vo-config/pull/12#issuecomment-288417999", 
+  "id": 288417999, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-vo-config/issues/12", 
+  "updated_at": "2017-03-22T14:34:55Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-vo-config/issues/comments/288417999", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/10994601?v=4", 
+    "events_url": "https://api.github.com/users/steige2/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/steige2/followers", 
+    "following_url": "https://api.github.com/users/steige2/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/steige2/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/steige2", 
+    "id": 10994601, 
+    "login": "steige2", 
+    "organizations_url": "https://api.github.com/users/steige2/orgs", 
+    "received_events_url": "https://api.github.com/users/steige2/received_events", 
+    "repos_url": "https://api.github.com/users/steige2/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/steige2/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/steige2/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/steige2"
+  }
+}

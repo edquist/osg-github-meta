@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/26#discussion_r66254371"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/26"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/66254371"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Nope because it's very much a 'hacky thing' we do to get our Frankenstein setup to work. I can make a JIRA ticket and assign it to Carl, though\n", 
+  "commit_id": "a2c130ac341529e10360df211193c7d0abc56845", 
+  "created_at": "2016-06-08T13:26:09Z", 
+  "diff_hunk": "@@ -164,3 +166,12 @@ def test_09_config_user_vo_map(self):\n                         conFileContents,\n                         owner='root')\n \n+    def test_10_fix_tomcat_template(self):\n+        # Fix EL7 bug in Gratia template\n+        if core.el_release() == 7:\n+            core.skip_ok_unless_installed(tomcat.pkgname(), 'gratia-service')\n+            core.config['gratia.broken_template'] = '/usr/share/gratia/server.xml.template'\n+            bad_line = r'\\s+sSLImplementation=.*'\n+            fixed_line = ' '*15 + 'sslImplementationName=\"org.glite.security.trustmanager.tomcat.TMSSLImplementation\"'\n+            files.replace_regexpr(core.config['gratia.broken_template'], bad_line, fixed_line, owner='gratia')\n+", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/26#discussion_r66254371", 
+  "id": 66254371, 
+  "original_commit_id": "a2c130ac341529e10360df211193c7d0abc56845", 
+  "original_position": 23, 
+  "path": "osgtest/tests/test_23_gratia.py", 
+  "position": 23, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/26", 
+  "updated_at": "2016-06-08T13:26:09Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/66254371", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

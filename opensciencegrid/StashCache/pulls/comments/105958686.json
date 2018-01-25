@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/StashCache/pull/51#discussion_r105958686"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/51"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/105958686"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I think this is the right approach.\r\n\r\nHowever, I'm not sure if this quite works?  Did you test this?  Seems like it's going to put the full line in as the group.  It also still keeps quotes.\r\n\r\nYou probably want a regex like this:\r\n```\r\nr = re.compile('^\\s*(Owner|ProjectName)\\s=\\s\"(.*)\"', re.IGNORECASE)\r\n```\r\n\r\nSeems that we need a small unit test for this function, given it's not 100% clear what the output is.", 
+  "commit_id": "9ea8e4ac95fb87b6f02dcac50fcb43429f08bd75", 
+  "created_at": "2017-03-14T16:30:30Z", 
+  "diff_hunk": "@@ -141,6 +143,19 @@ def doStashCpSingle(sourceFile, destination, cache, debug=False):\n         es_send(payload)\n \n \n+def parse_job_ad():\n+    temp_list = {}\n+    try:\n+        with open(os.environ['_CONDOR_JOB_AD']) as job_file:\n+            for line in job_file.readLines():\n+                match = re.match('Owner|ProjectName', line, re.IGNORECASE)\n+                if match:\n+                    temp_list[match.group()] = line", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/pull/51#discussion_r105958686", 
+  "id": 105958686, 
+  "original_commit_id": "118f68c2b7ca3ffce89195cdab9bc9b35bb2fe41", 
+  "original_position": 20, 
+  "path": "bin/stashcp", 
+  "position": null, 
+  "pull_request_review_id": 26860371, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/51", 
+  "updated_at": "2017-03-27T20:54:38Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/105958686", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

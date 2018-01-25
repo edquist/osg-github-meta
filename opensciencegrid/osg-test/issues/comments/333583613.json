@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Two things:\r\n1. `test_04_copy_server_to_local_gfal2_gftp_util` - would be nice if the test checked that the destination file existed after the copy\r\n2. Could you squash some of your commits? There's like 40 commits for 50 lines of changes; I think that's a little too much.", 
+  "created_at": "2017-10-02T16:13:16Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/104#issuecomment-333583613", 
+  "id": 333583613, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/104", 
+  "updated_at": "2017-10-02T16:13:16Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/333583613", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

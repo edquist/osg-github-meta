@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Note: after some off-thread discussions with John, we decided to migrate the callback data object to a separate C++ class for managing the object lifetime using RAII.  This would reduce the possibility of accidental memory leaks.", 
+  "created_at": "2017-07-25T03:15:21Z", 
+  "html_url": "https://github.com/opensciencegrid/xrootd-lcmaps/pull/9#issuecomment-317616778", 
+  "id": 317616778, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/issues/9", 
+  "updated_at": "2017-07-25T03:15:21Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/issues/comments/317616778", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

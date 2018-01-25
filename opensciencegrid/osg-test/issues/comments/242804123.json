@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "1. Did you run automated against your branch and the new `gridftp-transfer` probe?\n2. I imagine that this will cause nightlies to fail. @osg-cat, how do you want to deal with this? We could ask Carl to add a version check to his change. Or we could merge this and peg the VMU tests to default to the commit before this one. \n", 
+  "created_at": "2016-08-26T17:50:12Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/37#issuecomment-242804123", 
+  "id": 242804123, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/37", 
+  "updated_at": "2016-08-26T17:50:12Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/242804123", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

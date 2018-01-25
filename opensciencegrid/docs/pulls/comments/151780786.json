@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/256#discussion_r151780786"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/256"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/151780786"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Maybe this isn't obvious to me because I don't have a config file in front of me but how does an admin decide when to replace `Required all granted` with `Order allow, deny` and when to replace it with `Allow from all`?", 
+  "commit_id": "54fccfab6f936794f89686c2c8fc87c2d636a3fc", 
+  "created_at": "2017-11-17T20:20:15Z", 
+  "diff_hunk": "@@ -133,14 +133,19 @@ RewriteRule ^/cvmfs/(.*)$ /srv/cvmfs/$1\n   ExpiresByType application/json \"access plus 61 seconds\" \n </Directory>\n \n-WSGIDaemonProcess cvmfs-api processes=2 display-name=%{GROUP} \\\n+WSGIDaemonProcess cvmfs-api threads=64 display-name=%{GROUP} \\\n     python-path=/usr/share/cvmfs-server/webapi\n-WSGIProcessGroup cvmfs-api \n+<Directory /var/www/wsgi-scripts/cvmfs-server>\n+  WSGIProcessGroup cvmfs-api\n+  WSGIApplicationGroup cvmfs-api\n+  Options ExecCGI\n+  SetHandler wsgi-script\n+  Require all granted\n+</Directory>\n WSGISocketPrefix /var/run/wsgi \n-WSGIScriptAliasMatch /cvmfs/([^/]+)/api /var/www/wsgi-scripts/cvmfs-api.wsgi/$1 \n ```\n \n-On EL6-based systems (apache httpd 2.2) replace the \"Require all granted\" with \"Order allow, deny\" and \"Allow from all\".\n+On EL6-based systems (apache httpd 2.2) replace the \"Require all granted\" lines with \"Order allow, deny\" and \"Allow from all\".", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/256#discussion_r151780786", 
+  "id": 151780786, 
+  "original_commit_id": "5d173c32a1866134323a8a1833fd7f11b67b75e8", 
+  "original_position": 38, 
+  "path": "docs/other/install-cvmfs-stratum1.md", 
+  "position": null, 
+  "pull_request_review_id": 77550646, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/256", 
+  "updated_at": "2017-11-17T22:40:51Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/151780786", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

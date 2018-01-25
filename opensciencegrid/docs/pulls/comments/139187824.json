@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/166#discussion_r139187824"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/166"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139187824"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Shouldn't the text for the link be \"OSG Worker Node\" instead of \"OSG Client\"?", 
+  "commit_id": "a34fde5c7382ab5b9f6311cd53f5b440c4e28be9", 
+  "created_at": "2017-09-15T16:02:03Z", 
+  "diff_hunk": "@@ -389,7 +389,7 @@ In the output, check that your `gumsIDMapped` is not `null`. It returns the `uid\n \n ### Verifying GridFTP\n \n-Login on the node where your certificate and [OSG Client](../client/wn.md) is installed You will need to generate your proxy credentials using `grid-proxy-init` or `voms-proxy-init`.\n+Login on the node where your certificate and [OSG Client](../worker-node/install-wn.md) is installed You will need to generate your proxy credentials using `grid-proxy-init` or `voms-proxy-init`.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/166#discussion_r139187824", 
+  "id": 139187824, 
+  "original_commit_id": "a7ac8994ab606b2d162fe5c7267a37c2752b2f29", 
+  "original_position": 5, 
+  "path": "docs/data/bestman-install.md", 
+  "position": null, 
+  "pull_request_review_id": 63088821, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/166", 
+  "updated_at": "2017-09-15T16:47:30Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139187824", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

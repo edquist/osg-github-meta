@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Thanks, as always, for the thorough review. I've fixed the membership check. \r\n\r\nAs for `core.options.extrarepos` getting replaced with `['osg-contrib']` for slurm packages, the only case where it would matter would be if a user wanted to install slurm through a separate repository. I don't think this is a use case we really expect to test in the nightlies and if a user wanted to test this manually, they could pre-install the slurm packages they're interested in. \r\n", 
+  "created_at": "2017-01-18T15:22:26Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/66#issuecomment-273504678", 
+  "id": 273504678, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/66", 
+  "updated_at": "2017-01-18T15:22:26Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/273504678", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

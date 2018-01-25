@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/63#discussion_r92684610"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/63"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/92684610"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "With all the substitutions that are required, I think it's easier to just throw it in the test rather than dealing with file handles and having to crosscheck the file when doing development.", 
+  "commit_id": "50331b378f3b0b5122c0bc05d2ce9061de0e45f5", 
+  "created_at": "2016-12-15T19:40:35Z", 
+  "diff_hunk": "@@ -0,0 +1,107 @@\n+import osgtest.library.core as core\n+import osgtest.library.files as files\n+import osgtest.library.mysql as mysql\n+import osgtest.library.osgunittest as osgunittest\n+import osgtest.library.service as service\n+\n+CLUSTER_NAME = 'osg_test'\n+CTLD_LOG = '/var/log/slurm/slurmctld.log'\n+SHORT_HOSTNAME = core.get_hostname().split('.')[0]\n+\n+SLURMDBD_CONFIG = \"\"\"AuthType=auth/munge\n+DbdHost=localhost\n+SlurmUser=slurm\n+DebugLevel=debug5\n+LogFile=/var/log/slurm/slurmdbd.log\n+StorageType=accounting_storage/mysql\n+StorageLoc=%(name)s\n+StorageUser=%(user)s\n+StoragePass=%(pass)s\n+\"\"\"\n+\n+SLURM_CONFIG = \"\"\"AccountingStorageHost=localhost\n+AccountingStorageLoc=/tmp/slurm_job_accounting.txt\n+AccountingStorageType=accounting_storage/slurmdbd\n+AuthType=auth/munge\n+ClusterName=%(cluster)s\n+ControlMachine=%(short_hostname)s\n+JobAcctGatherType=jobacct_gather/linux\n+KillWait=30\n+NodeName=%(short_hostname)s Procs=1 RealMemory=128 State=UNKNOWN\n+PartitionName=debug Nodes=%(short_hostname)s Default=YES MaxTime=INFINITE State=UP\n+ReturnToService=2\n+SlurmUser=slurm\n+SlurmctldDebug=debug5\n+SlurmctldTimeout=300\n+SlurmctldLogFile=%(ctld_log)s\n+SlurmdLogFile=/var/log/slurm/slurm.log\n+SlurmdDebug=debug5\n+StateSaveLocation=/var/spool/slurmd\n+\"\"\"", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/63#discussion_r92684610", 
+  "id": 92684610, 
+  "in_reply_to_id": 92679547, 
+  "original_commit_id": "e004d037a6ee32a82d9734e47d1d1abd21594a93", 
+  "original_position": 40, 
+  "path": "osgtest/tests/test_29_slurm.py", 
+  "position": 40, 
+  "pull_request_review_id": 13204749, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/63", 
+  "updated_at": "2016-12-16T19:52:30Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/92684610", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

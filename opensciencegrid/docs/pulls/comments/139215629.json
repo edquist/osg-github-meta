@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/169#discussion_r139215629"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/169"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139215629"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Remove both, no site is on 0.20 or 0.19.", 
+  "commit_id": "1056e22bc64482ab119bd1664cf1eae3f19253e3", 
+  "created_at": "2017-09-15T18:11:39Z", 
+  "diff_hunk": "@@ -0,0 +1,46 @@\n+<span class=\"twiki-macro DOC_STATUS_TABLE\"></span>\n+\n+Hadoop\n+======\n+\n+\n+About this Document\n+===================\n+\n+The Hadoop Distributed File System (HDFS) is a highly scalable, very reliable distributed file system developed by the Apache project as a part of the Hadoop data processing system. The primary contributor (and largest user) is Yahoo. HDFS is based on the design of the Google File System. HDFS's strengths is in its ability to use commodity hard drives in worker nodes; it can turn a large amount of semi-reliable hardware into a system which is very reliable.\n+\n+To find out more information about HDFS, [visit its home page](http://hadoop.apache.org/hdfs/). If you are thinking about installing Hadoop, we also recommend reading the [HDFS architecture page](http://hadoop.apache.org/common/docs/current/hdfs_design.html).\n+\n+This page covers the OSG's usage of Hadoop, and includes instructions for installing a grid-enabled HDFS system.\n+\n+Planning\n+--------\n+\n+-   [HadoopUnderstanding](https://twiki.opensciencegrid.org/bin/view/Documentation/HadoopUnderstanding): This document explains the various components for Hadoop and the recommended specifications of size and deployment.\n+\n+Installation\n+------------\n+\n+-   [Install Guide](install-hadoop-2-0-0)\n+    -   Change link <https://twiki.grid.iu.edu/bin/view/Accounting/ProbeInstallation>\n+    -   <https://twiki.grid.iu.edu/bin/view/Trash/ReleaseDocumentationGratiaSiteCollector> revisit this link\n+\n+**Upgrading:** Please note that there are two upgrades that could be needed. To upgrade if you are using 0.19 from the Caltech repository, follow the first guide to upgrade to 0.20 then use the second to convert to the newer OSG repository.\n+\n+-   [HadoopUpgrade](https://twiki.opensciencegrid.org/bin/view/Storage/HadoopUpgrade) : Upgrade guide to upgrade from 0.19 to 0.20, both using the Caltech repo.\n+-   [UpgradeHadoop](https://twiki.opensciencegrid.org/bin/view/Documentation/Release3/UpgradeHadoop): This guide covers upgrading from 0.20 Caltech repository to 0.20 using OSG repository.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/169#discussion_r139215629", 
+  "id": 139215629, 
+  "original_commit_id": "9e97f567c52077b65dff29b14c115fc8357720c0", 
+  "original_position": 31, 
+  "path": "docs/data/hadoop-overview.md", 
+  "position": null, 
+  "pull_request_review_id": 63121195, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/169", 
+  "updated_at": "2017-09-28T15:03:24Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139215629", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

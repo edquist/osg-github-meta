@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "I'd do:\r\n\r\n```go\r\nif remote := r.Header.Get(\"X-Real-IP\"); remote != \"\" {\r\n  remoteAddr = remote\r\n} else if { ...\r\n```", 
+  "created_at": "2017-04-26T19:20:14Z", 
+  "html_url": "https://github.com/opensciencegrid/gracc-collector/pull/18#issuecomment-297514153", 
+  "id": 297514153, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gracc-collector/issues/18", 
+  "updated_at": "2017-04-26T19:20:14Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-collector/issues/comments/297514153", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/1627510?v=4", 
+    "events_url": "https://api.github.com/users/retzkek/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/retzkek/followers", 
+    "following_url": "https://api.github.com/users/retzkek/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/retzkek/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/retzkek", 
+    "id": 1627510, 
+    "login": "retzkek", 
+    "organizations_url": "https://api.github.com/users/retzkek/orgs", 
+    "received_events_url": "https://api.github.com/users/retzkek/received_events", 
+    "repos_url": "https://api.github.com/users/retzkek/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/retzkek/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/retzkek/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/retzkek"
+  }
+}

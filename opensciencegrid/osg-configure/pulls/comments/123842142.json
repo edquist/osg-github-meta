@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-configure/pull/59#discussion_r123842142"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/59"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/comments/123842142"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "What happens if this fails? E.g. cert or key not found, or some sort of error making the connection.", 
+  "commit_id": "b6699c2dc2a42eea8944db7cdecb7c5208435675", 
+  "created_at": "2017-06-23T20:52:13Z", 
+  "diff_hunk": "@@ -0,0 +1,130 @@\n+#!/usr/bin/python\n+\n+import os\n+import re\n+import pwd\n+import json\n+import pipes\n+import urllib\n+import httplib\n+import urllib2\n+\n+from osg_configure.modules import exceptions\n+\n+_debug = False\n+\n+# defaults\n+#default_capath  = \"/etc/grid-security/certificates/\"\n+default_certpath = \"/etc/grid-security/hostcert.pem\"\n+default_keypath  = \"/etc/grid-security/hostkey.pem\"\n+\n+# curl example:\n+# curl --capath /etc/grid-security/certificates/ --cert /etc/grid-security/hostcert.pem --key /etc/grid-security/hostkey.pem 'https://fermicloud331.fnal.gov:8443/gums/json/getOsgVoUserMap?hostname=test.cs.wisc.edu'\n+\n+# see: http://stackoverflow.com/questions/1875052/using-paired-certificates-with-urllib2\n+class HTTPSClientAuthHandler(urllib2.HTTPSHandler):\n+    def __init__(self, certpath, keypath):\n+        urllib2.HTTPSHandler.__init__(self)\n+        self.certpath = certpath\n+        self.keypath = keypath\n+\n+    def https_open(self, req):\n+        return self.do_open(self.get_connection, req)\n+\n+    # wrapper for HTTPSConnection constructor with cert files\n+    def get_connection(self, host, timeout=60):\n+        return httplib.HTTPSConnection(host, key_file=self.keypath,\n+                                             cert_file=self.certpath,\n+                                             timeout=timeout)\n+\n+def certurlopen(url, certpath, keypath):\n+    handler = HTTPSClientAuthHandler(certpath, keypath)\n+    opener  = urllib2.build_opener(handler)\n+    return opener.open(url)\n+\n+def get_subject(certpath):\n+    # TODO: use some SSL/X509 python module to extract DN\n+    subject = os.popen(\"openssl x509 -in %s -noout -subject\" %\n+                       pipes.quote(certpath)).read()\n+    pfx = \"subject=\"\n+    if subject.startswith(pfx):\n+        subject = subject[len(pfx):]\n+    return subject.strip()\n+\n+def gums_json_map(gums_host, command, params, certpath, keypath):\n+    params = urllib.urlencode(params)\n+    if not re.search(r':\\d+$', gums_host):\n+        gums_host = gums_host + \":8443\"\n+    url = 'https://%s/gums/json/%s?%s' % (gums_host, command, params)\n+    handle = certurlopen(url, certpath, keypath)\n+    return json.load(handle)\n+\n+def user_exists(user):\n+    try:\n+        pwd.getpwnam(user)\n+        return True\n+    except KeyError:\n+        return False\n+\n+def supported_vos_for_vo_users(vo_users):\n+    def any_vo_user_exists(vo):\n+        return any( user_exists(user) for user in vo_users[vo] )\n+\n+    return sorted(filter(any_vo_user_exists, vo_users))\n+\n+def gums_json_vo_user_map(gums_host, target_host=None,\n+                          certpath=default_certpath, keypath=default_keypath):\n+    json_cmd = \"getOsgVoUserMap\"\n+    if target_host is None:\n+        target_host = get_subject(certpath)\n+    params   = {'hostname': target_host}\n+    json_map = gums_json_map(gums_host, json_cmd, params, certpath, keypath)", 
+  "html_url": "https://github.com/opensciencegrid/osg-configure/pull/59#discussion_r123842142", 
+  "id": 123842142, 
+  "original_commit_id": "21dec619c2b3071b2cab4d1551a2809ee67d5e4a", 
+  "original_position": 81, 
+  "path": "osg_configure/modules/gums_supported_vos.py", 
+  "position": null, 
+  "pull_request_review_id": 46088663, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/59", 
+  "updated_at": "2017-06-23T21:23:06Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/comments/123842142", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

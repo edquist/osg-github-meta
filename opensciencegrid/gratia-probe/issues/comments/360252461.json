@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Get your hate ready!\r\n\r\nI had this fantastic idea.\r\n\r\n```\r\nimport classad as classadLib\r\n\r\nclassadLib.ClassAd.__contains__ = lambda self,attr: self.get(attr) is not None\r\n```\r\n\r\nThen all the `attr in ad` tests can just remain as they were...!\r\n\r\n(@matyasselmeci said he was sorry for not hating on me for this idea.)", 
+  "created_at": "2018-01-24T19:49:54Z", 
+  "html_url": "https://github.com/opensciencegrid/gratia-probe/pull/24#issuecomment-360252461", 
+  "id": 360252461, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gratia-probe/issues/24", 
+  "updated_at": "2018-01-24T19:49:54Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gratia-probe/issues/comments/360252461", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

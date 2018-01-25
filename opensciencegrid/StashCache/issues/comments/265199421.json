@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "I actually ran into a corner case for this.  \r\n\r\n1. My tests create a new file with the same name as an old file.\r\n2. The hash in CVMFS was incorrect, and actually failed the transfer (Input/Output Error).\r\n3. When transferring with `xrdcp`, it copied the correct file.  But the Checksum in CVMFS would have been of the old one.\r\n\r\nTherefore, if a user tries to copy a file that has the same name as an old file, but with new content, then this test would fail.  Matter of fact, if the transfer fails with CVMFS, but the file is in the CVMFS namespace, then we shouldn't trust CVMFS at all, it's likely it caught the same error.", 
+  "created_at": "2016-12-06T16:36:42Z", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/issues/29#issuecomment-265199421", 
+  "id": 265199421, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/29", 
+  "updated_at": "2016-12-06T16:36:42Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/comments/265199421", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

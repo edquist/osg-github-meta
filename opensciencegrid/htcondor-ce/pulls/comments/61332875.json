@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/91#discussion_r61332875"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/91"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/61332875"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "What happens if this script fails?\n", 
+  "commit_id": "9fbad4e4950c1603e32df221374e120baacc7af6", 
+  "created_at": "2016-04-27T20:46:50Z", 
+  "diff_hunk": "@@ -0,0 +1,30 @@\n+#!/bin/sh -xe\n+\n+# This script starts docker and systemd (if el7)\n+\n+# Version of CentOS/RHEL\n+el_version=$1\n+\n+ # Run tests in Container\n+if [ \"$el_version\" = \"6\" ]; then\n+\n+sudo docker run --rm=true -v `pwd`:/htcondor-ce:rw centos:centos${OS_VERSION} /bin/bash -c \"bash -xe /htcondor-ce/tests/test_inside_docker.sh ${OS_VERSION}\"\n+\n+elif [ \"$el_version\" = \"7\" ]; then\n+\n+docker run --privileged -d -ti -e \"container=docker\"  -v /sys/fs/cgroup:/sys/fs/cgroup -v `pwd`:/htcondor-ce:rw  centos:centos${OS_VERSION}   /usr/sbin/init\n+DOCKER_CONTAINER_ID=$(docker ps | grep centos | awk '{print $1}')\n+docker logs $DOCKER_CONTAINER_ID\n+docker exec -ti $DOCKER_CONTAINER_ID /bin/bash -c \"bash -xe /htcondor-ce/tests/test_inside_docker.sh ${OS_VERSION};", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/91#discussion_r61332875", 
+  "id": 61332875, 
+  "original_commit_id": "8553d60ed2f60d4ee9f1322cd6b6bf1f1841ed45", 
+  "original_position": 18, 
+  "path": "tests/setup_tests.sh", 
+  "position": 18, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/91", 
+  "updated_at": "2016-04-27T21:14:35Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/61332875", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

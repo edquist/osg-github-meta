@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gracc-collector/pull/21#discussion_r117042591"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-collector/pulls/21"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-collector/pulls/comments/117042591"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Move this to `Dockerfile.golang.centos7` intsead.", 
+  "commit_id": "942366c3fc9d71a42b400443b63d5286f93fe041", 
+  "created_at": "2017-05-17T15:57:24Z", 
+  "diff_hunk": "@@ -33,6 +33,7 @@ test:\n \n rpm:\n \tgit archive --prefix gracc-collector/ --output $(HOME)/rpmbuild/SOURCES/gracc-collector.tar.gz HEAD\n+\tyum -y install golang", 
+  "html_url": "https://github.com/opensciencegrid/gracc-collector/pull/21#discussion_r117042591", 
+  "id": 117042591, 
+  "original_commit_id": "4997086cfffc4c33fdc65aa7ed1c0237f69a2937", 
+  "original_position": 4, 
+  "path": "Makefile", 
+  "position": null, 
+  "pull_request_review_id": 38713269, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gracc-collector/pulls/21", 
+  "updated_at": "2017-05-17T16:39:27Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-collector/pulls/comments/117042591", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

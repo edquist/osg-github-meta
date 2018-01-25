@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Do you mean a link to [OO-102](https://jira.opensciencegrid.org/browse/OO-102)?  I thought everybody knew how to get to that.\n\nSee the diff.  Currently do_oasis_update is reading .cvmfsdirtab from /net/nas01/srv.  That's not where the rest of the files are anymore that persist across reinstalls, those are now mounted at /srv.  This pull request changes do_oasis_update so that file, the last one still referenced in /net/nas01/srv, will be with the rest of the files.  (Note: there are still files referenced in /net/nas01/Public, but that's OK).\n", 
+  "created_at": "2015-09-23T02:49:44Z", 
+  "html_url": "https://github.com/opensciencegrid/oasis-server/pull/7#issuecomment-142475360", 
+  "id": 142475360, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/oasis-server/issues/7", 
+  "updated_at": "2015-09-23T02:49:44Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/oasis-server/issues/comments/142475360", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/157#discussion_r138730543"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/157"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/138730543"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Link should be to `../security/install-gums`", 
+  "commit_id": "03cc8267258520e16dc5fcf77456168762feef75", 
+  "created_at": "2017-09-13T20:30:37Z", 
+  "diff_hunk": "@@ -0,0 +1,81 @@\n+!!! warning\n+    GUMS is no longer be supported in OSG 3.4. The [LCMAPS VOMS Plugin](../security/lcmaps-voms-authentication) is the preferred method for site authentication in the OSG and is available in both OSG 3.3 and OSG 3.4.\n+\n+!!! warning\n+    These experiments were run on EL 5 machines. EL 5 is no longer supported as of OSG 3.3.\n+\n+GUMS Scalability\n+================\n+\n+About this Document\n+===================\n+\n+The purpose of this document is to put together various GUMS configuration and system level settings that may help optimize GUMS server performance. It assumes you are familiar with GUMS, its installation and configuration as covered in [the GUMS install documentation](../security/gums).", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/157#discussion_r138730543", 
+  "id": 138730543, 
+  "original_commit_id": "67f4e1bbe1de29a18463f80672826d8da6b1ab31", 
+  "original_position": 13, 
+  "path": "docs/security/gums-scalability.md", 
+  "position": null, 
+  "pull_request_review_id": 62566817, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/157", 
+  "updated_at": "2017-09-13T20:48:53Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/138730543", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

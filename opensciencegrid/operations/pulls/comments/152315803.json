@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/operations/pull/99#discussion_r152315803"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/operations/pulls/99"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/operations/pulls/comments/152315803"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Instead of the passive \"has to be\",  it would be better to give it as an instruction \"make a symbolic link\".", 
+  "commit_id": "b4dc7e8e7136196ffb6a16901b84e8fb84175e26", 
+  "created_at": "2017-11-21T15:49:13Z", 
+  "diff_hunk": "@@ -0,0 +1,67 @@\n+External OASIS Repositories\n+===========================\n+\n+We offer hosting of non-OSG CVMFS repositories on OASIS. This means that requests to create, rename, remove, or blanking OASIS repositories will come in as GOC tickets. This document contains instructions for handling those tickets.\n+\n+!!! note \"Also see\"\n+    * [Policy for OSG Mirroring of External CVMFS repositories](https://opensciencegrid.github.io/technology/policy/external-oasis-repos/)\n+    * [External OASIS repository](https://opensciencegrid.github.io/docs/data/external-oasis-repos/)\n+\n+Hosting a repository on OASIS\n+-----------------------------\n+\n+1.  Ensure that the repository administrator is valid for the VO. This can be done by (a) OSG already having a\n+    relationship with the person or (b) the contacting the VO manager to find out.  Review the URL and verify verify\n+    that it is appropriate for the VO.\n+\n+1.  Add the repository URL in OIM under the VO's OASIS repository URLs. This should cause the repository's configuration\n+    to be added to the GOC Stratum-0 within 15 minutes.\n+\n+1.  If the respository ends in a new domain name that has not been distributed before, place a copy of the\n+    `domain.name.pub` public key from `domain.name` into `/srv/etc/keys` on both `oasis-replica` and\n+    `oasis-replica-itb`. If you do not have that key, ask the repository service representative how to obtain it.  In\n+    order to support CVMFS client versions 2.2.X, a symbolic link of `domain.name.conf` has to be made in", 
+  "html_url": "https://github.com/opensciencegrid/operations/pull/99#discussion_r152315803", 
+  "id": 152315803, 
+  "original_commit_id": "f9b8f4b25c5d1f08adb06e30e2ea7649120e95d3", 
+  "original_position": 23, 
+  "path": "oasis.md", 
+  "position": null, 
+  "pull_request_review_id": 78156685, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/operations/pulls/99", 
+  "updated_at": "2017-11-27T19:15:48Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/operations/pulls/comments/152315803", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

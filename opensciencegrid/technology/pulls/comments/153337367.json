@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/366#discussion_r153337367"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/366"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/153337367"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Perhaps we should make it clear somehow that `$OLDPACKAGE` here refers to the _subpackage_ that's getting removed, not to the entire (source) package name?\r\n\r\nAlso the grep will match things like `abc-$OLDPACKAGE-def` also.", 
+  "commit_id": "b86b38cf332cf3326be37fed36e3c81957485b52", 
+  "created_at": "2017-11-27T22:02:47Z", 
+  "diff_hunk": "@@ -290,3 +290,56 @@ Here's how to use them:\n (There does not seem to be an `%elseif`).\n \n The syntax `%{?el6}` expands to the value of the `%el6` macro if it is defined, and to the empty string if not; the `0` is there to keep the condition from being empty in the `%if` statement if the macro is not defined.\n+\n+\n+Renaming or Removing Packages\n+-----------------------------\n+\n+Occasionally we want to cause a package to be removed on update, or replaced by a package with a different name.\n+\n+For the most part, the [Fedora Packaging Guidelines page on renames](https://fedoraproject.org/wiki/Packaging:Guidelines#Renaming.2FReplacing_Existing_Packages) shows how to do that.\n+The exception is that we do not have the equivalent of a `fedora-obsolete-packages` package, so in order to force the removal of an entire package (not a subpackage), we have to dummy out the package instead -- see below.\n+(This should be a rare situation.)\n+\n+!!! note\n+    After doing a rename or a removal, you must update all the packages and subpackages that require the package being removed or renamed, and change or remove the requirements as appropriate.\n+\n+To find packages that require the old package at run time, set up a host with the OSG repos and install the `yum-utils` RPM.\n+Then, run:\n+```console\n+$ repoquery --plugins --whatrequires $OLDPACKAGE\n+```\n+\n+To find packages that require the old package at build time, install `osg-build`, and do this from a checkout of the OSG repos:\n+```console\n+$ osg-build prebuild *\n+$ for srpm in */_final_srpm_contents/*.src.rpm; do \\\n+    echo \"***** $srpm *****\"; \\\n+    rpm -q --requires -p $srpm | grep -w $OLDPACKAGE; \\", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/366#discussion_r153337367", 
+  "id": 153337367, 
+  "original_commit_id": "34e9784e00dcd0c1bf8886525aff3e87a1e6d445", 
+  "original_position": 29, 
+  "path": "docs/software/rpm-development-guide.md", 
+  "position": 29, 
+  "pull_request_review_id": 79325006, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/366", 
+  "updated_at": "2017-11-27T23:39:53Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/153337367", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

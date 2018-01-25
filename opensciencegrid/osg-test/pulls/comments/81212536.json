@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/47#discussion_r81212536"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/47"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/81212536"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Won't this fail on EL 6?\n", 
+  "commit_id": "1daa6648aea7f507e0deb1086b5c76f891d1fb8f", 
+  "created_at": "2016-09-29T19:09:48Z", 
+  "diff_hunk": "@@ -99,6 +99,14 @@ def test_05_start_condorce(self):\n         core.config['condor-ce.collectorlog'] = collector_log.strip().strip()\n \n         if service.is_running('condor-ce'):\n+            # Required to accept changes to the mapfile, which caused\n+            # issues in the nightly due to bad htcondor-ce-2.0.8-2\n+            # packaging remove after OSG 3.3.17. We don't use service.stop()\n+            # because it only stops services that we've started\n+            command = ('systemctl', 'stop', 'condor-ce')\n+            core.check_system(command, 'Stop condor-ce service')", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/47#discussion_r81212536", 
+  "id": 81212536, 
+  "original_commit_id": "d31fe9c15191ffb19e9ddf04ebdbaf4da3f347a2", 
+  "original_position": 9, 
+  "path": "osgtest/tests/test_19_condorce.py", 
+  "position": null, 
+  "pull_request_review_id": 2209475, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/47", 
+  "updated_at": "2016-09-29T19:29:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/81212536", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

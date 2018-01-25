@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gratia-probe/pull/17#discussion_r120360495"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/17"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/comments/120360495"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Won\u2019t that allow it to split every single character apart? Perhaps something like this:\r\n\r\n`Arbitrary_adlist = re.split(r'[,\\s]+', ArbitraryJobAds)`", 
+  "commit_id": "e7661457ef8b9d423fa3923176176ca19a099bb3", 
+  "created_at": "2017-06-06T13:31:33Z", 
+  "diff_hunk": "@@ -711,7 +710,19 @@ def classadToJUR(classad):\n \n     setIfExists(r.Queue, classad, \"JobUniverse\", \"Condor's JobUniverse field\", setstr=True)\n     setIfExists(r.NodeCount, classad, 'MaxHosts', \"max\")\n-\n+    ########################################################################################\n+    ########################################################################################\n+    # Code added to send to arbitrary Ads SOFTWARE-2714\n+    ArbitraryJobAds = GratiaCore.Config.getConfigAttribute(\"ArbitraryJobAdAttributes\")\n+    DebugPrint(5, \"ArbitraryJobAd: %s\" % str(ArbitraryJobAds))\n+    Arbirtray_adlist = ArbitraryJobAds.split(\",\")", 
+  "html_url": "https://github.com/opensciencegrid/gratia-probe/pull/17#discussion_r120360495", 
+  "id": 120360495, 
+  "in_reply_to_id": 120268464, 
+  "original_commit_id": "7bafbf21e52b738887412da757e7d12b4732a320", 
+  "original_position": 18, 
+  "path": "condor/condor_meter", 
+  "position": null, 
+  "pull_request_review_id": 42315445, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/17", 
+  "updated_at": "2017-06-08T18:06:45Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/comments/120360495", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

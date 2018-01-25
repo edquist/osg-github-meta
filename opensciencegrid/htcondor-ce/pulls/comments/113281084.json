@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/142#discussion_r113281084"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/142"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/113281084"
+    }
+  }, 
+  "author_association": "CONTRIBUTOR", 
+  "body": "Is it just the two-argument '?:' form of the ternary operator that requires v8.5+?\r\n\r\nIt does look like the v8.4 branch supports three-argument ternary:\r\nhttps://github.com/htcondor/htcondor/blob/V8_4_0/src/classad/sink.cpp#L383-L391\r\n\r\nHere's the ticket for adding the two-argument form (along with documenting the operator):\r\nhttps://htcondor-wiki.cs.wisc.edu/index.cgi/tktview?tn=5782", 
+  "commit_id": "ba08f99ce721b498ba62edc554fbf46777262e07", 
+  "created_at": "2017-04-25T18:56:12Z", 
+  "diff_hunk": "@@ -50,15 +50,23 @@ JOB_ROUTER_DEFAULTS_GENERATED = \\\\\n     set_requirements = True; \\\\\n     /* Note default memory request of 2GB */ \\\\\n     /* Note yet another nested condition allow pass attributes (maxMemory,xcount,jobtype,queue) via gWMS Factory described within ClassAd */ \\\\\n-    eval_set_RequestMemory = ifThenElse(maxMemory isnt undefined, maxMemory, ifThenElse(default_maxMemory isnt undefined, default_maxMemory, 2000)); \\\\\n+    eval_set_OriginalMemory = ifThenElse(maxMemory isnt undefined, maxMemory, ifThenElse(default_maxMemory isnt undefined, default_maxMemory, 2000)); \\\\\n+    set_JOB_GLIDEIN_Memory = \"$$(TotalMemory:0)\"; \\\\\n+    set_JobMemory = JobIsRunning ? int(MATCH_EXP_JOB_GLIDEIN_Memory)*95/100 : OriginalMemory; \\\\", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/142#discussion_r113281084", 
+  "id": 113281084, 
+  "in_reply_to_id": 112510120, 
+  "original_commit_id": "ba08f99ce721b498ba62edc554fbf46777262e07", 
+  "original_position": 7, 
+  "path": "src/condor_ce_router_defaults", 
+  "position": 7, 
+  "pull_request_review_id": 34655911, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/142", 
+  "updated_at": "2017-04-25T18:56:12Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/113281084", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/1951115?v=4", 
+    "events_url": "https://api.github.com/users/jthiltges/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/jthiltges/followers", 
+    "following_url": "https://api.github.com/users/jthiltges/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/jthiltges/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/jthiltges", 
+    "id": 1951115, 
+    "login": "jthiltges", 
+    "organizations_url": "https://api.github.com/users/jthiltges/orgs", 
+    "received_events_url": "https://api.github.com/users/jthiltges/received_events", 
+    "repos_url": "https://api.github.com/users/jthiltges/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/jthiltges/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/jthiltges/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/jthiltges"
+  }
+}

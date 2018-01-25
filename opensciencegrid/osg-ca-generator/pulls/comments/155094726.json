@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-ca-generator/pull/7#discussion_r155094726"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-ca-generator/pulls/7"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-ca-generator/pulls/comments/155094726"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "[This one](https://github.com/opensciencegrid/osg-ca-generator/pull/7/files#diff-aa56a9951831a6f2695c73c36d214137R134)? `os.makedirs` and `os.chown` raise `OSError` if the folder already exists or if the folder doesn't exist, respectively.", 
+  "commit_id": "3e1a21df5fb844257b660345add4cbd13eeab3e6", 
+  "created_at": "2017-12-05T22:26:25Z", 
+  "diff_hunk": "@@ -309,8 +317,50 @@ def _get_hostname():\n     except socket.error:\n         return None\n \n-def _write_file(path, contents):\n+def _write_file(path, contents, mode=0644):\n     \"\"\"Utility function for writing to a file\"\"\"\n-    f = open(path, 'w')\n-    f.write(contents)\n-    f.close()\n+    tmp_file = tempfile.NamedTemporaryFile(dir=os.path.dirname(path), delete=False)\n+    tmp_file.write(contents)\n+    tmp_file.flush()\n+    _safe_move(tmp_file, path, mode)\n+\n+def _safe_move(new_file, target_path, mode=0644, uid=0, gid=0):\n+    \"\"\"\n+    Move 'new_file' (file, NamedTemporaryFile, or path) to 'target_path', backing up 'target_path' to 'target_path.old'\n+    if it already exists. Maintain the permissions and ownership of 'target_path' or default to 0644 owned by root:root\n+    if 'target_path' does not exist. If the contents of 'new_file' are the same as the 'target_path', do nothing.\n+    \"\"\"\n+    if isinstance(new_file, str):\n+        new_path = new_file\n+        with open(new_path, 'r') as new_file:\n+            contents = new_file.read()\n+    elif isinstance(new_file, file) or hasattr(new_file, 'file'): # NamedTemporaryFiles have a 'file' attribute\n+        new_path = new_file.name\n+        new_file.seek(0)\n+        contents = new_file.read()\n+    else:\n+        raise TypeError('Expected string, file, or NamedTemporaryFile instance')\n+\n+    os.chmod(new_path, mode)\n+    os.chown(new_path, uid, gid)\n+\n+    try:\n+        with open(target_path, 'r') as old_file:\n+            old_contents = old_file.read()\n+        if contents.strip() == old_contents.strip():\n+            os.remove(new_path)\n+            return\n+\n+        stat = os.stat(target_path)\n+        mode = stat.st_mode\n+        uid = stat.st_uid\n+        gid = stat.st_gid\n+        os.rename(target_path, target_path + '.old')\n+    except IOError, exc:", 
+  "html_url": "https://github.com/opensciencegrid/osg-ca-generator/pull/7#discussion_r155094726", 
+  "id": 155094726, 
+  "in_reply_to_id": 155047333, 
+  "original_commit_id": "0696a2ac01f203ddd55e0258c9008c639781bc22", 
+  "original_position": 124, 
+  "path": "lib/cagen.py", 
+  "position": null, 
+  "pull_request_review_id": 81357873, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-ca-generator/pulls/7", 
+  "updated_at": "2017-12-05T22:47:11Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-ca-generator/pulls/comments/155094726", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

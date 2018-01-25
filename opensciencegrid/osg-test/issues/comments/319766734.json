@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "It is indeed best practice to add it to individual files - but I think that adding a license to the repository itself is a fine (sufficient?) first step.", 
+  "created_at": "2017-08-02T19:01:24Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/89#issuecomment-319766734", 
+  "id": 319766734, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/89", 
+  "updated_at": "2017-08-02T19:01:24Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/319766734", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

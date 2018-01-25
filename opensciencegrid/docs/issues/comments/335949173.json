@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Addressed by #196 ", 
+  "created_at": "2017-10-11T21:09:15Z", 
+  "html_url": "https://github.com/opensciencegrid/docs/issues/175#issuecomment-335949173", 
+  "id": 335949173, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/docs/issues/175", 
+  "updated_at": "2017-10-11T21:09:15Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/issues/comments/335949173", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

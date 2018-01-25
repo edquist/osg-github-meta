@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "@edquist could you kick off full set of manual tests (now) and one post-6pm to see how everything works? I think this should work ok for the set of tests that have Gratia involved because that's what causes the GMT rollover. However, when Gratia isn't involved, I think the Catalina log will be named using the local time date and we'd miss it in that 6pm-midnight CT span.", 
+  "created_at": "2016-11-30T19:18:29Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/59#issuecomment-263967323", 
+  "id": 263967323, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/59", 
+  "updated_at": "2016-11-30T19:18:29Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/263967323", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

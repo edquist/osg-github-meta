@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/130#discussion_r135124701"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/130"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/135124701"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Or EPEL 7?", 
+  "commit_id": "d4ba78d346082b131eaec85768b81c83ba9bbba2", 
+  "created_at": "2017-08-24T20:40:11Z", 
+  "diff_hunk": "@@ -0,0 +1,185 @@\n+Globus mass update procedure\n+============================\n+\n+Globus consists of many packages, which we tend to update at the same time. This requires extra work, primarily to prevent dependency issues.\n+\n+Prep work\n+---------\n+\n+### Docs\n+\n+Create a spreadsheet or table of the builds. Table should have NVR, perhaps URL, status (not started, imported, built, tested), and comments (mostly to record if it was a simple pass-through or not).\n+\n+Get packages to update, using `osg-outdated-epel-pkgs` from `opensciencegrid/tools`.\n+\n+To get in N-V-R format:\n+\n+``` console\n+[you@host]$ ./osg-outdated-epel-pkgs | \\\n+    egrep '^(globus|myproxy|gsi)' | \\\n+    awk 'BEGIN {OFS=\"\"} {print $1, \"-\", $3}'\n+```\n+\n+or to split up N and V-R in a comma-separated way (which you can feed into a Google Sheet to turn it into two columns):\n+\n+``` console\n+[you@host]$ ./osg-outdated-epel-pkgs | \\\n+    egrep '^(globus|myproxy|gsi)' | \\\n+    awk 'BEGIN {OFS=\"\"} {print $1, \",\", $3}'\n+```\n+\n+### SVN\n+\n+Create a separate SVN branch and populate it with all the packages you will update. (Get the list from the doc created above).\n+\n+``` console\n+[you@uw]$ svn mkdir file:///p/vdt/workspace/svn/native/redhat/branches/globus\n+### From a checkout, in native/redhat\n+[you@uw]$ for x in %RED%<PACKAGES>%ENDCOLOR%; do \\\n+     svn copy $x branches/globus/${x#trunk/}; \\\n+   done\n+```\n+\n+### Koji (Mat/Carl)\n+\n+This requires a Koji administrator. Koji admins as of August 2017 are Mat Selmeci and Carl Edquist.\n+\n+Ensure Koji tags exist: a destination tag, and a build tag, one for each dver, e.g.:\n+\n+-   el6-globus\n+-   el6-globus-build\n+-   el7-globus\n+-   el7-globus-build\n+\n+Set up tag inheritence: base the build tags off of the corresponding `dist-el?-build` tag. This is because we don't want old osg packages interfering with the new versions we're building. These may already exist -- check the `el?-globus-build` tags in the web interface.\n+\n+``` console\n+[you@host]$ for el in el6 el7; do \\\n+        osg-koji add-tag --parent=dist-$el-build \\\n+            --arches=x86_64 $el-globus-build; \\\n+    done\n+```\n+\n+Tag `buildsys-macros` for the OSG release into the build tags:\n+\n+``` console\n+[you@host]$ for el in el6 el7; do \\\n+       buildsys_macros_nvr=$(osg-koji -q list-tagged osg-3.4-$el-development \\\n+         buildsys-macros --latest | awk '{print $1}'); \\\n+       osg-koji tag-pkg $el-globus-build $buildsys_macros_nvr; \\\n+   done\n+```\n+\n+Ensure Koji targets exist, one for each dver, e.g.:\n+\n+-   el6-globus (el6-globus-build &rarr; el6-globus)\n+-   el7-globus (el7-globus-build &rarr; el7-globus)\n+-   kojira-fake-el6-globus (el6-globus &rarr; kojira-fake)\n+-   kojira-fake-el7-globus (el7-globus &rarr; kojira-fake)\n+\n+``` console\n+[you@host]$ for el in el6 el7; do \\\n+       osg-koji add-target $el-globus $el-globus-build $el-globus; \\\n+       osg-koji add-target kojira-fake-$el-globus $el-globus kojira-fake; \\\n+   done\n+```\n+\n+If basing the packages off of the Globus repos, add the Globus repos as external repos, and add them to the build tags (but not the dest tags).\n+\n+Edit `/etc/koji-hub/plugins/sign.conf` and set up the GPG signing for the RPMs. Run `/etc/koji-hub/plugins/fix-permissions` after editing the file.\n+\n+Per-package work\n+----------------\n+\n+1.  cd into branches/globus\n+2.  Download packages from <http://dl.fedoraproject.org/epel/6/SRPMS/>", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/130#discussion_r135124701", 
+  "id": 135124701, 
+  "original_commit_id": "d4ba78d346082b131eaec85768b81c83ba9bbba2", 
+  "original_position": 95, 
+  "path": "docs/software/globus-mass-update-procedure.md", 
+  "position": 95, 
+  "pull_request_review_id": 58502895, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/130", 
+  "updated_at": "2017-08-24T20:46:56Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/135124701", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

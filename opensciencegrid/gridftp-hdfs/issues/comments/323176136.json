@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "The changes to `gridftp_hdfs_send.c` are present (and in your repo too), but not the changes for `gridftp_hdfs_recv.c`. As far as I can tell, the changes for the latter file have never been shipped.\r\n\r\nI dunno why this even applies cleanly, since part of it has already been merged. We should probably close it?", 
+  "created_at": "2017-08-17T19:51:32Z", 
+  "html_url": "https://github.com/opensciencegrid/gridftp-hdfs/pull/1#issuecomment-323176136", 
+  "id": 323176136, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/issues/1", 
+  "updated_at": "2017-08-17T19:53:48Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/issues/comments/323176136", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

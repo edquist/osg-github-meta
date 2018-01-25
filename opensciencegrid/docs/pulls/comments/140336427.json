@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/179#discussion_r140336427"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/179"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/140336427"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Nope, we shouldn't be listening on this.", 
+  "commit_id": "a19bdb21d4bf7ab2440f88f9be1943d493a22751", 
+  "created_at": "2017-09-21T19:23:07Z", 
+  "diff_hunk": "@@ -0,0 +1,264 @@\n+Install Bestman Xrootd SE\n+=========================\n+\n+About this Document\n+===================\n+\n+This page explains how to install the BeStMan Storage Element with underlying XRootD storage.\n+\n+!!! note\n+    Starting on 11 February 2014, all OSG-issued Digicert certificates (host, service, and personal) use the SHA-2 algorithm. %RED%The BeStMan software must be on a recent version to support SHA-2 certificates%ENDCOLOR%. Please visit [our SHA-2 compliance page](https://opensciencegrid.github.io/technology/projects/sha2-support/) for more information about minimum required versions of software components.\n+\n+Requirements\n+============\n+\n+Host and OS\n+-----------\n+\n+-   OS is Red Hat Enterprise Linux 6, 7, and variants (see [details...](../common/yum.md))\n+-   [EPEL](http://fedoraproject.org/wiki/EPEL) repos enabled.\n+-   A working XRootD Server. See [InstallXrootd](https://twiki.opensciencegrid.org/bin/view/Documentation/Release3/InstallXrootd) for details.\n+-   Root access\n+\n+Users\n+-----\n+\n+This installation will create several users unless they are already created.\n+\n+| User      | Comment                                                 |\n+|:----------|:--------------------------------------------------------|\n+| `bestman` | Used by Bestman SRM server (needs sudo access).         |\n+| `daemon`  | Used by globus-gridftp-server.                          |\n+| `xrootd`  | Used by the xrootd client to contact xrootd redirector. |\n+\n+For this package to function correctly, you will have to create the users needed for grid operation. Any user that can be authenticated should be created.\n+\n+For grid-mapfile users, each line of the grid-mapfile is a certificate/user pair. Each user in this file should be created on the server.\n+\n+For gums users, this means that each user that can be authenticated by gums should be created on the server.\n+\n+Note that these users must be kept in sync with the authentication method. For instance, if new users or rules are added in gums, then new users should also be added here.\n+\n+Certificates\n+------------\n+\n+| Certificate                 | User that owns certificate | Path to certificate                                                                                 |\n+|:----------------------------|:---------------------------|:----------------------------------------------------------------------------------------------------|\n+| Host certificate            | `root`                     | `/etc/grid-security/hostcert.pem` `/etc/grid-security/hostkey.pem`                       |\n+| Bestman service certificate | `bestman`                  | `/etc/grid-security/bestman/bestmancert.pem` `/etc/grid-security/bestman/bestmankey.pem` |\n+\n+[Instructions](../common/pki-cli.md) to request a service certificate.\n+\n+You will also need a copy of CA certificates (see below).\n+\n+Networking\n+----------\n+\n+| Service Name            | Protocol    | Port Number                      | Inbound | Outbound |Commen                     |\n+|:------------------------|:------------|:---------------------------------|:--------|:---------|:--------------------------|\n+| GridFTP                 | tcp         |2811 and `GLOBUS_TCP_SOURCE_RANGE`| YES     |          | contiguous range of ports |\n+| Storage Resource Manager| tcp         | 8080                             | YES     |          |                           |", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/179#discussion_r140336427", 
+  "id": 140336427, 
+  "original_commit_id": "dd927fdc6f25b534cfd3fda72359529081515690", 
+  "original_position": 60, 
+  "path": "docs/data/install-bestman-xrootd.md", 
+  "position": null, 
+  "pull_request_review_id": 64395165, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/179", 
+  "updated_at": "2017-09-28T15:04:18Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/140336427", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

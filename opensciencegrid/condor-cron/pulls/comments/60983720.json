@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/condor-cron/pull/1#discussion_r60983720"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/condor-cron/pulls/1"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/condor-cron/pulls/comments/60983720"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "This would allow any user logged into the host to shut down the service, right?\n", 
+  "commit_id": "7b7818351b9e7efda37d1e68aff89b191c59459b", 
+  "created_at": "2016-04-25T20:34:01Z", 
+  "diff_hunk": "@@ -54,20 +54,24 @@ MAIL         = /bin/mail\n # CA certificate directory for Condor-G\n GSI_DAEMON_TRUSTED_CA_DIR = /etc/grid-security/certificates\n \n-## Condor-cron does not need to listen on a public interface\n-BIND_ALL_INTERFACES = false\n-NETWORK_INTERFACE = 127.0.0.1\n+# Condor-cron needs to listen on a public interface to push grid jobs to\n+# HTCondor-CEs\n+BIND_ALL_INTERFACES = true\n \n ## Condor-cron does not need shared port\n USE_SHARED_PORT = false\n \n EMAIL_DOMAIN = $(FULL_HOSTNAME)\n \n-#SEC_PASSWORD_FILE = $(LOCAL_DIR)/lib/condor-cron/pool_password\n-#SEC_DAEMON_AUTHENTICATION = REQUIRED\n-#SEC_DAEMON_INTEGRITY = REQUIRED\n-#SEC_DAEMON_AUTHENTICATION_METHODS = FS, PASSWORD\n-#SEC_NEGOTIATOR_AUTHENTICATION = REQUIRED\n-#SEC_NEGOTIATOR_INTEGRITY = REQUIRED\n-#SEC_NEGOTIATOR_AUTHENTICATION_METHODS = PASSWORD\n-#SEC_CLIENT_AUTHENTICATION_METHODS = FS, PASSWORD\n+SEC_DAEMON_AUTHENTICATION = REQUIRED\n+SEC_DAEMON_INTEGRITY = REQUIRED\n+SEC_DAEMON_AUTHENTICATION_METHODS = FS\n+SEC_CLIENT_AUTHENTICATION_METHODS = FS, GSI\n+SEC_DEFAULT_AUTHENTICATION = REQUIRED\n+ALLOW_ADMINISTRATOR = $(CONDOR_ADMIN)\n+ALLOW_OWNER = $(FULL_HOSTNAME)", 
+  "html_url": "https://github.com/opensciencegrid/condor-cron/pull/1#discussion_r60983720", 
+  "id": 60983720, 
+  "original_commit_id": "7b7818351b9e7efda37d1e68aff89b191c59459b", 
+  "original_position": 30, 
+  "path": "etc/condor_config", 
+  "position": 30, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/condor-cron/pulls/1", 
+  "updated_at": "2016-04-25T20:34:01Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/condor-cron/pulls/comments/60983720", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

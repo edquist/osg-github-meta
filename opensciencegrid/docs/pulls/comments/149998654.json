@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/242#discussion_r149998654"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/242"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/149998654"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Oof, twiki link and no indication of which instructions on the linked page should be followed", 
+  "commit_id": "1f35de0be1104e815cfcc2c36b27fdb5dadd0298", 
+  "created_at": "2017-11-09T15:43:11Z", 
+  "diff_hunk": "@@ -425,7 +444,69 @@ root@host # su - %RED%user%ENDCOLOR%\n \\[xrootd\\] Total 0.00 MB |**`================`**| 100.00 % \\[inf MB/s\\]\n ```\n \n-#### Security option 2: xrootd-lcmaps authorization\n+#### Security option 2: Shared keys\n+\n+If you want to enable security for access to xrootd via xrootdfs you will need to modify xrootd configuration and perform several steps to make xrootdfs secured.\n+\n+1. On the xrootd redirector node, execute the following command:\n+\n+        :::console\n+        root@host # xrdsssadmin -k %RED%<my_key_name>%ENDCOLOR% -u anybody -g usrgroup add %RED%<keyfile>%ENDCOLOR%\n+\n+    eg:\n+\n+        root@host # xrdsssadmin -k top_secret -u anybody -g usrgroup add /etc/xrootd/xrootd.key\n+\n+2. Set ownership\n+\n+        :::console\n+        root@host # chown xrootd.xrootd /etc/xrootd/xrootd.key\n+\n+3. On the node where xrootdfs is installed modify **`/etc/fstab`** add security information:\n+\n+        :::console\n+        root@host # xrootdfs %RED%/mnt/xrootd %ENDCOLOR% fuse rdr=xroot://%RED%redirector1.domain.com%ENDCOLOR%:1094/%RED%/path/redirector1%ENDCOLOR%,uid=xrootd,sss=%RED%keyfile%ENDCOLOR%0 0\n+\n+4. On all xrootd data servers and redirector nodes, modify xrootd configuration (**`/etc/xrootd/xrootd-clustered.cfg`**) by adding the following segment:\n+\n+        :::file\n+        # ENABLE_SECURITY_BEGIN\n+           xrootd.seclib /usr/lib64/libXrdSec.so\n+           #the line below should be before \"sec.protocol ... unix\"\n+           %RED%sec.protocol /usr/lib64 sss -s keyfile %ENDCOLOR%\n+           sec.protocol /usr/lib64 unix\n+           # this specify that we use the 'unix' authentication module, additional one can be specified.\n+           # this is the authorization file\n+           acc.authdb /etc/xrootd/auth_file\n+           ofs.authorize\n+           # ENABLE_SECURITY_END\n+\n+5. On all xrootd data server nodes, edit `/etc/xrootd/auth_file` to add authorized users of the form `u %RED%username%ENDCOLOR% %RED%/directoryname%ENDCOLOR% lr` where \"lr\" is the permission set.\n+\n+6. Copy %RED%keyfile<span class=\"twiki-macro ENDCOLOR\"></span> from redirector node to every data server node and the xrootdfs node. Make sure that this file is owned by the `xrootd` user.\n+\n+7. Restart xrootd cluster by following [these instructions](https://twiki.opensciencegrid.org/bin/view/SoftwareTeam/HowToInstallXrootd)", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/242#discussion_r149998654", 
+  "id": 149998654, 
+  "original_commit_id": "c71d678dc561c2a836c564652bccf06653e850e0", 
+  "original_position": 80, 
+  "path": "docs/data/install-xrootd.md", 
+  "position": null, 
+  "pull_request_review_id": 75480204, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/242", 
+  "updated_at": "2017-11-11T11:19:40Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/149998654", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/242#discussion_r150026597"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/242"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/150026597"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Done.  This is a bit of mess though, since I'm not sure `xrootd-lcmaps` is really equivalent to the others.  Not touching it right now.", 
+  "commit_id": "1f35de0be1104e815cfcc2c36b27fdb5dadd0298", 
+  "created_at": "2017-11-09T17:10:41Z", 
+  "diff_hunk": "@@ -287,13 +287,32 @@ fermicloud054.fnal.gov complete inventory as of Tue Apr 12 07:38:29 2011 /data/x\n \n **Note**: In this example, `fermicloud53.fnal.gov` is a redirector node and `fermicloud054.fnal.gov` is a data node.\n \n+### (Optional) Enabling a FUSE mount\n+\n+You can use a FUSE mount in order to test POSIX access to xrootd in the GridFTP server. Configure it using the following steps.\n+\n+Modify **`/etc/fstab`** by adding the following entries:\n+\n+    :::file\n+    ....\n+    xrootdfs                %RED%/mnt/xrootd%ENDCOLOR%              fuse    rdr=xroot://%RED%redirector1.domain.com%ENDCOLOR%:1094/%RED%/path/%ENDCOLOR%,uid=xrootd 0 0\n+\n+\n+Replace `/mnt/xrootd` with the path that you would like to access with. This should also match the GridFTP settings for the `XROOTD_VMP` local path. Create **`/mnt/xrootd`** directory. Once you are finished, you can mount it:\n+\n+    :::file\n+    mount /mnt/xrootd\n+\n+You should now be able to run UNIX commands such as `ls /mnt/xrootd` to see the contents of the XRootD server.\n+\n ### (Optional) Authorization\n \n There are several authorization options in XRootD available through the security\n plugins. In this document, we will cover two options for security:\n \n -   Simple Unix Security: Based on user accounts that the client is logged in as.\n--   xrootd-lcmaps: Using the lcmaps callout to use GUMS authorization\n+-   Shared-key based authentication.\n+-   `xrootd-lcmaps`: Using the LCMAPS callout to use X509-based authentication", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/242#discussion_r150026597", 
+  "id": 150026597, 
+  "in_reply_to_id": 149997662, 
+  "original_commit_id": "c71d678dc561c2a836c564652bccf06653e850e0", 
+  "original_position": 30, 
+  "path": "docs/data/install-xrootd.md", 
+  "position": null, 
+  "pull_request_review_id": 75515228, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/242", 
+  "updated_at": "2017-11-11T11:19:40Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/150026597", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

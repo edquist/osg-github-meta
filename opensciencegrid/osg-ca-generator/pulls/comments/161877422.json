@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-ca-generator/pull/14#discussion_r161877422"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-ca-generator/pulls/14"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-ca-generator/pulls/comments/161877422"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Should check if there's a newline at the end of the file and add it if missing before adding the new vo.", 
+  "commit_id": "018340bf5ad76adda804e8270b1838a6f8f20a14", 
+  "created_at": "2018-01-16T20:29:24Z", 
+  "diff_hunk": "@@ -186,18 +186,19 @@ def voms(self, vo_name):\n         _write_file(lsc, '%s\\n%s\\n' % (self.host_subject, self.subject))\n \n         vomses = '/etc/vomses'\n-        contents = '\"%s\" \"%s\" \"15001 \"%s\" \"%s\"\\n' % (vo_name, uri, self.host_subject, vo_name)\n+        new_vo = '\"%s\" \"%s\" \"15001\" \"%s\" \"%s\"\\n' % (vo_name, uri, self.host_subject, vo_name)\n         try:\n             with open(vomses, 'r') as vomses_file:\n-                vos = vomses_file.read().rstrip()\n-                if contents.strip() in vos:\n+                vos = vomses_file.read()\n+                if new_vo in vos:\n                     return\n+                vos += new_vo", 
+  "html_url": "https://github.com/opensciencegrid/osg-ca-generator/pull/14#discussion_r161877422", 
+  "id": 161877422, 
+  "original_commit_id": "ebe87efc634d8fa756bd4720c713b847de9fb71b", 
+  "original_position": 13, 
+  "path": "lib/cagen.py", 
+  "position": null, 
+  "pull_request_review_id": 89237722, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-ca-generator/pulls/14", 
+  "updated_at": "2018-01-16T21:26:56Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-ca-generator/pulls/comments/161877422", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

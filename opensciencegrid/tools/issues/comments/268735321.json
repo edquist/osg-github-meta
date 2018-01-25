@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Alright, this seems pretty usable on osghost.\r\n\r\nI'm pasting some use cases for reference / appetite whetting.\r\n\r\nTL;DR: The most common use case will probably be the one at the end with `--summarize` and `--list-outputs` (`-sl` for short) run against the timestamp for a VMU run dir.\r\n\r\n---\r\n\r\nUsage & Options summary:\r\n```\r\n[edquist@osghost ~]\r\n$ list-rpm-versions --help\r\n\r\nUsage:\r\n  list-rpm-versions [options] output-001 [packages...]\r\n  list-rpm-versions [options] --summarize [run-]20161220-1618 packages...\r\n\r\nList version-release numbers for RPMs installed in an osg-test run output\r\ndirectory, as found in output-NNN/output/osg-test-*.log\r\n\r\nThe output argument can also be a root.log from a koji/mock build,\r\nor the raw output of an 'rpm -qa' command.\r\n\r\nIf any packages are specified, limit the results to just those packages.\r\n\r\nIf a run directory (or, just the timstamp string) is specified, summary\r\ninformation will be printed for the listed packages across all output-NNN\r\nsubdirectories for that set of osg test runs.\r\n\r\nOptions:\r\n  -A, --no-strip-arch  don't attempt to strip .arch from package names\r\n  -D, --no-strip-dist  don't attempt to strip .dist tag from package releases\r\n\r\n  -s, --summarize      summarize results for all output subdirs\r\n  -l, --list-outputs   list output numbers (summarize mode only)\r\n  -L, --max-outputs N  list at most N output numbers per NVR (-1 for unlimited)\r\n```\r\n\r\n\r\nExample run on a single `output-NNN` dir for all packages:\r\n```\r\n[edquist@osghost /osgtest/runs/run-20161221-0423]\r\n$ list-rpm-versions output-123 \r\n\r\nPackage                         output-123\r\n-------                         ----------\r\nCGSI-gSOAP                      1.3.10-1\r\nGConf2                          3.2.6-8\r\napache-commons-cli              1.2-13\r\napache-commons-codec            1.8-7\r\napache-commons-collections      3.2.1-22\r\napache-commons-discovery        2:0.5-9\r\napache-commons-io               1:2.4-12\r\napache-commons-lang             2.6-15\r\napache-commons-logging          1.1.2-7\r\napr                             1.4.8-3\r\napr-util                        1.5.2-6\r\natk                             2.14.0-1\r\naudit-libs-python               2.4.1-5\r\navalon-framework                4.3-10\r\n...\r\n```\r\n\r\n\r\nExample run on a single `output-NNN` dir for two packages:\r\n```\r\n[edquist@osghost /osgtest/runs/run-20161221-0423]\r\n$ list-rpm-versions output-123 condor java-1.7.0-openjdk\r\n\r\nPackage             output-123\r\n-------             ----------\r\ncondor              8.5.8-1.osgup\r\njava-1.7.0-openjdk  1:1.7.0.121-2.6.8.0\r\n```\r\n\r\n\r\nExample run in summary mode over all `output-NNN` subdirs for a run set:\r\n```\r\n[edquist@osghost ~]\r\n$ list-rpm-versions -s 20161221-0423 condor java-1.7.0-openjdk\r\n\r\nPackage             Version-Release      Count\r\n-------             ---------------      -----\r\ncondor              -                    5\r\ncondor              8.4.9-1              63\r\ncondor              8.4.10-1             105\r\ncondor              8.5.7-1.osgup        42\r\ncondor              8.5.8-1.osgup        79\r\n\r\njava-1.7.0-openjdk  -                    5\r\njava-1.7.0-openjdk  1:1.7.0.121-2.6.8.0  121\r\njava-1.7.0-openjdk  1:1.7.0.121-2.6.8.1  168\r\n```\r\n\r\n\r\nSame thing, but list the output dir numbers also:\r\n```\r\n[edquist@osghost ~]\r\n$ list-rpm-versions -sl 20161221-0423 condor java-1.7.0-openjdk\r\n\r\nPackage             Version-Release      Count  Output-Nums\r\n-------             ---------------      -----  -----------\r\ncondor              -                    5      075,078,080,082,083\r\ncondor              8.4.9-1              63     000,001,002,003,004,005,006,...\r\ncondor              8.4.10-1             105    007,008,009,010,011,012,013,...\r\ncondor              8.5.7-1.osgup        42     021,022,023,024,025,026,027,...\r\ncondor              8.5.8-1.osgup        79     028,029,030,031,032,033,034,...\r\n\r\njava-1.7.0-openjdk  -                    5      075,078,080,082,083\r\njava-1.7.0-openjdk  1:1.7.0.121-2.6.8.0  121    000,001,002,003,004,005,006,...\r\njava-1.7.0-openjdk  1:1.7.0.121-2.6.8.1  168    126,127,128,129,130,131,132,...\r\n```\r\n", 
+  "created_at": "2016-12-22T07:18:49Z", 
+  "html_url": "https://github.com/opensciencegrid/tools/pull/12#issuecomment-268735321", 
+  "id": 268735321, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/tools/issues/12", 
+  "updated_at": "2016-12-22T07:18:49Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/tools/issues/comments/268735321", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

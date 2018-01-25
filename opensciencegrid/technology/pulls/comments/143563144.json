@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/327#discussion_r143563144"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/327"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/143563144"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "This sentence needs a subject to be complete, \r\n\r\n> We will remove...", 
+  "commit_id": "7b0fcc419d9d6300ea1fb1b40cbc87dc7cac51e4", 
+  "created_at": "2017-10-09T19:57:50Z", 
+  "diff_hunk": "@@ -0,0 +1,86 @@\n+Old Release Series Removal Plan\n+===============================\n+\n+In order to reduce clutter and disk usage on our repositories and build system,\n+we should remove older OSG Software release series.  This will result in\n+packages from those series becoming unavailable, so we should remove a release\n+series when its packages are no longer needed.\n+\n+I propose the following rule:\n+\n+Remove a release series when the _following_ series is completely out of", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/327#discussion_r143563144", 
+  "id": 143563144, 
+  "original_commit_id": "8e28ac08f4e5427e44ac3f5dc890f7a3f4d5ca43", 
+  "original_position": 11, 
+  "path": "docs/release/old-release-removal.md", 
+  "position": null, 
+  "pull_request_review_id": 68091432, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/327", 
+  "updated_at": "2017-10-09T20:01:24Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/143563144", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/80#discussion_r131756441"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/80"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/131756441"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "The backlinks are _other twiki pages_ that reference the one you are editing.\r\n\r\nI.e., once SHA2Compliance is moved over, InstallOSGBestmanSE should be updated to link to GitHub.", 
+  "commit_id": "66f657421c05c0c0e157ac60162a96ec2e2bde41", 
+  "created_at": "2017-08-07T20:34:11Z", 
+  "diff_hunk": "@@ -0,0 +1,150 @@\n+Migrating to Markdown\n+=====================\n+\n+As part of the TWiki retirement (the read-only target date of Oct 1, 2017, with a shutdown date in 2018), we will need to convert the OSG Software and Release3 docs from TWiki syntax to [Markdown](https://guides.github.com/features/mastering-markdown/). The following document outlines the conversion process and conventions.\n+\n+Initial conversion with Pandoc\n+------------------------------\n+\n+[Pandoc](http://pandoc.org/) is a tool that's useful for automated conversion of markdown languages that is available via RPM. To convert TWiki to Markdown, run the following command:\n+\n+```bash\n+pandoc -f twiki -t markdown_github <INPUT FILE> > <OUTPUT FILE>\n+```\n+\n+Where `<input-file>` is the path to initial document in raw TWiki and `output-file` is the path to the resulting document in GitHub Markdown.\n+\n+!!! note\n+    If you don't see output from the above command quickly, it means that Pandoc is having an issue with a specific section of the document. Find the offending section via binary search, temporarily remove the section, convert the document with Pandoc, and manually convert the offending section.\n+\n+### Using docker ###\n+\n+The `pandoc` library is written in Haskell and is frequently updated, meaning it may be unavailable on your distribution of choice - or too old.  If you cannot install `pandoc` but have access to docker, you can run the following command:\n+\n+```bash\n+docker run -v `pwd`:/source jagregory/pandoc -f twiki -t markdown_github <INPUT FILE> > <OUTPUT FILE>\n+```\n+\n+We have found some cases where the Docker version of `pandoc` handles Twiki syntax better than the EPEL one; YMMV.  Testing also shows that the conversion process is only about 80% accurate and each document will require a few minutes of manual touch-up.\n+\n+Previewing your document(s) with Mkdocs\n+---------------------------------------\n+\n+[Mkdocs](http://www.mkdocs.org/) has a development mode that can be used to preview documents as you work on them and is available via package manager or `pip`. Once installed, add your document(s) to the `pages` section of `mkdocs.yml` and launch the mkdocs server with the following command from the dir containing `mkdocs.yml`:\n+\n+```\n+$ PYTHONPATH=src/ mkdocs serve\n+```\n+\n+Access the server at `http://127.0.0.1:8000` and navigate to the document you're working on. It's useful to open the original TWiki doc in an adjacent tab or window to quickly compare the two.\n+\n+Things to watch out for\n+-----------------------\n+\n+### Broken links ###\n+\n+Pandoc isn't aware of the entire TWiki structure so internal links using [WikiWords](http://twiki.org/cgi-bin/view/TWiki/WikiWord) result in broken links. If the broken link is for a document that has already been migrated to GitHub, link to it using relative paths to the markdown doc of interest. If the broken link is for a document that hasn't been migrated to GitHub, consult the documentation spreadsheet (contact Brian L for access) to see if it's targeted for archival.\n+\n+If the broken link is:\n+\n+1. For a document that has already been migrated to GitHub, update it to point at the new location.\n+2. For a document that not been migrated to GitHub, consult the documentation spreadsheet (contact Brian L for access):\n+   a. If the link is targeted for archival, remove the link if it makes sense. If you're unsure, be sure to mention it in your final pull request\n+   b. If the link is not targeted for archival, link directly to the TWiki page.\n+\n+### Broken command blocks and file snippets ###\n+\n+Pandoc doesn't do a good job of converting our `<pre class=...` blocks so manual intervention is required. Command blocks and file snippets should be wrapped in three backticks (\\`\\`\\`):\n+\n+    ```\n+    # stuff\n+    ```\n+\n+Make sure to use the TWiki document as a reference when making fixes!\n+\n+#### Fixing root and user prompts ####\n+\n+| Find and replace...                                   | With...            |\n+|:------------------------------------------------------|:-------------------|\n+| `<span class=\"twiki-macro UCL\\_PROMPT\\_ROOT\"></span>` | `[root@client ~]$` |\n+| `<span class=\"twiki-macro UCL\\_PROMPT\"></span>`       | `[user@client ~]$` |\n+\n+#### Highlighting user input  ####\n+\n+Within command blocks and file snippets, we've used `%RED%...%ENDCOLOR%`, `&lt;...&gt;`, etc. to highlight areas that users would have to insert text specific to their site. For now, use desciptive, all-caps text wrapped in angle brackets to indicate user input:\n+\n+```\n+<USER INPUT>\n+```\n+\n+#### Ordered Lists ####\n+\n+Ordered lists are often broken up into multiple lists if there are command blocks/file snippets and/or additional text within one of the list items. To make sure the contents of an item are indented properly, use the following formatting:\n+\n+- For code blocks or file snippets, add an empty line after any regular text, then insert `(N+1)*4` spaces at the beginning of each line, where N is the level of the item in the list.\n+- For additional text (i.e. after a code block), insert `N*4` spaces at the beginning of each line, where N is the level of the item in the list.\n+\n+For example:\n+\n+```\n+1. Foo\n+    - Bar\n+\n+            COMMAND\n+            BLOCK\n+        text associated with Bar\n+\n+    text associated with Foo\n+\n+2. Baz\n+\n+        FILE\n+        SNIPPET\n+\n+```\n+\n+There are 12 spaces and 8 spaces in front of the command block and text associated with `Bar`, respectively; 4 spaces in front of the text associated with `Foo`; and 8 spaces in front of the file snippet associated with `Baz`\n+\n+### Notes ###\n+\n+To catch the user's attention for important items or pitfalls, we used `%NOTE%` TWiki macros, these can be replaced with admonition-style notes:\n+\n+```\n+!!! note\n+    # things to note\n+```\n+\n+### Obvious errors ###\n+\n+If you see any other obvious errors (e.g., links to gratia web), feel free to correct them while you're editing the doc *iff* the changes take less than ~15 minutes. This isn't a renovation project!\n+\n+Making the pull request\n+-----------------------\n+\n+1. Create a branch based off of master\n+2. Add page to [mkdocs.yml](../../mkdocs.yml) \n+3. Commit your changes and push to your GH repo\n+4. Make PR containing the following tasks in the body body:\n+\n+        - [ ] Remaining TWiki link #1\n+        - ...\n+        - [ ] Remainng TWiki link #N\n+        - [ ] Add migration header to TWiki document\n+\n+Adding a header to the TWiki document\n+-------------------------------------\n+\n+After completing the migration of a document, replace the contents of TWiki document with the following header, linking to the location of the migrated document:\n+\n+```\n+<div style=\"border: 1px solid black; margin: 1em 0; padding: 1em; background-color: #FFDDDD; font-weight: 600;\">\n+This is an archive, find the new version of this document [[LINK TO GITHUB DOCUMENT][here]].\n+\n+Background:\n+\n+At the end of year (2017), the TWiki will be retired in favor of !GitHub. You can find the various TWiki webs and their new !GitHub locations listed below:\n+\n+   * Release3: https://opensciencegrid.github.io/docs\n+   * !SoftwareTeam: https://opensciencegrid.github.io/technology\n+</div>\n+```", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/80#discussion_r131756441", 
+  "id": 131756441, 
+  "in_reply_to_id": 131754431, 
+  "original_commit_id": "ca76af2608785ef32a052e87120b0a9c7f1f5619", 
+  "original_position": 150, 
+  "path": "docs/software/markdown-migration.md", 
+  "position": 150, 
+  "pull_request_review_id": 54766836, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/80", 
+  "updated_at": "2017-08-07T20:44:51Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/131756441", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-build/pull/50#discussion_r163635493"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/50"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/163635493"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "~Shouldn't we eliminate this check since `git_hash` doesn't necessarily have to match the default cloned state of the local repo?~\r\n\r\nEDIT: Nevermind, I see that you're running `show-ref` on the tag", 
+  "commit_id": "41537209b24351a04bf03ed42d9cd65543499b98", 
+  "created_at": "2018-01-24T18:27:55Z", 
+  "diff_hunk": "@@ -81,6 +81,13 @@ def process_meta_url(line, destdir):\n         sha1 = output.split()[0]\n         if sha1 != git_hash:\n             raise Error(\"Repository hash %s corresponding to tag %s does not match expected hash %s\" % (sha1, tag, git_hash))", 
+  "html_url": "https://github.com/opensciencegrid/osg-build/pull/50#discussion_r163635493", 
+  "id": 163635493, 
+  "original_commit_id": "41537209b24351a04bf03ed42d9cd65543499b98", 
+  "original_position": 14, 
+  "path": "osgbuild/fetch_sources.py", 
+  "position": 14, 
+  "pull_request_review_id": 91280595, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/50", 
+  "updated_at": "2018-01-24T18:28:58Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/163635493", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

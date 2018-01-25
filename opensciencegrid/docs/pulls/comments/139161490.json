@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/163#discussion_r139161490"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/163"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139161490"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Let\u2019s aim to be consistent in our terminology. Are they system administrators or site administrators? Also, this whole paragraph is very chatty \u2014\u00a0can you tighten and focus it?", 
+  "commit_id": "0c2fff16c4c3f165e3238faa81ed890cdae6bcf5", 
+  "created_at": "2017-09-15T14:20:28Z", 
+  "diff_hunk": "@@ -1,42 +1,13 @@\n-Installation Guides\n-===================\n+Open Science Grid Site Documentation\n+====================================\n \n-The Open Science Grid consists primarily of a fabric of services at\n-participating sites.\n+!!! note\n+    This is currently a work in progress as we migrate our TWiki documentation to GitHub, so please let us know of any issues that you encounter by [opening a ticket](https://ticket.opensciencegrid.org) or e-mailing [goc@opensciencegrid.org](goc@opensciencegrid.org) with a description of your issue.\n \n-One of the most common ways of participating in the OSG is to install\n-one of our software services at your site and provide computational\n-power opportunistically to the grid.\n+Welcome to the home page of the Open Science Grid (OSG) Site documentation! The documentation contained here is designed for system adminstrators that provide resources to the OSG. If you're a new resource provider, the [Installation Overview](install-overview) is a good place to get started. Otherwise, you can find a list of our documents via the navigation and search bars to the left.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/163#discussion_r139161490", 
+  "id": 139161490, 
+  "original_commit_id": "53590eb4457ffcf1a76b8616a962163a9bfb1cac", 
+  "original_position": 14, 
+  "path": "docs/index.md", 
+  "position": null, 
+  "pull_request_review_id": 63056303, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/163", 
+  "updated_at": "2017-09-15T20:28:59Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139161490", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

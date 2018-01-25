@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/241#discussion_r149974253"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/241"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/149974253"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I'm about 90% sure this is flat-out wrong, but wasn't comfortable enough to simply remove it.\r\n\r\nLIGO doesn't have a VOMS server, yet they use this service just fine...\r\n\r\n@DrDaveD - can you chime in here?  Can we just delete?", 
+  "commit_id": "07df5de9d9b93d575a9ae706390bc823517d0094", 
+  "created_at": "2017-11-09T14:23:25Z", 
+  "diff_hunk": "@@ -3,20 +3,23 @@ Updating Software on OASIS\n \n OASIS is the OSG Application Software Installation Service. It is the recommended method to install software on the Open Science Grid. It is implemented using CernVM FileSystem (CVMFS) technology.\n \n-!!! note\n-    The applicable software versions for this document are **osg-version 3.1.13** (or higher)\n+This document is a step by step explanation of how a Virtual Organization (VO) Software Adminstrator can enable the OASIS service and use it to publish and update software on OSG Worker Nodes under `/cvmfs/oasis.opensciencegrid.org`.\n \n-This document is a step by step explanation of how a Virtual Organization (VO) Software Adminstrator can enable the OASIS service and use it to publish and update software on OSG Worker Nodes under /cvmfs/oasis.opensciencegrid.org. For information on how to configure a client for OASIS see the [OSG CVMFS Installation documentation](../worker-node/install-cvmfs). For information on hosting your own opensciencegrid.org repository see [this document](external-oasis-repos).\n+!!! note\n+    -   For information on how to configure a client for OASIS see the [CVMFS installation documentation](../worker-node/install-cvmfs).\n+    -   For information on hosting your own repository see the [OASIS repository installation](external-oasis-repos).\n \n Requirements\n ------------\n \n To begin the process to distribute software on OASIS using the service hosted at the OSG GOC, you must:\n \n--   have a personal grid certificate. The process for getting one is detailed [here](https://www.opensciencegrid.org/bin/view/Documentation/Release3/CertificateUserGet).\n--   register that certificate in [OIM](http://oim.opensciencegrid.org/oim/home). In order to register, the certificate has to be installed in your browser. If you are then not registered, clicking \"Login\" on the page will prompt you to register.\n--   be associated with a VO that is registered in OIM. The list of registered VOs appears [here](http://oim.opensciencegrid.org/oim/vo).\n--   register your certificate in the VOMS for your Virtual Organization. Click on the VO name that you're associated with in the above list and in the VO page click on the *\"Membership Services URL\"* to register with that VO VOMS.\n+-   [Obtain a personal grid certificate](../security/user-certs), if you don't have one already.\n+-   Register yourself in [OIM](http://oim.opensciencegrid.org/oim/home). To register, your certificate must be\n+    installed in your browser.  Clicking \"Login\" in OIM will prompt you to register if you are not already.\n+-   Be associated with a [VO registered in OIM](http://oim.opensciencegrid.org/oim/vo).\n+-   Register your certificate in the VOMS for your Virtual Organization. Click on the VO name that you're associated\n+    with in the above list and in the VO page click on the *\"Membership Services URL\"* to register with that VO VOMS.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/241#discussion_r149974253", 
+  "id": 149974253, 
+  "in_reply_to_id": 149820601, 
+  "original_commit_id": "8fff3ebca223dbe12429bedb19646b78fbd7937d", 
+  "original_position": 27, 
+  "path": "docs/data/update-oasis.md", 
+  "position": null, 
+  "pull_request_review_id": 75452718, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/241", 
+  "updated_at": "2017-11-10T13:51:48Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/149974253", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Ok, this is ready for a re-review. \r\n\r\n- [Build from the PR](https://travis-ci.org/opensciencegrid/docs/builds/295512534) only runs the verification (`mkdocs build` and `linkchecker`\r\n- [Build from a branch beginning with itb.*](https://travis-ci.org/opensciencegrid/docs/builds/295511453) runs both the verification and deployment to the itb\r\n\r\nA few things:\r\n\r\n1. All branches run `mkdocs build` and `linkchecker` before deployment, meaning that transient link failures can prevent deployment (I can change this)\r\n1. ITB documentation is titled differently ([see top left](https://opensciencegrid.github.io/docs-itb/)) but I haven't thought about how to add a warning header/change the readthedocs theme color/whatever to differentiate it from production docs. I also haven't figured out how to modify `robots.txt` so that it isn't crawled\r\n1. `doc-ci-scripts`'s `README.md` needs updated instructions", 
+  "created_at": "2017-10-31T22:13:15Z", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/205#issuecomment-340923392", 
+  "id": 340923392, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/docs/issues/205", 
+  "updated_at": "2017-10-31T22:13:15Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/issues/comments/340923392", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/237#discussion_r149527110"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/237"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/149527110"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Changed", 
+  "commit_id": "1651949a7b0606ca566cec753efd7017ee85c245", 
+  "created_at": "2017-11-07T22:43:14Z", 
+  "diff_hunk": "@@ -27,25 +33,28 @@ The OSG PKI Command Line Clients are tested to work on Python version 2.4+. They\n -   the name of the **Virtual Organization** affiliated with the Certificate Authority\n \n Requesting host/service certificate using OIM\n-==================================================\n+----------------------------------------------\n \n-The OSG PKI Certificate Request & Management System can be found at: <https://oim.opensciencegrid.org/oim/certificate>.\n+The OSG PKI Certificate Request & Management System can be found at:\n+<https://oim.opensciencegrid.org/oim/certificate>.\n \n-For instructions on how to request a host or service certificate using the Web interface please see the [user guide maintained by GOC](https://confluence.grid.iu.edu/pages/viewpage.action?pageId=3244064).\n+For instructions on how to request a host or service certificate using the Web\n+interface please see the [user guide maintained by\n+GOC](https://confluence.grid.iu.edu/pages/viewpage.action?pageId=3244064).", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/237#discussion_r149527110", 
+  "id": 149527110, 
+  "in_reply_to_id": 149506295, 
+  "original_commit_id": "0c96ee9c8169934613505820ca8995966e7d6b34", 
+  "original_position": 40, 
+  "path": "docs/security/host-certs.md", 
+  "position": null, 
+  "pull_request_review_id": 74935818, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/237", 
+  "updated_at": "2017-11-08T19:11:59Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/149527110", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/2693687?v=4", 
+    "events_url": "https://api.github.com/users/sthapa/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/sthapa/followers", 
+    "following_url": "https://api.github.com/users/sthapa/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/sthapa/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/sthapa", 
+    "id": 2693687, 
+    "login": "sthapa", 
+    "organizations_url": "https://api.github.com/users/sthapa/orgs", 
+    "received_events_url": "https://api.github.com/users/sthapa/received_events", 
+    "repos_url": "https://api.github.com/users/sthapa/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/sthapa/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/sthapa/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/sthapa"
+  }
+}

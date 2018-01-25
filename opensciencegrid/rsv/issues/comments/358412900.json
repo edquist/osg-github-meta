@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "It might be a good idea for this to attempt to verify sha256 and fall back to md5 (possibly with a warning) if sha256 sums are unavailable. It would solve the do-not-merge issue...", 
+  "created_at": "2018-01-17T19:19:56Z", 
+  "html_url": "https://github.com/opensciencegrid/rsv/pull/18#issuecomment-358412900", 
+  "id": 358412900, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/rsv/issues/18", 
+  "updated_at": "2018-01-17T19:24:12Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/rsv/issues/comments/358412900", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

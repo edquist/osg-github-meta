@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-configure/pull/61#discussion_r124118235"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/61"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/comments/124118235"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "That is exactly it. In my trials, `validation.valid_user_vo_file` thought the file was valid even though it wasn't.", 
+  "commit_id": "95a3068dc00ddf304939e11def2ecdc4e3facf1a", 
+  "created_at": "2017-06-26T20:53:03Z", 
+  "diff_hunk": "@@ -344,7 +344,7 @@ def _resourcecatalog_location(self):\n \n \n def ensure_valid_user_vo_file(using_gums, gums_host=None, logger=utilities.NullLogger):\n-    if not validation.valid_user_vo_file(USER_VO_MAP_LOCATION):\n+    if not (validation.valid_user_vo_file(USER_VO_MAP_LOCATION) and utilities.get_vos(USER_VO_MAP_LOCATION)):", 
+  "html_url": "https://github.com/opensciencegrid/osg-configure/pull/61#discussion_r124118235", 
+  "id": 124118235, 
+  "in_reply_to_id": 124110312, 
+  "original_commit_id": "95a3068dc00ddf304939e11def2ecdc4e3facf1a", 
+  "original_position": 5, 
+  "path": "osg_configure/configure_modules/infoservices.py", 
+  "position": 18, 
+  "pull_request_review_id": 46380499, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/61", 
+  "updated_at": "2017-06-27T18:06:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/comments/124118235", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

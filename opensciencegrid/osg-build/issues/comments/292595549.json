@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Hi........\r\n\r\nI can work with this format, although i think i would still like to support other options.  Eg I still think it'd be worthwhile to support a sha1sum for the upstream file itself, because we have lots of upstream sources which are not directly derived from a git-archive. I'm happy to implement that, and it doesn't need to block this request.  (Truth be told, i still like the idea of implementing support for a simple `UPSTREAM_PATH/filename [SHA1SUM]` ...)\r\n\r\nIf we are going to support the format in this PR, it would be nice to have a toolish way to get at the target upstream file.  But i won't worry so much about that if this is mostly for use at hcc.\r\n\r\nThings to fix in this PR:\r\n- remove all the references to JSON (eg in comments)\r\n- remove all the now-unnecessary `str()` casts (i assume they were put there in the first place because json returned `unicode` objects\r\n- strip a leading `v` from tag names when generating the name-version prefix (as github does)", 
+  "created_at": "2017-04-07T17:10:12Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-build/pull/30#issuecomment-292595549", 
+  "id": 292595549, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-build/issues/30", 
+  "updated_at": "2017-04-07T17:13:34Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-build/issues/comments/292595549", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

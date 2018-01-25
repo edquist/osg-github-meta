@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "What happens if the table matches a secondary group?\n\nI think we should first look at the DN, then the primary FQAN, but not all FQANs.\n\nBrian\n\nSent from my iPhone\n\n> On Mar 22, 2016, at 11:20 AM, Derek Weitzel notifications@github.com wrote:\n> \n> Does this change the formatting of the extattr_table.txt if users have already created one?\n> \n> \u2014\n> You are receiving this because you are subscribed to this thread.\n> Reply to this email directly or view it on GitHub\n", 
+  "created_at": "2016-03-22T18:54:00Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/71#issuecomment-199961063", 
+  "id": 199961063, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/71", 
+  "updated_at": "2016-03-22T18:54:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/199961063", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

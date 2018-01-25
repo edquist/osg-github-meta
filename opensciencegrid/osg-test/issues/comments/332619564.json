@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Those osg-configure tests make sure that trying to enable gram results in an error.", 
+  "created_at": "2017-09-27T18:49:07Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/100#issuecomment-332619564", 
+  "id": 332619564, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/100", 
+  "updated_at": "2017-09-27T18:49:07Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/332619564", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

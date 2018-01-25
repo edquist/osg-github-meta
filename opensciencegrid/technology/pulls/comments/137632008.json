@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/142#discussion_r137632008"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/142"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/137632008"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Broken link", 
+  "commit_id": "3940014ca9296ae9cc6b827a5dfc85f20702bf78", 
+  "created_at": "2017-09-07T19:18:47Z", 
+  "diff_hunk": "@@ -0,0 +1,108 @@\n+Creating the VO Client package\n+==============================\n+\n+Overview\n+--------\n+\n+The VO Client package is just a conversion of the tarball created by GOC into the RPM format.\n+\n+In order to build the RPM, one needs:\n+\n+-   The tarball containing the:\n+    -   `vomses` file\n+    -   `edg-mkgridmap.conf` file\n+    -   `gums.config.template` file\n+    -   `vomsdir` directory tree, containing the lsc files.\n+-   The RPM spec file\n+\n+Making the tarball\n+------------------\n+\n+To make the tarball:\n+\n+-   start with a clean directory\n+-   copy in the `vomses`, `gums.template`, and `edg-mkgridmap.conf` files and rename the edg-mkgridmap file:\n+\n+<!-- -->\n+\n+          wget http://repo.grid.iu.edu/pacman/tarballs/vo-package/vomses\n+          wget http://repo.grid.iu.edu/pacman/tarballs/vo-package/edg-mkgridmap.osg\n+          mv edg-mkgridmap.osg edg-mkgridmap.conf\n+          wget http://repo.grid.iu.edu/pacman/tarballs/vo-package/gums.template # TODO UNSURE\n+\n+-   Create the vomsdir directory by downloading the .lsc files\n+\n+<!-- -->\n+\n+         wget --recursive --no-host-directories --cut-dirs=3 -A \"*.lsc\" http://repo.grid.iu.edu/pacman/tarballs/vo-package/vomsdir\n+\n+-   In a separate directory, unpack the *old* vo-client tarball (from the upstream source cache)\n+-   diff the two directories, and compare the changes to the changelog posted at <https://twiki.grid.iu.edu/bin/view/Operations/PackageV44> (replace '44' with the current version)\n+\n+<!-- -->\n+\n+-   Follow the instructions in the attached [gums-template-conversion.txt](gums-template-conversion.txt) file to convert it from GUMS 1.1 (1.2?) format to GUMS 1.3 format. Name the result `gums.config.template`. See also the [Automated GUMS Conversion](#automated-gums-conversion) section below for a scripted version of this step.\n+-   Move the files into a subdirectory to include in the tarball:\n+\n+<!-- -->\n+\n+          VERSION=44  # set appropriately\n+          mkdir vo-client-$VERSION\n+          mv vomses gums.config.template edg-mkgridmap.conf vomsdir vo-client-$VERSION/\n+          tar -czf vo-client-$VERSION-osg.tar.gz vo-client-$VERSION/\n+\n+Upload the tarball into the [upstream source cache](rpm-development-guide#Upstream_Source_Cache), in the<br> `vo-client/VERSION/` directory.\n+\n+Automated GUMS Conversion\n+-------------------------\n+\n+The above [instructions](gums-template-conversion.txt) outline a procedure for converting the osg gums.config template from GUMS 1.1 format to 1.3 format. Because setting up a GUMS instance for this can be time consuming and tricky to get right, a script was written to automate the procedure on a Fermi VM. The script lives in svn under: `$SVN/software/tools/convert-osg-gums-template-for-vo-client.sh` .\n+\n+To use it:\n+\n+-   Create a new Fermi VM (el5 or el6)\n+-   Copy the script and the new `gums.template` to be converted to the /root homedir on the VM.\n+-   Log into the VM as root, make sure the script is executable, and run against the gums template:\n+\n+<!-- -->\n+\n+          $ ssh root@el6-vo-client\n+          # wget https://vdt.cs.wisc.edu/svn/software/tools/convert-osg-gums-template-for-vo-client.sh\n+          # chmod +x convert-osg-gums-template-for-vo-client.sh\n+          # ./convert-osg-gums-template-for-vo-client.sh gums.template\n+\n+-   It takes a little while to install and set up gums and related packages, but if it succeeds, you should see a message that says \"User group has been saved.\", and a file `gums.config.template` should be written in the current directory.\n+-   The newly converted `gums.config.template` should be compared to the old version of that file (from the previous vo-client package) to ensure that the only the differences are the changes for this release. (I have had to manually strip the extra test account stuff.) The 'meld' program is a nice graphical diff tool that I use for comparing them.\n+\n+RPM spec file maintenance\n+-------------------------\n+\n+The OSG RPM spec file is [maintained in Subversion](rpm-development-guide#Revision_Control_System).", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/142#discussion_r137632008", 
+  "id": 137632008, 
+  "original_commit_id": "9fd255d4f14e947ac116578632a540f224288a3c", 
+  "original_position": 80, 
+  "path": "docs/software/create-vo-client.md", 
+  "position": null, 
+  "pull_request_review_id": 61324878, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/142", 
+  "updated_at": "2017-09-07T19:35:20Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/137632008", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/345#discussion_r145999100"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/345"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/145999100"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Use repo.opensciencegrid.org instead", 
+  "commit_id": "33f4e9ecb234475425dd736a429209a4287fef27", 
+  "created_at": "2017-10-20T15:46:02Z", 
+  "diff_hunk": "@@ -82,3 +83,23 @@ If we really need RPMs from a removed release series, we can look at the text\n files in `/p/vdt/public/html/release-info/attic` to determine the exact NVRs we\n need, and download them from Koji.\n \n+\n+\n+Template Email\n+--------------\n+\n+>   On <DAYNAME, MONTH DAY>, the OSG will be removing the OSG <3.X> release\n+>   series from our repositories.  This includes both RPMs and tarballs hosted\n+>   on repo.grid.iu.edu.", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/345#discussion_r145999100", 
+  "id": 145999100, 
+  "original_commit_id": "a8a4ea4fe43e6a3ddfa9a202be0d6be032184003", 
+  "original_position": 21, 
+  "path": "docs/release/old-release-removal.md", 
+  "position": null, 
+  "pull_request_review_id": 70885114, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/345", 
+  "updated_at": "2017-10-20T16:36:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/145999100", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

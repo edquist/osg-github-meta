@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/StashCache/pull/17#discussion_r80362662"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/17"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/80362662"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Same, why are you calling another python script?  Create a module, class, or function to do this!\n", 
+  "commit_id": "5e3ab9381f872f709d59260815293406877f2512", 
+  "created_at": "2016-09-24T15:15:38Z", 
+  "diff_hunk": "@@ -0,0 +1,219 @@\n+import optparse\n+import sys\n+import subprocess\n+import datetime\n+import time\n+import re\n+import os\n+import json\n+import multiprocessing\n+import urllib2\n+\n+parser = optparse.OptionParser()\n+parser.add_option('--debug', dest='debug', action='store_true', help='debug')\n+parser.add_option('-r', dest='recursive', action='store_true', help='recursively copy')\n+parser.add_option('--closest', action='store_true')\n+args,opts=parser.parse_args()\n+\n+def find_closest():\n+    closest=subprocess.Popen(['./get_best_stashcache.py', '0'], stdout=subprocess.PIPE)", 
+  "html_url": "https://github.com/opensciencegrid/StashCache/pull/17#discussion_r80362662", 
+  "id": 80362662, 
+  "original_commit_id": "d3b94159a37792a96d9de944ed1ddc8935fa9936", 
+  "original_position": 19, 
+  "path": "bin/stashcp2/stashcp.py", 
+  "position": null, 
+  "pull_request_review_id": 1436511, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/17", 
+  "updated_at": "2016-10-11T14:34:39Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/StashCache/pulls/comments/80362662", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

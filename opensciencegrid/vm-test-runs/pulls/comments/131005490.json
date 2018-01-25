@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/vm-test-runs/pull/40#discussion_r131005490"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/40"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/comments/131005490"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "\"MatS\" looks too much like \"Mats\". Just remove the \"S\" - plain \"Mat\" is what's used elsewhere.", 
+  "commit_id": "8ab7a042325d870072db4278a0fa15d76fa1bfa0", 
+  "created_at": "2017-08-02T21:46:02Z", 
+  "diff_hunk": "@@ -0,0 +1,425 @@\n+Running Tests as VM Jobs\n+========================\n+\n+This repository drives the OSG Software nightly tests. Whenever updating [osg-run-tests](osg-run-tests), make sure to update the copy in `/usr/bin/` on `osghost`.\n+\n+Setting up credentials\n+----------------------\n+\n+**Note:** This one time setup must be performed before submitting any test jobs.\n+\n+1.  Contact Brian L. or Tim C. to have an account created on `osghost.chtc.wisc.edu`\n+2.  SSH to `osghost` (you will need to do this from the UW-Madison network) and create a password-less SSH key:\n+\n+        [user@client ~]$ ssh-keygen -C 'VMU test result upload key for <USER>@osghost' -f ~/.ssh/test_result_upload.key\n+\n+3.  Contact BrianL or MatS with your public key. They will add your public key to the `authorized_keys` file of the `cndrutil` user on `ingwe`.", 
+  "html_url": "https://github.com/opensciencegrid/vm-test-runs/pull/40#discussion_r131005490", 
+  "id": 131005490, 
+  "original_commit_id": "e2feeec43523117feefe2cf247187b6cd83ac0d4", 
+  "original_position": 16, 
+  "path": "README.md", 
+  "position": null, 
+  "pull_request_review_id": 53942578, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/40", 
+  "updated_at": "2017-08-02T21:50:22Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/comments/131005490", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

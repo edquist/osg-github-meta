@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "> So\u2026 if someone updates to this new version of RSV but happens not to have the latest installation of CA data, we are happy saying that they are screwed?\r\n\r\n@osg-cat, are you saying the rsv changes here rely on data installed from the latest CA certs packages?\r\n\r\nWhile the new `osg-ca-certs` package does lay down a `/etc/grid-security/certificates/cacerts_sha256sum.txt` file, my read is that this rsv probe verifies based on the contents of http://repo.grid.iu.edu/pacman/cadist/cacerts_sha256sum-new.txt (link broken as it is currently only available from [repo-itb](http://repo-itb.grid.iu.edu/pacman/cadist/cacerts_sha256sum-new.txt)).\r\n\r\nIn any case, I tried downgrading the `osg-ca-certs` package to the previous version (without the sha256 checksums), and running this new version of the probe still succeeds.  It does give a `WARNING` for the out-of-sync CA `UKeScienceCA-2B`, but that is independent from the sha256 changes...", 
+  "created_at": "2018-01-17T21:54:14Z", 
+  "html_url": "https://github.com/opensciencegrid/rsv/pull/18#issuecomment-358460498", 
+  "id": 358460498, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/rsv/issues/18", 
+  "updated_at": "2018-01-17T21:54:14Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/rsv/issues/comments/358460498", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

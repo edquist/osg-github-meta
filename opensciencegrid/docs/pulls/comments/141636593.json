@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/181#discussion_r141636593"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/181"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/141636593"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Useless heading, delete", 
+  "commit_id": "8f4c7863db5102d1a58db004ce44134d73c4fe27", 
+  "created_at": "2017-09-28T14:35:56Z", 
+  "diff_hunk": "@@ -0,0 +1,1499 @@\n+**Hadoop 2.0.0 (CDH4)**\n+=======================\n+\n+<span class=\"twiki-macro DOC_STATUS_TABLE\"></span> \n+**Purpose**: The purpose of this document is to provide Hadoop based SE administrators the information on how to prepare, install and validate the SE.\n+\n+!!! warning\n+    If you are installing Hadoop/Bestman from OSG 3.1, you will need to use [this](https://twiki.opensciencegrid.org/bin/view/Documentation/Release3/InstallHadoopSE) guide instead. This guide details installing Hadoop 2.0 from the OSG 3.2 repositories.\n+\n+Preparation", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/181#discussion_r141636593", 
+  "id": 141636593, 
+  "original_commit_id": "f99ad729a9c507e9ede7001636d8e09ca20079aa", 
+  "original_position": 10, 
+  "path": "docs/data/install-hadoop-2-0-0.md", 
+  "position": null, 
+  "pull_request_review_id": 65881447, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/181", 
+  "updated_at": "2017-10-13T17:11:24Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/141636593", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

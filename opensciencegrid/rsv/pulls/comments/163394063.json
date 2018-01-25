@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/rsv/pull/19#discussion_r163394063"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv/pulls/19"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv/pulls/comments/163394063"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "I would feel so much better about this if we could use some library for creating & parsing json ... `perl-JSON`, for instance, is available from the OS repos and we could add it to the rpm requirements.  (Either now or else in a future release...)", 
+  "commit_id": "1b5b893d6497fe26622368702415689df6efe127", 
+  "created_at": "2018-01-23T22:13:20Z", 
+  "diff_hunk": "@@ -268,77 +268,92 @@ EOF\n \n   ################################\n   # Check last contact time with Gratia server.\n-  my $wget_cmdline = shellquote(\n-    qw(wget -q --tries=1 --timeout=10 -O -),\n-    \"http://$soaphost/gratia-administration/monitor-status.html?probename=$probename\"\n+  my @cur_time= localtime();\n+  # localtime gives years from 1900\n+  my $year = 1900 + $cur_time[5];\n+  # perl uses 0 based months\n+  my $month = 1 + $cur_time[4];\n+  my $gracchost = \"https://gracc.opensciencegrid.org\";\n+  my $graccindex = sprintf \"gracc.osg.raw-%04d.%02d\", $year, $month;\n+  my $curl_cmdline = shellquote(\n+    qw(curl -q --retry 1  --connect-timeout 10 -XGET ),\n+    \"$gracchost/q/$graccindex/_search\",\n+    \"-d\",\n+    qq({ \"query\": { \"query_string\": { \"query\": \"ProbeName:\\\\\"$probename\\\\\" AND EndTime:[now-2d TO now]\" } }, \"sort\": [ { \"\\@received\": { \"order\": \"desc\" } } ],\"size\": 1 })", 
+  "html_url": "https://github.com/opensciencegrid/rsv/pull/19#discussion_r163394063", 
+  "id": 163394063, 
+  "original_commit_id": "c98604b8b87cc83fd4cf9f7f700da92d381206d6", 
+  "original_position": 18, 
+  "path": "rsv-metrics/libexec/probes/gratia-config-probe", 
+  "position": null, 
+  "pull_request_review_id": 91001596, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/rsv/pulls/19", 
+  "updated_at": "2018-01-24T08:05:43Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/rsv/pulls/comments/163394063", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

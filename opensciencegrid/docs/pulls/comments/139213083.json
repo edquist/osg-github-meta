@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/164#discussion_r139213083"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/164"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139213083"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Scrub out all the `twiki-macro` spans.  Above is an example of something that `pandoc` missed, but there's typically one or two per converted document.", 
+  "commit_id": "544511889c17531223e59101ba207864466052e1", 
+  "created_at": "2017-09-15T18:00:24Z", 
+  "diff_hunk": "@@ -0,0 +1,146 @@\n+OSG Software Stack -- Data Release -- 3.4.0-2 and 3.3.25-2\n+==========================================================\n+\n+**Release Date**: 2017-06-15\n+\n+Summary of changes\n+------------------\n+\n+This release contains:\n+\n+-   CA Certificates based on [IGTF 1.83](http://dist.eugridpma.info/distribution/igtf/current/CHANGES)\n+    -   Added new trust anchor for accredited KISTI CA v3 (KR)\n+    -   Removed obsolete GEANT TCS G1 and G2 (old Comodo-backed) trust anchors:\n+        -   UTN-USERFirst-Hardware\n+        -   TERENA-eScience-SSL-CA\n+        -   AAACertificateServices\n+        -   UTNAAAClient\n+        -   TERENAeSciencePersonalCA\n+        -   UTN-USERTrust-RSA-CA\n+        -   TERENA-eScience-SSL-CA-2\n+        -   TERENAeSciencePersonalCA2 (EU)\n+-   [VO Package v74](https://github.com/opensciencegrid/osg-vo-config/releases/tag/release-74)\n+    -   Fix the edg-mkgridmap entries for project8 and miniclean\n+    -   Add new VOMS entry for CIGI\n+    -   Add LIGO entry to GUMS template\n+    -   Fix vo-client ATLAS mappings\n+\n+These [JIRA tickets](https://jira.opensciencegrid.org/issues/?jql=project%20%3D%20SOFTWARE%20AND%20fixVersion%20%3D%203.4.0-2%20ORDER%20BY%20priority%20DESC%2C%20key%20DESC) were addressed in this release.\n+\n+Detailed changes are below. All of the documentation can be found in the [Release3](https://twiki.grid.iu.edu/bin/view/Documentation/Release3/) area of the TWiki.\n+\n+Updating to the new release\n+---------------------------\n+\n+### Update Repositories\n+\n+To update to this series, you need [install the current OSG repositories](../../common/yum#install-osg-repositories).\n+\n+### Update Software\n+\n+Once the repositories are installed, you can update to this new release with:\n+\n+``` console\n+[root@client ~] $ yum update\n+```\n+\n+<span class=\"twiki-macro NOTE\"></span> Please be aware that running `yum update` may also update other RPMs. You can exclude packages from being updated using the `--exclude=[package-name or glob]` option for the `yum` command.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/164#discussion_r139213083", 
+  "id": 139213083, 
+  "original_commit_id": "be7906b631f34bdedcd1745e71fdc5b9f07aaec2", 
+  "original_position": 47, 
+  "path": "docs/release/3.4/release-3-4-0-2.md", 
+  "position": 47, 
+  "pull_request_review_id": 63118459, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/164", 
+  "updated_at": "2017-09-18T22:27:38Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139213083", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

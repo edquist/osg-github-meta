@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-vo-config/pull/20#discussion_r120288355"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-vo-config/pulls/20"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-vo-config/pulls/comments/120288355"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Remove this line.", 
+  "commit_id": "cb674d168d235e5199fee235796504b7b89a8c7c", 
+  "created_at": "2017-06-06T08:03:45Z", 
+  "diff_hunk": "@@ -10,6 +10,7 @@\n \"ops\" \"voms2.cern.ch\" \"15009\" \"/DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch\" \"ops\"\n \"ops\" \"lcg-voms2.cern.ch\" \"15009\" \"/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch\" \"ops\"\n \"SBGrid\" \"hpc.sbgrid.org\" \"15002\" \"/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=hpc.sbgrid.org\" \"SBGrid\"\n+\"CIGI\" \"vm246.roger.ncsa.illinois.edu\" \"15001\" \"/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=vm246.roger.ncsa.illinois.edu\" \"CIGI\"\n \"CIGI\" \"voms.cigi.uiuc.edu\" \"15001\" \"/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.cigi.uiuc.edu\" \"cigi\"", 
+  "html_url": "https://github.com/opensciencegrid/osg-vo-config/pull/20#discussion_r120288355", 
+  "id": 120288355, 
+  "original_commit_id": "53956ae8f551a268fd7678b922ba0d68861d9115", 
+  "original_position": 5, 
+  "path": "vomses", 
+  "position": null, 
+  "pull_request_review_id": 42235767, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-vo-config/pulls/20", 
+  "updated_at": "2017-06-07T14:52:25Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-vo-config/pulls/comments/120288355", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

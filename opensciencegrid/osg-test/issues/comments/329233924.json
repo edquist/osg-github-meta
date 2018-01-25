@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Yes, you can set Travis-CI to test CVMFS.  We are in the StashCache project, nightly.\nhttps://travis-ci.org/StashCache/stashcache-tester\n\nAnd the repo (most everything is done under the \u201ctests\u201d directory)\nhttps://github.com/StashCache/stashcache-tester\n\n-Derek\n\n> On Sep 13, 2017, at 12:04 PM, Edgar Fajardo <notifications@github.com> wrote:\n> \n> @DrDaveD I do understand that singularity can be tested without cvmfs but since that one is the OSG most common use case, I would like to test it that way. But yes I can change to the singularity out of a docker container as a last resort\n> \n> \u2014\n> You are receiving this because you are subscribed to this thread.\n> Reply to this email directly, view it on GitHub, or mute the thread.\n> \n\n", 
+  "created_at": "2017-09-13T17:07:26Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/97#issuecomment-329233924", 
+  "id": 329233924, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/97", 
+  "updated_at": "2017-09-13T17:07:26Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/329233924", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

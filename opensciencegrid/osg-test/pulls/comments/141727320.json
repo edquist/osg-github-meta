@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/103#discussion_r141727320"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/103"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/141727320"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "We won't be testing VOMS at all? Not just voms-admin?", 
+  "commit_id": "cd90a5d48520038c3add688170564e0f64a410ef", 
+  "created_at": "2017-09-28T20:27:00Z", 
+  "diff_hunk": "@@ -148,6 +148,7 @@ def is_installed():\n         if not core.dependency_is_installed(dep):\n             return False\n \n+    # TODO: drop this check when 3.3 is completely EOL", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/103#discussion_r141727320", 
+  "id": 141727320, 
+  "in_reply_to_id": 141724505, 
+  "original_commit_id": "d14b5e932041c036d263210af8aec5e8195d7a1b", 
+  "original_position": 4, 
+  "path": "osgtest/library/voms.py", 
+  "position": 4, 
+  "pull_request_review_id": 65989091, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/103", 
+  "updated_at": "2017-09-28T20:27:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/141727320", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

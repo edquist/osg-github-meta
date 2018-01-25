@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "FWIW - `xrootd-hdfs` is a HDFS filesystem plugin for Xrootd.  `xrootd-lcmaps` is a security plugin for Xrootd that invokes LCMAPS.\r\n\r\nThey don't conflict and, for the most part, are used together.", 
+  "created_at": "2018-01-16T13:28:31Z", 
+  "html_url": "https://github.com/opensciencegrid/vm-test-runs/pull/51#issuecomment-357959484", 
+  "id": 357959484, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/51", 
+  "updated_at": "2018-01-16T13:28:31Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/comments/357959484", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

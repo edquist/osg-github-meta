@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Hey -\r\n\r\nI'm uncomfortable with how we are progressing with the automated side.  I don't think it's appropriate to suggest anyone to download random scripts from GitHub (yes, I know we did this all the time in twiki-land: it wasn't appropriate then either).\r\n\r\nCan we delay this documentation until we can get a small RPM out the door?  Now that we've done the proof of concept, it seems there's value in getting a package out the door.\r\n\r\nBrian", 
+  "created_at": "2017-11-14T13:03:11Z", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/243#issuecomment-344252414", 
+  "id": 344252414, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/docs/issues/243", 
+  "updated_at": "2017-11-14T13:03:11Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/issues/comments/344252414", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

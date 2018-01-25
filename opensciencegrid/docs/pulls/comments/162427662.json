@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/288#discussion_r162427662"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/288"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/162427662"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Why the use of double-backticks throughout this section?", 
+  "commit_id": "393e0749895f563d949757207000d6bf95d72a98", 
+  "created_at": "2018-01-18T18:22:28Z", 
+  "diff_hunk": "@@ -191,12 +191,28 @@ Once the repository is fully replicated on the OSG, the VO may proceed in publis\n If the repository ends in `.opensciencegrid.org`, the VO may ask for it to be replicated outside the US.  The\n VO should open a GGUS ticket following EGI's [PROC20](https://wiki.egi.eu/wiki/PROC20).\n \n-Changing the URL of a Repository on OASIS\n------------------------------------------\n+Replacing an Existing OASIS Repository Server\n+---------------------------------------\n \n-If necessary, it is possible to change the URL of the repository server; simply have the repository administrator\n-open a support ticket with the new value, and OSG operations will update OIM's OASIS repository URL for the VO.\n-The GOC Stratum-1 will then be updated within an hour.\n+There are two recommended ways to replace the server for an existing ``*.opensciencegrid.org`` or ``*.osgstorage.org`` repository, one without GOC intervention and one with:", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/288#discussion_r162427662", 
+  "id": 162427662, 
+  "original_commit_id": "393e0749895f563d949757207000d6bf95d72a98", 
+  "original_position": 12, 
+  "path": "docs/data/external-oasis-repos.md", 
+  "position": 12, 
+  "pull_request_review_id": 89883596, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/288", 
+  "updated_at": "2018-01-18T18:53:09Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/162427662", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

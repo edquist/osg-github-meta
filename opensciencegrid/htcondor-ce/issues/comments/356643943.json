@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "See my question:\r\n\r\n> If this should be the new provider, we should just package it but give the ability for users to choose which provider to use. How do users configure the provider that their CE is using?\r\n\r\nOr is `condor_ce_bdii_generate_glue2.py` no longer required and all users should use the new `htcondor-ce-provider`?", 
+  "created_at": "2018-01-10T15:52:05Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/175#issuecomment-356643943", 
+  "id": 356643943, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/175", 
+  "updated_at": "2018-01-10T15:52:05Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/356643943", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Yeah, which is a bit confusing to me because those tests did not have calls to `skip_ok_unless_installed()` for the bestman2 packages...\r\n\r\nI've added `@osgrelease(3.3)` decorators to the rest of the `test_52_bestman` tests, but I wonder if this is really the way we want to handle the issue in SOFTWARE-2759.  From yesterday:\r\n\r\nhttp://vdt.cs.wisc.edu/tests/20180111-1933/results.html\r\n\r\nAs you can see, the `@osgrelease(3.3)` tests still show up in the list, only as `ok` instead of `okskip`.  Perhaps what we really want is a way to exclude the unwanted tests from the list to run, rather than reporting them as `ok` instead of `okskip`?", 
+  "created_at": "2018-01-12T17:06:55Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/111#issuecomment-357296738", 
+  "id": 357296738, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/111", 
+  "updated_at": "2018-01-12T17:06:55Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/357296738", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

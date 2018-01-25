@@ -1,0 +1,82 @@
+{
+  "assignee": null, 
+  "assignees": [], 
+  "author_association": "OWNER", 
+  "body": "This PR is big so all help and eyes are appreciated (@matyasselmeci , @edquist). The bulk of the changes are due to the new parameter file format and changes made to accommodate it: \r\n\r\n- New `PackageSet` class \r\n- Changes to the VMU module\r\n- Tests for the VMU module (requires mock)\r\n- Updates to the DAG scripts \r\n\r\nThis new format gives us a much better VMU to osg-test interface and finer control over sets of tests: the actual [SELinux implementation](a28a759) is small and we could just as easily add other osg-test options (maybe add osg-test's `timeout` option so devs can control VMU payload timeouts?).\r\n\r\nAnd of course, results using the aforementioned changes: http://vdt.cs.wisc.edu/tests/20161215-1336/results.html", 
+  "closed_at": "2016-12-21T15:23:17Z", 
+  "closed_by": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }, 
+  "comments": 3, 
+  "comments_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/22/comments", 
+  "created_at": "2016-12-15T23:10:24Z", 
+  "events_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/22/events", 
+  "html_url": "https://github.com/opensciencegrid/vm-test-runs/pull/22", 
+  "id": 195940967, 
+  "labels": [
+    {
+      "color": "84b6eb", 
+      "default": true, 
+      "id": 356414534, 
+      "name": "enhancement", 
+      "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/labels/enhancement"
+    }, 
+    {
+      "color": "128A0C", 
+      "default": true, 
+      "id": 356414535, 
+      "name": "help wanted", 
+      "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/labels/help%20wanted"
+    }
+  ], 
+  "labels_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/22/labels{/name}", 
+  "locked": false, 
+  "milestone": null, 
+  "number": 22, 
+  "pull_request": {
+    "diff_url": "https://github.com/opensciencegrid/vm-test-runs/pull/22.diff", 
+    "html_url": "https://github.com/opensciencegrid/vm-test-runs/pull/22", 
+    "patch_url": "https://github.com/opensciencegrid/vm-test-runs/pull/22.patch", 
+    "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/pulls/22"
+  }, 
+  "repository_url": "https://api.github.com/repos/opensciencegrid/vm-test-runs", 
+  "state": "closed", 
+  "title": "Add ability to enable SELinux for specific package sets (SOFTWARE-2552)", 
+  "updated_at": "2016-12-21T15:23:17Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/vm-test-runs/issues/22", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

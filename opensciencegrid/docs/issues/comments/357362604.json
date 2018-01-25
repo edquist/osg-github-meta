@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "@brianhlin Done. I reverted the changes in the archives and twiki dir.", 
+  "created_at": "2018-01-12T21:43:42Z", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/282#issuecomment-357362604", 
+  "id": 357362604, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/docs/issues/282", 
+  "updated_at": "2018-01-12T21:43:42Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/issues/comments/357362604", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/1558058?v=4", 
+    "events_url": "https://api.github.com/users/mambelli/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/mambelli/followers", 
+    "following_url": "https://api.github.com/users/mambelli/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/mambelli/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/mambelli", 
+    "id": 1558058, 
+    "login": "mambelli", 
+    "organizations_url": "https://api.github.com/users/mambelli/orgs", 
+    "received_events_url": "https://api.github.com/users/mambelli/received_events", 
+    "repos_url": "https://api.github.com/users/mambelli/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/mambelli/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/mambelli/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/mambelli"
+  }
+}

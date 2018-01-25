@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "@JasonAlt - note that GH allows force-pushes for pull requests.  So, there's no problem to amend / change / rewrite things without closing the PR.", 
+  "created_at": "2017-10-19T15:16:41Z", 
+  "html_url": "https://github.com/opensciencegrid/gridftp-hdfs/pull/16#issuecomment-337940900", 
+  "id": 337940900, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/issues/16", 
+  "updated_at": "2017-10-19T15:16:41Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/issues/comments/337940900", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

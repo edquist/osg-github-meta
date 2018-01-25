@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/170#discussion_r139220840"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/170"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139220840"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "This is not rendering for me. Also, can you copy the diagram to the docs repo as well? Put it in docs/images.", 
+  "commit_id": "a5dbad173d6abc80444eee504b53370ee088f79b", 
+  "created_at": "2017-09-15T18:34:26Z", 
+  "diff_hunk": "@@ -0,0 +1,983 @@\n+GlideinWMS VO Frontend Installation\n+===================================\n+\n+About This Document\n+===================\n+\n+This document describes how to install the Glidein Workflow Managment System (GlideinWMS) VO Frontend for use with the OSG glidein factory. This software is the minimum requirement for a VO to use glideinWMS.\n+\n+This document assumes expertise with Condor and familiarity with the glideinWMS software. It **does not** cover anything but the simplest possible install. Please consult the [Glidein WMS reference documentation](http://www.uscms.org/SoftwareComputing/Grid/WMS/glideinWMS/doc.prd/install.html) for advanced topics, including non-`root`, non-RPM-based installation.\n+\n+This document covers three components of the GlideinWMS a VO needs to install:\n+\n+-   **User Pool Collectors**: A set of `condor_collector` processes. Pilots submitted by the factory will join to one of these collectors to form a Condor pool.\n+-   **User Pool Schedd**: A `condor_schedd`. Users may submit Condor vanilla universe jobs to this schedd; it will run jobs in the Condor pool formed by the **User Pool Collectors**.\n+-   **Glidein Frontend**: The frontend will periodically query the **User Pool Schedd** to determine the desired number of running job slots. If necessary, it will request the factory to launch additional pilots.\n+\n+This guide covers installation of all three components on the same host: it is designed for small to medium VOs (see the Hardware Requirements below). Given a significant, large host, we have been able to scale the single-host install to 20,000 running jobs.\n+\n+![alt text][logo]", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/170#discussion_r139220840", 
+  "id": 139220840, 
+  "original_commit_id": "d5eda911e523206b2fba85b5a7a3e5c915eaffd3", 
+  "original_position": 19, 
+  "path": "docs/other/install-gwms-frontend.md", 
+  "position": null, 
+  "pull_request_review_id": 63127568, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/170", 
+  "updated_at": "2017-09-15T20:07:27Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139220840", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

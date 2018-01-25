@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151344919"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151344919"
+    }
+  }, 
+  "author_association": "NONE", 
+  "body": "@rptaylor this package bears some patina. At the time, I was told that would make things easier for ATLAS, it was easy enough for us to do, and ever since it sits in the package repository.  If there is a strong opinion against, please bring it up at the workshop and/or we should clarify with ATLAS whether there is still a need. I'm happy to deprecate it if it is not needed anymore. Please let me know privately if you'd like me to forward the request to corresponding contact persons. For CC, it would probably be better not to use the cvmfs-auto-setup package because, as you pointed out, it is a bit of a misuse of RPMs.", 
+  "commit_id": "d01e585f151c9990ca9f4bd16c4c9a6931f9bbae", 
+  "created_at": "2017-11-16T08:23:37Z", 
+  "diff_hunk": "@@ -17,12 +17,8 @@ install-common:\n \tinstall -D -m 444 opensciencegrid.org.pub $(DESTDIR)/etc/cvmfs/keys/opensciencegrid.org\n \n install-debian: install-common\n-\tmkdir -p $(DESTDIR)/lib/systemd/system \\\n-\t  $(DESTDIR)/lib/systemd/system/autofs.service.wants \\\n-\t  $(DESTDIR)/usr/sbin\n-\tinstall -D -m 444 cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system\n-\tln -s ../cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system/autofs.service.wants/cvmfs-config-osg.service\n-\tinstall -D -m 555 cvmfs-config-osgd $(DESTDIR)/usr/sbin\n+\tmkdir -p $(DESTDIR)/etc/auto.master.d\n+\tinstall -D -m 0644 cvmfs.autofs $(DESTDIR)/etc/auto.master.d", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151344919", 
+  "id": 151344919, 
+  "in_reply_to_id": 150961851, 
+  "original_commit_id": "0d3da67811bdb211e462f960ad1c378758b74563", 
+  "original_position": 11, 
+  "path": "Makefile", 
+  "position": null, 
+  "pull_request_review_id": 77036481, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4", 
+  "updated_at": "2017-11-17T21:54:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151344919", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/1557360?v=4", 
+    "events_url": "https://api.github.com/users/jblomer/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/jblomer/followers", 
+    "following_url": "https://api.github.com/users/jblomer/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/jblomer/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/jblomer", 
+    "id": 1557360, 
+    "login": "jblomer", 
+    "organizations_url": "https://api.github.com/users/jblomer/orgs", 
+    "received_events_url": "https://api.github.com/users/jblomer/received_events", 
+    "repos_url": "https://api.github.com/users/jblomer/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/jblomer/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/jblomer/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/jblomer"
+  }
+}

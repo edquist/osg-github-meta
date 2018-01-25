@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "@osg-cat just making you aware of this. It will lock the mkdocs version, do some link checking and, perform deployment to github pages.", 
+  "created_at": "2017-11-29T20:06:52Z", 
+  "html_url": "https://github.com/opensciencegrid/management/pull/10#issuecomment-347980408", 
+  "id": 347980408, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/management/issues/10", 
+  "updated_at": "2017-11-29T20:06:52Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/management/issues/comments/347980408", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

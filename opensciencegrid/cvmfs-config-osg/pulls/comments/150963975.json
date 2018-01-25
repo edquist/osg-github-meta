@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r150963975"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/150963975"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Likewise, on Redhat the autofs reload is part of the installation instructions after manual creation of `/etc/auto.master.d/cvmfs.autofs`, not part of any cvmfs package.  The same for postrm.\r\n\r\nIf you want to make it easy for the system administrator, there could be a separate package called `cvmfs-autofs` or `cvmfs-autofs-config` which we could put in the cvmfs-contrib repository.  I suggest making a CVM ticket for that creating it in a new github repo.  Then if Jakob agrees he can import that into the cvmfs github project and I can build it for the cvmfs-contrib repository.", 
+  "commit_id": "d01e585f151c9990ca9f4bd16c4c9a6931f9bbae", 
+  "created_at": "2017-11-14T21:10:34Z", 
+  "diff_hunk": "@@ -0,0 +1,28 @@\n+#!/bin/sh -e\n+# post-install script for cvmfs-config-osg\n+#\n+# see: dh_installdeb(1)\n+\n+# summary of how this script can be called:\n+#        * <postrm> `remove'\n+#        * <postrm> `purge'\n+#        * <old-postrm> `upgrade' <new-version>\n+#        * <new-postrm> `failed-upgrade' <old-version>\n+#        * <new-postrm> `abort-install'\n+#        * <new-postrm> `abort-install' <old-version>\n+#        * <new-postrm> `abort-upgrade' <old-version>\n+#        * <disappearer's-postrm> `disappear' <overwriter>\n+#          <overwriter-version>\n+# for details, see http://www.debian.org/doc/debian-policy/ or\n+# the debian-policy package\n+\n+if deb-systemd-helper --quiet is-enabled autofs.service; then\n+    deb-systemd-invoke try-reload-or-restart autofs.service\n+fi", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r150963975", 
+  "id": 150963975, 
+  "original_commit_id": "0d3da67811bdb211e462f960ad1c378758b74563", 
+  "original_position": 21, 
+  "path": "packaging/debian/postinst", 
+  "position": null, 
+  "pull_request_review_id": 76593206, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4", 
+  "updated_at": "2017-11-17T21:54:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/150963975", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

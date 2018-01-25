@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/operations/pull/99#discussion_r152424309"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/operations/pulls/99"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/operations/pulls/comments/152424309"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "I had to re-read that a few times to understand.  I think a comma after \"their next step\" would make it much clearer that the instruction \"and wait\" is for the GOC person and not the admin. ", 
+  "commit_id": "b4dc7e8e7136196ffb6a16901b84e8fb84175e26", 
+  "created_at": "2017-11-21T22:50:25Z", 
+  "diff_hunk": "@@ -20,32 +20,32 @@ Hosting a repository on OASIS\n 1.  If the respository ends in a new domain name that has not been distributed before, place a copy of the\n     `domain.name.pub` public key from `domain.name` into `/srv/etc/keys` on both `oasis-replica` and\n     `oasis-replica-itb`. If you do not have that key, ask the repository service representative how to obtain it.  In\n-    order to support CVMFS client versions 2.2.X, a symbolic link of `domain.name.conf` has to be made in\n+    order to support CVMFS client versions 2.2.X, make a symbolic link of `domain.name.conf`\n     `/cvmfs/config-osg.opensciencegrid.org/etc/cvmfs/domain.d` pointing to `default.conf`. This symbolic link has to be\n     created on the `oasis-itb` machine's copy of the `config-osg.opensciencegrid.org` repository and then copied to\n     production with the `copy_config_osg` command on the oasis machine.\n \n 1.  If the repository name matches `*.opensciencegrid.org` or `*.osgstorage.org`, respond to the ticket to ask the\n-    administrator to continue with the next step; all other repositories (such as `*.egi.eu`) you are done.\n+    administrator to continue with their next step and wait until the admin has updated the ticket to indicate that they", 
+  "html_url": "https://github.com/opensciencegrid/operations/pull/99#discussion_r152424309", 
+  "id": 152424309, 
+  "original_commit_id": "42810c0b3633266ad8516ca947c300d0fb66302a", 
+  "original_position": 23, 
+  "path": "docs/external-oasis-repos.md", 
+  "position": null, 
+  "pull_request_review_id": 78285525, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/operations/pulls/99", 
+  "updated_at": "2017-11-27T19:15:48Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/operations/pulls/comments/152424309", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

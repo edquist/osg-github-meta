@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/153#discussion_r123657004"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/153"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/123657004"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "The above 5 lines seem to be mostly duplicated through the module.  Can you refactor them into a helper function?", 
+  "commit_id": "a3c6572d213d4cfbf68bb28ad241cb631ce77725", 
+  "created_at": "2017-06-23T01:35:31Z", 
+  "diff_hunk": "@@ -0,0 +1,194 @@\n+# audit_payload.py\n+#\n+# Writes logs of jobs starting and stopping based on ClassAd updates.\n+#\n+# This works automatically in a condor-ce if worker nodes have the environment\n+#   variable CONDORCE_COLLECTOR_HOST set to point to their site's condor-ce\n+#   server, if the jobs are run with condor glideins such as with GlideinWMS.\n+#\n+# Otherwise a job should use\n+#     condor_advertise -pool $CONDORCE_COLLECTOR_HOST:9619 UPDATE_STARTD_AD\n+#   at the start of the job and\n+#     condor_advertise -pool $CONDORCE_COLLECTOR_HOST:9619 INVALIDATE_STARTD_ADS\n+#   at the end of the job, sending to both comannds' standard input at least\n+#   these variables with format var = value, string values double-quoted:\n+#     Name (string) - name identifying the worker node, typically in the\n+#\tformat user@fully.qualified.domain.name\n+#     SlotID (integer) - slot identifier number on the worker node\n+#     MyType (string) - required to be set to the value of \"Machine\"\n+#   The condor_advertise at the begining of the message must also contain\n+#     GlobalJobId (string) - a globally unique identifier of the job\n+#     RemoteOwner (string) - a string identifying the owner of the job\n+#   and if the beginning of the message contains any of these they will\n+#   also be logged:\n+#     ClientMachine (string)\n+#     ProjectName (string)\n+#     Group (string)\n+#     x509UserProxyVOName (string)\n+#     x509userproxysubject (string)\n+#     x509UserProxyFQAN (string)\n+#     x509UserProxyEmail (string)\n+#\n+# There is one condor-ce configuration variable AUDIT_PAYLOAD_MAX_HOURS,\n+#   which is optional and indicates the maximum number of hours any job\n+#   is expected to run, default 72 hours (3 days).  After that time the\n+#   jobs will stop being tracked, in case a stop message was missed.\n+#\n+# Written by Dave Dykstra, June 2017\n+#\n+\n+import htcondor\n+# I would use the simpler \"time\" module but it gets a load error\n+#   undefined symbol: PyExc_ValueError\n+from datetime import datetime\n+\n+maxjobsecs = None\n+runningjobs = {}\n+firstidx = None\n+lastidx = None\n+\n+def dumpvars():\n+    htcondor.log(htcondor.LogLevel.Audit, \"firstidx: %s, lastidx: %s, runningjobs: %s\" % (firstidx, lastidx, str(runningjobs)))\n+\n+# stop tracking a running job\n+def removerunningjob(idx):\n+    global runningjobs\n+    global firstidx\n+    global lastidx\n+\n+    if idx not in runningjobs:\n+\t# shouldn't happen, but just in case\n+\treturn\n+\n+    # remove this job from the doubly-linked list\n+    thisjob = runningjobs[idx]\n+    if thisjob['previdx'] == None:\n+\tfirstidx = thisjob['nextidx']\n+    else:\n+\trunningjobs[thisjob['previdx']]['nextidx'] = thisjob['nextidx']\n+    if thisjob['nextidx'] == None:\n+\tlastidx = thisjob['nextidx']\n+    else:\n+\trunningjobs[thisjob['nextidx']]['previdx'] = thisjob['previdx']\n+\n+    # and remove it from the running jobs\n+    del runningjobs[idx]\n+\n+\n+# start tracking a running job\n+def addrunningjob(idx, globaljobid, now):\n+    global runningjobs\n+    global firstidx\n+    global lastidx\n+\n+    if idx in runningjobs:\n+\t# shouldn't happen, but just in case\n+\tremoverunningjob(idx)\n+\n+    thisjob = {}\n+    thisjob['globaljobid'] = globaljobid\n+    thisjob['starttime'] = now\n+\n+    # append this job the end of the doubly-linked list\n+    thisjob['previdx'] =  lastidx\n+    thisjob['nextidx'] =  None\n+    if lastidx != None:\n+\trunningjobs[lastidx]['nextidx'] = idx\n+    lastidx = idx\n+    if firstidx == None:\n+\tfirstidx = idx \n+\n+    # and add it to the running jobs\n+    runningjobs[idx] = thisjob\n+\n+# a job may be being stopped\n+def stopjob(info):\n+    global runningjobs\n+    if 'Name' not in info or 'SlotID' not in info:\n+\treturn\n+    idx = (info['Name'], info['SlotID'])\n+    if idx not in runningjobs:\n+\treturn", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/153#discussion_r123657004", 
+  "id": 123657004, 
+  "original_commit_id": "19efcc6ef4d3c78b40a9309e91e9d9283cd31409", 
+  "original_position": 111, 
+  "path": "src/audit_payloads.py", 
+  "position": null, 
+  "pull_request_review_id": 45882910, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/153", 
+  "updated_at": "2017-07-21T20:33:12Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/123657004", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

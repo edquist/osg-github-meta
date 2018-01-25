@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gracc-archive/pull/8#discussion_r118447942"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-archive/pulls/8"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-archive/pulls/comments/118447942"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Would it be better to use the atexit module?  That may cover a wider range of code paths.", 
+  "commit_id": "5554ca6e80de29f99c620241c31e719f1352917b", 
+  "created_at": "2017-05-25T09:12:43Z", 
+  "diff_hunk": "@@ -235,6 +219,13 @@ def exit_gracefully(signum, frame):\n     # Create and run the OverMind\n     print \"Starting the archiver agent.\"\n     archiver_agent = ArchiverAgent(config)\n+    # Capture and call sys.exit for SIGTERM commands\n+    def exit_gracefully(signum, frame):\n+        archiver_agent.flushFile()\n+        archiver_agent.closeFile()\n+        sys.exit(0)\n+    signal.signal(signal.SIGTERM, exit_gracefully)", 
+  "html_url": "https://github.com/opensciencegrid/gracc-archive/pull/8#discussion_r118447942", 
+  "id": 118447942, 
+  "original_commit_id": "ae043ad50e2c17d3f508d036444e45bdcb28b395", 
+  "original_position": 247, 
+  "path": "src/graccarchive/graccarchive.py", 
+  "position": 257, 
+  "pull_request_review_id": 40239832, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gracc-archive/pulls/8", 
+  "updated_at": "2017-05-25T15:10:44Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gracc-archive/pulls/comments/118447942", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

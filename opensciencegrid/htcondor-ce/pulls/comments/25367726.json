@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/11#discussion_r25367726"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/11"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/25367726"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Ah, that makes sense. We should probably fix it in osg-test as well.\n", 
+  "commit_id": "ba49473ebf57a49941530b60e84afe7d0fc75baa", 
+  "created_at": "2015-02-25T18:59:27Z", 
+  "diff_hunk": "@@ -0,0 +1,49 @@\n+#!/usr/bin/python\n+\n+import errno\n+import os\n+import tempfile\n+import textwrap\n+import time\n+from subprocess import Popen, PIPE, STDOUT\n+\n+# Excluding submit file so the respective scripts\n+# can generate it as they see fit\n+JOB_FILES = ['stdout', 'stderr', 'log']\n+\n+class CondorRunException(Exception):\n+    pass\n+\n+class CondorUserException(Exception):\n+    pass\n+\n+def print_formatted_msg(msg):\n+    print \"*\"*80\n+    for line in textwrap.wrap(msg, 80):\n+        print line\n+    print \"*\"*80\n+\n+def print_timestamped_msg(msg):\n+    print_formatted_msg(\"%s %s\" % (time.strftime('%F %T'), msg))\n+\n+def run_command(command):\n+    p = Popen(command, stdout=PIPE, stderr=STDOUT)\n+    stdout, stderr = p.communicate()\n+    return p.returncode, stdout, stderr", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/11#discussion_r25367726", 
+  "id": 25367726, 
+  "original_commit_id": "37e80a06db7ad76ddfd63eaae86be9fa0ce80a12", 
+  "original_position": 32, 
+  "path": "src/condor_ce_tools.py", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/11", 
+  "updated_at": "2015-02-25T19:33:46Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/25367726", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

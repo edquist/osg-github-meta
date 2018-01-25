@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/175#discussion_r153615230"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/175"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/153615230"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Can we narrow the scope of this exception? I only get `RuntimeError` when I'm not authorized for a specific command or I give it a bad ad. Also, nothing seems to be done with `e` so it can be dropped", 
+  "commit_id": "8df499f2c414c3fe12fb08f8975688b068ee60a9", 
+  "created_at": "2017-11-28T20:33:56Z", 
+  "diff_hunk": "@@ -0,0 +1,225 @@\n+#!/usr/bin/env python\n+import re\n+import os\n+import sys\n+import datetime\n+import htcondor\n+import subprocess\n+import collections\n+\n+manager_ldif = \"\"\"dn: GLUE2ManagerID=%(central_manager)s_Manager,%(bind_dn)s\n+objectClass: GLUE2Entity\n+objectClass: GLUE2Manager\n+objectClass: GLUE2ComputingManager\n+GLUE2ManagerID: %(central_manager)s_Manager\n+GLUE2ManagerProductName: HTCondor\n+GLUE2ManagerProductVersion: %(version)s\n+GLUE2ComputingManagerTotalPhysicalCPUs: %(total_cores)s\n+GLUE2ComputingManagerTotalLogicalCPUs: %(total_cores)s\n+GLUE2ManagerServiceForeignKey: %(central_manager)s\n+GLUE2ComputingManagerComputingServiceForeignKey: %(central_manager)s\n+\"\"\"\n+\n+resource_ldif = \"\"\"dn: GLUE2ResourceID=%(central_manager)s_standard,%(bind_dn)s\n+objectClass: GLUE2Entity\n+objectClass: GLUE2Resource\n+objectClass: GLUE2ExecutionEnvironment\n+GLUE2ResourceID: %(central_manager)s_standard\n+GLUE2ExecutionEnvironmentMainMemorySize: 2000\n+GLUE2ExecutionEnvironmentVirtualMemorySize: 2048\n+GLUE2ExecutionEnvironmentOSFamily: linux\n+GLUE2ExecutionEnvironmentCPUMultiplicity: singlecpu-multicore\n+GLUE2ExecutionEnvironmentPlatform: amd64\n+GLUE2ExecutionEnvironmentPhysicalCPUs: 8\n+GLUE2ExecutionEnvironmentLogicalCPUs: 8\n+GLUE2ExecutionEnvironmentConnectivityIn: TRUE\n+GLUE2ExecutionEnvironmentConnectivityOut: TRUE\n+GLUE2ExecutionEnvironmentTotalInstances: %(instances)s\n+GLUE2ResourceManagerForeignKey:  %(central_manager)s_Manager\n+GLUE2ExecutionEnvironmentComputingManagerForeignKey:  %(central_manager)s_Manager\n+\"\"\" \n+\n+endpoint_ldif = \"\"\"dn: GLUE2EndpointID=%(name)s_HTCondorCE,%(bind_dn)s\n+objectClass: GLUE2Entity\n+objectClass: GLUE2Endpoint\n+objectClass: GLUE2ComputingEndpoint\n+GLUE2EndpointID: %(name)s_HTCondorCE\n+GLUE2EndpointCapability: executionmanagement.jobexecution\n+GLUE2EndpointInterfaceName: org.opensciencegrid.htcondorce\n+GLUE2EndpointImplementor: HTCondor\n+GLUE2EndpointImplementationName: HTCondor\n+GLUE2EndpointImplementationVersion: %(version)s\n+GLUE2EndpointURL: condor://%(name)s:9619\n+GLUE2EndpointQualityLevel: production\n+GLUE2EndpointServingState: production\n+GLUE2EndpointHealthState: %(state)s\n+GLUE2EndpointHealthStateInfo: %(state_info)s\n+GLUE2EndpointStartTime: %(start_time)s\n+GLUE2EndpointIssuerCA: %(issuer)s\n+GLUE2EndpointDowntimeInfo: See the GOC DB for downtimes: https://goc.egi.eu/\n+GLUE2EndpointServiceForeignKey: %(central_manager)s\n+GLUE2ComputingEndpointComputingServiceForeignKey: %(central_manager)s\n+\"\"\"\n+share_ldif = \"\"\"dn: GLUE2ShareID=%(shareid)s,%(bind_dn)s\n+objectClass: GLUE2Entity\n+objectClass: GLUE2Share\n+objectClass: GLUE2ComputingShare\n+GLUE2ShareID: %(shareid)s\n+GLUE2ComputingShareServingState: production\n+GLUE2ComputingShareTotalJobs: %(total_vo_jobs)s\n+GLUE2ComputingShareWaitingJobs: %(idle_vo_jobs)s\n+GLUE2ComputingShareRunningJobs: %(running_vo_jobs)s\n+GLUE2ComputingShareComputingServiceForeignKey: %(central_manager)s\n+GLUE2ComputingShareComputingEndpointForeignKey: %(endpointid)s\n+GLUE2ComputingShareExecutionEnvironmentForeignKey: %(central_manager)s_standard\n+GLUE2ShareServiceForeignKey: %(central_manager)s\n+GLUE2ShareEndpointForeignKey: %(endpointid)s\n+GLUE2ShareResourceForeignKey: %(central_manager)s_standard\n+\"\"\"\n+\n+policy_ldif = \"\"\"dn: GLUE2PolicyID=%(policyid)s,GLUE2ShareID=%(shareid)s,%(bind_dn)s\n+objectClass: GLUE2Entity\n+objectClass: GLUE2Policy\n+objectClass: GLUE2MappingPolicy\n+GLUE2PolicyID: %(policyid)s\n+GLUE2PolicyScheme: org.glite.standard\n+GLUE2PolicyRule: vo:%(vo)s\n+GLUE2MappingPolicyShareForeignKey: %(shareid)s\n+\"\"\"\n+\n+def main():\n+    \n+    # Get central_manager hostname\n+    central_manager = htcondor.param.get('CENTRAL_MANAGER')\n+    if not central_manager:\n+        sys.stderr.write(\"Error: CENTRAL_MANAGER not set\\n\")\n+        sys.exit(1)\n+\n+    # Get VO Names\n+    vonames = htcondor.param.get('HTCONDORCE_VONames')\n+    if not vonames:\n+        sys.stderr.write(\"Error: HTCONDORCE_VONames not set\\n\")\n+        sys.exit(1)\n+    vonames = vonames.split(',')\n+\n+    # This is the bind DN for all entries\n+    bind_dn = \"GLUE2ServiceID=%s,GLUE2GroupID=resource,o=glue\" % (central_manager)\n+\n+    # Query collector for number of CPUs and Collector ad\n+    coll = htcondor.Collector(central_manager)\n+    total_cores = 0\n+    for ad in coll.query(htcondor.AdTypes.Startd, 'State=!=\"Owner\"', ['Cpus']):\n+        if ad.get('Cpus'):\n+            total_cores += ad['Cpus']\n+    coll_ad = coll.locate(htcondor.DaemonTypes.Collector)\n+    version = coll_ad['CondorVersion'].split()[1]\n+\n+    # Print the entry for the GLUE2 Manager\n+    print manager_ldif %{\n+        'central_manager': central_manager, \n+        'bind_dn': bind_dn, \n+        'version': version,\n+        'total_cores': total_cores,\n+        }\n+\n+    instances = coll_ad['HostsUnclaimed']\n+    # Print the entry for the GLUE2 Resource\n+    print resource_ldif %{\n+        'central_manager': central_manager, \n+        'bind_dn': bind_dn,\n+        'instances': instances,\n+        }\n+\n+    schedd_ads = coll.locateAll(htcondor.DaemonTypes.Schedd)\n+    for schedd_ad in schedd_ads:\n+\n+        if not schedd_ad['AuthenticatedIdentity'] == 'computing-element@cern.ch':\n+            continue\n+\n+        try:\n+            if htcondor.SecMan().ping(schedd_ad, \"READ\")['AuthorizationSucceeded']:\n+                state = 'ok'\n+            else:\n+                state = 'warning'\n+            state_info = 'Authorization ping successful'\n+        except Exception, e:", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/175#discussion_r153615230", 
+  "id": 153615230, 
+  "original_commit_id": "4bf21338c2f54dbb77328542c736b36eda5786c8", 
+  "original_position": 145, 
+  "path": "src/bdii/htcondor-ce-provider", 
+  "position": null, 
+  "pull_request_review_id": 79647207, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/175", 
+  "updated_at": "2018-01-12T08:29:02Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/153615230", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/313#discussion_r141420609"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/313"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/141420609"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "These commands should be on separate lines and the whole block enclosed in \\`\\`\\`. Also, you'll want to replace `\\_` with `_`, `&lt;` with `<`, and `&gt;` with `>`.", 
+  "commit_id": "95344ea08304ead70f16f68911028d93d0806a58", 
+  "created_at": "2017-09-27T17:56:55Z", 
+  "diff_hunk": "@@ -0,0 +1,23 @@\n+Procedure for updating empty-\\* packages\n+========================================\n+\n+Background\n+----------\n+\n+The `empty-*` packages were introduced in EmptyPackageFixProposal as a workaround for sites that install certain software (for example HTCondor or CA certs) from tarballs or other means that do not involve Yum/RPM.\n+\n+The packages contain no files, and exist merely to satisfy RPM dependencies so that other packages can be installed. It is the admin's responsibility to make sure that whatever component they installed the empty package for is functional.\n+\n+The empty packages are kept in a separate repository to prevent them from being accidentally installed instead of the component they claim to provide. Because of this, they do not go through the normal release process of development \u2192 testing \u2192 prerelease \u2192 release, but are *moved* straight from `osg-development` into `osg-empty` after developer testing. It is important that the packages stay in `osg-development` for only as long as necessary to do developer testing.\n+\n+Procedure\n+---------\n+\n+1.  Prepare the package update, but do not build yet.\n+2.  Coordinate with the Software and Release Managers to set aside a good time to update the package. An empty package should not remain in the development repos for longer than a few hours.\n+3.  Build into development.\n+4.  Test out of development. *Be thorough*, as there is no separate acceptance testing for empty packages.\n+5.  In the JIRA ticket, document your testing procedure and request permission from *both* the Software and the Release Managers. (Since there is no acceptance testing, both of them have to sign off on the new build).\n+6.  After receiving permission, tag the builds into the `osg-empty` tags, and untag them from the `osg-development` tags. Then regenerate the `osg-empty` repos. &lt;pre class=\"screen\"&gt;\n+\n+osg-koji move-pkg osg-3.3-el6-development osg-3.3-el6-empty *EL6\\_BUILD\\_NVR* osg-koji move-pkg osg-3.3-el7-development osg-3.3-el7-empty *EL7\\_BUILD\\_NVR* osg-koji regen-repo --nowait osg-3.3-el6-empty osg-koji regen-repo --nowait osg-3.3-el7-empty&lt;/pre&gt;", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/313#discussion_r141420609", 
+  "id": 141420609, 
+  "original_commit_id": "95344ea08304ead70f16f68911028d93d0806a58", 
+  "original_position": 23, 
+  "path": "archive/EmptyPackageProcedureMarkdown", 
+  "position": 23, 
+  "pull_request_review_id": 65631297, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/313", 
+  "updated_at": "2017-09-27T17:58:37Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/141420609", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

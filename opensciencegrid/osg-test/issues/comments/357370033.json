@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Alright, so two separate things here:\r\n\r\n1. I agree in principle, we don't need to include decorators on everything. If for some reason we need to support a package in version N that is only available in version N-1, we just won't apply the decorator. \r\n1. Yes, we put in that effort as a courtesy to our users because of the short notice of the retirement. However, if a user comes to us with a 3.3 GUMS and a 3.4 CE/gridftp server/etc, our recommendation to them should be an LCMAPS VOMS transition.\r\n\r\nSo @edquist the takeaway from this conversation is that we want decorated tests that are not run to be added to an `excluded` list", 
+  "created_at": "2018-01-12T22:18:11Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/111#issuecomment-357370033", 
+  "id": 357370033, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/111", 
+  "updated_at": "2018-01-12T22:18:11Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/357370033", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/38#discussion_r137856227"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/38"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/137856227"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "remove this note -- link doesn't exist", 
+  "commit_id": "6409e2c14dd444a58ead34f2882c64be9e26b3dd", 
+  "created_at": "2017-09-08T18:15:34Z", 
+  "diff_hunk": "@@ -0,0 +1,334 @@\n+Installing, Configuring, Using, and Troubleshooting RSV\n+=======================================================\n+\n+About This Guide\n+----------------\n+\n+The Resource and Service Validation (RSV) software helps a site administrator verify that certain site resources and services are working as expected. OSG recommends that sites install and run RSV, but it is optional; further, each site selects which specific tests (called *probes*) to run.\n+\n+Use this page to learn more about RSV in general, and how to install, configure, run, test, and troubleshoot RSV from the OSG software repositories. For documentation on specific probes or on how to write your own probes, please check the [Reference section](#reference).\n+\n+Introduction to RSV\n+-------------------\n+\n+The Resource and Service Validation (RSV) software provides OSG site administrators a scalable and easy-to-maintain resource and service monitoring infrastructure. The components of RSV are:\n+\n+- **RSV Client.** The client tools allow a site administrator to run tests against their site by providing a set of tests (which can run on the same or other hosts within a site), HTCondor-Cron for scheduling, and tools for collecting and storing the results (using Gratia). The client package is not installed by default and may be installed on a CE or other host. Generally, you configure the RSV client to run tests at scheduled time intervals and then it makes results available on a local website. Also, the client can upload test results to a central collector (see next item).\n+- **RSV Collector/Server.** The central OSG RSV Collector accepts and stores results from RSV clients throughout OSG, which can be viewed in [MyOSG](http://myosg.grid.iu.edu/), on the \u201cCurrent RSV Status\u201d page and under the \u201cResource Group\u201d menu.\n+- **Periodic Availability Reports.** The availability of all active registered OSG resources and the services running on each of those resources is calculated using the results received for [critical metrics](https://twiki.grid.iu.edu/bin/view/Operations/RsvEquivalency#Critical_Tests_for_OSG_Resources>). Once a day, these availability numbers are [published online](http://rsv.grid.iu.edu/daily-reports) and via email [as explained here](https://twiki.grid.iu.edu/bin/view/Trash/Trash/Trash/Trash/MeasurementsAndMetrics/RsvReportsOverview>) (More information: [Outline of reports](https://twiki.grid.iu.edu/bin/view/Operations/RSVPeriodicReporting), [Installation guide for GOC staff](https://twiki.grid.iu.edu/bin/view/Trash/Trash/Trash/Trash/MeasurementsAndMetrics/RsvReports)).\n+- **RSV-SAM Transport.** The WLCG RSV-SAM Transport infrastructure pushes out RSV results, for resources that are flagged to be part of the WLCG Interoperability agreement, from the GOC collector to WLCG's Service Availability Monitoring (SAM) system. More information on viewing these results is [available here](Operations.RsvSAMGridView).\n+- **MyOSG and OIM Links.** RSV picks up resource information, WLCG interoperability information, etc., from a MyOSG resource group summary listing, which is in turn based on the [OSG Information Management (OIM) (topology) system](https://oim.grid.iu.edu) (Requires registration). Resource [maintenance scheduled on OIM](https://twiki.grid.iu.edu/twiki/bin/view/Operations/OIMMaintTool) are forwarded to WLCG SAM, if applicable.\n+\n+\n+Before Starting\n+---------------\n+\n+Before starting the installation process, consider the following points (consulting [the Reference section below](#reference) as needed):\n+\n+- **User IDs:** If they do not exist already, the installation will create the Linux user IDs `rsv` and `cndrcron`\n+- **Service certificate:** The RSV service requires a service certificate (`/etc/grid-security/rsv/rsvcert.pem`) and matching key (`/etc/grid-security/rsv/rsvkey.pem`)\n+- **Network ports:** To view results, port 80 must accept incoming requests; outbound connectivity to tested services must work, too\n+- **Host choice:** Install RSV on your site CE unless you have specific reasons (e.g., performance) for installing on a separate host\n+\n+As with all OSG software installations, there are some one-time (per host) steps to prepare in advance:\n+\n+- Ensure the RSV host has [a supported operating system](../common/yum.md)\n+- Obtain root access to the host\n+- Prepare [the required Yum repositories](../common/yum.md)\n+- Install [CA certificates](../security/ca-cert-auth.md)\n+\n+Installing RSV\n+--------------\n+\n+An installation of RSV at a site consists of the RSV client software, the Apache web server, parts of HTCondor (for its cron-like scheduling capabilities), and various other small tools. To simplify installation, OSG provides a convenience RPM that installs all required software with a single command.\n+\n+1. Consider updating your local cache of Yum repository data and your existing RPM packages:\n+\n+        :::console\n+        [root@client ~] # yum clean all --enablerepo=\\*\n+        [root@client ~] # yum update\n+\n+    !!! note\n+        The `update` command will update **all** packages on your system.\n+\n+2. If you have installed HTCondor already but not by RPM, install a special empty RPM to make RSV happy:\n+\n+        :::console   \n+        [root@client ~] # yum install empty-condor --enablerepo=osg-empty\n+\n+3. Install RSV and related software: \n+\n+        :::console\n+        [root@client ~] # yum install rsv  \n+   \n+Configuring RSV\n+---------------\n+ \n+After installation, there are some one-time configuration steps to tell RSV how to operate at your site.\n+ \n+1. Edit `/etc/osg/config.d/30-rsv.ini` and follow the instructions in the file. There are detailed comments for each setting. In the simplest case \u2014 to monitor only your CE \u2014 set the `htcondor_ce_hosts` variable (or `gram_ce_hosts` for a GRAM CE) to the fully qualified hostname of your CE. For a sample `rsv.ini` file, see the complete installation output [below](#InstallDetails)\n+\n+2. If you have installed HTCondor already but not by RPM, specify the location of the Condor installation in `30-rsv.ini` in the `condor_location` setting. If an HTCondor RPM is installed, you do not need to set `condor_location`.\n+\n+3. Complete the configuration using the `osg-configure` tool:\n+\n+        :::console\n+        [root@client ~] # osg-configure -v\n+        [root@client ~] # osg-configure -c\n+\n+    !!! note\n+        The `osg-configure` tool produces a lot of output; see [below](#OsgConfigDetails) for an example.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/38#discussion_r137856227", 
+  "id": 137856227, 
+  "original_commit_id": "18ee2202521369747c698c6b8955d012f7f5d0d8", 
+  "original_position": 80, 
+  "path": "docs/monitoring/rsv.md", 
+  "position": null, 
+  "pull_request_review_id": 61582103, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/38", 
+  "updated_at": "2017-09-08T21:02:15Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/137856227", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

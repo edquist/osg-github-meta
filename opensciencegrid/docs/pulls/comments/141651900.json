@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/182#discussion_r141651900"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/182"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/141651900"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Updated", 
+  "commit_id": "537e0b49923a2cdfd6b706bd4203a97d8293c19b", 
+  "created_at": "2017-09-28T15:28:04Z", 
+  "diff_hunk": "@@ -0,0 +1,338 @@\n+\n+Install a CVMFS Stratum 1\n+===================================================================\n+\n+# About this Document \n+This document describes how to install a CVMFS Stratum 1. There are many different variations on how to do that, but this document focuses on the configuration of the OSG GOC Stratum 1 oasis-replica.opensciencegrid.org. It is applicable to other Stratum 1s as well, very likely with modifications (some of which are suggested in the document below).\n+\n+# Applicable versions \n+The applicable software versions for this document are cvmfs and cvmfs-server >= 2.2.1.\n+\n+# Requirements\n+\n+## Host and OS\n+\n+-   OS is a 64-bit <span class=\"twiki-macro SUPPORTED_OS\"></span>.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/182#discussion_r141651900", 
+  "id": 141651900, 
+  "in_reply_to_id": 141629712, 
+  "original_commit_id": "a19dde48e1fd23b836d6f1d92bf6e119846746aa", 
+  "original_position": 15, 
+  "path": "docs/other/install-cvmfs-stratum1.md", 
+  "position": null, 
+  "pull_request_review_id": 65900397, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/182", 
+  "updated_at": "2017-09-28T16:54:05Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/141651900", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/2693687?v=4", 
+    "events_url": "https://api.github.com/users/sthapa/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/sthapa/followers", 
+    "following_url": "https://api.github.com/users/sthapa/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/sthapa/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/sthapa", 
+    "id": 2693687, 
+    "login": "sthapa", 
+    "organizations_url": "https://api.github.com/users/sthapa/orgs", 
+    "received_events_url": "https://api.github.com/users/sthapa/received_events", 
+    "repos_url": "https://api.github.com/users/sthapa/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/sthapa/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/sthapa/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/sthapa"
+  }
+}

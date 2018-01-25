@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "Here's the updated request (adding a top-level 'resource_group'):\n\n```\n{'resource_groups': {'AGLT2': {'name': 'AGLT2'}},\n 'ce_services': {'AGLT2_CE_2': {'endpoint': 'gate02.grid.umich.edu:9619',\n                                'flavour': 'HTCONDOR-CE',\n                                'jobmanager': 'condor',\n                                'name': 'AGLT2-CE-HTCondorCE-gate02.grid.umich.edu',\n                                'site': 'AGLT2',\n                                'status': 'Production',\n                                'type': 'CE',\n                                'version': '2.0.4',\n                                'resource_group': 'AGLT2'}},\n 'queues': {'AGLT2_CE_2': {'default': {'ce': 'AGLT2_CE_2',\n                                       'entry': 'AGLT2-Dell1g2',\n                                       'max_wallclocktime': 4300,\n                                       'name': 'default',\n                                       'status': 'Production'}}}}\n```\n", 
+  "created_at": "2016-10-26T14:41:51Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/120#issuecomment-256368557", 
+  "id": 256368557, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/120", 
+  "updated_at": "2016-10-26T16:14:10Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/256368557", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

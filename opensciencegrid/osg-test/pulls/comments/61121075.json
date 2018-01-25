@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/7#discussion_r61121075"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/7"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/61121075"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "That was my original thought. But from talking with @osg-cat, I thought the metapackage osg-ce is used to install either of them. So it would be enough to check for it.\n", 
+  "commit_id": "aeecdbae732b3e8c167301dc3cdb93ce15c2dcd3", 
+  "created_at": "2016-04-26T16:46:01Z", 
+  "diff_hunk": "@@ -411,10 +411,9 @@ def test_17_copy_condor_logs(self):\n     #This test executes condor_meter\n     def test_18_execute_condor_meter(self):\n         core.state['gratia.condor-meter-running'] = False\n-        core.skip_ok_unless_installed('gratia-probe-condor', 'gratia-service', 'globus-gram-job-manager-condor',\n-                                      'globus-gram-client-tools', 'globus-proxy-utils')\n+        core.skip_ok_unless_installed('gratia-probe-condor', 'gratia-service', 'osg-ce')", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/7#discussion_r61121075", 
+  "id": 61121075, 
+  "original_commit_id": "f02369dc915bd2884a6c94a77b7251b8cca8e8b9", 
+  "original_position": 6, 
+  "path": "osgtest/tests/test_54_gratia.py", 
+  "position": null, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/7", 
+  "updated_at": "2016-04-27T20:01:40Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/comments/61121075", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

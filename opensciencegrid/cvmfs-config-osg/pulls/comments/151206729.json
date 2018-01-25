@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151206729"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151206729"
+    }
+  }, 
+  "author_association": "CONTRIBUTOR", 
+  "body": "@DrDaveD This isn't a precedent so much as not having prioritized the adoption of a feature that I believe wasn't introduced until RHEL7. For example, a few months after the release of RHEL7, @jblomer [wrote a ticket to himself](https://sft.its.cern.ch/jira/browse/CVM-675) suggesting its adoption. @bbockelm also [requested its adoption](https://sft.its.cern.ch/jira/browse/CVM-1238) as has @rptaylor [here](https://sft.its.cern.ch/jira/browse/CVM-1426). The timing of the last report is suggestive that this PR was noticed or discussed on another list?\r\n\r\nI agree that the perfect place for this file is the `cvmfs` package itself. I try not to let the perfect be the enemy of the good, but perhaps @jblomer is willing to adopt it following this example?\r\n\r\nI believe (strongly) that post-installation steps are an _intrinsic evil_ that increase support costs because, well, people don\u2019t read things on a monitor very carefully. We have technical options for eliminating these post-installation steps and we should use them. I\u2019m curious what @jblomer, @bbockelm, @rptaylor think about the idea and its proper location(s)?\r\n\r\nRe: \u201cautofs isn\u2019t really required so we shouldn\u2019t X/Y/Z\u201d. `cvmfs` on RedHat does actually require the installation of `autofs`. On Debian, `cvmfs` \u201cRecommends\u201d `autofs` (which I\u2019ve come to believe is the correct dependency) and the default behavior of apt-get is `\u2014install-recommends`. So, in practice, the installation of `autofs` is automatic on all platforms and it\u2019s perfectly reasonable to automate its configuration.\r\n\r\nThe Debian-way -- in contrast to RedHat -- is to enable and start services when they are installed (unless the service had previously been masked/disabled). `autofs` follows this approach. So, installing `cvmfs` is quite likely to also start `autofs`. So it\u2019s reasonable (on Debian) to also reload the autofs maps _if and only if_ the service is presently enabled and running. Given that it's a no-op when `autofs` is disabled, it may even be a reasonable step on RedHat. This is what the `postinst/postrm` scripts you note below do. I have no idea what the RPM equivalent approach to this would be.", 
+  "commit_id": "d01e585f151c9990ca9f4bd16c4c9a6931f9bbae", 
+  "created_at": "2017-11-15T18:06:29Z", 
+  "diff_hunk": "@@ -17,12 +17,8 @@ install-common:\n \tinstall -D -m 444 opensciencegrid.org.pub $(DESTDIR)/etc/cvmfs/keys/opensciencegrid.org\n \n install-debian: install-common\n-\tmkdir -p $(DESTDIR)/lib/systemd/system \\\n-\t  $(DESTDIR)/lib/systemd/system/autofs.service.wants \\\n-\t  $(DESTDIR)/usr/sbin\n-\tinstall -D -m 444 cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system\n-\tln -s ../cvmfs-config-osg.service $(DESTDIR)/lib/systemd/system/autofs.service.wants/cvmfs-config-osg.service\n-\tinstall -D -m 555 cvmfs-config-osgd $(DESTDIR)/usr/sbin\n+\tmkdir -p $(DESTDIR)/etc/auto.master.d\n+\tinstall -D -m 0644 cvmfs.autofs $(DESTDIR)/etc/auto.master.d", 
+  "html_url": "https://github.com/opensciencegrid/cvmfs-config-osg/pull/4#discussion_r151206729", 
+  "id": 151206729, 
+  "in_reply_to_id": 150961851, 
+  "original_commit_id": "0d3da67811bdb211e462f960ad1c378758b74563", 
+  "original_position": 11, 
+  "path": "Makefile", 
+  "position": null, 
+  "pull_request_review_id": 76877200, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/4", 
+  "updated_at": "2017-11-17T21:54:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/cvmfs-config-osg/pulls/comments/151206729", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/7475598?v=4", 
+    "events_url": "https://api.github.com/users/tpdownes/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/tpdownes/followers", 
+    "following_url": "https://api.github.com/users/tpdownes/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/tpdownes/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/tpdownes", 
+    "id": 7475598, 
+    "login": "tpdownes", 
+    "organizations_url": "https://api.github.com/users/tpdownes/orgs", 
+    "received_events_url": "https://api.github.com/users/tpdownes/received_events", 
+    "repos_url": "https://api.github.com/users/tpdownes/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/tpdownes/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/tpdownes/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/tpdownes"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Brian told me to merge small pull requests myself\n", 
+  "created_at": "2016-02-24T17:27:00Z", 
+  "html_url": "https://github.com/opensciencegrid/oasis-server/pull/19#issuecomment-188363397", 
+  "id": 188363397, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/oasis-server/issues/19", 
+  "updated_at": "2016-02-24T17:27:00Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/oasis-server/issues/comments/188363397", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 
+    "events_url": "https://api.github.com/users/DrDaveD/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/DrDaveD/followers", 
+    "following_url": "https://api.github.com/users/DrDaveD/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/DrDaveD/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/DrDaveD", 
+    "id": 2129743, 
+    "login": "DrDaveD", 
+    "organizations_url": "https://api.github.com/users/DrDaveD/orgs", 
+    "received_events_url": "https://api.github.com/users/DrDaveD/received_events", 
+    "repos_url": "https://api.github.com/users/DrDaveD/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/DrDaveD/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/DrDaveD/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/DrDaveD"
+  }
+}

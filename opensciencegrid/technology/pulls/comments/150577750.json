@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/364#discussion_r150577750"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/364"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/150577750"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Just a little bit of Ansible awesomeness! It means \u201ctake the intersection of the two groups\u201d, and in this case is a much better way to express the set of hosts being targeted instead of a group plus a limit option at the end. (IMO)", 
+  "commit_id": "d9ee240390b29602d033ce86d56966a8914885a2", 
+  "created_at": "2017-11-13T15:50:18Z", 
+  "diff_hunk": "@@ -25,50 +28,85 @@ The commands can be run as-is from within the `osgitb` directory from git.\n         :::console\n         ansible current -i inventory -f 20 -o -m command -a 'cat /etc/redhat-release'\n \n-2. Check HTCondor versions for all HTCondor hosts:\n+1. Check the date and time on all hosts (in case NTP stops working):\n \n         :::console\n-        ansible condor -i inventory -f 20 -o -m command -a 'rpm -q condor'\n+        ansible current -i inventory -f 20 -o -m command -a 'date'\n+\n+1. Check software versions for certain hosts (e.g., for the `condor` package on hosts in the `worksers` group):\n+\n+        :::console\n+        ansible workers -i inventory -f 20 -o -m command -a 'rpm -q condor'\n \n-3. Obtain the NVR of the HTCondor prerelease build from OSG to test.  Do this by talking to Tim&nbsp;T. and checking\n-   Koji.  The expectation is that the HTCondor prerelease build will be in the development repository (or\n-   upcoming-development).\n \n-## Install HTCondor Prerelease\n+## Installing HTCondor Prerelease\n+\n+Use this section to install a new version of HTCondor, specifically a prerelease build from the development or\n+upcoming-development repository, on the test hosts.\n+\n+1. Obtain the NVR of the HTCondor prerelease build from OSG to test.  Do this by talking to Tim&nbsp;T. and checking\n+   Koji.\n \n 1. Shut down HTCondor and HTCondor-CE on prerelease machines:\n \n         :::console\n-        ansible condordev -i inventory -bK -f 20 -m service -a 'name=condor-ce state=stopped' -l 'itb-ce*'\n-        ansible condordev -i inventory -bK -f 20 -m service -a 'name=condor state=stopped'\n+        ansible 'testing:&ces' -i inventory -bK -f 20 -m service -a 'name=condor-ce state=stopped'\n+        ansible 'testing:&condor' -i inventory -bK -f 20 -m service -a 'name=condor state=stopped'", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/364#discussion_r150577750", 
+  "id": 150577750, 
+  "in_reply_to_id": 150352314, 
+  "original_commit_id": "58ef87d1802fce76c6c6600c51611c9eeb5c048d", 
+  "original_position": 56, 
+  "path": "docs/release/itb-testing.md", 
+  "position": 56, 
+  "pull_request_review_id": 76147154, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/364", 
+  "updated_at": "2017-11-13T15:51:29Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/150577750", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377451?v=4", 
+    "events_url": "https://api.github.com/users/osg-cat/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/osg-cat/followers", 
+    "following_url": "https://api.github.com/users/osg-cat/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/osg-cat/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/osg-cat", 
+    "id": 7377451, 
+    "login": "osg-cat", 
+    "organizations_url": "https://api.github.com/users/osg-cat/orgs", 
+    "received_events_url": "https://api.github.com/users/osg-cat/received_events", 
+    "repos_url": "https://api.github.com/users/osg-cat/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/osg-cat/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/osg-cat/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/osg-cat"
+  }
+}

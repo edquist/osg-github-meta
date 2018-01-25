@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gums/pull/21#discussion_r40594575"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gums/pulls/21"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gums/pulls/comments/40594575"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Good!  I was basing that on the mapUser() in [ManualAccountMapper.java](https://github.com/opensciencegrid/gums/blob/master/gums-core/src/main/java/gov/bnl/gums/account/ManualAccountMapper.java#L98).  But if it works to return AccountInfo(account, groupName), great -- I'll give that a shot.\n\n(That might also mean I can get rid of some of the extra retrieveMapping() stuff I had to add in AccountPoolMapperDB.java, LocalPersistenceFactory.java, MockAccountPoolMapperDB.java ...)\n", 
+  "commit_id": "58623331a3341e0b812b8b4d44e77976aa93cb02", 
+  "created_at": "2015-09-28T19:30:31Z", 
+  "diff_hunk": "@@ -163,6 +169,9 @@ public String getType() {\n \n     @Override\n     public AccountInfo mapUser(GridUser user, boolean createIfDoesNotExist) {\n+        if (groupName != null && !groupName.equals(\"\")) {\n+            return new AccountInfo(getDB().retrieveMapping(user.getCertificateDN()), groupName);", 
+  "html_url": "https://github.com/opensciencegrid/gums/pull/21#discussion_r40594575", 
+  "id": 40594575, 
+  "original_commit_id": "58623331a3341e0b812b8b4d44e77976aa93cb02", 
+  "original_position": 34, 
+  "path": "gums-core/src/main/java/gov/bnl/gums/account/AccountPoolMapper.java", 
+  "position": 34, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gums/pulls/21", 
+  "updated_at": "2015-09-28T19:30:31Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gums/pulls/comments/40594575", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

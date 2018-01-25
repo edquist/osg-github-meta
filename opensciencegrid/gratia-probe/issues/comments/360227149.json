@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "> Hopefully this new requirement will not break old installations too badly... (If they are updating to the new gratia-probe, they'll probably be updating to newer condor too?)\r\n\r\nWith the `condor-python` dependency, we should be in the clear for these cases. If it breaks something, the site would have to be running some sort of unsupported frankenstein of condor 8.2 but the newest gratia-probe\r\n\r\n> Do we need to be concerned about the cases where `classad[x]` is `0` or `\"\"`?\r\n\r\nThat's a good point, could you update to `classad.get(x) is not None` like you suggested.", 
+  "created_at": "2018-01-24T18:23:27Z", 
+  "html_url": "https://github.com/opensciencegrid/gratia-probe/pull/24#issuecomment-360227149", 
+  "id": 360227149, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/gratia-probe/issues/24", 
+  "updated_at": "2018-01-24T18:23:27Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gratia-probe/issues/comments/360227149", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

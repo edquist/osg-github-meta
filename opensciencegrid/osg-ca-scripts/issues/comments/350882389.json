@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "LGTM (bumping because this string needs to be set for `osg-ca-manage --version`)", 
+  "created_at": "2017-12-11T22:40:36Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-ca-scripts/pull/6#issuecomment-350882389", 
+  "id": 350882389, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-ca-scripts/issues/6", 
+  "updated_at": "2017-12-11T22:40:36Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-ca-scripts/issues/comments/350882389", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

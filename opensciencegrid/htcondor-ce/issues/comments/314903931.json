@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "The EL6 errors are troubling so I've kicked off VMU tests against 8.6.4-1.1. I've also kicked off [Travis-CI tests](https://travis-ci.org/brianhlin/htcondor-ce/jobs/252980247) with a modified osg-test that should timeout the `condor_ce_run` command after 5 min so we can avoid the Travis-CI timeout and get condor logs back.", 
+  "created_at": "2017-07-12T21:34:38Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/153#issuecomment-314903931", 
+  "id": 314903931, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/153", 
+  "updated_at": "2017-07-12T21:34:38Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/314903931", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

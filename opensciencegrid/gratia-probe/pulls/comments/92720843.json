@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gratia-probe/pull/9#discussion_r92720843"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/9"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/comments/92720843"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Arright sounds good!", 
+  "commit_id": "7cfcf61bb1ee2a4a5947cf369f95a4cf4576273d", 
+  "created_at": "2016-12-15T23:10:04Z", 
+  "diff_hunk": "@@ -551,11 +551,14 @@ def determine_host_description(classad):\n \n     If there's no special host description, this returns None.\n     \"\"\"\n-    if 'MATCH_EXP_JOBGLIDEIN_ResourceName' not in classad:\n+    try:\n+        if classad['MATCH_EXP_JOBGLIDEIN_ResourceName'] == 'Local Job':\n+            host_descr = GratiaCore.Config.get_SiteName()", 
+  "html_url": "https://github.com/opensciencegrid/gratia-probe/pull/9#discussion_r92720843", 
+  "id": 92720843, 
+  "in_reply_to_id": 92711797, 
+  "original_commit_id": "7cfcf61bb1ee2a4a5947cf369f95a4cf4576273d", 
+  "original_position": 7, 
+  "path": "condor/condor_meter", 
+  "position": 7, 
+  "pull_request_review_id": 13242181, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/9", 
+  "updated_at": "2016-12-15T23:10:04Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/comments/92720843", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

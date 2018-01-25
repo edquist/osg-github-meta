@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Yes, but the advantage is the it is searchable on release day. For regular releases, that hang out for weeks, I would want them on doc-itb. Developers need to be able to record known issues before release.", 
+  "created_at": "2017-11-17T23:58:51Z", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/257#issuecomment-345397658", 
+  "id": 345397658, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/docs/issues/257", 
+  "updated_at": "2017-11-17T23:58:51Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/issues/comments/345397658", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377632?v=4", 
+    "events_url": "https://api.github.com/users/timtheisen/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/timtheisen/followers", 
+    "following_url": "https://api.github.com/users/timtheisen/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/timtheisen/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/timtheisen", 
+    "id": 7377632, 
+    "login": "timtheisen", 
+    "organizations_url": "https://api.github.com/users/timtheisen/orgs", 
+    "received_events_url": "https://api.github.com/users/timtheisen/received_events", 
+    "repos_url": "https://api.github.com/users/timtheisen/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/timtheisen/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/timtheisen/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/timtheisen"
+  }
+}

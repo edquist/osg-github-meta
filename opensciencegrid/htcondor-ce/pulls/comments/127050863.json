@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/153#discussion_r127050863"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/153"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/127050863"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I agree with your assessment that any modifications to the config here would realistically only be made by experts and I'm all for moving things out of `/etc/condor-ce/config.d/` where possible . \r\n\r\n@DrDaveD let's just drop this file", 
+  "commit_id": "a3c6572d213d4cfbf68bb28ad241cb631ce77725", 
+  "created_at": "2017-07-12T19:36:54Z", 
+  "diff_hunk": "@@ -0,0 +1,20 @@\n+# Settings for the collector audit payloads function.", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/153#discussion_r127050863", 
+  "id": 127050863, 
+  "in_reply_to_id": 127022499, 
+  "original_commit_id": "29ee0efcecf08fc65b496e1881f838c8d518373f", 
+  "original_position": 1, 
+  "path": "config/01-ce-collector-audit-payload.conf", 
+  "position": null, 
+  "pull_request_review_id": 49596604, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/153", 
+  "updated_at": "2017-07-21T20:33:12Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/127050863", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

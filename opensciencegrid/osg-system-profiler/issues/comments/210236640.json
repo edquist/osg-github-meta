@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "Hey @matyasselmeci,\n\nPresumably you're interested in my feedback on the changes to `osg-installed-versions` in your ab9c9cac16134ca4cbbecc79fd640e5b0ab235bc (and not the `osg-system-profiler-viewer` changes from 8d6a841c599301f69ba92de28a4ff7f358a898ef).\n\nI think I'd rather keep the logic simpler in `osg-installed-versions` and just allow specifying a URL for the PATH arguments.  Eg, 87ad1866a2716325658fde593c079776a0ba948c / https://github.com/opensciencegrid/osg-system-profiler/compare/master...edquist:url-paths.   And then `osg-system-profiler-viewer` should work unmodified.  Can you see if that works for you, and if so reset your PR (to 87ad1866a2716325658fde593c079776a0ba948c) ?\n\n(As for the regex change you slipped in [here](https://github.com/opensciencegrid/osg-system-profiler/pull/1/commits/ab9c9cac16134ca4cbbecc79fd640e5b0ab235bc#diff-258798b6abde1e9d7c0e8ae6f47d2a49R36), I'm guessing it can probably go in a separate commit.)\n", 
+  "created_at": "2016-04-15T01:25:20Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-system-profiler/pull/1#issuecomment-210236640", 
+  "id": 210236640, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-system-profiler/issues/1", 
+  "updated_at": "2016-04-15T01:25:20Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-system-profiler/issues/comments/210236640", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

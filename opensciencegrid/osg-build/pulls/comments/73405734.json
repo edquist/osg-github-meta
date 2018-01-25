@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-build/pull/11#discussion_r73405734"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/11"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/73405734"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Here as in a few other places, note that `re.escape` does not do the right thing when quoting filenames with embedded newlines.  `pipes.quote` seems to work for python 2.4 & 2.6.  (`shlex.quote` in 2.7+)\n", 
+  "commit_id": "45d9f80965270fe47cb0365801cc5c94933e6433", 
+  "created_at": "2016-08-03T19:38:50Z", 
+  "diff_hunk": "@@ -75,106 +86,326 @@ def make_svn_tree(srpm, url, extract_spec=False, diff_spec=False, provider=None)\n \n     \"\"\"\n     name, version = srpm_nvr(srpm)[0:2]\n-    upstream_dir = opj(name, \"upstream\")\n-    abs_srpm = abspath(srpm)\n-    base_srpm = basename(srpm)\n-    \n-    if not exists(name):\n-        checked_call([\"svn\", \"mkdir\", name])\n-    if not exists(upstream_dir):\n-        checked_call([\"svn\", \"mkdir\", upstream_dir])\n+    abs_srpm = os.path.abspath(srpm)\n+\n+    # HACK - if we're already in the package directory\n+    if os.path.basename(os.getcwd()) == name:\n+        os.chdir(\"..\")\n+\n+    if not os.path.exists(name):\n+        utils.checked_call([\"svn\", \"mkdir\", name])\n+\n+    osg_dir = os.path.join(name, \"osg\")\n+    if extra_action == EXTRA_ACTION_DIFF_SPEC:\n+        diff_spec(abs_srpm, osg_dir, want_diff3=False)\n+    elif extra_action == EXTRA_ACTION_EXTRACT_SPEC:\n+        extract_spec(abs_srpm, osg_dir)\n+    elif extra_action == EXTRA_ACTION_DIFF3_SPEC:\n+        if os.path.isdir(osg_dir):\n+            extract_orig_spec(osg_dir)\n+        diff_spec(abs_srpm, osg_dir, want_diff3=True)\n+\n+    upstream_dir = os.path.join(name, \"upstream\")\n+\n+    if not os.path.exists(upstream_dir):\n+        utils.checked_call([\"svn\", \"mkdir\", upstream_dir])\n+\n+    cached_filename = os.path.join(name, version, srpm)\n+\n+    make_source_file(url, cached_filename, upstream_dir, provider)\n+\n+    if len(glob.glob(os.path.join(upstream_dir, \"*.source\"))) > 1:\n+        logging.info(\"More than one .source file found in upstream dir.\")\n+        logging.info(\"Examine them to make sure there aren't duplicates.\")\n \n+\n+def make_source_file(url, cached_filename, upstream_dir, provider=None):\n+    \"\"\"Create an upstream/*.source file with the appropriate name based\n+    on either `provider` or `url` if the former is not given.  Also add\n+    the new file to SVN.\n+    \"\"\"\n     if provider is None:\n-        if re.search(r'emisoft\\.web\\.cern\\.ch', url):\n-            provider_name = 'emi'\n-        elif re.search(r'fedoraproject\\.org', url):\n-            provider_name = 'epel'\n+        for provpat, provname in PROVIDER_PATTERNS:\n+            if re.search(provpat, url):\n+                provider = provname\n+                break\n         else:\n-            provider_name = 'developer'\n-    else:\n-        provider_name = provider\n+            provider = 'developer'\n \n-    source_filename = opj(upstream_dir, provider_name+\".srpm.source\")\n+    source_filename = os.path.join(upstream_dir, provider+\".srpm.source\")\n \n-    source_contents = \"%s\\n# Downloaded from '%s'\\n\" % (opj(name, version, srpm), url)\n+    source_contents = \"\"\"\\\n+%(cached_filename)s\n+# Downloaded from '%(url)s'\n+\"\"\" % locals()\n \n-    if exists(source_filename):\n-        print \"Source file exists. Saving as %s.old\" % source_filename\n-        move(source_filename, source_filename + \".old\")\n-        unslurp(source_filename, source_contents)\n+    if os.path.exists(source_filename):\n+        logging.info(\"Source file exists. Saving as %s.old\", source_filename)\n+        shutil.move(source_filename, source_filename + \".old\")\n+        utils.unslurp(source_filename, source_contents)\n     else:\n-        unslurp(source_filename, source_contents)\n-        # TODO Check the path we're trying to add hasn't been added yet\n-        checked_call([\"svn\", \"add\", source_filename])\n-    if len(glob.glob(opj(upstream_dir, \"*.source\"))) > 1:\n-        print \"More than one .source file found in upstream dir.\"\n-        print \"Examine them to make sure there aren't duplicates.\"\n-\n-    osg_dir = opj(name, \"osg\")\n-    if diff_spec:\n-        # TODO: This needs touchups.\n-        if not isdir(osg_dir):\n-            print \"No osg dir exists. Not diffing.\"\n+        utils.unslurp(source_filename, source_contents)\n+        svn_safe_add(source_filename)\n+\n+\n+def is_untracked_path(path):\n+    \"\"\"Return True if the given path is untracked in SVN.\n+    Note: ignored files return False.\n+    \"\"\"\n+    output, ret = utils.sbacktick([\"svn\", \"status\", path])\n+\n+    return output.startswith('?')\n+\n+\n+def svn_safe_add(path):\n+    \"\"\"Add path to SVN if it's not already in there. Return True on success.\"\"\"\n+    if is_untracked_path(path):\n+        ret = utils.unchecked_call([\"svn\", \"add\", path])\n+        return ret == 0\n+\n+\n+def get_spec_name_in_srpm(srpm):\n+    \"\"\"Return the name of the spec file present in an SRPM.  Assumes\n+    there is exactly one spec file in the SRPM -- if there is more than\n+    one spec file, returns the name of the first one ``cpio'' prints.\n+    \"\"\"\n+    out, ret = utils.sbacktick(\"rpm2cpio %s | cpio -t '*.spec' 2> /dev/null\" % re.escape(srpm), shell=True)\n+    if ret != 0:\n+        raise Error(\"Unable to get list of spec files from %s\" % srpm)\n+    try:\n+        spec_name = filter(None, [x.strip() for x in out.split(\"\\n\")])[0]\n+    except IndexError:\n+        spec_name = None\n+\n+    if not spec_name:\n+        raise Error(\"No spec file inside %s\" % srpm)\n+\n+    return spec_name\n+\n+\n+def extract_from_rpm(rpm, file_or_pattern=None):\n+    \"\"\"Extract a specific file or glob from an rpm.\"\"\"\n+    command = \"rpm2cpio \" + re.escape(rpm) + \" | cpio -ivd\"", 
+  "html_url": "https://github.com/opensciencegrid/osg-build/pull/11#discussion_r73405734", 
+  "id": 73405734, 
+  "original_commit_id": "45d9f80965270fe47cb0365801cc5c94933e6433", 
+  "original_position": 228, 
+  "path": "osg-import-srpm", 
+  "position": 228, 
+  "pull_request_review_id": null, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/11", 
+  "updated_at": "2016-08-03T19:38:50Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-build/pulls/comments/73405734", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

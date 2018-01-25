@@ -1,0 +1,29 @@
+{
+  "author_association": "NONE", 
+  "body": "Apologies for my ignorance, but is there a connection to https://github.com/opensciencegrid/htcondor-ce/blob/master/src/bdii/condor_ce_bdii_generate_glue2.py ? Many lines seem very similar, especially the templates.", 
+  "created_at": "2017-12-11T20:31:23Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/175#issuecomment-350849033", 
+  "id": 350849033, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/175", 
+  "updated_at": "2017-12-11T20:31:23Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/350849033", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/1213276?v=4", 
+    "events_url": "https://api.github.com/users/kreczko/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/kreczko/followers", 
+    "following_url": "https://api.github.com/users/kreczko/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/kreczko/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/kreczko", 
+    "id": 1213276, 
+    "login": "kreczko", 
+    "organizations_url": "https://api.github.com/users/kreczko/orgs", 
+    "received_events_url": "https://api.github.com/users/kreczko/received_events", 
+    "repos_url": "https://api.github.com/users/kreczko/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/kreczko/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/kreczko/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/kreczko"
+  }
+}

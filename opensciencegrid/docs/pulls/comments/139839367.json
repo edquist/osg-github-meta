@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/177#discussion_r139839367"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/177"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139839367"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Fix links if you're removing the backslashes from the headers", 
+  "commit_id": "4a4ed22fda9d855c25ca9e7918a7b800ba736a56", 
+  "created_at": "2017-09-19T22:59:22Z", 
+  "diff_hunk": "@@ -0,0 +1,980 @@\n+HTCondor-CE Troubleshooting Guide\n+=================================\n+\n+In this document, you will find a collection of files and commands to help troubleshoot HTCondor-CE along with a list of common issues with suggested troubleshooting steps.\n+\n+Known Issues\n+------------\n+\n+### SUBMIT\\_EXPRS are not applied to jobs on the local HTCondor ###\n+\n+If you are adding attributes to jobs submitted to your HTCondor pool with `SUBMIT_EXPRS`, these will *not* be applied to jobs that are entering your pool from the HTCondor-CE. To get around this, you will want to add the attributes to your [job routes](job-router-recipes). If the CE is the only entry point for jobs into your pool, you can get rid of `SUBMIT_EXPRS` on your backend. Otherwise, you will have to maintain your list of attributes both in your list of routes and in your `SUBMIT_EXPRS`.\n+\n+General Troubleshooting Items\n+-----------------------------\n+\n+### Making sure packages are up-to-date\n+\n+It is important to make sure that the HTCondor-CE and related RPMs are up-to-date.\n+\n+``` console\n+root@host # yum update \"htcondor-ce*\" blahp condor\n+```\n+\n+If you just want to see the packages to update, but do not want to perform the update now, answer `N` at the prompt.\n+\n+### Verify package contents\n+\n+If the contents of your HTCondor-CE packages have been changed, the CE may cease to function properly. To verify the contents of your packages (ignoring changes to configuration files):\n+\n+``` console\n+user@host $ rpm -q --verify htcondor-ce htcondor-ce-client blahp | awk '$2 != \"c\" {print $0}'\n+```\n+\n+If the verification command returns output, this means that your packages have been changed. To fix this, you can reinstall the packages:\n+\n+``` console\n+user@host $ yum reinstall htcondor-ce htcondor-ce-client blahp\n+```\n+\n+!!! note\n+    The reinstall command may place original versions of configuration files alongside the versions that you have modified. If this is the case, the reinstall command will notify you that the original versions will have an `.rpmnew` suffix. Further inspection of these files may be required as to whether or not you need to merge them into your current configuration.\n+\n+### Verify clocks are synchronized\n+\n+Like all GSI-based authentication, HTCondor-CE is sensitive to time skews. Make sure the clock on your CE is synchronized using a utility such as `ntpd`. Additionally, HTCondor itself is sensitive to time skews on the NFS server. If you see empty stdout / err being returned to the submitter, verify there is no NFS server time skew.\n+\n+HTCondor-CE Troubleshooting Items\n+---------------------------------\n+\n+This section contains common issues you may encounter using HTCondor-CE and next actions to take when you do. Before troubleshooting, we recommend increasing the log level:\n+\n+1.  Write the following into `/etc/condor-ce/config.d/99-local.conf` to increase the log level for all daemons:\n+\n+        ALL_DEBUG = D_FULLDEBUG\n+\n+2.  Ensure that the configuration is in place:\n+\n+        root@host # condor_ce_reconfig\n+\n+3.  Reproduce the issue\n+\n+!!! note\n+    Before spending any time on troubleshooting, you should ensure that the state of configuration is as expected by running [condor\\_ce\\_reconfig](#condor95ce95reconfig).", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/177#discussion_r139839367", 
+  "id": 139839367, 
+  "original_commit_id": "ac978ed6174bc950889cb298da6f088ecee66615", 
+  "original_position": 63, 
+  "path": "docs/compute-element/troubleshoot-htcondor-ce.md", 
+  "position": null, 
+  "pull_request_review_id": 63827380, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/177", 
+  "updated_at": "2017-09-28T00:14:43Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/139839367", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

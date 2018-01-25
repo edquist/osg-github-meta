@@ -1,0 +1,48 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/179#discussion_r140346530"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/179"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/140346530"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "Done", 
+  "commit_id": "a19bdb21d4bf7ab2440f88f9be1943d493a22751", 
+  "created_at": "2017-09-21T20:09:57Z", 
+  "diff_hunk": "@@ -0,0 +1,264 @@\n+Install Bestman Xrootd SE\n+=========================\n+\n+About this Document\n+===================\n+\n+This page explains how to install the BeStMan Storage Element with underlying XRootD storage.\n+\n+!!! note", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/179#discussion_r140346530", 
+  "id": 140346530, 
+  "in_reply_to_id": 140336294, 
+  "original_commit_id": "dd927fdc6f25b534cfd3fda72359529081515690", 
+  "original_position": 9, 
+  "path": "docs/data/install-bestman-xrootd.md", 
+  "position": null, 
+  "pull_request_review_id": 64407713, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/179", 
+  "updated_at": "2017-09-28T15:04:18Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/140346530", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

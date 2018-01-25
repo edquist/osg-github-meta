@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/178#discussion_r140059835"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/178"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/140059835"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Use ` ``` console` instead of ` ``` screen`", 
+  "commit_id": "76e6af2886939cb1c1f443d8192388537bde0658", 
+  "created_at": "2017-09-20T18:50:43Z", 
+  "diff_hunk": "@@ -0,0 +1,139 @@\n+**Installation Best Practices**\n+===============================\n+\n+\n+About This Document\n+-------------------\n+\n+This document covers best practices to be used in installing software packages or security certificates on large numbers of hosts. It assumes you understand [YUM/RPM Basics](../common/).\n+\n+\n+\n+Install yum-priorities\n+----------------------\n+\n+We use `yum` priorities to ensure that we get the right packages from the OSG repositories. Please install it:\n+\n+``` screen", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/178#discussion_r140059835", 
+  "id": 140059835, 
+  "original_commit_id": "df8aceacbd08034d968a277d6e9a9f9deab8f796", 
+  "original_position": 17, 
+  "path": "docs/common/install-best-practices.md", 
+  "position": null, 
+  "pull_request_review_id": 64078838, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/178", 
+  "updated_at": "2017-09-20T19:35:15Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/140059835", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

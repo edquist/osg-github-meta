@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "`--privileged` was used for EL7 test but not EL6. I was seeing cgroup errors in the procd for HTCondor so I'm guessing that cgroups were enabled by default in 8.6.", 
+  "created_at": "2017-07-24T18:23:37Z", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/87#issuecomment-317511452", 
+  "id": 317511452, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/87", 
+  "updated_at": "2017-07-24T18:23:37Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/osg-test/issues/comments/317511452", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

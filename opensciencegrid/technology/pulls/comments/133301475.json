@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/112#discussion_r133301475"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/112"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/133301475"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Replace the double-quotes with backticks", 
+  "commit_id": "b8b34587e0b02f510aa3a9659a17b2f1ac263213", 
+  "created_at": "2017-08-15T20:56:57Z", 
+  "diff_hunk": "@@ -0,0 +1,209 @@\n+Koji Workflow\n+=============\n+\n+This covers the basics of using and understanding the [OSG Koji](https://koji.chtc.wisc.edu/koji) instance. It is meant primarily for OSG Software team members who need to interact with the service.\n+\n+Terminology\n+-----------\n+\n+Using and understanding the following terminology correctly will help in the reading of this document:\n+\n+**Package:**  \n+This refers to a named piece of software in the Koji database. An example would be \"lcmaps\".\n+\n+**Build**  \n+A specific version and release of a package, and an associated state. A build state may be successful (and contain RPMs), failed, or in-progress. A given build may be in one or more tags. The build is associated with the output of the latest build task with the same version and release of the package.\n+\n+**Tag**  \n+A named set of packages and builds, parent tags, and reference to external repositories. An example would be the \"osg-3.3-el6-development\" tag, which contains (among others) the \"lcmaps\" package and the \"lcmaps-1.6.6-1.1.osg33.el6\" build. There is an inheritance structure to tags: by default, all packages/builds in a parent tag are added to the tag. A tag may contain a reference to (possibly inherited) external repositories; the RPMs in these repositories are added to repositories created from this tag. Examples of referenced external repositories include CentOS base, EPEL, or JPackage.\n+\n+-   A tag is NOT a yum repository.\n+\n+**Target**  \n+A target consists of a build tag and a destination tag. An example is \"osg-3.3-el6\", where the build tag is \"osg-3.3-el6-build\" and the destination tag is \"osg-3.3-el6\". A target is used by the build task to know what repository to build from and tag to build into.\n+\n+**Task**  \n+A unit of work for Koji. Several common tasks are:\n+\n+-   build  \n+    This task takes a SRPM and a target, and attempts to create a complete Build in the target's destination tag from the target's build repository. This task will launch one buildArch task for each architecture in the destination tag; if each subtask is successful, then it will launch a tagBuild subtask.\n+\n+    -   Note that if the build task is marked as \"scratch\", then it won't result in a Build.\n+\n+-   buildArch  \n+    This task takes a SRPM, architecture name, and a Koji repository as an input, and runs `mock` to create output RPMs for that arch. The build artifacts are added to the Build if all buildArch tasks are successful.\n+\n+-   tagBuild  \n+    This adds a successful build to a given tag.\n+\n+-   newRepo  \n+    This creates a new repository from a given tag.\n+\n+**Build artifacts:**  \n+The results of a buildArch task. Their metadata are recorded in the Koji database, and files are saved to disk. Metadata may include checksums, timestamps, and who initiated the task. Artifacts may include RPMs, SRPMs, and build logs.\n+\n+**Repository:**  \n+A yum repository created from the contents of a tag at a specific point in time. By default, the yum repository will contain all successful, non-blocked builds in the tag, plus all RPMs in the external repositories for the tag.\n+\n+Further reading\n+---------------\n+\n+-   Official Koji documentation: <https://docs.pagure.org/koji/>\n+-   Fedora's koji documentation: <http://fedoraproject.org/wiki/Koji>\n+-   Fedora's \"Using Koji\" page: <http://fedoraproject.org/wiki/Using_the_Koji_build_system> Note that some instructions there may not apply to OSG's Koji. For the most part though, they are useful.\n+\n+Using Koji\n+==========\n+\n+Required Software\n+-----------------\n+\n+Using Koji requires:\n+\n+-   `osg-build` version 1.6.3 or later.\n+-   `koji` 1.6.0-2.osg or later. **Note** that you want a koji build from osg; the output of `rpm -q koji` should end in \".osg\".\n+\n+Both pieces of software are available from the osg repositories. `osg-build` may also be obtained from GitHub by cloning out `https://github.com/opensciencegrid/osg-build`\n+\n+### Special instructions for UW-Madison CSL machines:\n+\n+-   Clone the osg-build GitHub repo:\n+\n+        :::console\n+        [you@host]$ git clone https://github.com/opensciencegrid/osg-build\n+\n+-   Add this directory to your `$PATH`\n+-   Run\n+\n+        :::console\n+        [you@host]$ osg-koji setup\n+\n+    to set up the koji configuration and certificates in `~/.osg-koji`\n+\n+Obtaining a login\n+-----------------\n+\n+You will be using your grid certificate to log in. Email osg-software the DN of your certificate, and we will set up a koji account with the appropriate permissions. If you are switching certificate providers, you will need to email osg-software with your new DN. You will also need to clear your browser cookies and cache for `https://koji.chtc.wisc.edu` before trying to use the koji web interface again.\n+\n+Configuring certificate authentication\n+--------------------------------------\n+\n+You must also configure certificate authentication for the command-line tools on your build host:\n+\n+-   Run\n+\n+        :::console\n+        [you@host]$ osg-koji setup\n+\n+    to set up the appropriate configuration and certificates in `~/.osg-koji`\n+\n+After this, you will also be able to run koji commands manually by using the `osg-koji` wrapper script. You might need to rerun `osg-koji setup` if you renew or change your cert.\n+\n+Creating a new build\n+--------------------\n+\n+We create a new build in Koji from the package's directory in OSG Software subversion.\n+\n+If a successful build already exists in Koji (regardless of whether it is in the tag you use), you cannot replace the build. Two builds are the same if they have the same NVR (Name-Version-Release). You *can* do a \"scratch\" build, which recompiles, but the results are not added to the tag. This is useful for experimenting with koji.\n+\n+To do a build, execute the following command from within the OSG Software subversion checkout:\n+\n+```console\n+[you@host]$ osg-build koji <PACKAGE NAME>\n+```\n+\n+To do a scratch build, simply add the \"--scratch\" command line flag.", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/112#discussion_r133301475", 
+  "id": 133301475, 
+  "original_commit_id": "bf5c9781e6d907ba9b44c7fd178243311d52aced", 
+  "original_position": 115, 
+  "path": "docs/software/koji-workflow.md", 
+  "position": null, 
+  "pull_request_review_id": 56467262, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/112", 
+  "updated_at": "2017-08-15T21:37:04Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/technology/pulls/comments/133301475", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/249#discussion_r151248892"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/249"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/151248892"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "\"a\" -> \"an\"", 
+  "commit_id": "df9a7eb63efbfbd12f464c0ed1e09b9e053b6e74", 
+  "created_at": "2017-11-15T20:56:03Z", 
+  "diff_hunk": "@@ -69,33 +75,31 @@ If necessary, provision all OSG hosts that are in your site plan and that do not\n     -   [Submitting jobs to HTCondor-CE](compute-element/submit-htcondor-ce)\n -   [`osg-configure` Reference](other/configuration-with-osg-configure)\n \n-### Installing and Configuring Other Nodes ###\n+### Installing and Configuring Other Services ###\n \n-All of these node types and their services are optional, although OSG requires the Frontier Squid caching service if you have installed [CVMFS](worker-node/install-cvmfs) on your worker nodes.\n+All of these node types and their services are optional, although OSG requires a HTTP caching service if you have\n+installed [CVMFS](worker-node/install-cvmfs) on your worker nodes.\n \n--   [Install Frontier Squid, the HTTP caching proxy service](data/frontier-squid)\n--   RSV monitoring to monitor and report to OSG on the health of your site\n-    -   [Install RSV](monitoring/install-rsv)\n--   [Install the GlideinWMS VO Frontend](other/install-gwms-frontend) if your want your users\u2019 jobs to run on the OSG\n-    -   [Install the RSV GlideinWMS Tester](monitoring/install-rsv-gwms-tester) if you want to test your front-end's ability to submit jobs to sites in the OSG\n--   Storage element (pick one):\n-    -   GridFTP\n+-   [Install Frontier Squid](data/frontier-squid), a HTTP caching proxy service.", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/249#discussion_r151248892", 
+  "id": 151248892, 
+  "original_commit_id": "75bccc3e5f7b08899c40a9e73620316e976b5cc7", 
+  "original_position": 50, 
+  "path": "docs/index.md", 
+  "position": null, 
+  "pull_request_review_id": 76925814, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/249", 
+  "updated_at": "2017-11-15T21:56:56Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/151248892", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

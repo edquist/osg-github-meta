@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/242#discussion_r150000317"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/242"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/150000317"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "We may need to keep this line, though", 
+  "commit_id": "1f35de0be1104e815cfcc2c36b27fdb5dadd0298", 
+  "created_at": "2017-11-09T15:48:30Z", 
+  "diff_hunk": "@@ -649,6 +709,87 @@ root@host # service frm\\_xfrd start\n root@host # service frm\\_purged start\n ```\n \n+Installing a GridFTP Server\n+---------------------------\n+\n+The Globus GridFTP server can be installed alongside an XRootD storage element to provide\n+GridFTP-based access to the storage.\n+\n+!!! note \"See Also\"\n+    OSG has extensive documentation on setting up a GridFTP server; this section is an\n+    abbreviated version documenting the special steps needed for XRootD integration.\n+    You may also find the following useful:\n+\n+    -   [Basic GridFTP Install](gridftp).  Additionally covers service planning topics.\n+    -   [Load-balanced GridFTP Install](load-balanced-gridftp).  Covers the creation of\n+        a load-balanced GridFTP service using multiple servers.\n+\n+### Engineering Considerations\n+\n+GridFTP utilizes the host certificate in `/etc/grid-security/hostcert.pem` and\n+the key in `/etc/grid-security/hostkey.pem`.  See the [host certificate](../security/host-certs)\n+documentation for information about generating these files.\n+\n+Additionally, GridFTP will use the following network ports:\n+\n+| Service Name | Protocol | Port Number | Inbound | Outbound | Comment |\n+|--------------|----------|-------------|---------|----------|---------|\n+| GridFTP data inbound | tcp | `GLOBUS_TCP_PORT_RANGE` | Y | \u00a0 | contiguous range of ports |\n+| GridFTP data outbound | tcp | `GLOBUS_TCP_SOURCE_RANGE` | \u00a0 | Y | contiguous range of ports |\n+| GridFTP control port | tcp | 2811 and `GLOBUS_TCP_SOURCE_RANGE` | Y | \u00a0 | contiguous range of ports |\n+\n+### Installation\n+\n+GridFTP support for XRootD-based storage is provided by the `osg-gridftp-xrootd` meta-package:\n+\n+``` console\n+root@host # yum install osg-gridftp-xrootd\n+```\n+\n+### Configuration\n+\n+For information on how to configure authentication for your GridFTP installation, please refer to\n+the [configuring authentication section of the GridFTP guide](gridftp#configuring-authentication).\n+\n+Edit `/etc/sysconfig/xrootd-dsi` to set `XROOTD_VMP` to use your Xrootd redirector.\n+\n+    :::bash\n+    export XROOTD_VMP=\"%RED%redirector:1094:/local_path=/remote_path%ENDCOLOR%\"\n+\n+!!! warning\n+    The syntax of `XROOTD_VMP` is tricky; make sure to use the following guidance:\n+\n+    - **Redirector**: The hostname and domain of the local XRootD redirector server.\n+    - **local\\_path**: The path exported by the GridFTP server.\n+    - **remote\\_path**: The XRootD path that will be mounted at **local\\_path**.\n+\n+When `xrootd-dsi` is enabled, GridFTP configuration changes should go into\n+`/etc/xrootd-dsi/gridftp-xrootd.conf`, not `/etc/gridftp.conf`.  Sites should review any\n+customizations made in the latter and copy them as necessary.\n+\n+You can use the FUSE mount in order to test POSIX access to xrootd in the GridFTP server.\n+You should be able to run Unix commands such as `ls /mnt/xrootd` and see the contents of the\n+XRootD server.\n+\n+### File Locations\n+\n+| Service/Process | Configuration File | Description |\n+|-----------------|--------------------|-------------|\n+| GridFTP | /etc/sysconfig/globus-gridftp-server | Environment variables for GridFTP and LCMAPS |\n+| | /usr/share/osg/sysconfig/globus-gridftp-server-plugin | Where environment variables for GridFTP plugin are included.  **Do not edit** |\n+| | /var/log/gridftp.log | GridFTP transfer log |\n+| | /var/log/gridftp-auth.log | GridFTP authorization log |\n+| Gratia Probe | /etc/gratia/xrootd-transfer/ProbeConfig | GridFTP Xrootd Transfer Probe configuration |", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/242#discussion_r150000317", 
+  "id": 150000317, 
+  "original_commit_id": "c71d678dc561c2a836c564652bccf06653e850e0", 
+  "original_position": 227, 
+  "path": "docs/data/install-xrootd.md", 
+  "position": null, 
+  "pull_request_review_id": 75480204, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/242", 
+  "updated_at": "2017-11-11T11:19:40Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/pulls/comments/150000317", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

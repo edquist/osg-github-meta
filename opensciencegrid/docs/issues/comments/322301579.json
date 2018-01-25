@@ -1,0 +1,29 @@
+{
+  "author_association": "OWNER", 
+  "body": "@djw8605 @matyasselmeci @bbockelm @osg-cat\r\n\r\nI'm going to pick on this PR because I think it provides a good opportunity to rethink the organization of our user-facing documentation. The current table of contents made sense for the initial proof-of-conceptness of this repo but putting all the installation guides under a monolithic `Install Guides` section sounds like a UI nightmare. Additionally, the different folders under `docs` don't seem like useful groupings but I feel less strongly about changing those. Just spitballing a layout here:\r\n\r\n- General/Getting Started/etc\r\n- Security\r\n- Installation\r\n    - A basic site\r\n    - Adding CVMFS\r\n    - Adding GridFTP\r\n    - Deprecated Software\r\n- Release Information\r\n- Policy (I think the policy section in the `technology` repo really belongs in this one)\r\n\r\nWe could also split up the installation section into the more standard WN Client, Compute Element, Other (which could include some, if not all, optional software/hosts). Thoughts?", 
+  "created_at": "2017-08-14T20:33:41Z", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/13#issuecomment-322301579", 
+  "id": 322301579, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/docs/issues/13", 
+  "updated_at": "2017-08-14T20:33:41Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/issues/comments/322301579", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

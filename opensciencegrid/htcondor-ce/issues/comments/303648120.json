@@ -1,0 +1,29 @@
+{
+  "author_association": "CONTRIBUTOR", 
+  "body": "@bbockelm Hi, could you give some information or other examples about Travis-CI? ", 
+  "created_at": "2017-05-24T07:59:06Z", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/144#issuecomment-303648120", 
+  "id": 303648120, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/144", 
+  "updated_at": "2017-05-24T07:59:06Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/issues/comments/303648120", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/4969463?v=4", 
+    "events_url": "https://api.github.com/users/geonmo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/geonmo/followers", 
+    "following_url": "https://api.github.com/users/geonmo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/geonmo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/geonmo", 
+    "id": 4969463, 
+    "login": "geonmo", 
+    "organizations_url": "https://api.github.com/users/geonmo/orgs", 
+    "received_events_url": "https://api.github.com/users/geonmo/received_events", 
+    "repos_url": "https://api.github.com/users/geonmo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/geonmo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/geonmo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/geonmo"
+  }
+}

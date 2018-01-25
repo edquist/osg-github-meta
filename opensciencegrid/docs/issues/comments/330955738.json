@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "@matyasselmeci thanks for reviewing. I had already fixed most of those screen problems but forgot to commit them.  I fixed it now. can you review again?", 
+  "created_at": "2017-09-20T19:27:18Z", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/178#issuecomment-330955738", 
+  "id": 330955738, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/docs/issues/178", 
+  "updated_at": "2017-09-20T19:27:18Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/docs/issues/comments/330955738", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1798509?v=4", 
+    "events_url": "https://api.github.com/users/efajardo/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/efajardo/followers", 
+    "following_url": "https://api.github.com/users/efajardo/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/efajardo/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/efajardo", 
+    "id": 1798509, 
+    "login": "efajardo", 
+    "organizations_url": "https://api.github.com/users/efajardo/orgs", 
+    "received_events_url": "https://api.github.com/users/efajardo/received_events", 
+    "repos_url": "https://api.github.com/users/efajardo/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/efajardo/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/efajardo/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/efajardo"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "author_association": "MEMBER", 
+  "body": "making new branch", 
+  "created_at": "2017-10-16T15:20:43Z", 
+  "html_url": "https://github.com/opensciencegrid/myosg/pull/1#issuecomment-336920887", 
+  "id": 336920887, 
+  "issue_url": "https://api.github.com/repos/opensciencegrid/myosg/issues/1", 
+  "updated_at": "2017-10-16T15:20:43Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/myosg/issues/comments/336920887", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/11164477?v=4", 
+    "events_url": "https://api.github.com/users/SarahSchmiechen/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/SarahSchmiechen/followers", 
+    "following_url": "https://api.github.com/users/SarahSchmiechen/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/SarahSchmiechen/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/SarahSchmiechen", 
+    "id": 11164477, 
+    "login": "SarahSchmiechen", 
+    "organizations_url": "https://api.github.com/users/SarahSchmiechen/orgs", 
+    "received_events_url": "https://api.github.com/users/SarahSchmiechen/received_events", 
+    "repos_url": "https://api.github.com/users/SarahSchmiechen/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/SarahSchmiechen/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/SarahSchmiechen/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/SarahSchmiechen"
+  }
+}

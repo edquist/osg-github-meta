@@ -1,0 +1,47 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/htcondor-ce/pull/164#discussion_r130624058"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/164"
+    }, 
+    "self": {
+      "href": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/130624058"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Could you instead bump the version to `3.0.1`?", 
+  "commit_id": "d226443f2a09e2db282c7f0e6f034a1a532a2d77", 
+  "created_at": "2017-08-01T14:31:41Z", 
+  "diff_hunk": "@@ -3,7 +3,7 @@\n \n Name: htcondor-ce\n Version: 3.0.0\n-Release: 1%{?gitrev:.%{gitrev}git}%{?dist}\n+Release: 2%{?gitrev:.%{gitrev}git}%{?dist}", 
+  "html_url": "https://github.com/opensciencegrid/htcondor-ce/pull/164#discussion_r130624058", 
+  "id": 130624058, 
+  "original_commit_id": "500dae3ea741ef8d23ba0bf9e5259436d25c57f9", 
+  "original_position": 5, 
+  "path": "config/htcondor-ce.spec", 
+  "position": null, 
+  "pull_request_review_id": 53519741, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/164", 
+  "updated_at": "2017-08-01T14:36:41Z", 
+  "url": "https://api.github.com/repos/opensciencegrid/htcondor-ce/pulls/comments/130624058", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}
