@@ -5,7 +5,7 @@
   "body": "", 
   "closed_at": null, 
   "closed_by": null, 
-  "comments": 0, 
+  "comments": 2, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/docs/issues/288/comments", 
   "created_at": "2018-01-18T16:11:28Z", 
   "events_url": "https://api.github.com/repos/opensciencegrid/docs/issues/288/events", 
@@ -25,7 +25,7 @@
   "repository_url": "https://api.github.com/repos/opensciencegrid/docs", 
   "state": "open", 
   "title": "Add instructions for replacing an existing repository server", 
-  "updated_at": "2018-01-18T18:53:09Z", 
+  "updated_at": "2018-01-27T02:31:09Z", 
   "url": "https://api.github.com/repos/opensciencegrid/docs/issues/288", 
   "user": {
     "avatar_url": "https://avatars1.githubusercontent.com/u/2129743?v=4", 

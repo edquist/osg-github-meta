@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/288#pullrequestreview-89883596"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/288"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "What does \"replacement\" mean for an external OASIS repo? Is it just replacement of the contents?\r\n\r\nInstead of presenting this as a with/without GOC intervention, I think the choice should be with/without changing the FQDN and noting that changing the FQDN is a longer process. Then I'd like to see the instructions of these two options split into two separate level 3 headers. \r\n\r\n* The first section, without changing the FQDN, looks like it has two separate tracks (reusing the same host vs a new host) that you can throw into a list and have the instructions for each as numbered sub-lists. The warnings about revisions should be thrown into a warning admonition.\r\n* The second section, changing the FQDN, we should link to the instructions that you want them to follow (what's \"normal\"?). Then, as an unordered list, specify the differences in the steps in step order! If you're depending on instructions from another section, please add a comment to the target section in the markdown source that this section depends on it.\r\n", 
+  "commit_id": "393e0749895f563d949757207000d6bf95d72a98", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/288#pullrequestreview-89883596", 
+  "id": 89883596, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/288", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2018-01-18T18:53:09Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

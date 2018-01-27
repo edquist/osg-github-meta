@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gracc-collector/pull/21#pullrequestreview-38723930"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-collector/pulls/21"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "If you're going to install go with yum then should get rid of the manual install below. Looks like it puts the go binaries in /usr/bin, so the PATH change should be unnecessary.\r\n\r\nI don't *think* we're using anything that would require 1.7 or 1.8 (latest in centos 7 is 1.6.3), but I've been wrong once or twice.", 
+  "commit_id": "157dffb4d835209ccf7148fd2249a4f13a6999e7", 
+  "html_url": "https://github.com/opensciencegrid/gracc-collector/pull/21#pullrequestreview-38723930", 
+  "id": 38723930, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gracc-collector/pulls/21", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2017-05-17T16:38:01Z", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/1627510?v=4", 
+    "events_url": "https://api.github.com/users/retzkek/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/retzkek/followers", 
+    "following_url": "https://api.github.com/users/retzkek/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/retzkek/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/retzkek", 
+    "id": 1627510, 
+    "login": "retzkek", 
+    "organizations_url": "https://api.github.com/users/retzkek/orgs", 
+    "received_events_url": "https://api.github.com/users/retzkek/received_events", 
+    "repos_url": "https://api.github.com/users/retzkek/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/retzkek/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/retzkek/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/retzkek"
+  }
+}
