@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/oasis-server/pull/83#pullrequestreview-90629262"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/83"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "With the following:\r\n\r\n```\r\n# cat config.d/config-osg.opensciencegrid.org.local \r\nCVMFS_SERVER_URL=\"http://oasis-replica-itb.opensciencegrid.org:8000/cvmfs/@fqrn@\"\r\n# cat default.local \r\nCVMFS_REPOSITORIES=\"`echo $((echo oasis.opensciencegrid.org;echo cms.cern.ch;ls /cvmfs)|sort -u)|tr ' ' ,`\"\r\nCVMFS_QUOTA_LIMIT=20000\r\nCVMFS_HTTP_PROXY=DIRECT\r\n```\r\n\r\nI see the `openhtc.io` references for `atlas.cern.ch`, `cms.cern.ch`, and `oasis.opensciencegrid.org`. I didn't see any `openhtc.io` references when I used the fermilab squid server.", 
+  "commit_id": "2f32e47a366447d6231b8b734b82a877d0ac46ba", 
+  "html_url": "https://github.com/opensciencegrid/oasis-server/pull/83#pullrequestreview-90629262", 
+  "id": 90629262, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/oasis-server/pulls/83", 
+  "state": "APPROVED", 
+  "submitted_at": "2018-01-22T21:17:54Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

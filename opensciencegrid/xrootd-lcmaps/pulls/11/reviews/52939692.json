@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/xrootd-lcmaps/pull/11#pullrequestreview-52939692"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/11"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Looks good to me.\r\n\r\nFor future references - a more C++11-style way of doing this would be to have the deleter be a lambda.  See:\r\n\r\nhttps://philwrightdev.wordpress.com/2014/08/27/providing-a-custom-deleter-to-stdunique_ptr/\r\n\r\nI agree with their sentiment:\r\n\r\n> I prefer to use a lambda, as I can write it locally to the where it\u2019ll be used, and don\u2019t have to create a separate function, or class, whose purpose, or caller, might not be obvious without a comment.\r\n\r\n(of course, they then proceed with all the downsides of the approach ... oh well!)", 
+  "commit_id": "ae2e96492d4332fc6dcabab603a6fe1fde0308ec", 
+  "html_url": "https://github.com/opensciencegrid/xrootd-lcmaps/pull/11#pullrequestreview-52939692", 
+  "id": 52939692, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/11", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-07-28T14:06:37Z", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

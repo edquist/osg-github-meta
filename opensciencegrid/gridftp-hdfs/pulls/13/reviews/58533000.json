@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gridftp-hdfs/pull/13#pullrequestreview-58533000"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/13"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "LGTM.\r\n\r\nSeems like there's a few things around inetd / xinetd which aren't actually used any more.  I'm going to have to do further tweaks in the `.spec` file regardless and will remove those then.", 
+  "commit_id": "3c2fe22343215151d9879d5a54a82ffd1bc3003d", 
+  "html_url": "https://github.com/opensciencegrid/gridftp-hdfs/pull/13#pullrequestreview-58533000", 
+  "id": 58533000, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/13", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-08-24T22:56:45Z", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

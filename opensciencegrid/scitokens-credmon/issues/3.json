@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "1.  Issuer claim should be a configuration value from HTCondor.\r\n2.  Generated authorizations should be templated and taken from HTCondor config.  For example, `SCITOKENS_WRITE_DIRS=/user/{username}/`\r\n3.  Whether `sub` is set to `Owner` should be configured by a boolean.  If `sub` is not set to `Owner`, it should be set to a randomly-generated GUID.\r\n\r\nToward (3): the mapping from GUID back to `Owner` should be logged so we can trace tokens back to owners upon request.  In fact, the un-encoded, unsigned token should be logged.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/scitokens-credmon/issues/3/comments", 
   "created_at": "2017-09-21T18:30:44Z", 

@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/164#pullrequestreview-63118459"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/164"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Some small twiki-isms snuck through.  Can you scrub them out?\r\n\r\n@brianhlin - in general, I'm a bit reluctant about putting the release notes in the documentation.  I don't feel they add a whole lot -- and they certainly clutter up the ToC.\r\n\r\nTwo ideas:\r\n1.  I would be fine if we put the release notes in the technology repository and we only kept the last N (N=0, 1, 2?) release notes for each series in the docs repo.\r\n2.  Like HTCondor, concatenate all the release notes for a given series into a single page.  Migrate unsupported series pages into the technology repo.", 
+  "commit_id": "be7906b631f34bdedcd1745e71fdc5b9f07aaec2", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/164#pullrequestreview-63118459", 
+  "id": 63118459, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/164", 
+  "state": "DISMISSED", 
+  "submitted_at": "2017-09-15T18:07:38Z", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

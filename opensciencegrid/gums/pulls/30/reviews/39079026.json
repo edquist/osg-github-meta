@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gums/pull/30#pullrequestreview-39079026"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gums/pulls/30"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "The changes are straightforward enough, but the (still works) url on `repo` is a very outdated template ... I feel like we had a discussion in a ticket somewhere about using a url from github instead? Hmm...", 
+  "commit_id": "3f7ed8446d9e2d74ac6d863d0e8f473d10ee14ac", 
+  "html_url": "https://github.com/opensciencegrid/gums/pull/30#pullrequestreview-39079026", 
+  "id": 39079026, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gums/pulls/30", 
+  "state": "COMMENTED", 
+  "submitted_at": "2017-05-18T23:14:11Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5522437?v=4", 
+    "events_url": "https://api.github.com/users/edquist/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/edquist/followers", 
+    "following_url": "https://api.github.com/users/edquist/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/edquist/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/edquist", 
+    "id": 5522437, 
+    "login": "edquist", 
+    "organizations_url": "https://api.github.com/users/edquist/orgs", 
+    "received_events_url": "https://api.github.com/users/edquist/received_events", 
+    "repos_url": "https://api.github.com/users/edquist/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/edquist/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/edquist/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/edquist"
+  }
+}

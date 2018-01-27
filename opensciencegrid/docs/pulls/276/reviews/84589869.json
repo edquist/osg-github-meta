@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/276#pullrequestreview-84589869"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/276"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Tweaked some language to simplify the sentence and note precisely when the update was written.  Feel free to merge when you're happy.", 
+  "commit_id": "3cbd7671390753cf197b3270a67e3bae0f245aca", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/276#pullrequestreview-84589869", 
+  "id": 84589869, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/276", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-12-19T21:02:11Z", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

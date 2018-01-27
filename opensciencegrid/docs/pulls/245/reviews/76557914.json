@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/245#pullrequestreview-76557914"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/245"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "The RPM list does not go after the \"yum update\" Look for '### RPMs' and '### Upcoming RPMs' section(s).", 
+  "commit_id": "36a0bfd5cbf35e24e1ac5e25fc2f4be8fe80ea94", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/245#pullrequestreview-76557914", 
+  "id": 76557914, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/245", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2017-11-14T19:07:06Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377632?v=4", 
+    "events_url": "https://api.github.com/users/timtheisen/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/timtheisen/followers", 
+    "following_url": "https://api.github.com/users/timtheisen/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/timtheisen/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/timtheisen", 
+    "id": 7377632, 
+    "login": "timtheisen", 
+    "organizations_url": "https://api.github.com/users/timtheisen/orgs", 
+    "received_events_url": "https://api.github.com/users/timtheisen/received_events", 
+    "repos_url": "https://api.github.com/users/timtheisen/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/timtheisen/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/timtheisen/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/timtheisen"
+  }
+}

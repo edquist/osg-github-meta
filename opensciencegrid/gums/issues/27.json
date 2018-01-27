@@ -4,7 +4,6 @@
   "author_association": "MEMBER", 
   "body": "TYPE has been deprecated since MySQL 4.x. EL7 uses MySQL/MariaDB 5.5 which has\nfinally dropped support for TYPE. It has been replaced by ENGINE.\n", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 3, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/gums/issues/27/comments", 
   "created_at": "2016-03-02T20:05:18Z", 

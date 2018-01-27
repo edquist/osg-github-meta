@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/45#pullrequestreview-45283167"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/45"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Did some inline changes, particularly around the BeStMan2 introduction.\r\n\r\nI'm happy now.  Approving.", 
+  "commit_id": "d12110d90e0c35e1d7c0553e16a2ffdd6b57897e", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/45#pullrequestreview-45283167", 
+  "id": 45283167, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/45", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-06-20T22:13:22Z", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

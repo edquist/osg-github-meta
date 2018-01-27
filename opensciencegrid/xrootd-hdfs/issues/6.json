@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "`hdfsRead` has a few pipelining- and readahead-related improvements over `hdfsPread`.  However, it can only be used when the remote client is streaming the file (no skips).\n\nHowever, that should be easy to detect - use `hdfsRead` until a non-contiguous read is detected, then switch to `hdfsPread`.\n", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/xrootd-hdfs/issues/6/comments", 
   "created_at": "2016-07-11T18:39:05Z", 

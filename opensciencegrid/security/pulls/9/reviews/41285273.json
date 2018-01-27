@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/security/pull/9#pullrequestreview-41285273"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/security/pulls/9"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "This looks sane to me, though I'm generalizing a bit as I don't know our Travis configuration.", 
+  "commit_id": "635b2d76f9b3960f0cbe07bd08cc84ab2622b695", 
+  "html_url": "https://github.com/opensciencegrid/security/pull/9#pullrequestreview-41285273", 
+  "id": 41285273, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/security/pulls/9", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-05-31T16:33:44Z", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/38581?v=4", 
+    "events_url": "https://api.github.com/users/HedgeMage/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/HedgeMage/followers", 
+    "following_url": "https://api.github.com/users/HedgeMage/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/HedgeMage/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/HedgeMage", 
+    "id": 38581, 
+    "login": "HedgeMage", 
+    "organizations_url": "https://api.github.com/users/HedgeMage/orgs", 
+    "received_events_url": "https://api.github.com/users/HedgeMage/received_events", 
+    "repos_url": "https://api.github.com/users/HedgeMage/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/HedgeMage/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/HedgeMage/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/HedgeMage"
+  }
+}

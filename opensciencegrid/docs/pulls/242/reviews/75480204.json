@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/242#pullrequestreview-75480204"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/242"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Should we also add a subsection to the Install GridFTP doc that points to the xrootd doc's \"install gridftp\" section?", 
+  "commit_id": "c71d678dc561c2a836c564652bccf06653e850e0", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/242#pullrequestreview-75480204", 
+  "id": 75480204, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/242", 
+  "state": "DISMISSED", 
+  "submitted_at": "2017-11-09T15:49:57Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

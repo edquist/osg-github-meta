@@ -42,7 +42,6 @@
   "author_association": "MEMBER", 
   "body": "", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 3, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/gums/issues/29/comments", 
   "created_at": "2016-08-05T20:00:42Z", 

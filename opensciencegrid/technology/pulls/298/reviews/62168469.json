@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/298#pullrequestreview-62168469"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/298"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Hi, this looks good to me as a plain archival, and I've marked it as such in the spreadsheet. In the future, please only pick up docs that are marked as \"yes\" or \"no\" in the \"Archive?\" column.\r\n\r\nCould you add the link to the PR in the spreadsheet?", 
+  "commit_id": "6eaa4829e3107c18fd5c00c700191bacb50ab99e", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/298#pullrequestreview-62168469", 
+  "id": 62168469, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/298", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-09-12T15:24:46Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

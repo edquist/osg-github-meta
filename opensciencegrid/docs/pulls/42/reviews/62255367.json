@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/42#pullrequestreview-62255367"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/42"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I've pushed some changes to your branch to make it more like the HTCondor-CE install document. If you're ok with all the changes, I'll go ahead and merge it", 
+  "commit_id": "63438b4bbbfc90f2ad5fea586d7ca2435af35601", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/42#pullrequestreview-62255367", 
+  "id": 62255367, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/42", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-09-12T20:28:18Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

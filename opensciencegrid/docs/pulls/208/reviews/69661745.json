@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/208#pullrequestreview-69661745"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/208"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Some minor changes requested.\r\n\r\nOverall, this is a somewhat bizarre document.  There's a weird policy proclamation at the top (not matching any other site admin document in this web) and it's a mixture of directions for the site admin and GOC operational staff.\r\n\r\nWe should really keep the documentation for the non-OSG entity here and maybe keep the external stuff in the technology web.\r\n\r\nRegardless, once we fix up the minor stuff, we can do the separation later.", 
+  "commit_id": "e11ddeb6d2e5a1f28fa6ac25b2361134483f0928", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/208#pullrequestreview-69661745", 
+  "id": 69661745, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/208", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2017-10-16T18:56:47Z", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

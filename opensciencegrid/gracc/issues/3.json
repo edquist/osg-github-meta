@@ -42,7 +42,6 @@
   "author_association": "OWNER", 
   "body": "How is the instance name determined.  In the docs:\n\n> Most strings will expand the text %I to the \"instance name\".  So, for the `osg` instance, the following,\n\nBut, how is the instance name determined?\n", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 1, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/gracc/issues/3/comments", 
   "created_at": "2016-05-03T17:50:09Z", 

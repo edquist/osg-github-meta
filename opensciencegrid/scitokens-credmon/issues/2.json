@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "1.  Move all files to FHS locations.  In particular, the credentials directory needs to get out of `/etc`.  `/var/lib/condor` is fine -- as well as `/var/cache/scitokens-credmon`.\r\n2.  Have `example.conf` (or similar) get dropped into the `config.d` directory.\r\n3.  Binaries that aren't expected to be executed directly by users (such as the `SEC_CREDENTIAL_PRODUCER`) should go into `/usr/libexec`, not `/usr/bin`.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/scitokens-credmon/issues/2/comments", 
   "created_at": "2017-09-21T18:26:36Z", 

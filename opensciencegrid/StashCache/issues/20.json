@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "It's really nasty to call `#!/usr/bin/env python` from a top-level script.  There are many places where the user environment can leak through.\r\n\r\nInstead, have `stashcp` be something along the lines of:\r\n\r\n```\r\n#!/bin/sh\r\n\r\n# Take out things the user might have in their environment that would mess up the python instance.\r\nunset PYTHONPATH\r\nunset PATH\r\nunset LD_LIBRARY_PATH\r\n\r\n\r\nPYTHONPATH=$STASHCP_PREFIX/lib/python...\r\nPATH=...\r\n\r\nexec python2.7 $STASHCP_PREFIX/bin/stashcp.py \"$@\"\r\n```\r\n\r\nYou know the drill - have the install script automatically hardcode in the correct paths (such as `$STASHCP_PREFIX`).\r\n", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/20/comments", 
   "created_at": "2016-12-06T04:04:12Z", 

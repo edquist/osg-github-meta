@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gracc-request/pull/49#pullrequestreview-15184865"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/49"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Looks good to me.  Bit confusing though.  Could you add some docs on the `add_matched_to` and `add_matched_from` functions.", 
+  "commit_id": "a44954fc1f35bb1673f5c1b7a1bcfa70ff7ff320", 
+  "html_url": "https://github.com/opensciencegrid/gracc-request/pull/49#pullrequestreview-15184865", 
+  "id": 15184865, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gracc-request/pulls/49", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2017-01-04T19:52:36Z", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

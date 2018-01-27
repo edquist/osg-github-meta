@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/rsv-perfsonar/pull/19#pullrequestreview-78546608"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/19"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "One more small fix.  I'll +1 it for now so you can merge immediately after it without waiting on a new review.", 
+  "commit_id": "61c6701f6ee28eeb49cbb8d43a6c325537f2f477", 
+  "html_url": "https://github.com/opensciencegrid/rsv-perfsonar/pull/19#pullrequestreview-78546608", 
+  "id": 78546608, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/rsv-perfsonar/pulls/19", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-11-22T18:50:52Z", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

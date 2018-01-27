@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/324#pullrequestreview-65906624"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/324"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "I think that the note about the clean vs distclean more naturally goes just after the last step in the process. It is the first place where you are given a choice and the explanation does the most benefit right there. In the first step, there is no choice, you must do a distclean.", 
+  "commit_id": "46b2a9ca1eec15314ae17ec7450ca9c32a36280a", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/324#pullrequestreview-65906624", 
+  "id": 65906624, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/324", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2017-09-28T15:46:18Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377632?v=4", 
+    "events_url": "https://api.github.com/users/timtheisen/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/timtheisen/followers", 
+    "following_url": "https://api.github.com/users/timtheisen/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/timtheisen/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/timtheisen", 
+    "id": 7377632, 
+    "login": "timtheisen", 
+    "organizations_url": "https://api.github.com/users/timtheisen/orgs", 
+    "received_events_url": "https://api.github.com/users/timtheisen/received_events", 
+    "repos_url": "https://api.github.com/users/timtheisen/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/timtheisen/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/timtheisen/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/timtheisen"
+  }
+}

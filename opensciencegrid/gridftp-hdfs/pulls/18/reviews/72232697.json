@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gridftp-hdfs/pull/18#pullrequestreview-72232697"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/18"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "LGTM.  Thank you very much for the contribution!", 
+  "commit_id": "af615e59e8f1427359b2a055a665bf60dda38cb0", 
+  "html_url": "https://github.com/opensciencegrid/gridftp-hdfs/pull/18#pullrequestreview-72232697", 
+  "id": 72232697, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gridftp-hdfs/pulls/18", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-10-26T15:15:49Z", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

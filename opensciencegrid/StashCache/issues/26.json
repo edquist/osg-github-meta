@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "We should utilize the various python utilities for sanitizing inputs:\r\n* URLs should not be build via string concatenation.\r\n* `subprocess.Popen` should not be used with `shell=True`; give the command line arguments in a list.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/26/comments", 
   "created_at": "2016-12-06T04:26:35Z", 

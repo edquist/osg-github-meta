@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "We currently `fork`/`exec` to get the XRootD version and filesize, then again to actually perform the copy.\r\n\r\nXRootD has a perfectly reasonable set of python bindings.  Assuming we clear the environment in #20 and can guarantee that the user won't mess up our environment, we might as well start using those.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/24/comments", 
   "created_at": "2016-12-06T04:15:58Z", 

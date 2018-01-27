@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gracc-collector/pull/23#pullrequestreview-72943219"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc-collector/pulls/23"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I thought I saw an `enum` in the upstream package - better to use that than a magic number.  I think this is the relevant example: https://github.com/streadway/amqp/blob/3d520d05b74cc137bfac4ee6cd40d52cda7810ee/examples_test.go#L357\r\n\r\nAlso, can you add a small comment about why we want persistent mode?", 
+  "commit_id": "227b58b16035c647985d8e87b2ebbeae99d9d807", 
+  "html_url": "https://github.com/opensciencegrid/gracc-collector/pull/23#pullrequestreview-72943219", 
+  "id": 72943219, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gracc-collector/pulls/23", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2017-10-30T18:39:14Z", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

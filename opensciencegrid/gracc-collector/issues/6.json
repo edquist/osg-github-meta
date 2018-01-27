@@ -4,7 +4,6 @@
   "author_association": "MEMBER", 
   "body": "Gratia probes include a \"handshake\" record in each bundle; if there are no new records to send they will still send a bundle with the handshake to act as a heartbeat.\n\nInitial thought is there should be a separate AMQP exchange to handle heartbeats.\n", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/gracc-collector/issues/6/comments", 
   "created_at": "2016-10-20T22:28:52Z", 

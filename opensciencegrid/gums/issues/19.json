@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "- Use 'mvn dependency:analyze' to determine unnecessary dependencies.\n- Remove commented-out sections.\n- Add multi-profile support to force tomcat target.\n", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 1, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/gums/issues/19/comments", 
   "created_at": "2015-09-16T01:40:41Z", 

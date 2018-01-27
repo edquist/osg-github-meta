@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "The `VOMSACValidator` spawns a helper thread for each instance and re-loads\nthe CRLs for each new instance.  Hence, it's too heavyweight to do an instance\nper validation request.\n\nOTOH, the actual validation is done in a synchronized method, meaning only one\nthread can validate at a time per `VOMSACValidator` object.  So, it's also\ninappropriate to be a global object.\n\nHere, I split the difference and have it be a thread-local.\n", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 2, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/gums/issues/28/comments", 
   "created_at": "2016-08-02T19:29:22Z", 

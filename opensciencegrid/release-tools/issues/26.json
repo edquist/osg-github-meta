@@ -4,7 +4,6 @@
   "author_association": "MEMBER", 
   "body": "Set of patches to:\r\n   * verify that osg-koji is in PATH before running\r\n   * verify that release-tools binaries are in PATH and if not add . to PATH to see if that fixes things", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 2, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/release-tools/issues/26/comments", 
   "created_at": "2017-03-16T22:34:23Z", 

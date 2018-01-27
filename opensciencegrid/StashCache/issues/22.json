@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "`stashcp` should populate the user-agent field so we can distinguish it at the various web services (such as the GeoIP application).\r\n\r\nWe should coordinate with Dave Dykstra to see what the best user identifier exists.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 5, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/22/comments", 
   "created_at": "2016-12-06T04:09:04Z", 

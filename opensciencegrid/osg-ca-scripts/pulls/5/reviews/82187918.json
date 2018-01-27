@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-ca-scripts/pull/5#pullrequestreview-82187918"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-ca-scripts/pulls/5"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "", 
+  "commit_id": "467f18e651e6cb27933df7b4e4d61c1aa5d09a9d", 
+  "html_url": "https://github.com/opensciencegrid/osg-ca-scripts/pull/5#pullrequestreview-82187918", 
+  "id": 82187918, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-ca-scripts/pulls/5", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-12-08T15:32:57Z", 
+  "user": {
+    "avatar_url": "https://avatars0.githubusercontent.com/u/5246893?v=4", 
+    "events_url": "https://api.github.com/users/matyasselmeci/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/matyasselmeci/followers", 
+    "following_url": "https://api.github.com/users/matyasselmeci/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/matyasselmeci/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/matyasselmeci", 
+    "id": 5246893, 
+    "login": "matyasselmeci", 
+    "organizations_url": "https://api.github.com/users/matyasselmeci/orgs", 
+    "received_events_url": "https://api.github.com/users/matyasselmeci/received_events", 
+    "repos_url": "https://api.github.com/users/matyasselmeci/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/matyasselmeci/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/matyasselmeci/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/matyasselmeci"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-configure/pull/39#pullrequestreview-9746807"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/39"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "@matyasselmeci and I discussed whether quotes should be stripped or escaped and we decided that input validation was a separate issue.", 
+  "commit_id": "172b3c0cc2a36e4d5ce9a6def8853b8d9a8baf71", 
+  "html_url": "https://github.com/opensciencegrid/osg-configure/pull/39#pullrequestreview-9746807", 
+  "id": 9746807, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-configure/pulls/39", 
+  "state": "APPROVED", 
+  "submitted_at": "2016-11-22T20:03:39Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

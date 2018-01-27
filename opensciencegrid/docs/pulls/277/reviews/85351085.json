@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/277#pullrequestreview-85351085"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/277"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "I'm glad we're quickly documenting the new data transfer accounting but since we've been stressing doc quality recently, I've got a few bones to pick:\r\n\r\n1. Typos! I've noted a few but please review your prose closely and run it through a spell-checker\r\n1. Why is this a separate doc from the frontend installation doc? Can this just be added as a configuration sub-section of the existing doc?\r\n1. It's not completely clear to me if this is something that is optional or required for frontends.\r\n1. Is this production-ready or is it a technology preview?", 
+  "commit_id": "64c64b10eddf7fd64ba4263b6c4a9834e7e64dfd", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/277#pullrequestreview-85351085", 
+  "id": 85351085, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/277", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2017-12-22T16:41:35Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

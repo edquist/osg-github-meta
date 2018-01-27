@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "We currently perform the geo IP lookup each time `stashcp` is invoked.  We should write the sorted servers out to disk (`$HOME`?  `$PWD`?) and reuse them if `stashcp` is invoked multiple times from the same job.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/21/comments", 
   "created_at": "2016-12-06T04:06:49Z", 

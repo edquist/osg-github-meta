@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gratia-probe/pull/24#pullrequestreview-89937924"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/24"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "Looks good to me.  I agree with @edquist though, can this be done also at the HTCondor python classad level?\r\n\r\nNote though, this probe support sites that do not install the condor python libraries.", 
+  "commit_id": "1e62e8912653d78ead247ee5dcc09212cf1ec1b0", 
+  "html_url": "https://github.com/opensciencegrid/gratia-probe/pull/24#pullrequestreview-89937924", 
+  "id": 89937924, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gratia-probe/pulls/24", 
+  "state": "APPROVED", 
+  "submitted_at": "2018-01-18T21:22:38Z", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/116#pullrequestreview-56478636"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/116"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "LGTM. Fix the merge conflict and feel free to merge it yourself", 
+  "commit_id": "37de5e2746bbcf9e9e4a0ab7af5f690b29cea38d", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/116#pullrequestreview-56478636", 
+  "id": 56478636, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/116", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-08-15T21:39:59Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

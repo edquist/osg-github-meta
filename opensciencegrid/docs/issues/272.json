@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "This tries to better explain the different service options and what they do -- trying to encourage folks to use more of the hosted CE and explaining value of things like CVMFS.\r\n\r\nDesparately needs some diagrams, but I don't have them right now.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/docs/issues/272/comments", 
   "created_at": "2017-12-14T21:49:41Z", 

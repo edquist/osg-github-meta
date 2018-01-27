@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/gracc/pull/15#pullrequestreview-50732298"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/gracc/pulls/15"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "That's at least 1 commit per line.  That's a lot of commits, but the final diff looks ok.", 
+  "commit_id": "35400a317e0c90de795e03f1c3303e85a8f40611", 
+  "html_url": "https://github.com/opensciencegrid/gracc/pull/15#pullrequestreview-50732298", 
+  "id": 50732298, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/gracc/pulls/15", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-07-18T20:24:54Z", 
+  "user": {
+    "avatar_url": "https://avatars1.githubusercontent.com/u/79268?v=4", 
+    "events_url": "https://api.github.com/users/djw8605/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/djw8605/followers", 
+    "following_url": "https://api.github.com/users/djw8605/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/djw8605/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/djw8605", 
+    "id": 79268, 
+    "login": "djw8605", 
+    "organizations_url": "https://api.github.com/users/djw8605/orgs", 
+    "received_events_url": "https://api.github.com/users/djw8605/received_events", 
+    "repos_url": "https://api.github.com/users/djw8605/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/djw8605/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/djw8605/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/djw8605"
+  }
+}

@@ -4,7 +4,6 @@
   "author_association": "MEMBER", 
   "body": "Add configuration flag and env var to disable certificate verification when connecting to RabbitMQ over amqps. This is of course something one should never do in production, but it can be useful in dev and testing...\r\n\r\nAlso updated the vendored amqp package to current.\r\n\r\nBumps version to 1.1.7.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/gracc-collector/issues/22/comments", 
   "created_at": "2017-09-28T15:05:52Z", 

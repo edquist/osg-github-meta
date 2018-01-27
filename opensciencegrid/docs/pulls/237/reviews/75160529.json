@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/237#pullrequestreview-75160529"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/237"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "This is a good first pass for formatting improvements but I still think the doc is in need of a thorough content review (removing detailed help messages for PKI tools, elaboration of host vs service certs, SANs...). We can do that in another PR, though, so let's chat after this one gets merged.\r\n\r\nCould you squash the commits into one with a description of any major content changes? Once that's done, I'll go ahead and merge this.", 
+  "commit_id": "abfc3ab772ea2325ca857912751f421114c50fa8", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/237#pullrequestreview-75160529", 
+  "id": 75160529, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/237", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2017-11-08T16:29:30Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

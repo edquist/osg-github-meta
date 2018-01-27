@@ -4,7 +4,6 @@
   "author_association": "MEMBER", 
   "body": "Moved the $SERVER_WO_PORT variable up into the area where MySQL \nparameters are constructed, and created a new variable called $SERVER_PORT \nto separate out the port.\n\nIn my use case, I'd like to set up GUMS with the MySQL database living on\nanother machine. This seemed to be the best way to handle that without\nsignificantly breaking the existing setup script.\n\nAlso relevant, from the MySQL 5.1 reference:\n\"For connections to localhost, MySQL programs attempt to connect to the local\nserver by using a Unix socket file.  This occurs even if a --port or -P option\nis given to specify a port number. To ensure that the client makes a TCP/IP\nconnection to the local server, use --host or -h to specify a host name value of\n127.0.0.1, or the IP address or name of the local server.\"\nhttps://dev.mysql.com/doc/refman/5.1/en/connecting.html\n\nI take this to mean that specifying -h and -p won't break connections to\nlocalhost.\n", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 1, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/gums/issues/26/comments", 
   "created_at": "2016-03-02T19:30:40Z", 

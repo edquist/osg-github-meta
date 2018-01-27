@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/osg-test/pull/101#pullrequestreview-65862450"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/101"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "No newline at the end of `test_sequence`?! Savagery. \r\n\r\nOnce you add that, feel free to merge.", 
+  "commit_id": "4a5afa46e119d43f665f6a85dab2461e5dbeadf4", 
+  "html_url": "https://github.com/opensciencegrid/osg-test/pull/101#pullrequestreview-65862450", 
+  "id": 65862450, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/osg-test/pulls/101", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-09-28T13:42:58Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}

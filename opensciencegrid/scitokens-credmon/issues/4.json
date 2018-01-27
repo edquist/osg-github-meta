@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "If `scitokens-credmon` is running as root, it should;\r\n1.  See if the signing key already exists.\r\n2.  If not, generate a new one and drop it into place.\r\n3.  Look at the configured issuer and download the list of known keys.\r\n4.  If the current credential is not in the list of known keys, it should Complain Loudly and log a copy/paste-able JSON snippet (including key ID), asking the sysadmin to provide the (possibly freshly generated) key to the issuer.\r\n5.  If the current credential is in the list of known keys, check the local key ID and make sure it is set appropriately.\r\n\r\nBasically, we want to reduce and simplify the steps for registering a new schedd within the issuer infrastructure.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/scitokens-credmon/issues/4/comments", 
   "created_at": "2017-09-21T18:34:02Z", 

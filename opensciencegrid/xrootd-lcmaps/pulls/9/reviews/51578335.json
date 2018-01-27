@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/xrootd-lcmaps/pull/9#pullrequestreview-51578335"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/9"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "If the call to `globus_gsi_callback_set_cert_dir` fails, then the function returns early and the `m_callback_data` variable is leaked.\r\n\r\nI think we should:\r\n- check for `m_callback_data` being non-null at each call (freeing it before re-initializing if its set)\r\n- set it back to `nullptr` at the end of the `destroy`.\r\n- Calling `destroy` in the destructor if `m_callback_data` is not `nullptr`.\r\n\r\nShould be minor changes to the PR.", 
+  "commit_id": "0259e0bf61ea6820aeb4cc25e1c21375779f1a0e", 
+  "html_url": "https://github.com/opensciencegrid/xrootd-lcmaps/pull/9#pullrequestreview-51578335", 
+  "id": 51578335, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/xrootd-lcmaps/pulls/9", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2017-07-21T20:30:29Z", 
+  "user": {
+    "avatar_url": "https://avatars2.githubusercontent.com/u/1093447?v=4", 
+    "events_url": "https://api.github.com/users/bbockelm/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/bbockelm/followers", 
+    "following_url": "https://api.github.com/users/bbockelm/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/bbockelm/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/bbockelm", 
+    "id": 1093447, 
+    "login": "bbockelm", 
+    "organizations_url": "https://api.github.com/users/bbockelm/orgs", 
+    "received_events_url": "https://api.github.com/users/bbockelm/received_events", 
+    "repos_url": "https://api.github.com/users/bbockelm/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/bbockelm/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/bbockelm/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/bbockelm"
+  }
+}

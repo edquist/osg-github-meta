@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "We should fail the build if pylint fails.  We may need to add a `pylintrc` file so we can ignore some formatting errors.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/StashCache/issues/35/comments", 
   "created_at": "2016-12-07T18:49:49Z", 

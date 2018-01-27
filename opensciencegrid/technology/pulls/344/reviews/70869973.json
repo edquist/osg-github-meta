@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/technology/pull/344#pullrequestreview-70869973"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/technology/pulls/344"
+    }
+  }, 
+  "author_association": "MEMBER", 
+  "body": "We are almost there.\r\nIn the Release model section:\r\n\"The OSG Release team will release\" -> \"The OSG Software and Release Team releases\"\r\n\"will not have to coincide\" -> \"do not have to coincide\"\r\n\"will be determined\" -> \"are determined\"", 
+  "commit_id": "67d7d643b5a39d7bfc99d0dce82d9d36228ecc41", 
+  "html_url": "https://github.com/opensciencegrid/technology/pull/344#pullrequestreview-70869973", 
+  "id": 70869973, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/technology/pulls/344", 
+  "state": "CHANGES_REQUESTED", 
+  "submitted_at": "2017-10-20T14:59:23Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/7377632?v=4", 
+    "events_url": "https://api.github.com/users/timtheisen/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/timtheisen/followers", 
+    "following_url": "https://api.github.com/users/timtheisen/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/timtheisen/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/timtheisen", 
+    "id": 7377632, 
+    "login": "timtheisen", 
+    "organizations_url": "https://api.github.com/users/timtheisen/orgs", 
+    "received_events_url": "https://api.github.com/users/timtheisen/received_events", 
+    "repos_url": "https://api.github.com/users/timtheisen/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/timtheisen/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/timtheisen/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/timtheisen"
+  }
+}

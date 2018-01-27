@@ -4,7 +4,6 @@
   "author_association": "OWNER", 
   "body": "The proposed SLA for the RabbitMQ service (https://github.com/opensciencegrid/operations/blob/master/docs/SLA/event.md) covers only service availability and not expectations for data loss and buffering at the service.\r\n\r\nGiven we are more sensitive to loss of accepted data than service availability, expectations for data loss should be included.", 
   "closed_at": null, 
-  "closed_by": null, 
   "comments": 0, 
   "comments_url": "https://api.github.com/repos/opensciencegrid/operations/issues/89/comments", 
   "created_at": "2017-10-25T19:47:16Z", 

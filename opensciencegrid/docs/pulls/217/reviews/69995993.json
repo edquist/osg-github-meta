@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "html": {
+      "href": "https://github.com/opensciencegrid/docs/pull/217#pullrequestreview-69995993"
+    }, 
+    "pull_request": {
+      "href": "https://api.github.com/repos/opensciencegrid/docs/pulls/217"
+    }
+  }, 
+  "author_association": "OWNER", 
+  "body": "CI error appears to be due to an unrelated (and transient?) link error. Overriding", 
+  "commit_id": "0e6457414acc594f9b25bdde2a3721cdb7e309e1", 
+  "html_url": "https://github.com/opensciencegrid/docs/pull/217#pullrequestreview-69995993", 
+  "id": 69995993, 
+  "pull_request_url": "https://api.github.com/repos/opensciencegrid/docs/pulls/217", 
+  "state": "APPROVED", 
+  "submitted_at": "2017-10-17T19:09:26Z", 
+  "user": {
+    "avatar_url": "https://avatars3.githubusercontent.com/u/390105?v=4", 
+    "events_url": "https://api.github.com/users/brianhlin/events{/privacy}", 
+    "followers_url": "https://api.github.com/users/brianhlin/followers", 
+    "following_url": "https://api.github.com/users/brianhlin/following{/other_user}", 
+    "gists_url": "https://api.github.com/users/brianhlin/gists{/gist_id}", 
+    "gravatar_id": "", 
+    "html_url": "https://github.com/brianhlin", 
+    "id": 390105, 
+    "login": "brianhlin", 
+    "organizations_url": "https://api.github.com/users/brianhlin/orgs", 
+    "received_events_url": "https://api.github.com/users/brianhlin/received_events", 
+    "repos_url": "https://api.github.com/users/brianhlin/repos", 
+    "site_admin": false, 
+    "starred_url": "https://api.github.com/users/brianhlin/starred{/owner}{/repo}", 
+    "subscriptions_url": "https://api.github.com/users/brianhlin/subscriptions", 
+    "type": "User", 
+    "url": "https://api.github.com/users/brianhlin"
+  }
+}
